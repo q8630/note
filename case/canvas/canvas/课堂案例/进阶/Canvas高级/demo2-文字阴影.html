@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="canvas"style="border: 1px solid #000; display: block; margin: 0 auto;">
+    当前浏览器不支持Canvas,请更换浏览器以后再重试
+</canvas>
+
+
+
+<script>
+    var canvas=document.getElementById("canvas");
+    canvas.width = 1000;
+    canvas.height = 600;
+    var ctx=canvas.getContext("2d");
+
+
+
+    ctx.font = "bold 40px Arial";
+
+    var linearGrad = ctx.createLinearGradient(0,0,800,0);
+    linearGrad.addColorStop(0.0, "#f00");
+    linearGrad.addColorStop(0.5, "#0f0");
+    linearGrad.addColorStop(1.0, "#00f");
+    ctx.fillStyle = linearGrad;
+
+
+    ctx.shadowColor = "#ccc";
+    ctx.shadowOffsetX = 7;  //可为负值
+    ctx.shadowOffsetY = 7;
+    ctx.shadowBlur = 5;    //模糊程度
+
+    ctx.fillText("The weather is good today ！（今天天气不错！）",40,100)
+
+
+    ctx.font = "bold 200px Arial";
+    ctx.shadowColor = "#ccc";
+    ctx.shadowOffsetX = 20;  //可为负值
+    ctx.shadowOffsetY = 20;
+    ctx.shadowBlur = 5;    //模糊程度
+    ctx.fillText("Canvas",40,300)
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

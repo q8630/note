@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>多色多条线</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="800" style="border: 1px solid #000; display: block;margin: 10px auto;">
+    当前浏览器不支持Canvas,请更换浏览器以后再重试
+</canvas>
+
+
+
+<script>
+    var canvas=document.getElementById("canvas");
+    var ctx=canvas.getContext("2d");
+
+    //1.划线
+    ctx.moveTo(100,200);
+    ctx.lineTo(300,400);
+    ctx.lineTo(100,600);
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "#f00";
+
+    ctx.moveTo(300,200);
+    ctx.lineTo(500,400);
+    ctx.lineTo(300,600);
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "#0f0";
+
+    ctx.moveTo(500,200);
+    ctx.lineTo(700,400);
+    ctx.lineTo(500,600);
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "#00f";
+
+    //ps:canvas绘图是基于状态的绘图，所以应该先绘制绘图的状态，再绘制
+
+    //3.绘制
+    ctx.stroke();
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

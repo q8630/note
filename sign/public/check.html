@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--axios fetch  ajax请求-->
+<!--checkveri 代表接口的标识  veri后端接收的字段 -->
+<form action="http://127.0.0.1:3000/Handler/AdminHandler?type=checkveri" method="get">
+    姓名:
+    <input type="text" name="username" > <br>
+    密码:
+    <input type="text" name="password" > <br>
+    请输入验证码: <br>
+    <input type="text" name="type" value="checkveri" style="display: none">
+    <input type="text" name="veri">
+    <input type="submit" value="校验">
+</form>
+
+
+
+</body>
+</html>

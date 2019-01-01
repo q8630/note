@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>多边形</title>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="600" style="border: 1px solid #000; display: block;margin: 50px auto;">
+    当前浏览器不支持Canvas,请更换浏览器以后再重试
+</canvas>
+
+
+
+<script>
+    var canvas=document.getElementById("canvas");
+    var ctx=canvas.getContext("2d");
+
+    //1.划线
+    ctx.moveTo(100,100);
+    ctx.lineTo(700,500);
+    ctx.lineTo(100,500);
+    ctx.lineTo(100,100);
+
+    //2.设置线宽和颜色
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "#f00";
+
+    // 3.绘制
+    ctx.stroke();
+
+
+    //2.设置填充颜色
+    ctx.fillStyle = "#0f0";
+
+    //3.绘制填充图像
+    ctx.fill();
+
+
+
+</script>
+
+
+</body>
+</html>

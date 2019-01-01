@@ -1,0 +1,68 @@
+bin => 启动文件
+model  数据库文件
+public  静态资源文件
+views  视图文件
+app.js 真正的启动文件
+package.json 项目配置文件
+
+
+dependencies 生产环境
+线上运行的项目需要用到的一些依赖
+
+
+
+
+
+
+注册 修改密码
+
+vue
+
+vue-cli 2.0 脚手架     vue-cil 3.0
+
+指令 ：
+    v-model 双向数据绑定
+
+事件：
+    普通事件
+
+    事件修饰符
+    .stop 阻止事件冒泡
+    按键修饰符
+
+自定义指令
+    directive
+    全局
+    局部
+
+生命周期
+    beforeCreate
+组件
+    component
+    全局
+    局部
+自定义过滤器
+    filter
+    全局
+    局部
+
+路由
+
+动画
+
+vuex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:wq cmd退出

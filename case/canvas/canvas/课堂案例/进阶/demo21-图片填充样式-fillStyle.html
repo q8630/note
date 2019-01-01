@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片填充</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="800" style="border: 1px solid #000; display: block;margin: 10px auto;">
+    当前浏览器不支持Canvas,请更换浏览器以后再重试
+</canvas>
+
+
+
+<script>
+    window.onload = function(){
+        var canvas=document.getElementById("canvas");
+        var ctx=canvas.getContext("2d");
+
+        var backgroundImages = new Image();
+        backgroundImages.src = "zhuanqiang.jpg";
+        backgroundImages.onload = function(){
+           // var pattrem = ctx.createPattern(backgroundImages,"no-repeat");
+           // var pattrem = ctx.createPattern(backgroundImages,"repeat-x");
+           // var pattrem = ctx.createPattern(backgroundImages,"repeat-y");
+           var pattrem = ctx.createPattern(backgroundImages,"repeat");
+
+            ctx.fillStyle = pattrem;
+            ctx.fillRect(0,0,800,800)
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

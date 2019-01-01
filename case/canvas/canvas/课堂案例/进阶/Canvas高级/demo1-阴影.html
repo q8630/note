@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="canvas"style="border: 1px solid #000; display: block; margin: 0 auto;">
+    当前浏览器不支持Canvas,请更换浏览器以后再重试
+</canvas>
+
+
+
+<script>
+    var canvas=document.getElementById("canvas");
+    canvas.width = 1000;
+    canvas.height = 600;
+    var ctx=canvas.getContext("2d");
+
+    ctx.fillStyle = "#058";
+
+    ctx.shadowColor = "#ccc";
+    ctx.shadowOffsetX = 20;  //可为负值
+    ctx.shadowOffsetY = 20;
+    ctx.shadowBlur = 5;    //模糊程度
+
+    ctx.fillRect(200,100,400,400)
+
+
+
+</script>
+
+
+</body>
+</html>

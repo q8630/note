@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="canvas"style="border: 1px solid #000; display: block; margin: 0 auto;">
+    当前浏览器不支持Canvas,请更换浏览器以后再重试
+</canvas>
+
+
+
+<script>
+    var canvas=document.getElementById("canvas");
+    canvas.width = 1000;
+    canvas.height = 1500;
+    var ctx=canvas.getContext("2d");
+
+
+    var linearGrad = ctx.createLinearGradient(0,0,800,0);
+    linearGrad.addColorStop(0.0, "#f00");
+    linearGrad.addColorStop(0.5, "#0f0");
+    linearGrad.addColorStop(1.0, "#00f");
+    ctx.fillStyle = linearGrad;
+
+    //font-style
+    ctx.font = "bold 50px Arial";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,50);
+
+
+    ctx.font = "italic bold 50px Arial";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,150);
+
+
+    ctx.font = "oblique bold 50px Arial";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,250);
+
+    //font-variant
+    ctx.font = "small-caps bold 50px Arial";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,350);
+
+    //font-weight
+    ctx.font = "lighter 50px Arial";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,450);
+
+
+    ctx.font = "normal 50px Arial";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,550);
+
+
+    ctx.font = "bold 50px Arial";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,650);
+
+    ctx.font = "bolder 50px Arial";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,750);
+
+
+    //font-size
+    ctx.font = "bold 30px Arial";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,850);
+
+    ctx.font = "bold 100px Arial";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,950);
+
+
+
+    //font-family
+    ctx.font = "bold 50px Arial";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,1050);
+
+    ctx.font = "bold 50px 楷体";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,1150);
+
+
+</script>
+
+
+</body>
+</html>
