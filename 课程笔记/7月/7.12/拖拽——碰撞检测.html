@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+
+		#div1{
+			width: 100px;
+			height: 100px;
+			background: pink;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 2;
+		}
+		#div2{
+			width: 100px;
+			height: 100px;
+			background: lightgreen;
+			position: absolute;
+			top: 100px;
+			left: 150px;
+			z-index: 1;
+		}
+
+	</style>
+	<script>
+		// 当鼠标按下时  oDiv开始跟随鼠标移动
+		// 当鼠标移动时   oDiv跟随鼠标
+		// 当鼠标抬起时   oDiv停止运动
+
+		//            onmousedown
+		//            onmousemove
+		//            onmouseup
+		//
+		//		拖拽——碰撞检测
+		window.onload  = function(){
+			var oDiv = document.getElementById("div1");
+			var oDiv2 = document.getElementById("div2");
+			oDiv.onmousedown=function(ev){
+				var oEvent=ev||event;
+				var x=oEvent.clientX-oDiv.offsetLeft;
+				var y=oEvent.clientY-oDiv.offsetTop;
+
+				document.onmousemove=function(ev){
+					var oEvent=ev||event;
+
+					oDiv.style.left=oEvent.clientX-x+"px";
+					oDiv.style.top=oEvent.clientY-y+"px";
+
+					var l1=oDiv.offsetLeft;
+					var r1=oDiv.offsetLeft+oDiv.offsetWidth;
+					var t1=oDiv.offsetTop;
+					var b1=oDiv.offsetTop+oDiv.offsetHeight;
+
+					var l2=oDiv2.offsetLeft;
+					var r2=oDiv2.offsetLeft+oDiv.offsetWidth;
+					var t2=oDiv2.offsetTop;
+					var b2=oDiv2.offsetTop+oDiv.offsetHeight;
+					if(l1>r2||r1<l2||t1>b2||b1<t2){
+
+						oDiv2.style.background="lightgreen";
+					}else{
+						oDiv2.style.background="orange";
+
+					}
+
+				};
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+
+			}
+
+
+		}
+
+	</script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

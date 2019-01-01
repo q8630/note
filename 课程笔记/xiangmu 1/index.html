@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+    <meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" />
+    <title>百度地图API自定义地图</title>
+    <!--引用百度地图API-->
+    <style type="text/css">
+        html,body{margin:0;padding:0;}
+        .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+        .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div id="headerBox"></div>
+
+<div id="content">
+    <!--轮播图开始-->
+    <div class="banner1" style="display: block">
+        <img class="images_01" src="images/banner01_01.png" alt="">
+        <img class="images_02" src="images/banner01_02.png" alt="">
+        <img class="images_03" src="images/banner01_03.png" alt="">
+    </div>
+    <div class="banner2" style="display: none">
+        <img class="images_01" src="images/banner02_01.png" alt="">
+        <img class="images_02" src="images/banner02_02.png" alt="">
+        <img class="images_03" src="images/banner02_03.png" alt="">
+    </div>
+    <div class="banner3" style="display: none">
+        <img class="images_01" src="images/banner03_01.png" alt="">
+        <img class="images_02" src="images/banner03_02.png" alt="">
+        <img class="images_03" src="images/banner01_03.png" alt="">
+    </div>
+    <!--按钮-->
+    <div class="btn">
+        <span class="zuo"></span>
+        <div class="zhong">
+            <span class="sp"></span>
+            <span class="sp"></span>
+            <span class="sp"></span>
+        </div>
+        <span class="you"></span>
+    </div>
+    <!--轮播图结束-->
+
+    <!--主要产品-->
+    <div class="chanpin">
+        <img src="images/goOn_icon01.png" alt="">
+        <h1>主要产品</h1>
+        <h2>Our Works</h2>
+        <img class="img2" src="images/three_points01.png" alt="">
+        <div class="content_jj">
+            <div class="line">
+                <div>
+                    <i></i>
+                    <span></span>
+                </div>
+                <div>
+                    <i></i>
+                    <span></span>
+                </div>
+                <div>
+                    <i></i>
+                    <span></span>
+                </div>
+                <div>
+                    <i></i>
+                    <span></span>
+                </div>
+                <div>
+                    <i></i>
+                    <span></span>
+                </div>
+                <div>
+                    <i></i>
+                    <span></span>
+                </div>
+            </div>
+            <div class="contents" style="display: block">
+                <div class="left_cont">
+                    <img src="images/chanpin_image01.jpg" alt="">
+                </div>
+                <div class="right_cont">
+                    <h1>小鸟掌学<span></span></h1>
+                    <div class="p1">
+                        <img src="images/xiaoniao_icon.png" alt="">
+                        <h2>概述</h2>
+                        <p>小鸟掌学创建于2014年初，起源服务于四川省专业技术人员继续教育基地的在线培训平台，受到客户与社会的密切关注与欢迎。卓新思创科技有限公司负责小鸟掌学的运营、推广和研发等工作。</p>
+                    </div>
+                    <div class="p2">
+                        <p>我们的愿景：成为中国最强、最大的中小微企业定制在线学习服务提供商！</p>
+                        <p>我们做的是“新学习、新媒体”！</p>
+                        <p>帮助企业建立自己的企业学校，实现：全民全学、全民全校、全民全智(比拼式学习)！</p>
+                    </div>
+                    <div class="tip">
+                        <img  class="tip_left" src="images/yinhao_you.png" alt="">
+                        <div>学我所用、学以致用</div>
+                        <img  class="tip_right" src="images/yinhao_zuo.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="contents" style="display: none">
+                <div class="left_cont">
+                    <img src="images/chanpin_image02.jpg" alt="">
+                </div>
+                <div class="right_cont">
+                    <h1>小鸟掌学<span></span></h1>
+                    <div class="p2" style="padding-top: 30px">
+                        <p> <span style="font-size: 38px;float: left" >随</span>着智能手机应用，微学习（即微观背景下的学习）已经开始飞速蔓延，通过对学习内容或者学习时间进行分割，使学员对学习内容进行碎片化的学习，在企业内它可以以正式或随意的方式推送给学员。作为一种人才培养方式，微课能较好的补充实体培训中无法实现的可移动性、持续性、重复性、随时随地等不足。这有助于企业建立规范的培养体系，提高全员素质，从而达到提升企业经济效益，并建立一支忠诚善战的员工队伍。</p>
+                    </div>
+                    <div class="tip" style="margin-top: 80px">
+                        <img  class="tip_left" src="images/yinhao_you.png" alt="">
+                        <div>学我所用、学以致用</div>
+                        <img  class="tip_right" src="images/yinhao_zuo.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="contents" style="display:none ">
+                <div class="left_cont">
+                    <img src="images/chanpin_image03.jpg" alt="">
+                </div>
+                <div class="right_cont">
+                    <h1>小鸟掌学对企业的价值<span></span></h1>
+                    <div class="p2">
+                        <p style="margin-top: 20px">1)	帮助企业转变为学习型组织，促进全员持续学习；</p>
+                        <p>2)	加速企业内部知识的传播，提高管理、操作和经验技巧的传承；</p>
+                        <p>3)	营造企业比拼式学习氛围，挖掘实战精华</p>
+                        <p style="margin-top: 120px">4)	降低企业培训的时间和金钱成本 ，提高培训效率和培训质量；</p>
+                        <p>5)	增加凝聚力，提高员工的忠诚度，做到“上下同欲”；</p>
+                        <p>6)	增强企业供应商、经销商的知识技能的提高，形成“供应链学习模式”；</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contents" style="display:none ">
+                <div class="left_cont">
+                    <img src="images/chanpin_image04.jpg" alt="">
+                </div>
+                <div class="right_cont" style="padding-top: 10px;line-height: 28px">
+                    <h1>“小鸟掌学”云平台<span></span></h1>
+                    <div class="p2" style="line-height: 26px">
+                        <p style="padding-top: 10px">“小鸟掌学”云平台 是一套完整的专家知识、学习管理、监督考核系统。首先根据企业和员工的特性，抓取学习需求，然后从“平台学习库、行业学习库和企业内训库”中调出教学资源，按学习计划“推送”任务给每一位员工，并对学习过程进行监管，对学习效果进行评估，根据学习情况调整学习计划，不断优化员工的职业生涯。</p>
+                        <p style="margin-top: 100px">“小鸟掌学”主要基于智能手机平台进行学习。针对性、趣味性、创新性的学习方式有助于员工建立学习兴趣，将学习与趣味相结合，提高学习吸收率。提高员工技能，增加企业效益</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="contents" style="display:none">
+                <div class="left_cont">
+                    <img src="images/chanpin_image05.jpg" alt="">
+                </div>
+                <div class="right_cont" style="padding-top: 10px;line-height: 28px">
+                    <h1>“小鸟掌学”云平台<span></span></h1>
+                    <div class="p2">
+                        <p style="margin-top: 20px">“小鸟掌学”云平台是企业战略变革的工具；</p>
+                        <p>“小鸟掌学”云平台是企业文化重要的组成部分；</p>
+                        <p>“小鸟掌学”云平台是企业培训的重要支撑手段和实施保障机制；</p>
+                        <p style="margin-top: 110px">“小鸟掌学”云平台是企业上下游意识形态统一的桥梁；</p>
+                        <p>“小鸟掌学”云平台是企业经验分享的平台；</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="contents" style="display:none">
+                <div class="left_cont">
+                    <img src="images/chanpin_image06.jpg" alt="">
+                </div>
+                <div class="right_cont" style="padding-top: 10px;line-height: 28px">
+                    <h1>“小鸟掌学”云平台<span></span></h1>
+                    <div class="p2" style="line-height: 26px">
+                        <p style="padding-top: 20px">“小鸟掌学”云平台 本质上是一种正规化教学管理机制，但它更突破了时间、地域、成本、固定性的限制（绝非在线浏览网页，看电子书籍和一些视音频上）。“小鸟掌学”改变了企业现有培训的“双高困局”（高成本、高误工），实现了 “双低学习模式”（低成本、低误工）。</p>
+                        <p style="margin-top: 90px">当今，科学技术迅猛发展，社会文化不断进步，“终身教育、终身学习”将被越来越多的人所认识。面对未来，小鸟掌学将不断努力，以一流的运营和服务，成为企业首选的、长期的、可信赖的学习资源提供商、运营服务提供商，为社会各行各业的发展和国家经济实力的增强，做出新的贡献。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lin">
+                <span class="zuo"></span>
+                <span class="you"></span>
+            </div>
+        </div>
+    </div>
+
+    <!--公司简介-->
+    <div class="chanpin jianjie">
+        <h1>公司简介</h1>
+        <h2>About Company</h2>
+        <img class="img2" src="images/three_points01.png" alt="">
+        <div class="content_jj">
+            <div class="contents">
+                <div class="left_cont">
+                    <img src="images/jianjie_image01.jpg" alt="">
+                </div>
+                <div class="right_cont">
+                    <h1 class="jhdcolor ">卓新思创科技有限公司<span></span></h1>
+                    <div class="p1">
+                        <img src="images/xiaoniao_icon.png" alt="">
+                        <h2 class="jtextcolor ">概述</h2>
+                        <p>卓新思创科技有限公司，源自北京市专业技术人员继续教育基地的在线培训平台，经过多年的积累，我们已经拥有强大的教育产品设计开发团队，拥有众多在线教育产品。</p>
+                    </div>
+                    <div class="p2">
+                        <p>在线教育，正在改变人们的学习方式，微课、微学习的流行，更是让碎片化的时间得到充分的利用，我们有理由相信，在线微学习，将成为未来在线教育的主流模式。我们全新推出企业培训微学平台—
+                            <a href="#">小鸟掌学</a>，全面覆盖PC、手机、平板的学习方式，极高自由度的培训选择，企业可选择购买平台在售课程，或自己上传课程。</p>
+                       
+                    </div>
+                    <div class="tip">
+                        <img  class="tip_left" src="images/yinhao_you.png" alt="">
+                        <div>企业培训，从未如此简单</div>
+                        <img  class="tip_right" src="images/yinhao_zuo.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="lin"></div>
+        </div>
+    </div>
+
+    <!--业务范围-->
+    <div class="yewu">
+        <img style="margin-top:8px;" src="images/yewu_zhiyinimg.jpg" alt="">
+        <h1 style="margin-top:10px; line-height:60px;">业务范围</h1>
+        <h2>Business Scope</h2>
+        <img class="img2" src="images/three_points01.png" alt="">
+
+        <div class="yewu-xia">
+            <div class="yewu_a">
+                <div class="yewu-01">
+                    <div class="nuber">01</div>
+                    <div class="zhongjian">
+                        <h1>企业培训平台</h1>
+                        <p>Enterprise training platform</p>
+                    </div>
+                    <div class="pic"><img src="images/business_cimg01.png" alt=""></div>
+                    <div class="pa">
+                        <p>我们的愿景：成为中国最强、最大的中小微企业定制在线学习服务提供商！</p>
+                        <p>我们做的是“新学习、新媒体”！</p>
+                    </div>
+                    <div class="icon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--百度地图-->
+<!--<div style="width:100%;height:550px;" id="map">-->
+    <!--<imgs src="images/map_bottomimg.png" alt="">-->
+<!--</div>-->
+<div id="footerBox"></div>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+        addRemark();//向地图中添加文字标注
+    }
+
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("map");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(116.565261,39.904111);//定义一个中心点坐标
+        map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+        var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+        map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+        var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+        map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+        var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+        map.addControl(ctrl_sca);
+    }
+
+    //标注点数组
+    var markerArr = [{title:"翡翠教育",content:"",point:"116.564987|39.904118",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+    ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                borderColor:"#808080",
+                color:"#333",
+                cursor:"pointer"
+            });
+
+            (function(){
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click",function(){
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open",function(){
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close",function(){
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click",function(){
+                    _marker.openInfoWindow(_iw);
+                })
+                if(!!json.isOpen){
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("images/map.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    //文字标注数组
+    var lbPoints = [{point:"116.564987|39.90418",content:""}
+    ];
+    //向地图中添加文字标注函数
+    function addRemark(){
+        for(var i=0;i<lbPoints.length;i++){
+            var json = lbPoints[i];
+            var p1 = json.point.split("|")[0];
+            var p2 = json.point.split("|")[1];
+            var label = new BMap.Label("<div style='padding:2px;'>"+json.content+"</div>",{point:new BMap.Point(p1,p2),offset:new BMap.Size(3,-6)});
+            map.addOverlay(label);
+            label.setStyle({borderColor:"#999"});
+        }
+    }
+
+    initMap();//创建和初始化地图
+</script>
+<script src="js/index.js"></script>
+</body>
+</html>

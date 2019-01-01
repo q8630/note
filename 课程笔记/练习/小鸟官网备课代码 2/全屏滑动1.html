@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body,#box{
+            width: 100%;
+            height: 100%;
+            background: #fff;
+        }
+        .boxT{
+            width: 100%;
+            height: 80px;
+            background: #0d74ac;
+        }
+        .boxT span{
+            width: 100px;
+            height: 78px;
+            border: 1px solid #fff;
+            float: left;
+            margin-left: 50px;
+            color: #fff;
+            text-align: center;
+            line-height: 80px;
+        }
+        .boxB{
+            width: 100%;
+            height: calc(100% - 80px);
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+        #lunbo{
+            width: 100%;
+            height: calc((100% - 80px)*5);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #lunbo div{
+            width: 100%;
+            height: calc(100% / 5 + 80px);
+            font-size: 100px;
+            text-align: center;
+        }
+        .div1{background: #f00;}
+        .div2{background: #0f0;}
+        .div3{background: #00f;}
+        .div4{background: #ff0;}
+        .div5{background: #f0f;}
+
+        button {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 40px;
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            margin-left: -50px;
+            background: #000;
+            opacity: 0.5;
+        }
+        .btnT{
+            top: 0;
+        }
+        .btnB{
+            bottom: 0;
+        }
+        #mask{
+            width: 100%;
+            height: 100%;
+            background: #00f;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+
+    </style>
+
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+
+    <div id="box">
+        <div class="boxT" id="boxT">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="boxB" id="boxB">
+            <div id="lunbo">
+                <div class="div1">1</div>
+                <div class="div2">2</div>
+                <div class="div3">3</div>
+                <div class="div4">4</div>
+                <div class="div5">5</div>
+            </div>
+            <button class="btnT" id="btnT"> 上 </button>
+            <button class="btnB" id="btnB"> 下 </button>
+
+        </div>
+    </div>
+    <div id="mask"></div>
+
+
+
+    <script>
+
+
+
+
+
+
+
+
+        var oBoxB = document.getElementById("boxB");
+        var oLunbo = document.getElementById("lunbo");
+        var oLunboDiv = oLunbo.getElementsByTagName("div");
+        var oBoxT = document.getElementById("boxT");
+        var oBoxTSpan = oBoxT.getElementsByTagName("span");
+        var oBtnT = document.getElementById("btnT");
+        var oBtnB = document.getElementById("btnB");
+        var oMask = document.getElementById("mask");
+
+        var H =parseInt(getStyle( oBoxB,"height")) ;
+        console.log(H);
+
+        function getStyle(obj,attr) {
+            if(obj.currentStyle){
+                return obj.currentStyle[attr];
+            }else{
+                return getComputedStyle(obj,false)[attr];
+            }
+        }
+
+
+        //鼠标滚轮方向
+        var scrollFunc = function (e) {
+            e = e || window.event;
+            if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件
+                if (e.wheelDelta > 0) { //当滑轮向上滚动时
+                    //事件
+
+                    // alert("上滚")
+                    xiagun();
+                }
+                if (e.wheelDelta < 0) { //当滑轮向下滚动时
+                    //事件
+                    // alert("下滚")
+                    shanggun();
+
+
+                }
+            } else if (e.detail) {  //Firefox滑轮事件
+                if (e.detail> 0) { //当滑轮向上滚动时
+                    //事件
+                }
+                if (e.detail< 0) { //当滑轮向下滚动时
+                    //事件
+                }
+            }
+        }
+        //给页面绑定滑轮滚动事件
+        if (document.addEventListener) {//firefox
+            document.addEventListener('DOMMouseScroll', scrollFunc, false);
+        }
+        //滚动滑轮触发scrollFunc方法  //ie 谷歌
+        window.onmousewheel = document.onmousewheel = scrollFunc;
+
+
+
+
+
+
+
+        var index = 0;
+        var len = oLunboDiv.length;
+        console.log(len);
+
+        //上按钮
+        oBtnT.onclick = function (ev) {
+            shanggun()
+        }
+
+        function shanggun(){
+            if ($("#lunbo").is(':animated')) {
+                return;
+            }
+            index++;
+            if(index>=4){
+                index=4;
+            }
+            $("#lunbo").animate({"top":-H*index+"px"},500)
+
+
+            for (var j = 0; j < len; j++) {
+                oBoxTSpan[j].style.background = "#0d74ac"
+            }
+
+            oBoxTSpan[index].style.background = "pink";
+
+        }
+
+
+        //下按钮
+        oBtnB.onclick = function (ev) {
+            xiagun()
+
+
+
+        }
+
+        function xiagun(){
+
+            if ($("#lunbo").is(':animated')) {
+                return;
+            }
+            index--;
+            if(index<=0){
+                index=0;
+            }
+            $("#lunbo").animate({"top":-H*index+"px"},500)
+
+            for (var j = 0; j < len; j++) {
+                oBoxTSpan[j].style.background = "#0d74ac"
+            }
+
+            oBoxTSpan[index].style.background = "pink";
+
+        }
+
+
+        //小点点的事件
+        oBoxTSpan[0].style.background = "pink"
+        for (var i = 0; i <len ; i++) {
+            oBoxTSpan[i].number = i;
+            oBoxTSpan[i].onclick = function () {
+
+                for (var j = 0; j < len; j++) {
+                    oBoxTSpan[j].style.background = "#0d74ac"
+                }
+
+                this.style.background = "pink";
+
+                index = this.number;
+
+                $("#lunbo").animate({"top":-H*index+"px"},500)
+
+            }
+        }
+
+
+
+
+        setTimeout(function () {
+            // oMask.style.height = 0+"px"
+            
+            $("#mask").animate({"height":"0"},500)
+        },5000)
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

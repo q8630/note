@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+</head>
+<body>
+<script>
+    /*	var obj={
+     //		键值对的形式
+     name:'许东',
+     sex:'男',
+     age:99
+     }
+     for(var key in obj){
+     //		console.log(key);
+     console.log(obj[key]);
+     }*/
+
+    //	var json = {
+    //		'name':'xud',
+    //		'sex':1,
+    //		'age':99
+    //	}
+    //	document.write(json)
+    //		for(var key in json){
+    ////		console.log(key);
+    //		console.log(json[key]);
+    //	}
+
+    //		json解析
+    //  json解析为json格式的字符串  JSON.stringify()
+    //document.write(JSON.stringify(json))
+    //	json格式的字符串解析为 json格式的对象 JSON.parse()
+    //注意 属性要利用双引号包含 否则会抛出异常
+    //	var str = '{"name":"xud","sex":1,"age":99}';
+    //	console.log(JSON.parse(str));
+
+    //json的拷贝
+    //	简单拷贝
+    //	var json = {
+    //		'name':'xud',
+    //		'sex':1,
+    //		'age':99
+    //	}
+    //	var json1=json;
+    //	json1.age=10;
+    //	console.log(json);
+
+    //	浅拷贝
+    var json = {
+        'name':'xud',
+        'sex':1,
+        'age':99,
+        'friends':{
+            'name':'zhao',
+            'age':99
+        }
+    }
+    var json1={};
+    for(var key in json){
+        json1[key] = json[key];
+    }
+
+    json1.age=10;
+    json1.friends.age=1;
+    console.log(json);
+
+    //	深拷贝
+
+</script>
+</body>
+</html>

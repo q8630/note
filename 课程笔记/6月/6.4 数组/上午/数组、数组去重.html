@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+<script>
+    //字面量定义
+   // var arr = [2];  //是一个空数组
+    //[] 里面的长度是1   值为2
+    //构造函数定义数组
+ //   var arr = new Array(2); //空数组
+    //() 里面的长度是2  值为空
+ //   var arr = new Array(2,35,5);  //()里面的长度是3  值为2 ，35  ，5
+
+
+  //  数组的索引
+
+
+
+
+   //   var arr=[1,2,3,4,56];
+
+ //   arr.push(3); //末尾添加一个数
+//    arr.pop(); //末尾删除一个数
+//    arr.unshift(); // 头部添加一个数
+ //   arr.shift(); //头部删除一个数
+//    arr.reverse(); //数组的反转
+  //  arr.sort(); // 熟知的排序  快速排序   按数字顺序排序
+     // arr.splice(2,1);
+ //   arr.splice(1,1,123,222);
+//    arr.splice(1,2,2,1,5);
+   // console.log(arr);
+    // arr.forEach(function(item,index){
+        // console.log(index);
+      //   console.log(item);
+   //  });
+
+
+
+//    for (var i = 0; i < arr.length; i++) {
+//        console.log(i);//索引
+//        console.log(arr[i]); //值
+//    }
+//
+//    for (var key in arr){
+//        console.log(key);//索引
+//        console.log(arr[key]);//值
+//    }
+
+//    for (let vas of arr){
+//        console.log(vas);//值
+//    }
+
+//    var arr=[1,2,3,4,56];
+//
+////    arr=arr.toString(); //转换为字符串
+////    arr=arr.join('--');   //转换为字符串
+////
+//    var arr1=[2,5,2,5,2,5];
+//    var arr2=arr.concat(arr1);
+//    console.log(arr2);
+//    console.log(arr1);
+ //  slice 数组的截取   含头不含尾
+//    var arr2=arr1.slice(2,3);  // 索引 //把字符串分割为数组
+//    console.log(arr);
+//    console.log(arr2);
+//   克隆数组
+//          var arr1=[1,5,3,6,5,2,5,6,3];
+//    var arr2=arr1.slice(0,arr1.length);
+//    console.log(arr1);
+//    console.log(arr2);
+
+
+
+//    var arr=["刘备","张飞","关羽"];
+//   // arr=arr.join('|');
+//   // console.log(arr);
+//
+//
+//    var str = arr[0];
+//    for (var i = 1; i < arr.length; i++) {
+//          str+='|'+arr[i]
+//    }
+//    console.log(str);
+
+
+//    var str='刘备|张飞|关羽';
+//    var arr=str.split('|');
+//    console.log(arr);
+
+
+
+
+
+//方法1
+//
+//    var arr=[1,1,2,2,5,8,1,6,5,4,5,3,5,2,6,4,7];
+//    var newArr=[];
+//    for (var i = 0; i < arr.length; i++) {
+//        var flag=true; //假设不存在重复的
+//        for (var j = 0; j < newArr.length; j++) {
+//            if(newArr[j] ===arr[i]){
+//                flag=false;
+//            }
+//        }
+//        if(flag){
+//            newArr.push(arr[i]);
+//        }
+//    }
+//     console.log(newArr);
+//
+//方法2
+
+        var arr=[1,1,2,2,5,8,1,6,5,4,5,3,10,50,23,6,4,7];
+    var newArr=[];
+
+
+    for (var i = 0; i < arr.length; i++) {
+        if(newArr.indexOf(arr[i])<0){
+            newArr.push(arr[i]);
+        }
+    }
+    newArr= newArr.sort((a,b)=>a-b);
+    console.log(newArr);
+
+//
+//方法3  （性能高）
+//
+//    var arr=[1,1,2,2,5,8,1,6,5,4,5,3,5,2,6,4,7],newArr=[],obj={};
+//    for (var i = 0; i < arr.length; i++) {
+//        if(obj[arr[i]]==undefined){
+//            obj[arr[i]]=true;
+//        }
+//        }
+//        for (var key in obj){
+//            newArr.push(key);
+//    }
+//    console.log(newArr);
+
+////方法4
+//    var arr=[1,1,2,2,5,8,1,6,5,4,5,3,5,2,6,4,7],obj={};
+//    for (var i = 0; i < arr.length; i++) {
+//        if(typeof  (obj[arr[i]])!=='undefined'){
+//            arr.splice(i,1);
+//            i--;
+//        }else {
+//            obj[arr[i]]=true;
+//        }
+//    }
+//    console.log(arr);
+//扩展 数组去重的3种方法
+    //在数组的原型上面扩展
+
+//    Array.prototype.unique=function(){
+//        var obj={};
+//
+//        if (!obj[this[i]]) {newArr.push(); obj[this[i]]=true;}
+//
+//    };
+
+
+ //  es6
+//    var arr=[1,1,2,2,5,8,1,6,5,4,5,3,5,2,6,4,7];
+//   var newArr =Array.from(new  Set(arr));
+ //   Array.from() ; // 类数组转换为数组
+
+  //  new Set(arr);  //数组的去重
+
+
+
+
+</script>
+</body>
+</html>

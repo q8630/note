@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         li:hover{
+        background: red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="生出">
+<ul>
+
+</ul>
+<script>
+
+    var oIn = document.getElementsByTagName('input')[0];
+    var oUl = document.getElementsByTagName('ul')[0];
+
+    oIn.onclick = function(){
+        var arr=['西施浣纱','昭君出塞','贵妃醉酒','貂蝉拜月'];
+        for (var i=0 ;i<arr.length; i++){
+            var li = document.createElement('li');
+            li.innerHTML=arr[i];
+            oUl.appendChild(li);
+        }
+
+    };
+
+
+//    var oDiv = document.createElement('div');
+//    var body = document.body;
+//    body.appendChild(oDiv)
+</script>
+</body>
+</html>

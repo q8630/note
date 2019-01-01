@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+        th,td{
+            border: 1px solid #D0D0D0;
+            color:beige;
+            padding: 10px;
+        }
+        th{
+            background-color: hotpink;
+            font:bold 16px "微软雅黑";
+            color: #ffffff;
+        }
+        td{
+            font: 14px"微软雅黑";
+        }
+
+        tbody tr {
+            background-color: palevioletred;
+        }
+
+        tbody tr:hover{
+            cursor: pointer;
+            background-color: slateblue;
+        }
+
+
+
+    </style>
+
+
+
+
+</head>
+<body>
+
+<div class="wrap">
+    <table>
+        <thead>
+        <tr>
+            <th><input type="checkbox" id="theadlnp"/></th>
+            <th>菜名</th>
+            <th>饭店</th>
+        </tr>
+        </thead>
+
+        <tbody id="tbody">
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>肉</td>
+            <td>食堂</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td>蔬菜</td>
+            <td>食堂</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"/></td>
+            <td>辣辣</td>
+            <td>饭堂</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+
+var arrln = tbody.getElementsByTagName('input');
+    theadlnp.onclick = function(){
+        for (var i=0;i<arrln.length;i++){
+            arrln[i].checked=this.checked;
+        }
+    };
+for (var i = 0; i < arrln.length; i++) {
+    arrln[i].onclick=function(){
+        var flag = true;
+        for (var j = 0; j < arrln.length; j++) {
+            if(!arrln[j].checked){
+                flag=false;
+            }
+            theadlnp.checked=flag;
+        }
+    }
+
+}
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  //死循环
+//    function 讲故事(){
+//        if('和尚还俗了'){
+//            document.write('新的开始');
+//            return;
+//        }
+//        document.write('一直在讲故事');
+//        讲故事();
+//
+//    }
+//    讲故事();
+
+   //求阶乘  5！=5*5！
+//    function  factorial(n){
+//        if (n === 1){
+//            return 1;
+//        }
+//        return n *factorial(n - 1)
+//    }
+//    console.log(factorial(7));
+
+
+//    // n 个数的累加 100
+//
+//    function  shu(n){
+//        if (n === 1){
+//            return 1;
+//        }
+//        return n+ shu (n - 1)
+//    }
+//    console.log(shu(100));
+
+//    //求斐波那契数列（ Fibonacci） 的第n 个数  （1 1 2 3 5 8 13）
+//
+//    function fibo (n){
+//        if (n ===1 ||n === 2){
+//            return 1;
+//        }
+//        return fibo(n-1) + fibo (n-2)
+//    }
+//    console.log(fibo(6));
+
+//函数的递归
+var arr = [1,2,[1,2,3,[1,2,3],[1,2,[1,2,3,[1,2,3,[1,2,3],[1,2,3]]],3]],3];
+var sum=0;
+    function flat (arr){
+        for (var i = 0; i < arr.length; i++) {
+            if (typeof  arr[i] == 'number'){
+                sum+= arr[i];
+            }else {
+                sum+=flat(arr[i])
+            }
+        }return sum;
+    }
+console.log(flat(arr));
+
+</script>
+</body>
+</html>

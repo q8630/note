@@ -1,0 +1,398 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.headr{
+    width: auto;
+    background-color: #c0dbff;
+    position: relative;
+}
+.head{
+    width: 1230px;
+    height: 33px;
+    margin: auto;
+    background-color: #f3ca6f;
+    position: relative;
+}
+.ul1{
+    width: 218px;
+    height: 32px;
+    float: left;
+    position: absolute;
+    background-color: #f1f1f1;
+}
+.ul1 li{
+    float: left;
+    display: block;
+    width: 72px;
+    height: 18px;
+    margin-top: 7px ;
+    margin-bottom: 7px;
+}
+.ul1 .li1{
+    background-color: #E94F2B;
+}
+.ul1 .li2{
+    background-color: #D0AD4F;
+}
+.ul1 .li3{
+    background-color: #0febc1;
+}
+.ul2{
+    float: right;
+    background-color: #f2f2f2;
+}
+.ul2 li{
+    width: 74px;
+    height: 18px;
+    margin-top: 7px ;
+    margin-bottom: 7px;
+    position: relative;
+    float: left;
+    list-style: none;
+}
+.ul2 .li1{
+    background-color: #00a383;
+}
+.ul2 .li2{
+    background-color: #1ECA6B;
+}
+.ul2 .li3{
+    background-color: #ffff00;
+}
+.ul2 .li4{
+    background-color: #0b0b0b;
+}
+.ul2 .li5{
+    background-color: #0da5d6;
+}
+.ul2 .li6{
+    background-color: #2577e3;
+}
+
+.hedden{
+    height: 130px ;
+    position: relative;
+    background-color: #8ebefc;
+}
+.header{
+    width: 1230px;
+    height: 78px;
+    background-color: #1ECA6B;
+    position: relative;
+    margin: auto;
+}
+.logo{
+    width: 240px;
+    height: 130px;
+    background-color: #0b0b0b;
+    float: left;
+}
+.search{
+    width: 625px;
+    height: 40px;
+    position: absolute;
+    background-color: red;
+    margin-top: 37px;
+    margin-left: 300px;
+}
+.search1{
+    float: right;
+    height: 40px;
+    width: 132px;
+    background-color: #EFEFEF;
+}
+
+/*内容*/
+.content{
+    position: relative;
+    margin-top: 15px;
+
+}
+.nav1{
+    margin: auto;
+    width: 1230px;
+    height: 37px;
+    background-color: #FF6E00;
+    position: relative;
+}
+.nav1 li{
+    height: 36px;
+    list-style: none;
+    background-color: #ffff00;
+    float: left;
+    position: relative;
+    margin: 3px;
+}
+.content .li1{
+    position: absolute;
+    height: 36px;
+    width: 200px;
+    background-color: red;
+}
+.nav1 .li2{
+    width: 100px;
+    height: 30px;
+    margin-top: 4px;
+    background-color: #1ECA6B
+
+}
+.nav1 .li3{
+    width: 100px;
+    height: 30px;
+    margin-top: 4px;
+    background-color: #f7f8f8;
+}
+.nav1 .li4{
+    width: 100px;
+    height: 30px;
+    margin-top: 4px;
+    background-color: #2577e3;
+}
+.nav1 .li5{
+    width: 100px;
+    height: 30px;
+    margin-top: 4px;
+    background-color: #ffff00;
+}
+.nav1 .li6{
+    width: 100px;
+    height: 30px;
+    margin-top: 4px;
+    background-color: #00A887;
+}
+.nav1 .li7{
+    width: 100px;
+    height: 30px;
+    margin-top: 4px;
+    background-color: #ff0000;
+}
+.nav1 .li8{
+    width: 100px;
+    height: 30px;
+    margin-top: 4px;
+    background-color: #a4cbff;
+}
+.nav1 .li9{
+    width: 100px;
+    height: 30px;
+    margin-top: 4px;
+    background-color: #00ff00;
+}
+.nav1 .li10{
+    width: 100px;
+    height: 30px;
+    margin-top: 4px;
+    background-color: #f1f1f1;
+}
+.banner0{
+    width: 1230px;
+    height: 500px;
+    margin: auto;
+}
+.banner{
+    position: relative;
+    height: 500px;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+.banner ul{
+    width: 200px;
+    height: 500px;
+    background-color: rebeccapurple;
+    position: relative;
+}
+.banner ul li{
+    list-style: none;
+    width: 200px;
+    height: 31px;
+    background-color: transparent;
+}
+.banner ul li:hover{
+    background-color: aquamarine;
+}
+.brandWall{
+    width: 100%;
+    height: 24px;
+    background-color: orchid;
+    margin-top: 5px;
+}
+.brandWall_1{
+    width: 108px;
+    height: 17px;
+    margin: auto;
+    background-color: #ffe8b8;
+}
+.HotBrand{
+    width: 100%;
+    height: 172px;
+    position: relative;
+    background-color: #fff;
+}
+.HotBrand ul{
+    width: 1230px ;
+    height: 162px;
+    background-color: #00ff00;
+    margin: auto;
+}
+.HotBrand ul li{
+    float: left;
+    width:238px ;
+    height: 130px;
+    background-color: red;
+    margin: 4px;
+    margin-top: 25px;
+    list-style: none;
+}
+.brandWall-con{
+    width: 100%;
+    height: 394px;
+    background-color: #f0f0f0;
+    position: relative;
+}
+.module{
+    width: 1230px;
+    height: 370px;
+    background-color: #f3ca6f;
+    position: relative;
+    margin: auto;
+}
+.zuo{
+    width: 234px;
+    height: 370px;
+    background-color: #00ff00;
+    float: left;
+}
+.zuo .a{
+    width:100%;
+    height: 55px;
+    background-color: #00A78B;
+}
+.zuo.b{
+    width: 100%;
+    height: 316px;
+    background-color: fuchsia;
+}
+.zhong{
+    width: 485px;
+    height: 370px;
+    float: left;
+    margin-left: 13px;
+    margin-right: 13px;
+}
+.zhong .a{
+    width: 100%;
+    height: 55px;
+    background-color: #0000ff;
+}
+.zhong .b{
+    width: auto;
+    height: 316px;
+    background-color: #f3d0b0;
+
+}
+.you{
+    width: 485px;
+    height: 370px;
+    float: left;
+}
+.you .a{
+    width: 100%;
+    height: 55px;
+    background-color: #00ff00;
+}
+.you .b{
+    width: auto;
+    height: 316px;
+    background-color: #0febc1;
+
+}
+
+.box{
+    width: 1230px;
+    height: 327px;
+    margin: auto;
+    background-color: inherit;
+}
+.box1{
+    position: relative;
+
+}
+.box1 li{
+    list-style: none;
+    width: 119px;
+    height: 105px;
+    background-color: black;
+    float: left;
+    margin: 2px;
+}
+.box1 li:hover{
+    background-color: greenyellow;
+}
+
+.box2{
+    width: 1230px;
+    height: 665px;
+    margin: auto;
+    position: relative;
+}
+.box2 .zuo{
+    width: 235px;
+    height: 618px;
+    background-color: rebeccapurple;
+    position: relative;
+}
+.box2 .you{
+    float: right;
+    width: 995px;
+    height: 618px;
+    background-color: red;
+    margin-left: 235px;
+    position: absolute;
+}
+.box2 .you .shang{
+    width: 800px;
+    height: 31px;
+    float: right;
+    margin-top: 2px;
+    margin-left: 195px;
+    position: absolute;
+    background-color: #00a383;
+}
+.box2 .you .shang li{
+    list-style: none;
+    width: 60px;
+    height: 21px;
+    float: right;
+    background-color: #7FD1C1;
+    margin: 5px;
+}
+.ppd{
+    float: left;
+    width: 484px;
+    height: 316px;
+    background-color:floralwhite;
+    margin-top: 33px;
+}
+.box2 .you .xia li{
+    list-style: none;
+    width: 230px;
+    height: 300px;
+    background-color: #00ff00;
+    float: left;
+    margin-top: 49px;
+    margin-left: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text-shadow</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 500px;
+            height: 500px;
+            background: #f00;
+            border: 10px solid #ff0;
+            font-size: 100px;
+            /*
+                transform				向元素应用 2D 或 3D 转换。
+                transform-origin		允许你改变被转换元素的位置。 (设置元素的基点位置)
+                transform-style			规定被嵌套元素如何在 3D 空间中显示.
+                backface-visibility		定义元素在不面对屏幕时是否可见。
+
+            */
+
+
+            /* transform-origin:0% 70%; */
+
+            /* 缩放 */
+            transform: scale3d(2,2,1);
+            -webkit-transform: scale3d(2,2,1);	
+            -moz-transform: scale3d(2,2,1);	
+
+            /*旋转 */
+            /* transform: rotate3d(0,0,1,180deg);
+            -webkit-transform: rotate3d(0,0,1,180deg);
+            -moz-transform: rotate3d(0,0,1,180deg);	 */
+
+
+        }
+        .box1{
+            backface-visibility:hidden;
+            -webkit-backface-visibility:hidden;
+            -moz-backface-visibility:hidden;
+            -ms-backface-visibility:hidden;
+        }
+        .box2{
+            backface-visibility:visible;
+            -webkit-backface-visibility:visible;
+            -moz-backface-visibility:visible;
+            -ms-backface-visibility:visible;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="box1">中午好！</div>
+    <div class="box2">中午好！</div>
+
+
+
+
+</body>
+</html>

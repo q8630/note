@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<input type="text">
+    +
+    <input type="text">
+    =
+    <input type="button" value="求值">
+
+
+
+	<script>
+		var arrIn = document.getElementsByTagName('input');
+		arrIn[2].onclick = function(){
+            if((arrIn[0].value)==''&&(arrIn[1].value)==''){
+                return;//中断函数
+            }
+
+			var val1 = parseFloat(arrIn[0].value);
+			var val2 = parseFloat(arrIn[1].value);
+			//console.log(val1+val2);
+            var sum=val1+val2;
+
+            if(isNaN(sum)){
+                alert('输入错误')  //页面弹出弹框
+            }else{
+               // console.log(val1+val2);
+                console.log(sum);
+            }
+            arrIn[0].value='';
+            arrIn[1].value='';
+
+
+		}
+	</script>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			.box{
+				width: 500px;
+				height: 300px;
+			}
+			
+			.box.top {
+				width:500px;
+				height: 40px;
+				line-height: 40px;
+				background: burlywood;
+				box-sizing: border-box;
+			}
+			
+			.box .top h3 {
+				font-size: 30px;
+				font-weight: normal;
+				float: left;
+				padding: 0 10px;
+				color: white;
+				cursor: pointer;
+			}
+			.box .top h3.now{
+				border-top: 2px solid green;
+				background-color: white;
+				color: black;
+			}
+			
+			.bottom div {
+				width: 500px;
+				height: 200px;
+				background-color: red;
+				display: none;
+			}
+			
+			.bottom.div2{
+				background-color: yellow;
+			}
+			
+			.bottom.div3{
+				background-color: olivedrab;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<div class="top">
+				<h3 class="now">图片</h3>
+				<h3>专栏</h3>
+				<h3>热点</h3>
+			</div>
+			<div class="bottom">
+				<div class="div1" style="display: block;">图片</div>
+				<div class="div2">专栏</div>
+				<div class="div3">热点</div>
+			</div>
+		</div>
+		<script>
+			var h3 = document.querySelectorAll('.box .top h3')
+			cont = document.querySelectorAll('.bottom div')
+			for (let i=0;i<3;i++){
+				h3[i].onclick = function (){
+					for (let j=o ;j<3 ;j++){
+						cont[j].style.display ='none';
+					}
+					cont[i].style.display = 'block';
+				}
+			}
+
+		</script>
+		<p>&copy;</p>
+	</body>
+</html>

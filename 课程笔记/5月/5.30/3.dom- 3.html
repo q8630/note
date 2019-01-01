@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+【节点关系】
+1.childnodes 获取所有的子节点 (元素  注释  换行符等)
+2.children 获取所有的元素子节点 (元素)
+3.parentNode  获取的是元素的父亲节点(元素)
+4.previousSibling 获取上一个哥哥节点 (可能不是元素)
+5.previousElementSibling 获取上一个元素哥哥节点 (元素)
+6.nextSibling 获取下一个弟弟节点(可能不是元素)
+7.nextElementSibling 获取下一个元素弟弟节点(元素)
+8.firstChild  获取第一个子节点(可能不是元素)
+9.lastChild 获取最后一个子节点(可能不是元素)
+-->
+<div id="tab">
+    <!-- 选项卡的头部 -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <!-- 选项卡的底部 -->
+    <div>1</div>
+    <div>2</div>
+    <div id="box">当前</div>
+    <div>4</div>
+    <div>5</div>
+</div>
+<script type="text/javascript">
+    var tab = document.getElementById('tab');
+/*    console.log(tab.firstChild); //
+    console.log(tab.lastChild); //
+
+    console.log(tab.firstElementChild); //
+    console.log(tab.lastElementChild); //*/
+//
+//
+//    console.log(tab.childNodes);
+//    console.log(tab.children);
+//    console.log(tab.parentNode); //
+//
+//    var oUL = document.getElementsByTagName('li');
+//    console.log(oUL); //
+//    console.log(oUL[0].parentNode); //
+//
+    var box = document.getElementById('box');
+    console.log(box.previousSibling); //
+    console.log(box.previousElementSibling); //
+
+    console.log(box.nextSibling); //
+    console.log(box.nextElementSibling); //
+
+</script>
+</body>
+</html>

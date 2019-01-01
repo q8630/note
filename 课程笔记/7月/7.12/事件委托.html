@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul li{
+            background: yellow;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">添加</button>
+    <ul id="ul">
+        <li>地球人</li>
+        <li>地球人</li>
+        <li>地球人</li>
+        <li>地球人</li>
+    </ul>
+
+
+    <script>
+        var btn = document.getElementById('btn');
+        var arrLi = document.getElementsByTagName('li');
+
+        btn.onclick = function(){
+            var li = document.createElement('li');
+            li.innerHTML = '外星人';
+            ul.appendChild(li);
+        };
+        ul.onclick = function(){
+            alert(111);
+        }
+    </script>
+</body>
+</html>

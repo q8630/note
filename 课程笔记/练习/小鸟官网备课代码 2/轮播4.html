@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/animate.css" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .box{
+            width: 500px;
+            height: 200px;
+            border: 5px solid #000;
+            margin: 100px 600px;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        .daBox{
+            width: 9999px;
+            height: 200px;
+            background: #FFF;
+            position: absolute;
+            top: 0;
+            left: -500px;
+        }
+
+        .daBox p{
+            width: 98px;
+            height: 200px;
+            float: left;
+            border-right: 2px solid #fff;
+            line-height: 200px;
+            text-align: center;
+            font-size: 50px;
+            background: #ccc;
+        }
+
+        .xiaoBox1{
+            width: 500px;
+            height: 200px;
+            background: #f00;
+            float: left;
+            font-size: 100px;
+        }
+        .xiaoBox2{
+            width: 500px;
+            height: 200px;
+            background: #0f0;
+            float: left;
+            font-size: 100px;
+        }
+        .xiaoBox3{
+            width: 500px;
+            height: 200px;
+            background: #00f;
+            float: left;
+            font-size: 100px;
+        }
+        button{
+            width: 50px;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 40px;
+            color: #fff;
+            position: absolute;
+            top: 75px;
+            background: #000;
+            opacity: 0.5;
+        }
+        .btnLeft{
+            left: 0;
+        }
+        .btnRight{
+            right: 0;
+        }
+        .btnBox{
+            width: 60px;
+            height: 20px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -30px;
+        }
+        .btnBox span{
+            width: 20px;
+            height: 20px;
+            display: block;
+            float: left;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+        .ani_d{
+
+        }
+
+        /*the animation definition*/
+        @-webkit-keyframes ani_d {
+            0% {
+                -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+                visibility: visible
+            }
+            100% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+        }
+        @keyframes ani_d {
+            0% {
+                -webkit-transform: translate3d(-100%, 0, 0);
+                -ms-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+                visibility: visible
+            }
+            100% {
+                -webkit-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+
+
+    </style>
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+
+
+<div class="box">
+
+    <div class="daBox">
+
+            <p>11</p>
+            <p>12</p>
+            <p>13</p>
+            <p>14</p>
+            <p>15</p>
+
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+
+            <p>6</p>
+            <p>7</p>
+            <p>8</p>
+            <p>9</p>
+            <p>10</p>
+
+            <p>11</p>
+            <p>12</p>
+            <p>13</p>
+            <p>14</p>
+            <p>15</p>
+
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+
+    </div>
+
+    <button class="btnLeft"> < </button>
+    <button class="btnRight"> > </button>
+
+
+</div>
+
+<script>
+    $(function(){
+        var number = 5;
+
+
+        $(".btnRight").click(function(){
+            if ($(".daBox").is(':animated')) {
+                return;
+            }
+            number++;
+            if(number>15){
+                number=0;
+
+                $(".daBox").css("left",-(number*100))
+                number++;
+            }
+            $(".daBox").animate({"left":-(number*100)},1000)
+
+            $(".btnBox>span").css("background","#fff")
+            $(".btnBox>span").eq(number-1).css("background","#ccc")
+
+        })
+
+        $(".btnLeft").click(function(){
+            if ($(".daBox").is(':animated')) {
+                return;
+            }
+            number--;
+            if(number<0){
+                number=3
+
+                $(".daBox").css("left",-(number*500))
+                number--;
+            }
+            $(".daBox").animate({"left":-(number*500)},1000)
+
+            $(".btnBox>span").css("background","#fff")
+            $(".btnBox>span").eq(number-1).css("background","#ccc")
+
+        })
+
+
+
+
+        $(".daBox>p").eq(5).css("background","#f00")
+        $(".daBox>p").click(function(){
+
+            if($(this).index()>6){
+                number =$(this).index()-2
+            }
+            if($(this).index()==6){
+                number =$(this).index()-1
+            }
+
+
+            $(".daBox>p").css("background","#ccc")
+            $(this).css("background","#f00")
+
+            $(".daBox").animate({"left":-(number*100)},1000)
+
+        })
+
+    })
+
+
+
+</script>
+</body>
+</html>

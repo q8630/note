@@ -1,0 +1,69 @@
+﻿[
+    {
+        "name":"iPad",
+        "number":"1",
+        "list":{
+            "img":"img/pic1.jpg",
+            "small_img":"img/pic1_1.jpg",
+            "particulars":"[当当自营] Apple iPad mini 4 平板电脑 7.9英寸（128G WLAN版/A8芯片 MK9N2CH/A）深空灰色",
+            "price":"3188.00",
+            "images":[
+              {"pic":"img/pic1_1.jpg"},
+              {"pic":"img/pic1_2.jpg"},
+              {"pic":"img/pic1_3.jpg"},
+              {"pic":"img/pic1_4.jpg"}
+            ]
+        }
+    },
+    {
+        "name":"MacBook",
+        "number":"2",
+        "list":{
+            "img":"img/pic2.jpg",
+            "small_img":"img/pic2_1.jpg",
+            "particulars":"【当当自营】Apple MacBook Pro 13.3英寸笔记本电脑 深空灰色（Core i5处理器/8GB内存/128GB硬盘 MPXQ2CH/A）",
+            "price":"9388.00",
+            "images":[
+                {"pic":"img/pic2_1.jpg"},
+                {"pic":"img/pic2_2.jpg"},
+                {"pic":"img/pic2_3.jpg"}
+            ]
+            }
+    },
+    {
+        "name":"Watch1",
+        "number":"3",
+        "list":{
+            "img":"img/pic3.jpg",
+            "small_img":"img/pic3_1.jpg",
+            "particulars":"【当当自营】Apple Watch Series 2 智能手表（42毫米金色铝金属表壳 午夜蓝色运动型表带 GPS 50米防水 蓝牙 MQ152CH/A）",
+            "price":"2988.00",
+            "images":[
+                {"pic":"img/pic3_1.jpg"},
+                {"pic":"img/pic3_2.jpg"}
+            ]
+        }
+    },
+    {
+        "name":"Watch2",
+        "number":"4",
+        "list":{
+            "img":"img/pic4.jpg",
+            "small_img":"img/pic4_1.jpg",
+            "particulars":"【当当自营】Apple Watch Series 2 智能手表（42毫米玫瑰金色铝金属表壳 粉砂色运动型表带 GPS 50米防水 MQ142CH/A）",
+            "price":"2988.00",
+            "images":[
+                {"pic":"img/pic4_1.jpg"},
+                {"pic":"img/pic4_2.jpg"},
+                {"pic":"img/pic4_3.jpg"}
+            ]
+        }
+    }
+]
+
+
+
+
+
+
+

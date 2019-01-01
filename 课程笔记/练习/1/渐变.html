@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*借助伪元素和opacity实现渐变过渡*/
+        .box3 {
+            max-width: 400px; height: 200px;
+            background: linear-gradient(to right, olive, green);
+            position: relative;
+            z-index: 0;
+        }
+        .box3::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, green, purple);
+            opacity: 0;
+            transition: opacity .5s;
+            z-index: -1;
+        }
+        .box3:hover::before {
+            opacity: 1;
+        }
+
+
+        /*借助background-position实现渐变过渡*/
+        .box2 {
+            max-width: 400px;
+            height: 200px;
+            background: linear-gradient(to right, olive, green, purple);
+            background-size: 200%;
+            transition: background-position .5s;
+        }
+        .box2:hover {
+            background-position: 100% 0;
+        }
+        /*借助background-color实现渐变过渡*/
+        .box1 {
+            max-width: 400px;
+            height: 200px;
+            background: olive linear-gradient(to right, rgba(0,255,0,0), rgba(0,255,0,.5));
+            transition: background-color .5s;
+        }
+        .box1:hover {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+借助background-color实现渐变过渡
+<div class="box1">1</div><br>
+借助background-position实现渐变过渡
+<div class="box2">2</div><br>
+借助伪元素和opacity实现渐变过渡
+<div class="box3">3</div><br>
+</body>
+</html>

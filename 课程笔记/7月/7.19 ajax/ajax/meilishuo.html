@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body,#box{
+            width: 100%;
+            height: auto;
+            background: #eee;
+        }
+        #list{
+            width: 1200px;
+            height: auto;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #list>li{
+            width: 260px;
+            height: auto;
+            list-style: none;
+            float: left;
+            padding: 20px;
+            background: #fff;
+
+        }
+        #list>li>img{
+            width: 260px;
+            height: auto;
+            display: block;
+
+        }
+        #list>li>p:nth-child(2){
+            width: 260px;
+            height: 50px;
+            line-height: 50px;
+            color: #666;
+
+        }
+        #list>li>p:nth-child(2)>span:first-child{
+            width: 100px;
+            height: 50px;
+            float: left;
+
+        }
+        #list>li>p:nth-child(2)>span:last-child{
+            width: 100px;
+            height: 50px;
+            float: right;
+            text-align: right;
+
+        }
+        #list>li>p:last-child{
+            width: 260px;
+            height: 50px;
+            color: #333;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+        }
+
+    </style>
+
+    <script src="ajax.js"></script>
+</head>
+<body>
+
+    <div id="box">
+        <ul id="list">
+        </ul>
+    </div>
+
+
+    <script>
+
+        var oList = document.getElementById("list");
+
+        ajax("data/meilishuo.json",function (data) {
+//            console.log("成功");
+//            console.log(data);
+            var _data = eval("("+data+")")
+//            console.log(_data);
+
+            //json数据   遇到中括号 就用for循环 遇到大括号就点.
+
+            for (var i = 0; i <_data.length ; i++) {
+
+                //创建
+                var oLi = document.createElement("li");
+                var oImg = document.createElement("img");
+                var oP1 = document.createElement("p");
+                var oP2 = document.createElement("p");
+                var oSpan1 = document.createElement("span");
+                var oSpan2 = document.createElement("span");
+                var oEm1 = document.createElement("em");
+                var oEm2 = document.createElement("em");
+                var oI1 = document.createElement("i");
+                var oI2 = document.createElement("i");
+
+                //添加（插入）
+//                oSpan1.appendChild(oEm1);
+//                oSpan2.appendChild(oEm2);
+                oSpan1.appendChild(oI1);
+                oSpan2.appendChild(oI2);
+                oP1.appendChild(oSpan1);
+                oP1.appendChild(oSpan2);
+                oLi.appendChild(oImg);
+                oLi.appendChild(oP1);
+                oLi.appendChild(oP2);
+                oList.appendChild(oLi);
+
+                oImg.src = _data[i].img;
+                oEm1.innerHTML = "¥";
+                oEm2.innerHTML = "❤️";
+                oI1.innerHTML = _data[i].price;
+                oI2.innerHTML = _data[i].like;
+                oP2.innerHTML = _data[i].detail;
+
+            }
+
+        },function () {
+            console.log("失败");
+        })
+
+
+    </script>
+
+
+</body>
+</html>

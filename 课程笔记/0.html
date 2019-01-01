@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        ul{
+            width: 500px;
+            height: 200px;
+            background-color: red;
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+        }
+    </style>
+    <script src="utils.js"></script>
+</head>
+<body>
+<div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script>
+    var arrLi =document.querySelectorAll('li');
+
+    utils.css(arrLi[2],'display','none');
+    utils.css(arrli[0],{
+        'marginTop':'20'
+    })
+
+
+
+</script>
+</body>
+</html>

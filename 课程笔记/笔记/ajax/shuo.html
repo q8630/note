@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .box{
+            width: 1200px;
+            height: auto;
+            border:5px solid #f00;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .box li{
+            list-style: none;
+            width: 570px;
+            height: 323px;
+            position: relative;
+            float: left;
+            margin: 10px 15px;
+
+        }
+        .box li p{
+            width: 570px;
+            height: 30px;
+            position: absolute;
+            left: 0;
+            bottom: 50px;
+            background: rgba(0,0,0,.5);
+            color: #fff;
+        }
+        .box li div{
+            width: 570px;
+            height: 50px;
+            background: #ccc;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="box0">
+
+    <ul id="box">
+        <li>
+            <img src="/img/1.jpg" alt="">
+            <p></p>
+            <span></span>
+        </li>
+
+    </ul>
+</div>
+
+
+
+<script src="ajax.js"></script>
+<script>
+    var oList=document.getElementById('box');
+    ajax("data/demo1.json",function(data){
+//        alert("成功");
+        var _data = eval("("+data+")");
+
+        for (var i = 0; i < data.length; i++) {
+            var oLi=document.createElement('li');
+            oList.appendChild(oLi) ;
+            oImg=document.createElement('img');
+            oLi.appendChild(oImg) ;
+            var oPa=document.createElement('p');
+            oLi.appendChild(oPa);
+            var oSpan=document.createElement('span');
+            oLi.appendChild(oSpan);
+
+            oImg.src= _data[i].img;
+            oPa.innerHTML=_data[i].zhe;
+            oSpan.innerHTML=_data[i].chang;
+
+
+
+
+        }
+
+    },function(){
+alert("失败")
+    })
+</script>
+
+</body>
+</html>

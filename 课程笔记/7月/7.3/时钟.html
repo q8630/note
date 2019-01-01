@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+
+        }
+
+    </style>
+</head>
+<body>
+<script>
+    time();
+    setInterval(function(){
+        time();
+    },1000);
+
+    function time(){
+        var date =new Date(); //获取本地时间
+        var h=date.getHours(); //获取小时
+        var m=date.getMinutes();//获取分钟
+        var s=date.getSeconds(); //获取秒
+
+
+    var str = isNum(h)+isNum(m)+isNum(s);
+
+    var arr = str.split(""); //字符串转换为数组 split()
+
+
+    var oBox =document.getElementsByClassName("box")[0];
+    var aImg = document.getElementsByTagName("img");
+    for (var i = 0; i < aImg.length; i++) {
+        aImg[i].src ="img/"+arr[i]+".png"
+
+       }
+    }
+
+    function isNum(a){
+        if(a<10){
+            return "0"+a;
+        }else {
+            return ""+a;
+        }
+    }
+
+
+</script>
+<div class="box">
+    <img src="img/1.png" alt="">
+    <img src="img/1.png" alt="">
+    :
+    <img src="img/1.png" alt="">
+    <img src="img/1.png" alt="">
+    :
+    <img src="img/1.png" alt="">
+    <img src="img/1.png" alt="">
+</div>
+</body>
+</html>

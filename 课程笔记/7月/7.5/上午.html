@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上午</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 700px;
+            height: 342px;
+            margin:  100px auto;
+            position: relative;
+        }
+        #pic{
+            width: 700px;
+            height: 342px;
+            overflow: hidden;
+        }
+        #pic img{
+            width: 700px;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #btn{
+            width: 220px;
+            height: 24px;
+            background: rgba(255,255,255,.5);
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -100px;
+            text-align: center;
+            padding-top: 4px;
+            border-radius: 20px;
+
+        }
+
+        #btn li{
+            width: 20px;
+            height: 20px;
+            background: rgb(255,255,255);
+            display: inline-block;
+            border-radius: 20px;
+
+        }
+        #b1{
+            float: left;
+            width: 20px;
+            height: 60px;
+            background-color: #BFBFBF;
+        }
+        #b2{
+            float: right;
+            width: 20px;
+            height: 60px;
+            background-color: #BFBFBF;
+        }
+    </style>
+</head>
+<body>
+<script>
+    window.onload =function(){
+var oPic = document.getElementById("pic");
+    var oDiv = oPic.getElementsByTagName("img");
+
+    var oBtn = document.getElementById("btn");
+    var oLi = oBtn.getElementsByTagName("li");
+
+oLi[0].style.background ="red";
+for (var i = 0; i < oLi.length; i++) {  //仅仅给 li 添加事件
+    oLi[i].index= i;    //给li 标签添加一个属性
+    oLi[i].onmouseover = function () {
+
+        //让所有的消失
+        for (var j = 0; j < oLi.length; j++) {
+            oDiv[j].style.display ="none";
+            oLi[j].style.background ="#fff"
+        }
+        //让想要显示的那个显示出来
+        oDiv[this.index].style.display ="block";
+        this.style.background ="red"
+    }
+}}
+</script>
+<div id="box">
+   <div class="pic" id="pic">
+       <div><img src="image/0.jpg" alt=""></div>
+       <div><img src="image/1.jpg" alt=""></div>
+       <div><img src="image/2.jpg" alt=""></div>
+       <div><img src="image/3.jpg" alt=""></div>
+       <div><img src="image/4.jpg" alt=""></div>
+   </div>
+    <div>
+        <ul id="btn">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+        <div id="btn1"></div>
+        <div id="btn2"></div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+

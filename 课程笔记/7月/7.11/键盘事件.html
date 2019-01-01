@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+222
+
+<script>
+
+    //keyCode 键值
+    document.onkeydown =function(ev){
+        var oEvent =ev ||event;
+        console.log(oEvent.keyCode);
+    }
+
+
+//    document.onkeydown = function () {
+//        console.log('onkeydown');
+//    };
+//    document.onkeyup =function(){
+//        console.log('onkeyup');
+//    };
+//    document.onkeypress =function(){
+//        console.log('onkeypress');
+//    }
+
+
+
+    document.onkeydown =function(ev){
+        var oEven= ev ||event;
+//
+//        oEven.altKey
+//        oEven.ctrlKey    布尔值当你 按住ctrl 为真
+//        oEven.shiftKey
+
+
+
+        if(oEven.keyCode == 65 && oEven.altKey && oEven.shiftKey){
+            alert("shift alt a 按下了")
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阴影</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+            -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+            /*background-color: #0febc1;*/
+        }
+        div img{
+            width: 200px;
+            height: 200px;
+            background: url("img/27.jpg");
+            opacity: .1;
+        }
+        div:hover{
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+            -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <a href="" class="a"></a>
+    <img src="img/27.jpg" alt="">
+</div>
+</body>
+</html>

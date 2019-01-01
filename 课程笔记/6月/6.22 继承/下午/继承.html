@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+<script>
+//call 继承
+//call继承能够继承私有属性，不能继承公有属性
+//    function F(){
+//        this.x = 10; //s.x=10
+//        this.Y = 20;//s.y = 20
+//    }
+//    F.prototype.sun = function(){
+//        console.log(this.x + this.y);
+//    };
+//    function S(){
+//        //call 继承 =》私有属性的继承
+//        this.z = 50;
+//        F.call(this);
+//    }
+//    var s = new S();
+////    console.log(s.x);
+//    s.x = 30;
+//    var f = new F();
+//    console.log(f.x);//10
+//    console.log(s.x);//30
+
+
+
+
+
+//    //原型继承
+//把父元素的私有属性 设置为子元素的公有属性
+//  function F(){
+//    this.x = 10; //s.x=10
+//    this.Y = 20;//s.y = 20
+//}
+//  F.prototype.sun = function(){
+//    console.log(this.x + this.y);
+//};
+//  function S(){
+//
+//    this.z = 50;
+//  //  F.call(this);
+//}
+////解决了
+// S.prototype = new F();
+// var s = new S();
+//
+// console.log(s);
+// console.log(s.x);
+// s.sun();
+
+////寄生式组合继承
+//
+//function F(){
+//    this.x = 10; //s.x=10
+//    this.Y = 20;//s.y = 20
+//}
+//F.prototype.sun = function(){
+//    console.log(this.x + this.y);
+//};
+//function S(){
+//
+//    this.z = 50;
+//     F.call(this);  //this指的是实例
+//}
+////解决的方法：借助中间的空类达到
+//S.prototype = Object.create(F.prototype);
+//function  Temp(){
+//
+//}Temp.prototype = F.prototype;//Temp.prototype 就指向了F的原型
+//
+//S.prototype = new Temp();
+//
+////作为空类的实例。S.prototype就不会受污染
+////并且同时S.prototype 原型下的_proto_ 指向 F.prototype
+//
+//    //寄生式组合继承ie6~ie8 不支持
+////解决了子类继承父类原型的问题
+//
+//    var s = new S();
+//    console.log(s);
+
+
+
+//    //es6 继承
+//    class Person{
+//        constructor(){
+//
+//        }
+//    }
+//
+//    class Man extends Person{
+//        constructor(){
+//            super()
+//        }
+//    }
+
+
+    function Fn(){
+        var n = 10;
+        this.m = n;
+    }
+    var f =new Fn();
+console.log(f);
+
+//console.log(f instanceof Fn);
+//console.log(f instanceof Array);
+//console.log(f instanceof Object);
+//
+//console.log(f in Fn);
+//console.log(f in Array);
+//console.log(f in Object);
+//
+//    console.log(f.hasOwnProperty('m'));
+//console.log(f.hasOwnProperty('n'));
+//console.log(f.hasOwnProperty('toString'));
+//
+//    console.log(toString('m'));
+//console.log(toString('n'));
+//console.log(toString('toString'));
+//
+//    console.log(f.constructorFn);
+//console.log(f.constructor);
+//console.log(f.constructorFn);
+
+
+console.log(toString.call(1));
+console.log(toString.call('1'));
+//console.log(toString.call(fn));
+console.log(toString.call([]));
+console.log(toString.call({}));
+
+
+</script>
+</body>
+</html>

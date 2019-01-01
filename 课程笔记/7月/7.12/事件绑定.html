@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <button id="btn">按钮</button>
+<script>
+    var oBtn = document.getElementById('btn');
+
+
+    function aaa(){
+        alert("aaa");
+    }
+    function bbb(){
+        alert("bbb");
+    }
+
+    function addEvent(ele,ev,callback){
+        if (ele.attachEvent){
+            ele.attachEvent('on'+ev,callback);
+        }else {
+            ele.addEventListener(ev,callback);
+        }
+    }
+
+    addEvent(oBtn,'click',aaa);
+    addEvent(oBtn,'click',bbb);
+
+    function removeEvent(ele,ev,callback){
+        if (ele.detachEvent){
+            ele.detachEvent("on" + ev, callback);
+        }else {
+            ele.removeEventListener(ev,callback);
+        }
+    }
+    removeEvent(oBtn,'click',aaa);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 5000px;
+        }
+        #div1{
+            left: 0;
+            width: 100px;
+            height: 200px;
+            background: yellow;
+            position: absolute;
+            transition: top 0.5s;
+        }
+        #div2{
+            right: 0;
+            width: 100px;
+            height: 200px;
+            background: orange;
+            position: absolute;
+            transition: top 0.5s;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <script>
+        <!--对联悬浮框-->
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+
+        window.onscroll = function(){
+            var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+            var screenH = document.documentElement.clientHeight;
+            oDiv1.style.top = scrollTop + screenH/2 - 100 + 'px';
+            oDiv2.style.top = scrollTop + screenH/2 - 100 + 'px';
+        };
+
+    
+    </script>
+
+</body>
+</html>

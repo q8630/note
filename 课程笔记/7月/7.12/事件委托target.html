@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li id="item1">111</li>
+        <li id="item2">222</li>
+        <li id="item3">333</li>
+    </ul>
+
+
+    <script>
+        var item1 = document.getElementById('item1');
+        var item2 = document.getElementById('item2');
+        var item3 = document.getElementById('item3');
+
+        function fn(ev){
+            var oEvent = event || window.ev;
+            var target = oEvent.target || oEvent.srcElement;
+            if (target == item1){
+                alert('111');
+            }
+            else if (target == item2){
+                alert('222');
+            }
+            else if (target == item3){
+                alert('333');
+            }
+        }
+        addEvent(document,'click',fn);
+
+        function addEvent(ele,ev,callback){
+            if (ele.attachEvent){
+                ele.attachEvent('on'+ev,callback);
+            }else {
+                ele.addEventListener(ev,callback);
+            }
+        }
+    </script>
+</body>
+</html>

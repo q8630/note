@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ac14e79e-d9d0-48ce-9066-4d3b28d15f95" name="默认的" comment="" />
+    <ignored path="小鸟官网备课代码.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="小鸟官网备课代码" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="轮播5.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/轮播5.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="217" lean-forward="true" selection-start-line="217" selection-end-line="217" />
+              <folding>
+                <element signature="e#4416#4896#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="740">
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/common.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="85" column="11" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="articleData.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/articleData.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="533">
+              <caret line="171" column="17" selection-start-line="171" selection-start-column="12" selection-end-line="171" selection-end-column="17" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#5;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#6;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#7;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#8;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#9;n#!!top" expanded="true" />
+                <element signature="e#1862#2176#0" />
+                <element signature="e#2205#2521#0" />
+                <element signature="e#2550#2867#0" />
+                <element signature="e#2896#3206#0" />
+                <element signature="e#3241#3542#0" />
+                <element signature="e#3579#3880#0" />
+                <element signature="e#3921#4222#0" />
+                <element signature="e#4253#4554#0" />
+                <element signature="e#4581#4882#0" />
+                <element signature="e#4911#5212#0" />
+                <element signature="e#5241#5537#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listData.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/listData.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="40" column="22" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="22" />
+              <folding>
+                <element signature="e#1248#1480#0" />
+                <element signature="e#1496#2984#0" />
+                <element signature="e#1525#2981#0" />
+                <element signature="e#1587#2977#0" />
+                <element signature="e#1593#1822#0" />
+                <element signature="e#1823#2054#0" />
+                <element signature="e#2055#2287#0" />
+                <element signature="e#2288#2513#0" />
+                <element signature="e#2514#2739#0" />
+                <element signature="e#2740#2972#0" />
+                <element signature="e#2988#3791#0" />
+                <element signature="e#3017#3788#0" />
+                <element signature="e#3079#3784#0" />
+                <element signature="e#3085#3314#0" />
+                <element signature="e#3315#3546#0" />
+                <element signature="e#3547#3779#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Html5" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/百度地图.html" />
+        <option value="$PROJECT_DIR$/baidu.html" />
+        <option value="$PROJECT_DIR$/全屏滑动.html" />
+        <option value="$PROJECT_DIR$/解析URL/index.html" />
+        <option value="$PROJECT_DIR$/解析URL/yemian.html" />
+        <option value="$PROJECT_DIR$/轮播2.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/滑动按钮样式.html" />
+        <option value="$PROJECT_DIR$/music.html" />
+        <option value="$PROJECT_DIR$/localStorage/demo1.html" />
+        <option value="$PROJECT_DIR$/article.html" />
+        <option value="$PROJECT_DIR$/js/articleData.js" />
+        <option value="$PROJECT_DIR$/js/list.js" />
+        <option value="$PROJECT_DIR$/js/article.js" />
+        <option value="$PROJECT_DIR$/轮播5.html" />
+        <option value="$PROJECT_DIR$/js/listData.json" />
+        <option value="$PROJECT_DIR$/list.html" />
+        <option value="$PROJECT_DIR$/common.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="-8" />
+    <option name="width" value="1932" />
+    <option name="height" value="1038" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="小鸟官网备课代码" type="b2602c69:ProjectViewProjectNode" />
+              <item name="小鸟官网备课代码 2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="小鸟官网备课代码" type="b2602c69:ProjectViewProjectNode" />
+              <item name="小鸟官网备课代码 2" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\关于工作\翡翠教育\翡翠教育\备课\备课\项目一\科技官网\小鸟官网备课代码" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js" />
+      <recent name="D:\关于工作\翡翠教育\翡翠教育\备课\备课\项目一\科技官网\小鸟官网备课代码\css" />
+      <recent name="D:\关于工作\翡翠教育\翡翠教育\备课\备课\项目一\科技官网\小鸟官网备课代码\js" />
+      <recent name="D:\关于工作\翡翠教育\翡翠教育\备课\备课\项目一\科技官网\小鸟官网备课代码" />
+      <recent name="D:\关于工作\翡翠教育\翡翠教育\备课\备课\项目一\科技官网\小鸟官网备课代码\localStorage" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <method />
+    </configuration>
+    <configuration default="true" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac14e79e-d9d0-48ce-9066-4d3b28d15f95" name="默认的" comment="" />
+      <created>1508140568619</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1508140568619</updated>
+      <workItem from="1533263361954" duration="262000" />
+      <workItem from="1533263655259" duration="4508000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="4770000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.14375" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="运行" order="13" />
+      <window_info anchor="bottom" id="Application Servers" order="10" />
+      <window_info anchor="bottom" id="版本控制" order="14" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="调试" order="12" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14375" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="运行" order="13" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="版本控制" order="14" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="调试" order="12" />
+      <window_info anchor="bottom" id="Application Servers" order="10" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/轮播5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+          <folding>
+            <element signature="e#4416#4896#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baidu.html" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/解析URL/demo1.html" />
+    <entry file="file://$PROJECT_DIR$/解析URL/demo2.html" />
+    <entry file="file://$PROJECT_DIR$/解析URL/demo3.html" />
+    <entry file="file://$PROJECT_DIR$/解析URL/demo4.html" />
+    <entry file="file://$PROJECT_DIR$/解析URL/index.html" />
+    <entry file="file://$PROJECT_DIR$/解析URL/yemian.html" />
+    <entry file="file://$PROJECT_DIR$/轮播2.html" />
+    <entry file="file://$PROJECT_DIR$/baidu.html" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/js/jquery-1.8.3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/全屏滑动.html" />
+    <entry file="file://$PROJECT_DIR$/解析URL/demo2.html" />
+    <entry file="file://$PROJECT_DIR$/解析URL/demo3.html" />
+    <entry file="file://$PROJECT_DIR$/解析URL/demo4.html" />
+    <entry file="file://$PROJECT_DIR$/解析URL/demo1.html" />
+    <entry file="file://$PROJECT_DIR$/解析URL/index.html" />
+    <entry file="file://$PROJECT_DIR$/轮播2.html" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/滑动按钮样式.html" />
+    <entry file="file://$PROJECT_DIR$/music.html" />
+    <entry file="file://$PROJECT_DIR$/localStorage/demo3.html" />
+    <entry file="file://$PROJECT_DIR$/css/list.css" />
+    <entry file="file://$PROJECT_DIR$/css/article.css" />
+    <entry file="file://$PROJECT_DIR$/baidu.html" />
+    <entry file="file://$PROJECT_DIR$/localStorage/demo1.html" />
+    <entry file="file://$PROJECT_DIR$/解析URL/yemian.html" />
+    <entry file="file://$PROJECT_DIR$/localStorage/demo2.html" />
+    <entry file="file://$PROJECT_DIR$/js/article.js" />
+    <entry file="file://$PROJECT_DIR$/article.html" />
+    <entry file="file://$PROJECT_DIR$/js/list.js" />
+    <entry file="file://$PROJECT_DIR$/轮播4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/轮播5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="217" lean-forward="true" selection-start-line="217" selection-end-line="217" />
+          <folding>
+            <element signature="e#4416#4896#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/listData.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="40" column="22" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="22" />
+          <folding>
+            <element signature="e#1248#1480#0" />
+            <element signature="e#1496#2984#0" />
+            <element signature="e#1525#2981#0" />
+            <element signature="e#1587#2977#0" />
+            <element signature="e#1593#1822#0" />
+            <element signature="e#1823#2054#0" />
+            <element signature="e#2055#2287#0" />
+            <element signature="e#2288#2513#0" />
+            <element signature="e#2514#2739#0" />
+            <element signature="e#2740#2972#0" />
+            <element signature="e#2988#3791#0" />
+            <element signature="e#3017#3788#0" />
+            <element signature="e#3079#3784#0" />
+            <element signature="e#3085#3314#0" />
+            <element signature="e#3315#3546#0" />
+            <element signature="e#3547#3779#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/articleData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="171" column="17" selection-start-line="171" selection-start-column="12" selection-end-line="171" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#6;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#7;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#8;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#9;n#!!top" expanded="true" />
+            <element signature="e#1862#2176#0" />
+            <element signature="e#2205#2521#0" />
+            <element signature="e#2550#2867#0" />
+            <element signature="e#2896#3206#0" />
+            <element signature="e#3241#3542#0" />
+            <element signature="e#3579#3880#0" />
+            <element signature="e#3921#4222#0" />
+            <element signature="e#4253#4554#0" />
+            <element signature="e#4581#4882#0" />
+            <element signature="e#4911#5212#0" />
+            <element signature="e#5241#5537#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="85" column="11" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

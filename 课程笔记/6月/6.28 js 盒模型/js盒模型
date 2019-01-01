@@ -1,0 +1,144 @@
+JS的盒模型属性
+ 在JS中通过相关的属性可以获取（设置）元素的样式信息，
+ 这些属性就是盒子模型的属性（基本上都是有关于样式的）/
+   client
+      top (client top)
+      left
+      width
+      height
+
+   offset
+      parent
+      top
+      left
+      width
+      height
+
+   scroll
+     top
+     left
+     width
+     height
+
+1、clientTop/left/width/height
+  1、clientWidth & clientHeight :获取当前元素可视区域的宽高
+  （内容的宽高+左右+上下padding）
+  和内容是否溢出无关（和是否设置了overflow:hidden也无关）
+  就是我们自己设定的内容的宽高+padding
+
+  获取当前页面一屏幕（可视区域）的宽度和高度
+  document.documentElement.scrollWidth || document.body.scrollWidth
+  document.documentElement.scrollHeight || document.body.scrollHeight
+
+2、clientTop & clientLeft 获取（上/左）边框的宽度
+
+3、offsetWidth & offsetHeight
+  在client的基础上加上border （和内容是否溢出也没有关系）
+
+4、scrollWidth & scrollHeight 真实内容的宽高
+在不同 的浏览器中是否设置了OVERFLOW:HIDDEN 都会对最后的结果产生影响。所以此值只做参考，属于约等于的值。
+
+
+ 获取当前页面真实的宽度和高度（包含溢出的部分）
+  document.documentElement.scrollWidth || document.body.scrollWidth
+  document.documentElement.scrollHeight || document.body.scrollHeight
+
+
+通过js盒模型属性获取值的特点
+
+  获取的都是数字不带单位
+  获取的都是整数，不会出现小数（四舍五入，尤其是获取偏移量）
+  获取的结果都是复合样式，（好几个元素的样式组合在一起的值 ）
+
+  获取元素具体的某个样式值
+  元素 .style.xx 操作获取
+
+  只能获取所有在元素行内上的样式 （不写在行内上，不管写没写都获取不到，）
+
+
+
+bom
+
+	cookie
+	sessionStorage
+	localStorage
+dom
+	获取元素
+	dom操作
+	节点获取
+	动态操作
+	属性操作
+	...
+
+数组
+	基本操作
+	基本方法
+	迭代
+函数
+	this/arguments
+	封装
+	闭包
+对象
+	json
+原型/原型链  继承
+正则(正则捕获)
+		获取url地址 ：问号传参
+        时间格式化
+事件
+	各类设备的事件
+	事件池机制(类似于发布订阅模式)
+	js的盒模型属性
+
+ 		滑动轮播图
+ 		鼠标跟随效果
+ 		拖拽效果
+ 		放大镜效果
+		图片延迟加载
+		瀑布流
+	js事件
+		事件池
+		事件委托
+		事件传播
+ajax
+	同步
+	异步
+	跨域
+
+es6：
+	变量
+	解构赋值
+	箭头函数
+	继承
+	promise
+		管理异步
+		回调地狱
+	async
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

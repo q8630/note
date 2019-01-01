@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+
+</head>
+<body>
+<input type="button" id="btn">
+<script>
+    window.onload=function(){
+        var oBtn=document.getElementById('btn');
+
+
+        //attachEvent (事件名，函数)
+        //ie(除了ie11)
+//        oBtn.attachEvent('onclick',function(){
+//            alert('a')
+//        });
+//        oBtn.attachEvent('onclick',function(){
+//            alert('5')
+//        });
+
+
+        //DOM 方式 （非ie 低版本 ie8以上）
+        //addEventListener (事件名，函数，false)
+        oBtn.addEventListener('click',function(){
+            alert('你点我!')
+        },false);
+        oBtn.addEventListener('click',function(){
+            alert('再点我!')
+        },false);
+        oBtn.addEventListener('click',function(){
+            alert('你还点!')
+        },false);
+        oBtn.addEventListener('click',function(){
+            alert('哼!不和你玩了~~')
+        },false);
+
+
+
+
+
+
+    }
+
+
+</script>
+</body>
+</html>

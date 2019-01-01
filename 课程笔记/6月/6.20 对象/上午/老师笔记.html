@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1.箭头函数 里面没有arguments
+    //let fn = (...arg)=>{
+    ////	console.log(arguments);
+    //	console.log(arg);
+    ////	console.log(10);
+    //};
+    //fn(10,20,30)
+    //2.箭头函数里面没有this主体
+//    let obj={
+//        fn:(function (){
+//            var that=this;
+//            return function(){
+//                console.log(this);
+////  			console.log(that);
+//
+//            }
+//        })()
+//    };
+    //  fn();//_this  =window
+    //谁执行这个函数 this指向谁
+    //  obj.fn();//this->obj
+    //  obj.fn.call(window);//this->obj
+    //  箭头函数里的this  继承上下文的宿主环境
+//    let obj1={
+//        fn:(function (){
+//            var that=this;
+//            return ()=>{
+//                console.log(this);
+//            }
+//        })()
+//    };
+//    obj1.fn();//this->window
+
+
+
+
+    //	对象的解构赋值
+//    var obj = {
+//        name:'炫宣',
+//        sex:'小公举',
+//        age:8
+//    }
+//
+//    //注意 解构时 需要起的变量名 和 对象里面的属性名对应
+//    let {name,...a}=obj;
+//    console.log(name,a);
+
+
+
+    //var _obj = obj;
+    //_obj.n
+    //_obj.n
+    //_obj.n
+    //let {name:n,sex:s,age:a}=obj;
+    //console.log(n,s,a);
+    //
+    //
+    //let newObj = {...obj,eat:function(){}}
+    ////console.log(obj.name,obj.sex,obj.age);
+
+
+    //	对象的解构赋值
+    var obj = {
+        name:'炫宣',
+        sex:'小公举',
+        age:8
+    };
+
+    //注意 解构时 需要起的变量名 和 对象里面的属性名对应
+    let {name,...a}=obj;
+    console.log(name,a);
+
+
+
+    //var _obj = obj;
+    //_obj.n
+    //_obj.n
+    //_obj.n
+    //let {name:n,sex:s,age:a}=obj;
+    //console.log(n,s,a);
+    //
+    //
+    //let newObj = {...obj,eat:function(){}}
+    ////console.log(obj.name,obj.sex,obj.age);
+
+
+</script>
+</body>
+</html>

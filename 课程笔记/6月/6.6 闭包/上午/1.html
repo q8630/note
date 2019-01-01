@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 300px;
+            -webkit-background-origin:;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    function  css (ele,attr){
+        if(ele.currentStyle){  // 用来兼容ie
+            return ele.currentStyle[attr]
+        }else{
+            return getComputedStyle(ele)[attr]; // 不兼容ie
+        }
+    }  //css样式查看 js封装
+
+    console.log(css(div1,'width'));
+    console.log(css(div1,'height'));
+    console.log(css(div1,'position'));
+    console.log(css(div1, 'background-color'));
+
+
+
+
+
+
+</script>
+</body>
+</html>

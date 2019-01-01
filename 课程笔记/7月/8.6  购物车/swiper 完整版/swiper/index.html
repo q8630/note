@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=640, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        html,body{
+            width: 100%;    /* 750px */
+            height: auto;
+        }
+        #box{
+            width: 100%;    /* 750px */
+            height: auto;
+        }
+
+        #boxTitle{
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+
+        }
+        #list{
+            width: 640px;
+            height: auto;
+            margin: 0 auto;
+            overflow: hidden;
+
+        }
+        #list li{
+            list-style: none;
+            width: 320px;
+            height: 434px;
+            float: left;
+        }
+
+
+    </style>
+    <script src="js/ajax.js"></script>
+
+
+
+</head>
+<body>
+    <div id="box">
+        <h1 id="boxTitle">Apple新品预约开启</h1>
+        <ul id="list">
+            <!--<li><imgs src="imgs/pic1.jpg" alt=""></li>-->
+            <!--<li><imgs src="imgs/pic2.jpg" alt=""></li>-->
+            <!--<li><imgs src="imgs/pic3.jpg" alt=""></li>-->
+            <!--<li><imgs src="imgs/pic4.jpg" alt=""></li>-->
+        </ul>
+
+
+
+    </div>
+
+    <script>
+        window.onload = function () {
+
+            var oList = document.getElementById("list");
+
+
+            ajax("js/package.json",function (data) {
+                console.log("成功");
+                console.log(data);
+
+                var _data = eval("("+data+")");
+                for (var i = 0; i < _data.length ; i++) {
+                    console.log(_data[i].list.img);
+                    console.log(_data[i].name);
+                    var name = _data[i].name;
+
+                    var aLi = document.createElement("li");
+
+                    aLi.setAttribute("name",name);
+                    var aImg = document.createElement("img");
+                    aImg.src = _data[i].list.img;
+
+                    aLi.appendChild(aImg);
+                    oList.appendChild(aLi);
+
+
+                    aLi.onclick = function () {
+                        var type = this.getAttribute("name");
+
+
+                        window.location.href = "detail.html?haha="+type;
+
+
+                    }
+
+                }
+
+
+
+            },function () {
+                console.log("失败");
+            })
+
+
+
+
+
+        }
+    </script>
+
+
+
+
+
+</body>
+</html>

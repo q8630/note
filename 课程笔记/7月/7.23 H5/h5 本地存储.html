@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>本地存储</title>
+</head>
+<body>
+<button id="btn1">存储</button>
+<button id="btn2">取出</button>
+<button id="btn3">删除一个</button>
+<button id="btn4">删除全部</button>
+
+<script>
+
+
+    //localStorage  没有时间限制的数据存储
+    //sessionStorage  针对一个会话（窗口）的数据存储
+    //1、存 localStorage.setItem("name","值")
+    //2、取 localStorage.getItem("name")
+    //3、删除单个 localStorage.removeItem("name")
+    //4、删除全部 localStorage.clear()
+
+    window.onload =function(){
+        var oBtn1=document.getElementById("btn1");
+        var oBtn2=document.getElementById("btn2");
+        var oBtn3=document.getElementById("btn3");
+        var oBtn4=document.getElementById("btn4");
+
+        oBtn1.onclick =function(){  //存入
+            localStorage.setItem("zhou","神");
+            localStorage.setItem("zhen","男");
+            localStorage.setItem("yu","汉");
+        };
+        oBtn2.onclick =function(){  //取出
+            localStorage.getItem("zhou");
+            localStorage.getItem("zhen");
+            localStorage.getItem("yu");
+        };
+        oBtn3.onclick =function(){
+            localStorage.removeItem("zhou"); //删除单个
+            localStorage.removeItem("yu")
+        };
+        oBtn4.onclick =function(){
+           localStorage.clear();   //删除全部
+        }
+
+
+    }
+
+
+</script>
+
+
+</body>
+</html>

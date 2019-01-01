@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    //变量提升  只对等号左边的进行提升
+//
+//
+//    sum();
+//    fu();//Uncaught TypeError: fn is not a function
+//    // 匿名函数之函数表达式
+//    var fn = function(){
+//        console.log(1);
+//    }; //代码执行到此处会把函数值付给FN
+//
+//    fn();
+//    //普通的函数
+//    function sum(){
+//        console.log(2);
+//    }
+
+//var f=function(){return true;};
+//    var g =function(){return false;};
+//    ~function(){
+//        if(g()&& [] ==![]){
+//            f =function(){return false;};
+//            function g(){return true;}
+//
+//        }
+//    }();
+
+ //console.log(a);
+   // var a =12;
+//  a=22;
+// let a =13;
+//console.log(window.a);
+
+//    var a=12,b=13,c=14;
+//    function  fn(a){
+//        console.log(a, b, c);
+//        var b=c=a=20;
+//        console.log(a, b, c);
+//    }fn(a);
+//console.log(a, b, c);
+
+
+
+//    function sum(){
+//        var s=0;
+//        s=x+y;
+//        return s;
+//    }
+//     sum(x,y);//立即销毁
+//    var a=sum(x,y);//不销毁
+
+
+//    let fn = function(){
+//        var sum = Math.random();
+//        return function (){
+//            console.log(sum);
+//        }
+//    };
+//
+//// 函数执行的时候形成一个不销毁的私有作用域    闭包
+//    var f=fn();
+//console.log(f);
+//    f();
+//    f();
+//    f();
+//    f();
+
+
+    var h2 = document.querySelectorAll('.tit h2');
+    var div =document.querySelectorAll('cont div');
+for (var i = 0; i < h2.length; i++) {
+    (function(i){
+        h2[i].onclick=function(){
+            for (var j = 0; j < div.length; j++) {
+                h2[j].classList.remove('now');
+                div[j].classList.remove('now');
+
+            }
+            h2[i].classList.add('now');
+            div[i].classList.ddd('now');
+        }
+    })(i)
+
+}
+
+
+
+
+</script>
+</body>
+</html>

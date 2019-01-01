@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 600px;
+            margin: auto;
+            border:1px solid lightgrey;
+            padding: 20px;
+        }
+        .box textarea{
+            width: 400px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <label for="">输入</label>
+    <textarea name="" id="text" cols="30" rows="10"></textarea>
+    <input id="btn" type="button" value="发布">
+    <ul id="ul">
+
+    </ul>
+</div>
+<script>
+    var div = document.getElementsByTagName('div')[0];
+    var textarea = div.children[1];
+    var btn = textarea.nextElementSibling || textarea.nextSibling;
+    var ul = div.lastElementChild || div.lastChild;
+
+    btn.onclick = function(){
+        var val = textarea.value;
+        if(val ==''||val =='233'){
+            alert('请重新输入');
+            textarea.value ='';
+            return;
+        }
+        var newLi = document.createElement('li');
+        newLi.innerHTML = val+"<a href ='#'>删除</a>";
+        if(ul.children.length === 0){
+            ul.appendChild(newLi);
+        }else{
+            ul.insertBefore(newLi,ul,children[0])
+        }
+        textarea.value = '';
+
+        var a =newLi.getElementsByTagName('a')[0];
+        a.onclick = function(){
+            ul.removeChild(this.parentNode);
+        }
+    }
+
+
+</script>
+</body>
+</html>

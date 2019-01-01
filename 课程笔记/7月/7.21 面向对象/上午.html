@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象</title>
+</head>
+<body>
+<script>
+    //对象是一个整体，对外提供一些操作
+//1、属性
+//        var a=12;    //变量：自由的，不属于任何对象
+//            a++;
+//
+//            alert(a);   //13
+//
+//
+//            var arr=[];
+//            arr.a=12;
+//
+//            arr.a++;                 //属性：属于一个对象
+//            alert(arr.a);  //13
+
+
+
+
+    //2、方法
+
+//
+//
+//        function aaa(){    //函数：是自由的
+//            alert('abc');
+//        }
+//        var arr=[1,2,3,4];
+//        arr.aaa=function(){  //方法 ：属于一个对象
+//            alert('abc');
+//        };
+//        aaa();
+//        arr.aaa();
+
+
+
+
+    //3、this ：this所在的方法属于谁，this就指向谁
+    //当this 所在的方法自调用时，this就指向window
+    //this 的指向可以被改变 call和apply
+    //call和apply的区别  ？
+    // 相同：
+   //定义都是调用一个对象的方法，用另外一个对象替换当前的对象
+    //不同：
+    // apply：最多只能有两个参数，新的this对象和一个数组argArray/
+    //call：它可以结束多个参数，第一个参数与apply一样，后面则是一串参数列表
+    //实际上，apply和call 功能是一样的，只是传入的参数列表形式不同。
+
+
+
+ //4、
+    var obj= new Object(); //创建对象
+
+    obj.age='20';  //添加属性
+    obj.name='233';
+    obj.sex='boy';
+    obj.time='2018';
+
+    obj.a=function(){
+        alert('a');
+    } ;
+    obj.b=function(){
+        alert('b');
+    };
+    obj.c=function(){
+        alert(this.age);
+    };                             //添加方法
+
+
+//    obj.a();  //调用
+//    obj.b();
+//    obj.c();
+
+   alert(obj.sex);
+
+
+</script>
+</body>
+</html>

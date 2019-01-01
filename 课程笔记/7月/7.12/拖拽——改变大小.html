@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#div1{
+			width: 200px;
+			height: 150px;
+			background: pink;
+			position: relative;
+
+		}
+		#div2{
+			width: 11px;
+			height: 11px;
+			/*background: red;*/
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			cursor: nw-resize;
+		}
+	</style>
+	<script>
+//		拖拽——改变大小
+		window.onload  = function(){
+			var oDiv = document.getElementById("div2");
+			var oBox = document.getElementById("div1");
+
+			oDiv.onmousedown=function(ev){
+				var oEvent=ev||event;
+				var x=oEvent.clientX-oDiv.offsetLeft;
+				var y=oEvent.clientY-oDiv.offsetTop;
+
+				document.onmousemove=function(ev){
+					var oEvent=ev||event;
+					oBox.style.width=oEvent.clientX-x+11+"px";
+					oBox.style.height=oEvent.clientY-y+11+"px";
+				};
+
+				document.onmouseup=function(){
+//					清除文档鼠标按下起来后的事件执行
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+
+			}
+
+
+		}
+
+	</script>
+</head>
+<body>
+<div id="div1">
+	<div id="div2"></div>
+</div>
+</body>
+</html>

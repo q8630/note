@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 100%;
+            display: none;
+        }
+        img.now{
+            display: block;
+        }
+        .banner{
+            position: relative;
+        }
+        ul{
+            list-style: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+
+        }
+        li{
+            width: 10px;
+            height: 10px;
+            background: rgba(0,0,0,.5);
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+
+            /*transition: all 1s;*/
+
+        }
+        li.now{
+            background: white;
+        }
+        .arrow{
+            font-size: 40px;
+            text-align: center;
+            line-height: 60px;
+            color: rgba(255,255,255,.3);
+            user-select: none;
+            cursor: pointer;
+        }
+        .arrow div{
+            width: 40px;
+            height: 60px;
+            background: rgba(0,0,0,.5);
+            position: absolute;
+            /*top: 50%;*/
+            /*margin-top: -30px;*/
+            top:0;
+            bottom: 0;
+            margin: auto;
+        }
+        .arrow .arrowRight{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <img class="img now" src="img/0eb36709d70207b26e5971f2c22c4c57_0x0.jpg" alt="">
+    <img src="img/1e3863cf6b56d632beca75ab101b9f80_0x0.jpg" alt="">
+    <img src="img/5ab0eb9fa558b2800bb7f9da2d18d9ab_0x0.jpg" alt="">
+    <img src="img/42c88ed322abfbc4c4c52f987bae28e3_0x0.jpg" alt="">
+    <img src="img/6244c0a0063d022aa38b282a3fbdbbe3_0x0.jpg" alt="">
+    <img src="img/88353a024777f28c534a3665e53e7d1a_0x0.jpg" alt="">
+
+    <ul>
+        <li class="li now"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="arrow">
+        <div id="left" class="arrowLeft">&lt;</div>
+        <div  id="right" class="arrowRight">&gt;</div>
+    </div>
+</div>
+<script>
+    let arrImg = document.querySelectorAll('.banner img'),
+            arrLi = document.querySelectorAll('.banner li');
+    let index = 0, timer=null;
+
+    //圆点点击
+    for (let i = 0; i < arrLi.length; i++) {
+        arrLi[i].onclick = function(){
+            for (let j=0;j<arrImg.length; j++){
+                arrImg[j].className= '';
+                arrLi[j].className ='';
+            }
+            arrImg[i].className='now';
+            this.className = 'now';
+            index=i;
+        }
+    }
+//点击右侧按钮
+    right.onclick = function(){
+        index++;
+        if(index>arrLi.length-1){
+            index=0;
+        }
+        for (let j = 0; j < arrImg.length; j++) {
+            arrLi[i].onclick = function(){
+                for (let j=0;j<arrImg.length; j++){
+                    arrImg[j].className= '';
+                    arrLi[j].className ='';
+                }
+                arrImg[i].className='';
+                this.className = '';
+
+
+            };
+            arrImg[index].className='now';
+            arrLi[index].className='now';
+
+        }
+    };
+    //左点击
+    left.onclick = function(){
+        index--;
+        if (index<0){
+            index=arrLi.length-1;
+        }
+        for(let  j=0;j<arrImg.length; j++){
+            arrImg[j].className='';
+            arrLi[j].className ='';
+        }
+        arrImg[index].className='now';
+        arrLi[index].className = 'now';
+    }
+
+</script>
+</body>
+</html>

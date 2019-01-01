@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工厂模式</title>
+</head>
+<body>
+<script>
+var bz={
+    name:1,
+    age:2,
+    sex:1
+};
+var xw={
+    name:1,
+    age:20,
+    sex:10
+};
+var sl={
+    name:1,
+    age:23,
+    sex:15
+};
+
+
+
+    function  factiry(n,s){
+     //   1.原料
+        var obj={};
+    //    2.加工
+        obj.name=n;
+        obj.sex=s;
+    //    3.出厂
+        return obj;
+    }
+
+    var bz=factiry('bz',1);
+    var xw=factiry('xw',1);
+
+
+
+</script>
+</body>
+</html>

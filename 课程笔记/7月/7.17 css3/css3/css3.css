@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: #f3ca6f;
+    box-shadow: 10px 10px 10px #f0f; //元素
+    line-height: 200px;
+    text-align: center;
+    text-shadow: 5px 5px 5px #000;   //文本
+    margin: auto;
+    border-radius: 50%;   //圆角
+}
+.img{
+    width: 600px;
+    height: 500px;
+    margin: auto;
+    padding: 30px;
+    background: #f3ca6f;
+    border: 20px solid #000000;
+
+    background: url("../img/Full.Metal.Jacket.jpg") no-repeat;
+    background-origin: border-box;   //相对与边框盒定位图片
+    /*background-origin: content-box;*/  //相对与内容框定位图片
+    /*background-origin: padding-box;*/  //相对与内边距框定位图片
+
+
+
+
+     background-clip :center-box ;  //背景背景剪切到内容框 -ms-word-wrap:;
+
+    //word-wrap 自动换行
+    /*word-wrap:normal ;*/  // 默认不换行
+    word-wrap:break-word ; //换行
+}
+.img img{
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

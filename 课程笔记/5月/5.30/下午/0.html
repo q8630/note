@@ -1,0 +1,35 @@
+
+伊凡  15:03:03
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
++
+<input type="text">
+=
+<input type="button" value="求值">
+<script>
+    var arrIn=document.getElementsByTagName('input');
+    arrIn[2].onclick=function(){
+
+        if((arrIn[0].value)==''&&(arrIn[1].value)==''){
+            return;// /中断函数
+        }
+        var val1=parseFloat(arrIn[0].value);
+        var val2=parseFloat(arrIn[1].value);
+        var sum=val1+val2;
+
+        if (isNaN(sum)){
+            alert('输入错误 请重新输入')
+        }else{
+            console.log(sum);
+        }
+        arrIn[0].value='';
+        arrIn[1].value='';
+    }
+</script>
+</body>

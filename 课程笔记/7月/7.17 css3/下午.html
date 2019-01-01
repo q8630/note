@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2D 3D</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: #00a383;
+            border: 2px dashed red;
+            border-radius: 50%;
+            position: relative;
+
+            /*2D*/
+            /*位移*/
+            /*transform: translate(200px,300px);*/
+
+            /*-ms-transform: translate(200px,300px);   !*ie浏览器*!*/
+            /*-moz-transform: translate(200px,300px);   !*Firefox *!*/
+            /*-webkit-transform: translate(200px,300px);  !*Safari and C*!*/
+            /*-o-transform: translate(200px,300px);   !*OPera*!*/
+
+            /*-webkit-transform: translate() rotare() scale() skew;*/
+            /*-moz-transform: translate() rotare() scale() skew;*/
+            /*-ms-transform: translate() rotare() scale() skew;*/
+            /*-o-transform: translate() rotare() scale() skew;*/
+            /*transform: translate() rotare() scale() skew;*/
+
+        div {
+            -webkit-animation:;
+            -o-animation:;
+            animation:;
+        }
+
+        @keyframes {
+            0% {
+
+            }
+        }
+
+        /*旋转*/
+        /*transform: rotate(30deg);*/
+
+        /*-ms-transform: rotate(30deg);  !*ie浏览器*!*/
+        /*-moz-transform: rotate(30deg);  !*Firefox *!*/
+        /*-webkit-transform: rotate(30deg) ; !*Safari and C*!*/
+        /*-o-transform: rotate(30deg);  !*OPera*!*/
+
+        /*缩放*/
+
+        /*transform: scale(2,2);*/
+
+        /*-ms-transform: scale(2,2);  !*ie浏览器*!*/
+        /*-moz-transform:scale(2,2);  !*Firefox *!*/
+        /*-webkit-transform: scale(2,2); !*Safari and C*!*/
+        /*-o-transform: scale(2,2);  !*OPera*!*/
+
+        /*反转*/
+
+        /*transform: skew(30deg,30deg);*/
+
+        /*-ms-transform: skew(30deg,30deg); !*ie浏览器*!*/
+        /*-moz-transform: skew(30deg,30deg); !*Firefox *!*/
+        /*-webkit-transform: skew(30deg,30deg); !*Safari and C*!*/
+        /*-o-transform: skew(30deg,30deg);  !*OPera*!*/
+
+        /*3D*/
+        /*位移*/
+        /*transform: translate3d(200px,300px,200px);*/
+
+        /*-moz-transform: translate3d(200px,300px,200px);   !*Firefox *!*/
+        /*-webkit-transform: translate3d(200px,300px,200px);  !*Safari and C*!*/
+
+        /*旋转*/
+        /*transform: rotate3d(0,0,0,30deg);*/
+
+        /*-moz-transform: rotate3d(0,0,0,30deg);  !*Firefox *!*/
+        /*-webkit-transform: rotate3d(03,02,03,30deg) ; !*Safari and C*!*/
+
+        /*缩放*/
+
+        /*transform: scale3d(2,2,2);*/
+
+        /*-moz-transform:scale3d(2,2,2);  !*Firefox *!*/
+        /*-webkit-transform: scale3d(2,2,2); !*Safari and C*!*/
+
+        transform-origin:
+
+        0
+        %
+        0
+        %
+        ;
+        transform-style:
+
+        ;
+
+        }
+        .ul {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #0da5d6;
+            position: absolute;
+            left: 80px;
+            top: 80px;
+        }
+
+        .box :hover {
+            transform: rotate3d(0, 0, 0, 80deg);
+
+            -moz-transform: rotate3d(0, 0, 0, 30deg);
+            -webkit-transform: rotate3d(0, 0, 0, 30deg)
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="ul"></ul>
+
+</div>
+</body>
+</html>

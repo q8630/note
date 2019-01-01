@@ -1,0 +1,193 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	list-style: none;
+}
+
+/*头部*/
+.headr{
+	width: 100%; 
+	height: 35px;
+	line-height: 35px;
+	background-color:#cccccc;
+}
+.headr .zuo{
+	float: left;
+}	
+.headr .you {
+	float: right;
+}	
+.headr .zuo li{
+	float: left;
+	margin-left: 5px;
+}	
+.headr .you li{
+	float: left;
+	margin-left:5px ;
+}	
+/*标题*/
+.logo{
+	width: 1218px;
+	height: 55px;
+	background-color: red;
+	margin: auto;
+	margin-top:75px;
+}
+.logo input{
+	float: right;
+	margin-right:100px ;
+}
+/*导航*/
+.daohang{
+	width: 1218px;
+	height: 50px;
+	line-height: 50px;
+	background-color: wheat;
+	margin: auto;
+}
+.daohang .zuo{
+	float: left;
+}
+.daohang .you{
+	float: right;
+}
+.daohang .zuo li{
+	float: left;
+	margin-left:5px ;
+}
+.daohang .you li{
+	float: right;
+	margin-right:5px ;
+}
+/*轮播图*/
+.tu{
+	width: 1218px;
+	height: 465px;
+	background-image: url(../img/banner.jpg);
+	border-bottom: 20px;
+}
+/*.zhuti{
+	width: 1218px;
+	height: 1300px;
+	background-color: burlywood;
+	margin: auto;
+	margin-top: 20px;	
+}*/
+/*商品展示区*/
+.tp div{
+	width: 100%;
+	height: 320px;
+	background-color: deepskyblue;
+	margin: auto;
+}
+/*第一行图片*/
+.tp .box {
+	width: 100%;
+	height: 320px;
+	background-color: red;
+	margin: auto;	
+	margin-top: 20px;
+}
+.tp .box .t1{
+	height:320px;
+	width: 800px;
+	float: left;
+} 
+.tp .box .t2{
+	height: 320px;
+	width: 390px;
+	margin-left: 20px;
+	float: right;
+}
+/*第二行图片*/
+.tp .box2 {
+	width: 100%;
+	height: 320px;
+	background-color: red;
+	margin: auto;	
+	margin-top: 20px;
+}
+.tp .box .t3{
+	height:320px;
+	width: 400px;
+	float: left;
+} 
+.tp .box .t4{
+	height: 320px;
+	width: 400px;
+	margin-left: 20px;
+	float: left;
+}
+.tp .box .t4{
+	height: 320px;
+	width: 400px;
+	margin-left: 20px;
+	float: right;
+/*第三行图片*/
+.tp .box3 {
+	width: 1218px;
+	height: 320px;
+	background-color: red;
+	margin: auto;	
+	margin-top: 20px;
+}
+.tp .box .t6{
+	height: 320px;
+	width: 390px;
+	float: left;
+}
+.tp .box .t7{
+	height:320px;
+	width: 800px;
+	margin-left: 20px;
+	float: right;
+} 
+
+/*第四行图片*/
+.tp .box3 {
+	width: 1218px;
+	height: 216px;
+	margin: auto;
+	background-color: cadetblue;
+	margin-top: 20px;
+}
+.tp .box .t8{
+	height:216px;
+	width: 400px;
+	float: left;
+} 
+.tp .box .t9{
+	height: 216px;
+	width: 400px;
+	margin-left: 20px;
+	float: left;
+}
+.tp .box .t10{
+	height: 216px;
+	width: 400px;
+	margin-left: 20px;
+	float: right;
+/*第五行图片*/
+.tp .box4 {
+	width: 1218px;
+	height: 50px;
+	margin: auto;
+	background-color: white;
+	margin-top: 20px;
+}
+
+/*.dibu{
+	width: 1218px;
+	height: 194px;
+	background-color: fuchsia;
+	margin: auto;
+}
+.feet{
+	height: 216px;
+	width: 1280px;
+	background-color: red;
+	margin: auto;
+	margin-bottom: 0;
+}*/

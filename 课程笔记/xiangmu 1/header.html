@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script src="js/ajax.js"></script>
+</head>
+<body>
+<header id="header">
+    <div class="center">
+        <div class="logo"><img src="images/logo.png" alt=""></div>
+        <div class="nav_wrap">
+            <div class="nav_piece now">
+                <h1>首页</h1>
+            </div>
+            <div class="nav_piece">
+                <h1 class="had_downnav ">小鸟掌学<span class="xiaoniao_img"></span>
+                </h1>
+                <ul class="down_box">
+                        <li><span>小鸟掌学主页  <i></i></span></li>
+                        <li><span>小鸟掌学概述  <i></i></span></li>
+                        <li><span>对企业的价值  <i></i></span></li>
+                        <li><span>小鸟掌云  <i></i></span></li>
+                        <li><span>微课联盟  <i></i></span></li>
+                        <li><span>App下载  <i></i></span></li>
+                </ul>
+            </div>
+            <div class="nav_piece">
+                <h1>小鸟动态</h1>
+            </div>
+            <div class="nav_piece">
+                <h1 class=" had_downnav" >企业文化<span class="xiaoniao_img"></span></h1>
+                <ul class="down_box">
+                    <li><span><a href="b.html?cc=companyIdea">公司理念</a> <i></i></span> </li>
+                    <li><span><a href="b.html?cc=companyCulture">公司文化</a> <i></i></span> </li>
+                    <li><span><a href="b.html?cc=companyEnvironment">公司氛围</a> <i></i></span> </li>
+                </ul>
+            </div>
+            <div class="nav_piece">
+                <h1 class=" had_downnav">人力资源<span class="xiaoniao_img"></span></h1>
+                <ul class="down_box">
+                    <li><span><a href="b.html?cc=talents">人才理念</a> <i></i></span> </li>
+                    <li><span><a href="b.html?cc=team">团队介绍</a> <i></i></span> </li>
+                    <li><span><a href="b.html?cc=joinUs">招聘信息</a> <i></i></span> </li>
+                </ul>
+            </div>
+            <div class="nav_piece">
+                <h1> <a class="lx" href="b.html?cc=telUs">联系我们</a></h1>
+            </div>
+        </div>
+    </div>
+</header>
+<script>
+    var oUl =document.getElementById('ul');
+
+    ajax('js/listData.json',function(data){
+//            alert('成功')
+        var aData = eval('('+data+')');
+//            console.log(aData);
+
+        var l =aData.length;
+
+        for (var i = 0; i < l; i++) {
+            var list=aData[i].data.list;
+//                console.log(list);
+
+            for (var j = 0; j < list.length; j++) {
+                var li =document.createElement('li');
+                var img =document.createElement('img');
+//                    console.log(list[j].coverImg);
+//                    console.log(list[j].sysId);
+
+                li.setAttribute('num',list[j].sysId);
+
+
+                img.src =list[j].coverImg;
+                li.appendChild(img);
+                oUl.appendChild(li);
+
+                li.onclick =function(){
+                    var nu=this.getAttribute('num');
+                    console.log(nu);
+                    window.location.href = "b.html?cc="+nu;
+                }
+            }
+
+        }
+
+    },function(){
+        alert('失败')
+    })
+
+</script>
+
+<script src="js/header.js"></script>
+</body>
+</html>

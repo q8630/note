@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .box {
+            width: 800px;
+            height: 42px;
+            position: relative;
+            background: #fff ;
+            border-radius: 10px;
+            margin: 200px auto;
+        }
+        ul {
+            position: relative;
+            list-style: none;
+        }
+        li {
+            float: left;
+            width: 83px;
+            height: 42px;
+            text-align: center;
+            cursor: pointer;
+            font: 500 16px/42px "simsun";
+        }
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 83px;
+            height: 42px;
+            background-color: #ff00ff;:
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <span></span>
+    <ul>
+        <li>北京校区</li>
+        <li>上海校区</li>
+        <li>广州校区</li>
+        <li>深圳校区</li>
+        <li>北京校区</li>
+        <li>上海校区</li>
+        <li>广州校区</li>
+        <li>深圳校区</li>
+    </ul>
+</div>
+
+
+
+<script>
+    //需求1：鼠标放到哪个li上，span移动到该li。移开回到最开始。
+    //需求2：点击哪个li，就被记录，当移开的时候，恢复到记录的位置。
+    //步骤：
+    //1.老三步。
+    //2.移动span标签。
+
+
+
+    //1.老三步。
+    var liArr = document.getElementsByTagName("li");
+    var span = document.getElementsByTagName("span")[0];
+    var liWidth = liArr[0].offsetWidth;
+    //计数器
+    var count = 0;
+
+    //for循环绑定事件
+    for(var i=0;i<liArr.length;i++){
+        //自定时属性
+        liArr[i].index = i;
+        //鼠标移动到哪个li,span就移动上去
+        liArr[i].onmouseover = function () {
+            //2.移动span标签。
+            animate(span, this.index*liWidth);
+        }
+
+        //鼠标移开li,恢复初始位置
+//        liArr[i].onmouseout = function () {
+//            //2.恢复初始位置
+//            animate(span, count*liWidth);
+//        }
+
+        //点击哪个li，就被记录，当移开的时候，恢复到记录的位置。
+        //只需要记录住被点击的li的索引值。
+        //移开的时候，恢复到记录的索引值上。
+
+        liArr[i].onclick = function () {
+            count = this.index;
+        }
+    }
+
+
+
+
+
+
+
+
+
+    //封装缓动动画
+    function animate(ele,target) {
+        //要用定时器，先清定时器。
+        clearInterval(ele.timer);
+        //2.定义一个定时器。
+        ele.timer = setInterval(function () {
+            //步长 = （目标位置-盒子本身位置）/ 10；
+            var step = (target-ele.offsetLeft)/10;
+            //大于0向上取整，小于0向下取整。
+            var step = step>0?Math.ceil(step):Math.floor(step);
+            //步长使用正值还是负值不需要判断。因为我们的步长就使用目标值-当前值得到的。
+            ele.style.left = ele.offsetLeft + step + "px";
+            //清楚定时器
+            console.log(1);
+            if(Math.abs(target-ele.offsetLeft)<Math.abs(step)){
+                ele.style.left = target + "px";
+                clearInterval(ele.timer);
+            }
+
+        },10);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>封装面向对象</title>
+</head>
+<body>
+<script>
+//构造函数和别的函数一样，就是一个普通的函数，
+// 之所以被称作构造函数，是因为它和别的函数的作用不同，他是用来构造函数的，
+    //不同的是作用不同
+
+
+//封装
+    function fengzhung(name,age,height,sex){
+        var obj=new Object(); //创建对象
+
+        //添加属性
+        obj.name = name;
+        obj.age = age;
+        obj.height = height;
+        obj.sex = sex;
+
+        //添加方法
+        obj.show=function(){
+            alert(this.age)
+        };
+        obj.eat=function(){
+            alert('ege')
+        };
+        return obj
+    }
+    var newObj = fengzhung('a','12','20','b')
+
+    alert(newObj.name);
+    newObj.show();
+
+
+//封装   工厂方式
+    function fengzhung(name,age,height,sex){    //类
+        var obj=new Object(); //创建对象  原料
+
+        //添加属性    加工
+        obj.name = name;
+        obj.age = age;
+        obj.height = height;
+        obj.sex = sex;
+
+        //添加方法
+        obj.show=function(){
+            alert(this.age)
+        };
+        obj.eat=function(){
+            alert('ege')
+        };
+        return obj    //出厂
+    }
+    var newObj = fengzhung('a','12','20','b')
+
+    alert(newObj.name);
+    newObj.show();
+
+
+</script>
+</body>
+</html>

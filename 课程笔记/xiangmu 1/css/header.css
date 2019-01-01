@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    font-family: STKaiti, KaiTi_GB2312, "华文楷体", "宋体", Arial, Helvetica, sans-serif
+}
+#header{
+    width: 100%;
+    height: auto;
+    background: url("../images/header_bg.jpg") top center;
+    min-width: 1100px;
+}
+#header>.center{
+    height: 120px;
+    width: 1100px;
+    margin: 0 auto;
+}
+#header>.center>.logo{
+    float: left;
+}
+#header>.center>.nav_wrap{
+    width: 630px;
+    margin: 0 auto;
+    height: 25px;
+    line-height: 25px;
+    float: right;
+    margin-top: 45px;
+    text-align: right;
+}
+#header>.center>.nav_wrap>.nav_piece{
+    float: left;
+    position: relative;
+    color: #fff;
+    z-index: 999;
+}
+#header>.center>.nav_wrap>.nav_piece .lx{
+    color: #fff;
+}
+#header>.center>.nav_wrap>.nav_piece>h1{
+    font-size: 16px;
+    text-align: center;
+    padding: 0 15px;
+    position: relative;
+    cursor: pointer;
+    height: 35px;
+    font-weight: 700;
+}
+.now{
+    background:url(../images/nav_now_bg.png) no-repeat bottom center;
+}
+.nav_piece>h1:hover{
+    background:url(../images/nav_now_bg.png) no-repeat bottom center;
+}
+#header>.center>.nav_wrap>.nav_piece .had_downnav{
+    padding: 0 40px 0 15px;
+}
+#header>.center>.nav_wrap>.nav_piece>h1>.xiaoniao_img{
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 25px;
+    right: 8px;
+    top: 0;
+    background: url(../images/nav_xiajiantou.png) no-repeat;
+    z-index: 999;
+}
+.down_box{
+    display: none;
+    background: #36264a;
+    position: absolute;
+
+}
+.down_box>li{
+    position: relative;
+    width: 150px;
+    height: 40px;
+    list-style: none;
+    text-align: left;
+    padding:0 0 0 30px ;
+    line-height: 40px;
+
+}
+.down_box>li span{
+    display: block;
+}
+.down_box>li a{
+    color: #fff;
+    line-height: 40px;
+}
+.down_box>li i{
+    display: none;
+    width: 5px;
+    height: 8px;
+    float: right;
+    position: absolute;
+    right: 15px;
+    top: 16px;
+    background: url("../images/nav_li_bg.png") no-repeat;
+}
+
+.down_box>li:hover{
+    background: #3498db;
+    transition: all 0.5s;
+}
+.down_box>li:hover span{
+    transform:translate(10px) ;
+    transition: all 0.5s;
+}
+.down_box>li:hover i{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

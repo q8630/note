@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+</head>
+<body>
+<script>
+
+//    var obj={
+//       // 键值对的形式存储
+//        name:'233',
+//        age:'0',
+//        sex:'33'
+//    };
+//    for (var key in obj){
+//        console.log(key);
+//        console.log(obj[key]);
+//    }
+//
+//    var json = {
+//       'name' :'233',
+//        'age':'0',
+//        'sex':'33'
+//    }
+//document.write(json)
+//    for (var key in json){
+//        console.log(key);
+//        console.log(json[key]);
+//    }
+
+
+   // 简单的拷贝
+//    var json={
+//        'name' :'233',
+//        'age':'0',
+//        'sex':'33'
+//    };
+//    var json1=json;
+//    json1.age=10;
+//    console.log(json);
+
+
+//    //浅拷贝
+//
+//
+//    var json = {
+//        'name' :'233',
+//        'age':'0',
+//        'sex':'33',
+//        'friends':{
+//            'name':'22',
+//            'age':99
+//        }
+//    }
+//    var json1={};
+//    for (var key in json){
+//        json1[key] = json[key];
+//    }
+//    json1.age= 2;
+//    json1.friends.age=4;
+//console.log(json);
+
+
+    //深拷贝
+var json = {
+    'name':'xud',
+    'sex':1,
+    'age':99,
+    'friends':{
+        'name':'zhao',
+        'age':99
+    }
+};
+
+    function copyJson(json){
+        var newJson= {};
+        for(var key in json){
+            if(typeof  json[key] == "object"){
+                newJson[key] = copyJson(json[key]);
+            }else {
+                newJson[key] = json[key];
+            }
+        }return newJson;
+    }
+    var json1 = copyJson(json);
+    json1.age=10;
+    json1.friends.age=1;
+    console.log(json);
+
+
+</script>
+</body>
+</html>

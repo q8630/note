@@ -1,0 +1,585 @@
+#content{
+    width: 100%;
+    height: auto;
+    background: #f1f2f6;
+}
+
+/*轮播开始*/
+/*第一张*/
+#content>.banner1{
+    width: 100%;
+    height: 593px;
+    cursor: pointer;
+    background: url("../images/banner01_bg.jpg") no-repeat center;
+    position: relative;
+}
+#content>.banner1>.images_01{
+    position: absolute;
+    top: 205px;
+    left: 560px;
+}
+#content>.banner1>.images_02{
+    position: absolute;
+    top: 300px;
+    left: 590px;
+}
+#content>.banner1>.images_03{
+    position: absolute;
+    top: 355px;
+    left: 590px;
+}
+
+/*第二张*/
+#content>.banner2{
+    width: 100%;
+    height: 593px;
+    cursor: pointer;
+    background: url("../images/banner02_bg.jpg") no-repeat center;
+    position: relative;
+}
+#content>.banner2>.images_01{
+    position: absolute;
+    top: 177px;
+    left: 261px;
+}
+#content>.banner2>.images_02{
+    position: absolute;
+    top: 70px;
+    left: 461px;
+}
+#content>.banner2>.images_03{
+    position: absolute;
+    top: 195px;
+    left: 470px;
+}
+
+/*第三张*/
+#content>.banner3{
+    width: 100%;
+    height: 593px;
+    cursor: pointer;
+    background: url("../images/banner01_bg.jpg") no-repeat center;
+    position: relative;
+}
+#content>.banner3>.images_01{
+    position: absolute;
+    top: 205px;
+    left: 560px;
+}
+#content>.banner3>.images_02{
+    position: absolute;
+    top: 300px;
+    left: 590px;
+}
+#content>.banner3>.images_03{
+    position: absolute;
+    top: 355px;
+    left: 590px;
+}
+/*轮播结束*/
+
+/*按钮开始*/
+#content>.btn{
+    width: 200px;
+    height: 2px;
+    position:relative;
+    bottom: 55px;
+    left: 655px;
+    background: url("../images/next&prev_line.png");
+}
+#content>.btn>.zuo{
+    position: absolute;
+    top:  -13px;
+    float: left;
+    display: block;
+    width: 29px;
+    height: 29px;
+    background: url("../images/prev_jiantou.png");
+}
+#content>.btn>.zuo:hover{
+    background:url("../images/prev_jiantou_hover.png")
+}
+#content>.btn>.you:hover{
+    background:url("../images/next_jiantou_hover.png")
+}
+#content>.btn>.you{
+    position: absolute;
+    top: -13px;
+    right: 0;
+    float: right;
+    display: block;
+    width: 29px;
+    height: 29px;
+    background: url("../images/next_jiantou.png");
+}
+#content>.btn>.zhong{
+    width: 48px;
+    height: 14px;
+    background: #fff;
+    position: absolute;
+    top: -8px;
+    right: 35%;
+    border-radius: 12px;
+    border: 2px solid #f2f2f2;
+}
+#content>.btn>.zhong .sp{
+    width: 6px;
+    height: 6px;
+    float: left;
+    margin-top: 4px;
+    margin-left: 7px;
+    background: url("../images/next&prev_others.png");
+}
+#content>.btn>.zhong .sp:first-child{
+    background: url("../images/next&prev_now.png");
+}
+/*按钮结束*/
+
+/*主要产品*/
+#content>.chanpin {
+    width: 1100px;
+    height: 1000px;
+    /*background: #7FD1C1;*/
+    margin: 0 auto ;
+}
+#content>.chanpin >img{
+    margin: 0 auto;
+    margin-top: 48px;
+    display: block;
+    /*text-align: center;*/
+}
+#content>.chanpin >h1{
+    display: block;
+    text-align: center;
+    font-size: 54px;
+    color: #311759;
+    margin-top: 60px;
+    line-height: 60px;
+    font-weight: 700;
+}
+#content>.chanpin >h2{
+    display: block;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    letter-spacing: 6px;
+}
+#content>.chanpin >.img2{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+#content>.chanpin >.content_jj{
+    width: 1100px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+#content>.chanpin >.content_jj>.line{
+    width: 19px;
+    margin-right: 51px;
+    float: left;
+    height: 380px;
+    background: url(../images/chanpin_nowline_bgline.png) repeat-y 9px 20px;
+    margin-top: 22px;
+}
+#content>.chanpin >.content_jj>.line>div{
+    text-align: center;
+    height: 11px;
+    margin-bottom: 64px;
+}
+#content>.chanpin >.content_jj>.line>div i{
+    display: none;
+    width: 19px;
+    height: 19px;
+    background: url(../images/chanpin_nowline_daquan.png);
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    top: -4px;
+}
+#content>.chanpin >.content_jj>.line>div span{
+    display: block;
+    width: 11px;
+    height: 11px;
+    margin: 0 auto;
+    background: url(../images/chanpin_nowline_xiaoquan.png);
+    cursor: pointer;
+}
+#content>.chanpin >.content_jj>.line>div span:hover{
+    background: url(../images/chanpin_nowline_xiaoquan.png) 0 11px;
+    transition: all 0.5s;
+}
+#content>.chanpin >.content_jj>.contents{
+    width: 1020px;
+    float: left;
+    color: #565559;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+#content>.chanpin >.content_jj>.contents>.left_cont{
+    float: left;
+    width: 370px;
+    height: 436px;
+    background: url("../images/chanpin_image01.jpg");
+}
+#content>.chanpin >.content_jj>.contents>.right_cont{
+    width: 613px;
+    float: right;
+}
+#content>.chanpin >.content_jj>.contents>.right_cont>h1{
+    color: #311759;
+    font-size: 30px;
+    background: url(../images/pen_line.png) no-repeat left bottom;
+    height: 60px;
+    position: relative;
+    font-weight: 700;
+}
+#content>.chanpin >.content_jj>.contents>.right_cont>h1>span{
+    width: 61px;
+    height: 54px;
+    background: url(../images/pen.png) no-repeat;
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+}
+#content .contents>.right_cont>.p1{
+    color: #565559;
+    overflow: hidden;
+    margin: 35px 0 90px 10px;
+}
+#content .contents>.right_cont>.p1>img{
+    float: left;
+    margin-right: 25px;
+    margin-top: 5px;
+}
+#content .contents>.right_cont>.p1>h2{
+    float: left;
+    font-size: 24px;
+    width: 470px;
+}
+#content .contents>.right_cont>.p1>p{
+    float: left;
+    width: 480px;
+    line-height: 24px;
+    color: #565559;
+    font-weight: 500;
+    font-family: 华文楷体;
+    font-size: 14px;
+}
+#content .contents>.right_cont>.p2>p{
+    line-height: 24px;
+    font-family: KaiTi_GB2312;
+}
+#content .contents>.right_cont>.tip{
+    margin-top: 30px;
+}
+#content .contents>.right_cont>.tip>.tip_right{
+    float: right;
+}
+#content .contents>.right_cont>.tip>.tip_left{
+    float: right;
+}
+#content .contents>.right_cont>.tip>div{
+    margin-top: 14px;
+    font-size: 18px;
+    float: right;
+}
+#content .content_jj>.lin{
+    position: absolute;
+    left: 53%;
+    margin-left: -108px;
+    top: 232px;
+    z-index: 20;
+    height: 29px;
+    width: 610px;
+    background: url(../images/next&prev_line.png) repeat-x left center;
+}
+#content .content_jj>.lin>span{
+    position: absolute;
+    top: 0;
+    height: 29px;
+    width: 29px;
+    cursor: pointer;
+}
+#content .content_jj>.lin>.zuo{
+    background: url(../images/prev_jiantou.png) no-repeat;
+}
+#content .content_jj>.lin>.zuo:hover{
+    background: url(../images/prev_jiantou_hover.png) no-repeat;
+}
+#content .content_jj>.lin>.you{
+    right: 0;
+    background: url(../images/next_jiantou.png) no-repeat;
+}
+#content .content_jj>.lin>.you:hover{
+    right: 0;
+    background: url(../images/next_jiantou_hover.png) no-repeat;
+}
+
+/*公司简介*/
+.jianjie{
+    width: 1920px;
+    height: 923px;
+    background: url("../images/mokuai02_bg.jpg") no-repeat;
+    color: #fff;
+}
+.jianjie a{
+    color: #fff;
+}
+.jtextcolor{
+    color: #bca9d7;
+}
+.jhdcolor{
+    color: #fff;
+}
+#content>.jianjie {
+    width: 100%;
+    height: 923px;
+}
+#content>.jianjie >img{
+    margin: 0 auto;
+    margin-top: 48px;
+    display: block;
+    /*text-align: center;*/
+}
+#content>.jianjie >h1{
+    display: block;
+    text-align: center;
+    font-size: 54px;
+    color: #fff;
+    margin-top: 60px;
+    line-height: 60px;
+    padding-top: 130px;
+    font-weight: 700;
+}
+#content>.jianjie >h2{
+    display: block;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    letter-spacing: 6px;
+    color: #fff;
+}
+#content>.jianjie >.img2{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+#content>.jianjie >.content_jj{
+    width: 1100px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+#content>.jianjie >.content_jj>.line{
+    width: 19px;
+    margin-right: 51px;
+    float: left;
+    height: 380px;
+    background: url(../images/chanpin_nowline_bgline.png) repeat-y 9px 20px;
+    margin-top: 22px;
+}
+#content>.jianjie >.content_jj>.line>div{
+    text-align: center;
+    height: 11px;
+    margin-bottom: 64px;
+}
+#content>.jianjie >.content_jj>.line>div i{
+    display: none;
+    width: 19px;
+    height: 19px;
+    background: url(../images/chanpin_nowline_daquan.png);
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    top: -4px;
+}
+#content>.jianjie >.content_jj>.line>div span{
+    display: block;
+    width: 11px;
+    height: 11px;
+    margin: 0 auto;
+    background: url(../images/chanpin_nowline_xiaoquan.png);
+    cursor: pointer;
+}
+#content>.jianjie >.content_jj>.line>div span:hover{
+    background: url(../images/chanpin_nowline_xiaoquan.png) 0 11px;
+    transition: all 0.5s;
+}
+#content>.jianjie >.content_jj>.contents{
+    width: 1020px;
+    float: left;
+    color: #bca9d7;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+#content>.jianjie >.content_jj>.contents>.left_cont{
+    float: left;
+    width: 370px;
+    height: 436px;
+    background: url("../images/chanpin_image01.jpg");
+}
+
+#content .contents>.right_cont>.p1>p{
+    float: left;
+    width: 480px;
+    line-height: 24px;
+    color: #bca9d7;
+    font-weight: 500;
+    font-family: KaiTi_GB2312;
+    font-size: 15px;
+}
+#content>.jianjie >.content_jj>.contents>.right_cont>h1{
+    color: #fff;
+    font-size: 30px;
+    background: url(../images/pen_line.png) no-repeat left bottom;
+    height: 60px;
+    position: relative;
+    font-weight: 700;
+}
+#content .content_jj>.lin{
+    position: absolute;
+    left: 53%;
+    margin-left: -110px;
+    top: 232px;
+    z-index: 20;
+    height: 29px;
+    width: 610px;
+    background: url(../images/next&prev_line.png) repeat-x left center;
+}
+
+/*业务范围*/
+#content>.yewu {
+    width: 1100px;
+    height: 1000px;
+    /*background: #7FD1C1;*/
+    margin: 0 auto ;
+}
+#content>.yewu >img{
+    margin: 0 auto;
+    margin-top: 48px;
+    display: block;
+    /*text-align: center;*/
+}
+#content>.yewu >h1{
+    display: block;
+    text-align: center;
+    font-size: 54px;
+    color: #311759;
+    margin-top: 60px;
+    line-height: 60px;
+    font-weight: 700;
+}
+#content>.yewu >h2{
+    display: block;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    letter-spacing: 6px;
+}
+#content>.yewu >.img2{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+#content>.yewu>.yewu-xia{
+    margin: 0 auto;
+    width: 1100px;
+    height: auto;
+}
+.yewu_a{
+    width: 1100px;
+    height: auto;
+    margin: 0 auto;
+    background: #ff1581;
+}
+#content>.yewu>.yewu-xia .yewu-01{
+    height: 116px;
+    margin-bottom: 66px;
+    border-bottom: 2px dashed #e0e0e2;
+    /*margin-bottom: 54px;*/
+}
+#content>.yewu>.yewu-xia .nuber{
+    float: left;
+    width: 148px;
+    font-size: 90px;
+    color: #b5b6ba;
+    font-family: "宋体";
+}
+#content>.yewu>.yewu-xia>.yewu_a .zhongjian{
+    width: 285px;
+    height: auto;
+    float: left;
+    text-align: right;
+    margin-top: 31px;
+}
+#content>.yewu>.yewu-xia>.yewu_a .zhongjian h1{
+    font-size: 24px;
+    color: #311859;
+    font-weight: normal;
+}
+#content>.yewu>.yewu-xia>.yewu_a .zhongjian p{
+    font-size: 14px;
+    color: #311859;
+    font-weight: normal;
+}
+#content>.yewu>.yewu-xia .pic{
+    margin: 0 44px 0 59px;
+    width: 116px;
+    float: left;
+}
+#content>.yewu>.yewu-xia .pa{
+    float: left;
+    width: 320px;
+    margin: 20px 60px 0 0;
+    font-family: KaiTi_GB2312;
+    line-height: 24px;
+}
+#content>.yewu>.yewu-xia .icon{
+    width: 67px;
+    height: 67px;
+    cursor: pointer;
+    margin-top: 20px;
+    background: url("../images/business_zhankaishouqi.png") ;
+    float: left;
+}
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    /*百度地图*/
+#map>img{
+    background: url("../images/map_bottomimg.png") no-repeat;
+    width: 1920px;
+    height: 33px;
+}
+
+
+
+
+
+
+
+

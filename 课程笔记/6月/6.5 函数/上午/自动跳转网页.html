@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var num = 2;
+    var timer= setInterval(function(){
+        var a=document.getElementById('a');
+        a.innerHTML = num + '秒后跳转<a href="http://www.baidu.com">跳转</a>';
+        num --;
+        if(num<0){
+            clearInterval(timer);
+            location.href = 'http://www.baidu.com';
+        }
+    },1000)
+
+</script>
+<div id="a"><a href="http://www.baidu.com">跳转</a></div>
+</body>
+</html>

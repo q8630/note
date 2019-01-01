@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box{
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: rebeccapurple;
+            margin: 100px auto;
+            border-radius: 50%;
+
+        }
+
+        .box1{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #0febc1;
+            transform: translate(50%,50%);
+            border-radius: 50%;
+        }
+        .box2{
+            position: relative;
+            top: 60px;
+            left: 60px;
+            width: 80px;
+            height: 80px;
+            background-color: lightgrey;
+        }
+
+        .box2:hover{
+            transform: rotate3d(0,0,1,50deg);
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</div>
+</body>
+</html>

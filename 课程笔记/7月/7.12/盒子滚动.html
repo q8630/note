@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 200px;
+            background: palevioletred;
+            position: absolute;
+            top: 0;
+            transition: .4s;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    window.onmousewheel = scroll;
+    function scroll(ev) {
+        var oEvent = window.event || ev;
+
+            if (oEvent.wheelDelta > 0) {
+                box.style.top += '-100px';
+            } else {
+                box.style.top += '100px';
+            }
+    }
+</script>
+</body>
+</html>

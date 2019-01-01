@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload=function(){//onload在事件加载完成以后执行调用
+//            var oBtn1=document.getElementById('showBtn');
+//            var oBtn2=document.getElementById('hideBtn');
+            var oDiv=document.getElementById('div1');
+            var oSb=document.getElementById('sb');
+//
+//            oBtn1.onclick=function(){
+//                oDiv.style.display='block';
+//                oDiv.style.background='yellow'
+//            }
+//
+//            oBtn2.onclick=function(){
+//                oDiv.style.display='none';
+//            }
+
+            oSb.onmouseover=function(){
+                oDiv.style.display='block';
+                oDiv.style.background='yellow'
+            }
+
+            oSb.onmouseout=function(){
+                oDiv.style.display='none';
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+
+<!--<input id="showBtn" type="button" value="显示" />-->
+<!--<input id="hideBtn" type="button" value="隐藏" />-->
+<strong id="sb">我也可以显示</strong>
+<div id="div1"></div>
+</body>
+</html>

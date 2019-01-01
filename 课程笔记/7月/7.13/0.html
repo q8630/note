@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 500px;
+            height: 500px;
+            background-color: #00A483;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+</div>
+
+<script src="07%20放大镜/my.js"></script>
+<script>
+    window.onload =function(){
+        var box =document.getElementById('box');
+
+        box.onmousemove=function(ev){
+            var event=ev||window.event;
+
+            var boxy =box.offsetTop;
+            var boxx =box.offsetLeft;
+
+
+            var x= event.clientX -boxx;
+            var y=event.clientY -boxy;
+
+
+
+            //赋值给box 盒子innnerHEML 属性
+            box.innerHTML = "您的鼠标在盒子中的y坐标为；"+y
+             +"px;<br>您的鼠标在盒子x中的坐标为:"+x+"px;<br>"
+
+        }
+
+
+
+    }
+
+
+
+
+</script>
+</body>
+</html>

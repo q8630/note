@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="startMove.js"></script>
+    <style>
+        #box{
+            width: 200px;
+            height: 300px;
+            background-color: #F39C12;
+            position: absolute;
+            top:20px;
+            left: 60px;
+        }
+        #box1{
+            width: 600px;
+            height: 500px;
+            background-color: #ff00ff;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<div id="box1"></div>
+
+<script>
+
+    var oBox = document.getElementById("box");
+    var oBox1 = document.getElementById("box1");
+
+
+        startMove(oBox1,{"width":"1","height":"1","opacity":"10"},function (){
+            startMove(oBox,{"width":"1","height":"1","opacity":"10"},function (){
+                startMove(oBox1,{"top":"100","left":"500","opacity":"100"},function (){
+                });
+                startMove(oBox,{"top":"100","left":"500","opacity":"100"},function (){})
+
+            })
+
+        })
+setInterval()
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取属性</title>
+</head>
+<body>
+<div>
+    <input id="tetx" type="text" value="请输入内容。。。"/>
+</div>
+
+<script>
+
+    window.onload = function(){
+        var oTetx=document.getElementById('tetx')
+
+
+
+        //获取属性 Attribute
+        //方法一
+        alert(oTetx.value)
+
+        //方法二
+        alert(oTetx['value'])
+
+        //方法三
+        alert(oTetx.getAttribute('value'))
+
+
+        //设置属性
+
+        //方法一
+//        oTetx.value ='00'
+
+        //方法二
+//        oTetx.setAttribute('value','000')
+
+
+        //获取属性 ： getAttribute("") : 一个参数
+
+        //设置属性 ：  setAttribute(""，"") : 两个参数
+
+
+
+
+
+
+    }
+
+</script>
+
+
+</body>
+</html>

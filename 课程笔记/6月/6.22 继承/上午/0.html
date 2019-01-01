@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+//    var obj={
+//        fn:function (x,y){
+//            console.log(x, y, this);
+//        }
+//    };
+//    obj.fn.call(window,1,2);
+//    obj.fn.apply(1);
+//    obj.fn.bind(1);
+//    var arr=[1,3,2,22,44,2,1];
+//
+//    console.log(Math.max(1,3,2,22,44,2,1));
+//    console.log(Math.apply(null,arr));
+
+
+    function fn(){
+        console.log(this);
+        console.log(1);
+    }
+    var obj={
+        fn:fn
+    };
+
+    // setTimeout(fn,300)
+
+    setTimeout(fn.bind(obj),3000)
+
+
+
+
+
+</script>
+</body>
+</html>

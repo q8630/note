@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body >
+<!--<div id="div1" onclick="alert(this.tagName)">2-->
+    <!--&lt;!&ndash;<ul onclick="alert(this.tagName)">1<li onclick="alert(this.(clientX+','+ clientY))">0</li></ul>&ndash;&gt;-->
+    <!---->
+<!--</div>-->
+<button onclick="alert('点我')" >按钮</button>
+<div style="width: 200px;height: 200px;background-color: red ;display:none"></div>
+<script>
+//    dom0 事件：绑定自定义属性
+//    div1.onclick=function(){
+//        console.log(1);
+//    };
+//    div1.onclick=function(){
+//    console.log(2);
+//    };
+
+    //dom2
+//事件池
+
+//    function  f1(){
+//        console.log(f1);
+//    }
+//function  f1(){
+//    console.log(f1);
+//}
+
+
+//    window.onload = function(){
+//        document.onclick = function(ev){
+//            var a= ev||event;
+//            console.log(a);
+//            alert(a.clientX+','+ a.clientY);
+//        }
+//    }
+
+
+    window.onload =function(){
+        var oBtn=document.getElementsByTagName('button')[0];
+        var oDiv = document.getElementsByTagName('div')[0];
+
+        oDiv.onclick = oBtn.onclick = function(ev){
+            var oEvent =ev ||event;
+            oDiv.style.display ='block';
+
+            //阻止事件冒泡
+            oEvent.cancelBubble=true; //兼容低版本ie
+            oEvent.stopPropagation(); // 不兼容ie 6 7 8
+
+            try{
+                oEvent.stopPropagation(); //不兼容低版本浏览器
+            }catch (a){
+                console.log(a);
+                oEvent.cancelBubble=true;  //兼容低版本浏览器
+
+            }
+
+
+
+        }
+        document.onclick = function(){
+            oDiv.style.display ='none';
+        }
+
+    }
+
+
+
+</script>
+</body>
+</html>

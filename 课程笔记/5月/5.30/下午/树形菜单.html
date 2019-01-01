@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>树形菜单</title>
+    <style>
+        *{
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        h1{
+            cursor: pointer;
+        }
+        ul{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>111</h1>
+    <ul>
+        <li>132</li>
+        <li>7676</li>
+        <li>67678678</li>
+        <li>76786786</li>
+        <li>76786876</li>
+
+    </ul>
+
+<h1>222</h1>
+<ul>
+    <li>132</li>
+    <li>7676</li>
+    <li>67678678</li>
+    <li>76786786</li>
+    <li>76786876</li>
+
+</ul>
+<h1>333</h1>
+<ul>
+    <li>132</li>
+    <li>7676</li>
+    <li>67678678</li>
+    <li>76786786</li>
+    <li>76786876</li>
+
+</ul>
+<h1>4444</h1>
+<ul>
+    <li>132</li>
+    <li>7676</li>
+    <li>67678678</li>
+    <li>76786786</li>
+    <li>76786876</li>
+
+</ul>
+<h1>555</h1>
+<ul>
+    <li>132</li>
+    <li>7676</li>
+    <li>67678678</li>
+    <li>76786786</li>
+    <li>76786876</li>
+
+</ul>
+
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+    <!--<style>-->
+        <!--h1{-->
+            <!--cursor: pointer;-->
+        <!--}-->
+        <!--ul{-->
+            <!--display: none;-->
+        <!--}-->
+    <!--</style>-->
+
+<!--<body>-->
+<!--<h1>标题一</h1>-->
+<!--<ul>-->
+    <!--<li>标题一里面的内容</li>-->
+    <!--<li>标题一里面的内容</li>-->
+    <!--<li>标题一里面的内容</li>-->
+    <!--<li>标题一里面的内容</li>-->
+<!--</ul>-->
+<!--<h1>标题二</h1>-->
+<!--<ul>-->
+    <!--<li>标题二里面的内容</li>-->
+    <!--<li>标题二里面的内容</li>-->
+    <!--<li>标题二里面的内容</li>-->
+    <!--<li>标题二里面的内容</li>-->
+<!--</ul>-->
+<!--<h1>标题三</h1>-->
+<!--<ul>-->
+    <!--<li>标题三里面的内容</li>-->
+    <!--<li>标题三里面的内容</li>-->
+    <!--<li>标题三里面的内容</li>-->
+    <!--<li>标题三里面的内容</li>-->
+<!--</ul>-->
+<!--<h1>标题四</h1>-->
+<!--<ul>-->
+    <!--<li>标题四里面的内容</li>-->
+    <!--<li>标题四里面的内容</li>-->
+    <!--<li>标题四里面的内容</li>-->
+    <!--<li>标题四里面的内容</li>-->
+<!--</ul>-->
+<script>
+
+  var  arrH1 = document.getElementsByTagName('h1');
+   var arrUl = document.getElementsByTagName('ul');
+//itar//for 循环快捷键
+    for (var i = 0; i < arrH1.length; i++) {
+        arrH1[i].index = i;
+        arrH1[i].onclick = function(){
+            for (var j = 0; j < arrUl.length; j++) {
+                arrUl[j].style.display='none';
+
+            }
+            arrUl[this.index].style.display='block'
+        }
+
+    }
+
+  var arrH1 = document.getElementsByTagName('h1');
+  var arrUl = document.getElementsByTagName('ul');
+  arrH1[0].onclick = function(){
+      if( arrUl[0].style.display == 'block'){
+          arrUl[0].style.display = 'none'
+      }else {
+          arrUl[0].style.display = 'block';
+      }
+  }
+
+    var arrH1 = document.getElementsByTagName('h1');
+    var arrUl = document.getElementsByTagName('ul');
+  for (var i = 0; i < arrH1.length; i++) {
+      arrH1[i].index=i;
+      arrH1[i].onclick=function(){
+          if( arrUl[this.index].style.display == 'block'){
+              arrUl[this.index].style.display = 'none'
+          }else {
+              arrUl[this.index].style.display = 'block';
+          }
+      }
+
+  }
+
+
+</script>
+</body>
+</html>

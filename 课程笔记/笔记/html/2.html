@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子绝父相案例</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+        }
+        img{
+            width: 100%;
+        }
+        .box div{
+            /*居中方式一*/
+            position: absolute;
+            top:50%;
+            margin-top: -50px;
+            /*left: 50%;*/
+            /*margin-left: -30px;*/
+
+            /*居中方式二*/
+            /*            position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        !*left: 0;*!
+                        !*right: 0;*!
+                        margin: auto;*/
+
+
+
+            width: 60px;
+            height: 100px;
+            background: rgba(0,0,0,.4);
+            font-size: 40px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            display: none;
+        }
+        .rt{
+            right: 0;
+        }
+        .box:hover div{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="../img/1.jpg" alt="">
+    <div class="lt">&lt;</div>
+    <div class="rt">&gt;</div>
+</div>
+
+
+<!--实体字符-->
+</body>
+</html>

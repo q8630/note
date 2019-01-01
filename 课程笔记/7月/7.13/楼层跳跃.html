@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul,body,html {
+            height: 100%;
+        }
+        ol {
+            position: fixed;
+            top: 100px;
+            right: 50px;
+        }
+        ol li {
+            list-style: none;
+            width: 30px;
+            height: 30px;
+            border-radius:30px ;
+            border: 1px solid #000;
+            text-align: center;
+            /*line-height: 50px;*/
+            margin-top: 5px;
+            cursor: pointer;
+            /*float: left;*/
+        }
+        ul li {
+            list-style: none;
+            height: 100%;
+            text-align: center;
+            font: 700 100px/600px "simsun";
+        }
+
+
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>鞋子区域</li>
+    <li>裤子区域</li>
+    <li>裙子区域</li>
+    <li>袜子区域</li>
+    <li>帽子区域</li>
+</ul>
+
+<ol>
+    <li>鞋子</li>
+    <li>裤子</li>
+    <li>裙子</li>
+    <li>袜子</li>
+    <li>帽子</li>
+</ol>
+
+<!--<script src="jQuery1.11.1.js"></script>-->
+<script>
+    //需求1：给ol中的li和ul中的li指定对应的颜色。
+    var ol = document.getElementsByTagName("ol")[0];
+    var ul = document.getElementsByTagName("ul")[0];
+    var olLiArr = ol.children;
+    var ulLiArr = ul.children;
+    //指定一个数组，里面设置五种颜色。
+    var arr = ["pink","yellowgreen","blue","yellow","purple"]
+
+    //给两个数组中的li上色。
+    for(var i=0;i<olLiArr.length;i++){
+        olLiArr[i].style.background = arr[i];
+        ulLiArr[i].style.background = arr[i];
+    }
+
+    //需求2：点击ol中的li，让屏幕滑动到指定的位置。
+    //原理：点击了哪个ol中的li，就去对应的ul中的li去找，距离顶部的距离。
+    //设置屏幕滑动。。。。（window.scrollTo(0，距离顶部的距离);）（缓动实现）
+
+    //设置leader和target和timer;  要求都是全局变量
+    var leader = 0;var target = 0;var timer = null;
+
+    //时时刻刻获取leader的值。leader要获取距离顶部的距离（要纵坐标）
+    window.onscroll = function () {
+        leader =document.documentElement.scrollTop;
+       // console.log(leader);
+    }
+
+    for(var i=0;i<olLiArr.length;i++){
+        //自定义属性绑定
+        olLiArr[i].index = i;
+        olLiArr[i].onclick = function () {
+            //立刻获取目标位置。(点击一次ol中的li,获取到ul中的li，距离顶部的距离)
+            target = ulLiArr[this.index].offsetTop;
+            //定时器系列
+            clearInterval(timer);
+            timer = setInterval(function () {
+                var step = (target-leader)/10;
+                step = step>0?Math.ceil(step):Math.floor(step);
+                leader = leader + step;
+                if (target-leader <=step){
+                    leader = target;
+                }
+                window.scrollTo(0,leader);
+                if(leader == target){
+                    clearInterval(timer);
+                }
+            },30);
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

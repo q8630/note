@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>短信验证定时器</title>
+</head>
+<body>
+<input type="text"  value="输入验证码">
+<input type="button" id="btn" value="点击发送">
+<script>
+    var btu = document.getElementById('btn');
+    var num = 2, timer=null;
+    btn.onclick = function(){
+           //禁用按钮
+        this.disabled = true;
+          //设置按钮的值
+        timer = setInterval(function(){
+            btn.value = num + '秒后点击发送';
+            num--;
+            if(num<0){
+                clearInterval(timer);
+                btn.value = '点击发送';
+                btn.disabled = false;
+                num = 2;
+            }
+        },1000);
+    };
+</script>
+</body>
+</html>

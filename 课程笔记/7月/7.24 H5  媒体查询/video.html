@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>video</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+
+        button{
+            width: 120px;
+            height: 50px;
+            background-color: #f0704b;
+            border-radius: 50%;
+        }
+
+
+    </style>
+</head>
+<body>
+<div>
+    autoplay 自动播放
+    controls 添加控件
+    <button onclick="playVid()" type="button">播放</button>
+    <button onclick="pauseVid()" type="button">停止</button>
+    <video id="video1" controls autoplay  src="hd.mp4">
+    </video>
+
+    <audio id="audio1" src="See%20You%20Again.mp3" autoplay controls></audio>
+</div>
+<script>
+
+    var aVideo=document.getElementById('video1');
+    var aAudio=document.getElementById('audio1');
+//    isSupp=aVideo.canPlayType(vidType+';codecs="'+codType+'"');
+    function playVid(){
+        aVideo.play();
+    }
+    function pauseVid(){
+        aVideo.pause();
+    }
+
+
+</script>
+</body>
+</html>

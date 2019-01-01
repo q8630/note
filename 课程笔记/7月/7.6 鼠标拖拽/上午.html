@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 2000px;
+            height: 2000px;
+            background-color: #BFBFBF;
+            position: relative;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #ff00ff;
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+
+
+<script>
+
+
+var aBody = document.getElementsByTagName("body")[0];
+    var aDiv = document.getElementsByTagName("div")[0];
+   // var c =aBody.score.top;
+    aBody.onmousemove= function(ev){ //   onmousemove //鼠标移动跟随
+
+        var oEvent = ev || event;  // event 兼容性问题
+
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+
+        var x = oEvent.clientX - aDiv.offsetWidth/2+scrollLeft;
+        var y = oEvent.clientY - aDiv.offsetHeight/2+scrollTop;
+
+        var w = aBody.offsetWidth- aDiv.offsetWidth;
+        var h= aBody.offsetHeight- aDiv.offsetHeight;
+
+
+
+        if(x<=0){
+            x=0
+        }
+        if(y<=0){
+            y=0
+        }
+        if(x>=w){
+            x=w
+        }
+        if(y>=h){
+            y=h
+        }
+
+
+
+        aDiv.style.top = y+ "px";
+        aDiv.style.left = x+ "px";
+    }
+
+
+</script>
+</html>

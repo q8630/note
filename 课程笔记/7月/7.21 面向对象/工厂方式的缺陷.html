@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //工厂方式的问题
+    //1、没有new     鸡蛋挑骨头
+    // 2、函数重复定义    造成资源浪费
+
+    //加上new
+//
+//    系统做了两件事
+//    1、替你创建了一个空白的对象
+//    2、替你返回了这个对象
+
+//
+//function  createPerson(name,qq){ //构造函数
+//
+////    var obj=new Object();
+//    this.name=name;
+//    this.qq= qq;
+//
+//    this.showName=function(){
+//        alert('我的名字:'+this.name);
+//    } ;
+//    this.showQQ=function(){
+//        alert('我的QQ:'+this.QQ);
+//    };
+////    return obj;
+//}
+//var obj1= new createPerson('女',"212212");
+//var obj2= new createPerson('男',"78788")
+//
+//obj1.showName();
+//obj2.showQQ();
+//
+//    alert(obj1.showName == obj2.showName)
+
+
+        function  createPerson(name,qq){ //构造函数
+
+    //    var obj=new Object();
+        this.name=name;
+        this.qq= qq;
+        }
+            createPerson.prototype.showName=function(){
+            alert('名字:'+this.name);
+        } ;
+            createPerson.prototype.showQQ=function(){
+            alert('QQ:'+this.qq);
+        };
+
+        var obj1= new createPerson('女2221',"212212");
+        var obj2= new createPerson('男2233',"78788")
+
+        obj1.showName();
+        obj2.showQQ();
+
+            alert(obj1.showName == obj2.showName)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cookie</title>
+</head>
+<body>
+<script>
+    var oDate = new Date();
+    oDate.setDate(oDate.getDate()+10);
+
+//    document.cookie = "userName=233";
+//    document.cookie = "password=213";expires='+oDate';
+
+
+    //存
+
+    function setCookie(name,value,iDay){
+        var oDate =new Date();
+        oDate.setDate(oDate.getDate()+iDay);
+        document.cookie = name +"=" +value +";expires="+oDate
+    }
+    setCookie("userName","name",10);
+
+
+//取
+
+    function getCookie(name){
+        var arr = document.cookie.split('; ');
+        for (var i = 0; i < arr.length; i++) {
+            var newArr = arr[i].split('=');
+            if(newArr[0]=='name'){
+                return newArr[1]
+            }
+        }
+    }
+
+alert(document.cookie)
+</script>
+</body>
+</html>

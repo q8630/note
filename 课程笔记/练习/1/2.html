@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .aa{
+            width: 100%;
+            height: auto;
+        }
+        .aa .dh{
+            width: 100px;
+            height: 100px;
+            border: 1px solid#ff3f38;
+            border-radius: 50%;
+            margin: 60px auto;
+
+            background: olive linear-gradient(to right, rgba(0,255,0,0), rgba(0,255,0,.5));
+            transition: background-color .5s;
+            /*animation: dh 0.5s;*/
+            /*animation-name:dh ;*/
+            /*-webkit-animation-fill-mode: both;*/
+            /*animation-fill-mode: both*/
+            /*-webkit-animation-name: bounceIn;*/
+            /*-webkit-animation-duration: .75s;*/
+            /*animation-duration: .75s*/
+
+        }
+
+
+
+
+         /*{*/
+            /*-webkit-animation-duration: 1s;*/
+            /*animation-duration: 1s;*/
+            /*-webkit-animation-fill-mode: both;*/
+            /*animation-fill-mode: both*/
+        /*}*/
+
+
+
+        /*@keyframes bounceIn {*/
+            /*0%,100%,20%,40%,60%,80% {*/
+                /*-webkit-transition-timing-function: cubic-bezier(0.215,.61,.355,1);*/
+                /*transition-timing-function: cubic-bezier(0.215,.61,.355,1)*/
+            /*};*/
+
+
+        .aa:hover .dh{
+            background-color: purple;
+            animation: dh 0.5s linear;
+        }
+
+        @keyframes dh {
+            0% {
+               width: 105px;
+            }
+            10% {
+                width: 65px;
+            }
+            25% {
+                width:70px;
+            }
+            50% {
+                width: 80px;
+            }
+            60% {
+                width: 70px;
+            }
+            75% {
+                width: 65px;
+            }
+            100% {
+                width: 105px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="aa"><div class="dh"></div> </div>
+
+<script>
+
+//    document.write({uuu});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title定时器</title>
+</head>
+<body>
+<script>
+//  setInterval(callback,Interval)
+ //   callback  //回调函数     Interval  //执行时间 以毫秒为单位
+  //每隔100ms 执行一次这个函数
+  let  timer1= setInterval(function(){
+        alert(22);
+    },100);
+
+  clearInterval(timer1);
+
+//  延时定时器
+
+  //等100ms 执行这个函数  执行完就结束
+  let  timer2=  setTimeout(function(){
+        alert(233);
+    },1000);
+
+    clearTimeout(timer2);
+</script>
+</body>
+</html>

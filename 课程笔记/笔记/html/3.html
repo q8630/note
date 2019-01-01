@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background: #F7F7F7;
+        }
+        ul{
+            list-style: none;
+            padding:0;
+            margin:0;
+        }
+        header{
+            height: 100px;
+            background: blue;
+        }
+        .nav{
+            height: 100px;
+            width: 100px;
+            /*position: absolute;*/
+            background: blue;
+            /*top: 50px;*/
+            /*left: 20px;*/
+            /*transition: left 2s, background 2s;*/
+            transition:width 1s linear ,height 1s linear 1s;
+        }
+        .nav:hover {
+            background: red;
+            width: 500px;
+            height: 300px;
+            /*left: 100%;;*/
+
+        }
+        .main{
+            width:1000px;
+            height: 500px;
+            margin:0;
+        }
+        article{
+            width: 300px;;
+            height:100%;
+            float: right;
+            background: yellow;
+        }
+        aside{
+            width: 300px;
+            height:100%;
+            background: pink;
+            float: left;
+        }
+        footer{
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<header>头部
+    <nav class="nav">导航栏</nav>
+</header>
+<h2>二级标签</h2>
+<!--<figcaption>媒体标题</figcaption>-->
+<main class="main">主体部分
+    <article>文章
+        <section>独立块元素</section>
+    </article>
+    <aside>侧边栏</aside>
+</main>
+<div><progress value="90" max="100"></progress></div>
+
+<div><meter min="10" max="=90" low="400" high="500" value="500"></meter></div>
+
+<div><time> 2016-5-22>2016-12-12</time></div>
+
+<div><mark>mark标签的使用方法</mark></div>
+
+<footer>底部</footer>
+
+</body>
+</html>

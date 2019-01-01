@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .phone{
+            width: 100px;
+            height: 40px;
+            position: relative;
+        }
+        .t{
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid burlywood;
+
+        }
+        .c{
+            width: 100px;
+            height: 110px;
+            display: none;
+            position: absolute;
+            background-color: red;
+
+        }
+        .nav{
+            width: 100%;
+            height: 100px;
+            background-color: lawngreen;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="phone" id="phone">
+    <div class="t" id="t">移动端</div>
+    <div class="c" id="c">内容</div>
+
+</div>
+<div class="nav"></div>
+   <script>
+       var phone=document.getElementById('phone');
+       var c=document.getElementById('c');
+
+       phone.onmouseover = function(){
+           c.style.display = 'block'
+       };
+       phone.onmouseout=function(){
+           c.style.display = 'none'
+       }
+
+
+   </script>
+
+</body>
+</html>

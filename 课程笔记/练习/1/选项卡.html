@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box{
+            width: 500px;
+            height: 400px;
+            background: #D0AD4F;
+            margin: 50px auto;
+            border: 1px solid#ff3f38;
+        }
+        #box input{
+            margin: 0 50px;
+        }
+        #box div{
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            font-size: 50px;
+            color: #000000;
+            line-height: 500px;
+            display: none;
+        }
+        #box div:after{
+            content: '233';
+        }
+        .now{
+            border: 1px solid;
+        }
+    </style>
+    <script>
+
+        window.onload =function(){
+            var oBox=document.getElementById('box');
+            var aBtn=oBox.getElementsByTagName('input');
+            var oDiv=oBox.getElementsByTagName('div');
+
+            for (var i = 0; i < aBtn.length; i++) {
+                aBtn[i].index =i;
+                aBtn[i].onclick=function(){
+                    for (var i = 0; i < aBtn.length; i++) {
+                        oDiv[i].style.display='none'
+                    }
+                    oDiv[this.index].style.display='block'
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="button" value="按钮1">
+        <input type="button" value="按钮2">
+        <input type="button" value="按钮3">
+
+        <div style="display: block">第一个盒子</div>
+        <div>第二个盒子</div>
+        <div>第三个盒子</div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的算法</title>
+</head>
+<body>
+<script>
+
+//    1、冒泡算法
+//    var arr=[2,3,5,4,7];
+//    var l= 0; //轮数
+//     var c=0;  //次数
+////外层循环 控制轮数
+//    for (var i = 0; i < arr.length-1; i++) {
+//        l++;
+//        var flag=true; //假设我们的数 是排好序的
+//        //内层循环 找最大的放后面  控制比较的次数
+//
+//
+//        for (var j = 0; j < arr.length-1; j++) {
+//            if(arr[j] >arr[j+1]){
+//                var temp;
+//                temp=arr[j];
+//                arr[j]=arr[j+1];
+//                arr[j+1]=temp;
+//                c++;
+//                flag=false;
+//            }
+//        }
+//        if(flag){
+//            break;
+//        }
+//    }
+//    console.log(arr,l,c);
+
+
+ //        var a=22;
+//     var b=33;
+//    //1.定义一个中间变量
+//    var temp;
+//    temp=a;
+//    a=b;
+//    b=temp;
+// console.log(a, b);
+//
+ //2.不定义中间变量
+//    a+=b; // 66
+//    b=a-b;//22
+//    a-= b; //33
+//
+// console.log(a, b);
+
+
+////   //2、插入算法
+// var arr=[2,4,3,6,9];
+//    var l= 0,c=0,k=0;
+//    var flag=true;
+//
+//    for (var i = 1 ; i < arr.length; i++) {
+//        l++;
+//        for (var j = i; j > 0; j--){
+//            k++;
+//           if (arr[j] < arr[j-1]){
+//               var temp= arr[j];
+//               arr [j] = arr[j-1];
+//               arr[j-1]= temp;
+//
+//               c++;
+//               flag=false;
+//            }
+//            if(flag) {
+//                break;
+//           }
+//        }
+//    }
+//    console.log(arr,l,c);
+
+
+//    3、 快速排序（二分法）
+//    sort()  //只能排序 10以下的数字
+//    sort (callback) ;//传一个回调函数
+//
+//    var arr=[1,5,2,3,9,64,254];
+//    arr=arr.sort(function(a,b){
+//        return a-b;//升序
+//       // return b-a;//降序
+//    });
+//    console.log(arr);
+//   // 简化
+//
+    var arr=[1,5,20,0.2,3,9,0.1,64,254,222];
+    arr=arr.sort((a,b)=>a-b);
+//    (a,b)=>b-a;
+//    (a,b)=> a-b;
+
+    console.log(arr);
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

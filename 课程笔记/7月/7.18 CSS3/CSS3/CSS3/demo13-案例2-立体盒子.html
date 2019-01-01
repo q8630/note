@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text-shadow</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            background: #eee;
+        }
+        #box{
+            width: 500px;
+            height: 500px;
+            margin: 150px auto;
+            position: relative;
+            /*border: 1px solid #f00;*/
+
+            transform-style:preserve-3d;  /* 默认   2D */
+
+            transform:rotateX(-20deg) rotateY(-20deg);
+
+            transition: all 2s ;
+
+        }
+        #box:hover{
+            transform:rotateX(-360deg) rotateY(-360deg);
+        }
+
+        #box div{
+            width: 500px;
+            height: 500px;
+            opacity: 0.5;
+            filter:alpha(opacity=50);
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 250px;
+            text-align: center;
+            line-height: 500px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="box">
+        <div style="background: #f00; transform: rotateY(-90deg) translateZ(250px) ">左 </div>
+        <div style="background: #ff0; transform: rotateY(90deg) translateZ(250px) "> 右 </div>
+        <div style="background: #0f0; transform: rotateY(0deg) translateZ(250px) ">前</div>
+        <div style="background: #00f; transform: rotateY(180deg) translateZ(250px) ">后</div>
+        <div style="background: #b64bff; transform: rotateX(90deg) translateZ(250px) ">上</div>
+        <div style="background: #2af8ff; transform: rotateX(90deg) translateZ(-250px) ">下</div>
+    </div>
+
+
+
+
+
+</body>
+</html>

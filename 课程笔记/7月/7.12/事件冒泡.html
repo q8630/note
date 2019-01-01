@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+    <li id="item1" >item1</li>
+    <li id="item2" >item2</li>
+    <li id="item3" >item3</li>
+</ul>
+
+<script>
+    //    事件委托  ：事件冒泡
+    var list = document.getElementById("list");
+    function index(ev){
+        var oEvent = window.event||ev;
+        var target = oEvent.target || oEvent.srcElement;
+        if(target.nodeName == "LI"){
+            alert(target.innerHTML);
+        }
+    }
+    list.addEventListener("click",index);
+    var li=document.createElement("li");
+    li.innerHTML = "item4";
+    list.appendChild(li);
+
+</script>
+
+</body>
+</html>

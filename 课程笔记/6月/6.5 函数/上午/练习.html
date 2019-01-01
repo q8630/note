@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /*display: block;*/
+        }
+        .box2{
+            width: 600px;
+            height: 30px;
+            background-color: wheat;
+            /*display:none;*/
+        }
+
+    </style>
+    <script>
+        window.onload=function(){
+
+
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        var timer=null;
+         oDiv1.onmouseover = function(){
+             oDiv2.style.display = 'block';
+             clearInterval(timer);
+         };
+        oDiv1.onmouseover = function(){
+            timer = setInterval(function(){
+                oDiv2.style.display = 'none';
+            },100)
+         }
+        };
+    </script>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<script>
+
+
+
+</script>
+</body>
+</html>

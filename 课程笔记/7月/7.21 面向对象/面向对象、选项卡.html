@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body  #div1{
+            width: 100%;
+            height:auto;
+            background-color: #f2f2f2;
+        }
+        #div1{
+        margin: 20px auto;
+        }
+
+        input{
+            width: 30px;
+            height: 30px;
+            margin: 2px;
+            background-color: #2fc3d0;
+        }
+
+        #div1>div{
+            width: 200px;
+            height: 200px;
+            background-color: #f3d0b0;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1">
+    <input  class="active"  type="button" value="aa">
+    <input type="button" value="bb">
+    <input type="button" value="cc">
+
+    <div style="display: block">aaa</div>
+    <div>bbb</div>
+    <div>ccc</div>
+</div>
+<script>
+//    new TobQh();
+//    function TobQh(){
+//        var oDiv=document.getElementById('div1');
+//        this.aBtn=oDiv.getElementsByTagName('input');
+//        this.aDiv=oDiv.getElementsByTagName('div');
+//
+//
+//        for (var i = 0; i <this.aBtn.length; i++) {
+//            this.aBtn[i].index=i;
+//            this.aBtn[i].onclick= clickFn;
+//        }
+//    }
+//    function clickFn(){
+//        for (var i = 0; i <3; i++) {
+//            this.aBtn[i].className ='';
+//            this.aBtn[i].style.display = 'none'
+//        }
+//        name.className ='active';
+//        this.aDiv[name.index].style.display ='block';
+//    }
+
+    new hanshu();
+            function hanshu(){
+        var $this=this;
+        this.oDiv=document.getElementById('div1');
+
+        this.btn=document.getElementsByTagName("input");
+
+        this.aDiv=document.querySelectorAll('#div1 div');
+
+//        console.log(btn);
+        for (var i = 0; i < this.btn.length; i++) {
+            this.btn[i].index=i;
+            this.btn[i].onclick=function(){
+                $this.sss(this)
+            };
+        }
+
+        }
+    hanshu.prototype. sss=function(hhh){
+            for (var i = 0; i <  this.btn.length; i++) {
+                this.btn[i].className='';
+                this.aDiv[i].style.display = 'none';
+            }
+            hhh.className ='active';
+          this.aDiv[hhh.index].style.display = 'block'
+        }
+
+
+
+
+</script>
+</body>
+</html>

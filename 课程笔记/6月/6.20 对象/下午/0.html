@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //  console.log(fn(10,2.2,6.6 闭包,8,6,34,1.6));
+
+//    function fn(){
+//        console.log(arguments);
+//        arguments=Array.from(arguments);
+//        arguments.sort(function(a,b){
+//            return a-b;
+//        });
+//        arguments.pop();
+//        arguments.shift();
+//        eval(arguments.join('+'));
+//        console.log((eval(arguments.join('+'))).toFixed(2));
+//    }
+
+
+    let fn= (...a) => {
+
+      console.log(a);
+      a.sort(function(a,b){
+          return a-b;
+      }).pop();
+      a.shift();
+      console.log(a);
+      eval(a.join('+'));
+      console.log((eval(a.join('+'))).toFixed(2))
+
+
+  }
+    console.log(fn(10,2.2,6.6,8,6,34,1.6));
+
+
+
+</script>
+</body>
+</html>

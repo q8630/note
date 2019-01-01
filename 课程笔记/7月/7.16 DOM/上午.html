@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+
+</head>
+<body>
+<ul id="ul">
+    <li id="li">1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+    var oUl = document.getElementById('ul');
+    var oLi =document.getElementById('li');
+
+    for (var i = 0; i < oUl.childNodes.length; i++) {
+//        if(oUl.childNodes[i].nodeType==1){ //判断是不是元素节点
+//            oUl.childNodes[i].style.color ="#f00"
+//        }
+
+//        oUl.children[i].style.color="#ff0"
+    }
+
+
+    alert(oLi.parentNode);
+
+
+</script>
+<!--获取子节点-->
+
+<!--1、childNodes 获取元素节点的同时还能获取文本节点-->
+<!--2、children  直接获取元素节点-->
+
+<!--3、 nodeType  判断节点的类型o-->
+
+<!--获取子节点 :childNodes -->
+<!--子节点分为：1、文本节点  2、元素节点 -->
+<!--判断节点类型 ：nodeTyoe -->
+
+
+
+
+</body>
+</html>

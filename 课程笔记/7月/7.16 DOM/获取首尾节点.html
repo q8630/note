@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul">
+    <li><span>1</span></li>
+    <li><span>2</span></li>
+    <li><span>3</span></li>
+    <li><span>4</span></li>
+    <li><span>5</span></li>
+</ul>
+
+<script>
+    window.onload=function(){
+//        var ul=document.getElementById('ul');
+     var aList =document.getElementsByClassName('li')[0];
+
+
+      aList.firstChild.style.color = '#f00';
+//        for (var i = 0; i < li.length; i++) {
+//            alert(li.lastChild)
+//
+//        }
+
+    }
+
+//    获取第一个子节点
+//    1、firstChild  只兼容 ie8 一下的浏览器 （低版本浏览器）
+//    2、firstElementChild   高级浏览器
+
+
+
+    if(aList.firstElementChild){  // 高版本浏览器
+
+        aList.firstElementChild.style.background = '#f00';
+    }else {
+        aList.firstChild.style.background = '#f00';   //低版本浏览器
+    }
+
+
+    //获取最后一个子节点
+    if(aList.lastElementChild){  // 高版本浏览器
+
+        aList.lastElementChild.style.background = '#f00';
+    }else {
+        aList.lastChild.style.background = '#f00';   //低版本浏览器
+    }
+
+    // 获取兄弟 节点 Sibling
+    //获取下一个兄弟节点  nextSibling
+
+    if(aList.nextElementSibling){  // 高版本浏览器
+
+        aList.nextElementSibling.style.background = '#f00';
+    }else {
+        aList.nextSibling.style.background = '#f00';   //低版本浏览器
+    }
+
+    //获取上一个 兄弟节点  previous Sibling
+    if(aList.previousElementSibling){  // 高版本浏览器
+
+        aList.previousElementSibling.style.background = '#f00';
+    }else {
+        aList.previousSibling.style.background = '#f00';   //低版本浏览器
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

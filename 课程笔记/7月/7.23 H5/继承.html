@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+<script>
+function A(){
+    this.abc =12;
+}
+A.prototype.show=function(){
+    alert(this.abc);
+};
+    //继承A
+    function B(){
+        A.call(this);
+    }
+    for (i in A.prototype)
+
+
+</script>
+</body>
+</html>

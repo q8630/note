@@ -1,0 +1,145 @@
+html,body{
+    width: 100%;
+    height: auto;
+    background-color: #f2f2f2;
+    font: 12px/1.5 tahoma,arial,Hiragino Sans GB,WenQuanYi Micro Hei,\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;
+}
+
+#box{
+    width: 966px;
+    margin: 25px auto;
+
+}
+.list{
+    padding-left: 1px;
+    overflow: hidden;
+    width: 995px;
+}
+.list>div{
+    float: left;
+    box-sizing: border-box;
+    font-size: 16px;
+    position: relative;
+    border: 1px solid;
+    margin-right: 3px;
+    line-height: 40px;
+    transition: all 0.2s;
+    text-align: center;
+    width: 19%;
+    cursor: pointer;
+}
+.list>div:hover{
+    color: #FFFFFF;
+    border-color: rgb(225, 55, 91);
+    background: rgb(225, 55, 91);
+}
+.list>div>a{
+    display: block;
+    transition: all 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.list1{
+    width: 1000px;
+    height: 100%;
+    margin: 20px auto;
+    padding-bottom: 16px;
+    overflow: hidden;
+}
+.list1 li{
+    float: left;
+    width: 226px;
+    height: 460px;
+    margin: 16px 16px 0 0;
+    border: solid 1px #e0e0e0;
+}
+
+.list1>li>div:nth-child(1){
+    height: 288px;
+    overflow: hidden;
+    position: relative;
+}
+.list1>li>div:nth-child(1)>img{
+    width: 226px;
+    height: 288px;
+}
+.list1>li>div:nth-child(2){
+    height: 116px;
+    padding: 39px 15px 10px 15px;
+    position: relative;
+}
+
+.list1>li>div:nth-child(2)>img{
+    padding: 4px 9px;
+    background-color: #fff;
+    border: solid 1px #e0e0e0;
+    position: absolute;
+    top: -25px;
+    left: 62px;
+    z-index: 3;
+    width: 80px;
+    height: 40px;
+}
+.list1>li>div:nth-child(2)>p:nth-child(2){
+    font-size: 16px;
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.list1>li>div:nth-child(2)>p:nth-child(3){
+     color: #999;
+     height: 18px;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     overflow: hidden;
+}
+.list1>li>div:nth-child(2)>div{
+     height: 46px;
+     overflow: hidden;
+     font-size: 12px;
+     color: #666;
+     padding-top: 3px;
+     float: left;
+ }
+.list1>li>div:nth-child(2)>div>span{
+     font-size: 26px;
+     color: #f10180;
+     margin-right: 3px;
+    float: left;
+ }
+.list1>li>div:nth-child(2)>div>p{
+    font-size: 12px;
+    color: #666;
+    float: left;
+    padding-top: 1.5em;
+}
+.list1>li>div:nth-child(2) a{
+    font-size: 14px;
+    color: #f10180;
+    line-height: 28px;
+    width: 100%;
+    height: 28px;
+    border: solid 1px #f10180;
+    display: block;
+    position: relative;
+    top: 50px;
+}
+.list1>li>div:nth-child(2) a:hover{
+    color: #fff;
+    background-color: rgb(225, 55, 91);
+}
+
+.list1 li:hover{
+    border: solid 1px rgb(225, 55, 91);
+}
+
+
+
+
+
+
+
+
+

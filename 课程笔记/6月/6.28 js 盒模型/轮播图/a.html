@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        button {
+            margin: 20px;
+            width: 50px;
+            height: 30px;
+        }
+        .box {
+            height: 300px;
+            margin: 20px 0;
+            position: relative;
+            background-color: #ccc;
+        }
+        .box1 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<!--<button>0</button>-->
+<button >200</button>
+<button >400</button>
+<div class="box">
+    <div class="box1" id="box1"></div>
+</div>
+
+<script>
+//    var btn = document.getElementsByTagName("button")[0];
+//
+    var box1 = document.getElementById("box1");
+//
+//
+//    btn.onclick= function(){
+//        setInterval(function(){
+//            box1.style.left = box1.offsetLeft + 10 + "px";
+//        },100)
+//    };
+    var btn1 = document.getElementsByTagName("button")[1];
+    var btn2 = document.getElementsByTagName("button")[2];
+
+    btn1.onclick=function(){
+        animate(box1,200)
+    };
+
+    btn2.onclick= function () {
+        animate(box1,400)
+    }
+
+//    function  animate (target){
+//        var timer = setInterval(function(){
+//            if(box1.offsetLeft === target){
+//                clearInterval(timer);
+//            }else {
+//                box1.style.left = box1.offsetLeft + 10 + "px";
+//            }
+//        },20)
+//    }
+
+//var timer = setInterval(function(){
+//            if(box1.offsetLeft === target){
+//                clearInterval(timer);
+//            }else {
+//                box1.style.left = box1.offsetLeft + 10 + "px";
+//            }
+//       },20)
+//
+//    function animate(target){
+//        clearInterval(timer);
+//        timer = setInterval(function(){
+//            var step = target >box1.offsetLeft ? 10: -10;
+//            if (Math.abs(box1.offsetLeft -target) <Math.abs(step)){
+//                box1.style.left = target + "px";
+//                clearInterval(timer);
+//            }else {
+//                box1.style.left = box1.offsetLeft + step + "px";
+//            }
+//        },20)
+//    }
+
+
+
+    //封装一个方法，目标位置传递过来的参数
+
+    function animate(ele,target){
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function(){
+            var step = target> ele.offsetLeft ? 10: -10 ;
+            var val= ele.offsetLeft -target;
+            ele.style.left = ele.offsetLeft + step +"px";
+            if (Math.abs(val) < Math.abs(step)){
+                ele.style.left = target+ "px";
+                clearInterval(ele.timer);
+            }
+        },20)
+    }
+
+
+
+    //封装缓动动画
+
+    function animate(ele,target){
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function(){
+            var step = (target-ele.offsetLeft)/10;
+                step = step>0? Math.ceil(step):Math.floor(step);
+            ele.style.left = ele.offsetLeft + step + "px";
+            console.log(1);
+            if (Math.abs(target-ele.offsetLeft) <Math.abs(step)){
+                ele.style.left = target+"px";
+                clearInterval(ele.timer);
+            }
+        },30)
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

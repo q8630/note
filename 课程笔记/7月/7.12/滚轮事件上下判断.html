@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        body {
+            height: 2000px;
+        }
+
+    </style>
+
+    <script>
+
+        window.onmousewheel = scroll;
+
+        window.addEventListener("DOMMouseScroll", scroll);
+
+
+
+        function scroll(ev) {
+            var oEvent = window.event || ev;
+
+            if (oEvent.wheelDelta) { // 谷歌 IE
+                // down  负值   up 正值
+//                alert(oEvent.wheelDelta);
+                if(oEvent.wheelDelta>0){
+                    up();
+                }else{
+                    down();
+                }
+//
+            } else {
+//                oEvent.detail  // 火狐
+                // down  正值   up 负值
+//                alert(oEvent.detail);
+                if(oEvent.detail<0){
+                    up();
+                }else{
+                    down();
+                }
+
+
+
+            }
+        }
+
+        //
+        function up(){
+            alert("向上滚动")
+        }
+
+
+
+        function down(){
+            alert("向下滚动")
+        }
+
+
+
+    </script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

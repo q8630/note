@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 3px;
+        }
+        #div2{
+            background: blue;
+        }
+    </style>
+<!--    <script>
+        //    内嵌引入js
+//        window.onload  在网页加载的时候  先把所有资源文件都加载完成 然后再开始加载js  在一个页面中 window.onload只能出现一次 出现多次后面的会覆盖掉前面  Dom0事件  以后会学Dom2事件
+        window.onload = function(){
+            document.getElementById('div1').onclick = function(){
+                document.getElementById('div2').style.display='none';
+            }
+        };
+
+    </script>-->
+
+    <script src="1.js"></script>
+</head>
+<body>
+<!--行内引入js-->
+<!--<div id="div1" onclick="document.getElementById('div2').style.display='none'"></div>
+<div id="div2"></div>-->
+
+
+<!--<div id="div1" onclick="hide()"></div>
+<div id="div2"></div>-->
+
+
+<!--<script>
+    function  hide(){
+        document.getElementById('div2').style.display='none'
+    }
+</script>-->
+
+
+<!--<div id="div1" ></div>
+<div id="div2"></div>-->
+
+
+
+</body>
+</html>
+

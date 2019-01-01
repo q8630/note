@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body,#box{
+    width: 100%;
+    height: 100%;
+    font-family: STKaiti, KaiTi_GB2312, "华文楷体", "宋体", Arial, Helvetica, sans-serif;
+}
+.boxT{
+    width: 100%;
+    height: 50px;
+    background: url("../images/aboutxiaoniao/beader_bg.jpg");
+}
+.boxT .head {
+    width:1100px;
+    height: 50px;
+    margin: 0 auto;
+}
+.boxT .head img{
+    float: left;
+}
+.boxT .nav{
+    float: left;
+    margin-left:35px ;
+    padding-top:11px ;
+    line-height: 25px;
+    height: 25px;
+}
+.boxT span{
+    font-size: 16px;
+    text-align: center;
+    padding: 0 15px;
+    position: relative;
+    cursor: pointer;
+    height: 25px;
+    color: #aeabb4;
+    font-weight: 700;
+}
+.boxT span:hover{
+    background: url(../images/nav_now_bg.png) no-repeat bottom center;
+    color: #fff;
+    transition: all 0.5s ease 0s;
+}
+.boxB{
+    width: 100%;
+    height: calc(100% - 50px);
+    /*background: #000;*/
+    position: relative;
+    /*overflow: hidden;*/
+}
+#lunbo{
+    width: 100%;
+    height: calc((100% - 50px)*6);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#lunbo>div{
+    width: 100%;
+    height: calc(100% / 6 + 50px);
+    /*font-size: 100px;*/
+    text-align: center;
+}
+/*第一页*/
+.div1{
+    background: #221236
+
+}
+.div1 .one{
+    position: relative;
+    margin-top: -35px;
+}
+.div1 h3{
+    color: #fff;
+    font-size: 44px;
+    line-height: 48px;
+}
+.div1 .p1{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 4px;
+    color: #fff;
+}
+.div1 .p2{
+    font-size: 20px;
+    color: #fff;
+}
+.div1 .tex{
+    padding-top: 15px;
+    color: #fff;
+    position: relative;
+}
+.div1 .tex .zuo{
+    position: relative;
+    left: -8px;
+    top: -30px;
+}
+.div1 .tex .you{
+    position: relative;
+    right: -8px;
+    top: 17px;
+}
+.div1 .tex span{
+    font-size: 48px;
+}
+.div1 .btnB{
+    display: block;
+    height: 58px;
+    width: 58px;
+    background: url(../images/aboutxiaoniao/donext.png) 0 -58px no-repeat;
+    margin:75px 48% 0px;
+    cursor: pointer;
+}
+.div1 .btnB:hover{
+    background-position: 0 0;
+    transition: all 0.5s ease 0s;
+}
+/*第二页*/
+.div2{
+    /*background: rgb(34, 18, 54);*/
+    /*overflow: hidden;*/
+    position: relative;
+}
+.div2 .dbox{
+    width: 5000px;
+    height: auto;
+    position: relative;
+    top:0;
+    left: 0;
+}
+.div2 .one{
+    float: left;
+    height: 560px;
+    position: absolute;
+    top: 45px;
+    margin-top: -280px;
+    width: 100%;
+    text-align: center;
+}
+.div2 .one h1{
+    font-size: 54px;
+    color: #311759;
+    font-weight: bold;
+}
+.div2 .one .tex{
+    font-size: 18px;
+    color: #6b6a6f;
+    width: 630px;
+    line-height: 30px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 20px;
+}
+.div2 .one .tex .L{
+    position: absolute;
+    left: -34px;
+    top: -3px;
+}
+.div2 .one .tex .R{
+    position: absolute;
+    right: -30px;
+    top: 64px;
+}
+.div2 .one .pic{
+    margin-top: 12px;
+
+}
+.div2 .one .pic img{
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+.div2 .tow{
+    float: left;
+    background:#fff;
+    width: 100%;
+    position:relative;
+}
+.div2 .tow .cc{
+    width: 700px;
+    height: 560px;
+    margin: 50px auto ;
+    position: relative;
+}
+.div2 .tow  .pic{
+    width: 700px;
+    height: 99px;
+    margin-top: 50px;
+    /*overflow: hidden;*/
+    color: #6b6a6f;
+    text-align: left;
+}
+.div2 .tow .cc .text{
+    width: 520px;
+    margin-left: 55px;
+    float: right;
+}
+.div2 .tow .cc .text img{
+    float: left;
+}
+.div2 .tow .cc h1{
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 20px;
+}
+.div2 .tow .cc h2{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.div2 .there{
+    float: left;
+    background: #fff;
+    position: relative;
+}
+.div2 .there .san{
+    height: 560px;
+    position: absolute;
+    margin-top: 30px;
+    width: 100%;
+}
+.div2 .there .san .tp{
+    width: 630px;
+    line-height: 30px;
+    margin: 80px auto;
+    position: relative;
+    color: #221236;
+    font-size: 36px;
+}
+.div2 .there .san .tp span{
+    color: #221236;
+    font-size: 36px;
+}
+.div2 .there .san p{
+    width: 730px;
+    margin: 55px auto 0;
+    line-height: 30px;
+    font-size: 18px;
+    color: #6b6a6f;
+    text-align: left;
+    text-indent: 2em;
+}
+
+.div2 .lBtn{
+    width: 58px;
+    height: 58px;
+    background: url(../images/aboutxiaoniao/goleft.png) no-repeat;
+    position: fixed;
+    top: 50%;
+    margin-top: -29px;
+    left: 60px;
+    cursor: pointer;
+}
+.div2 .lBtn:hover{
+    background-position: -58px 0;
+    transition: all 0.5s ease 0s;
+}
+.div2 .rBtn{
+    background: url(../images/aboutxiaoniao/goright.png)-58px 0 no-repeat;
+    width: 58px;
+    height: 58px;
+    position: fixed;
+    top: 50%;
+    margin-top: -29px;
+    cursor: pointer;
+    right: 60px;
+}
+.div2 .rBtn:hover{
+    background-position: 0 0;
+    transition: all 0.5s ease 0s;
+}
+    /*第三页*/
+.div3{background: #221236;}
+/*第四页*/
+.div4{background: #ff0;}
+/*第五页*/
+.div5{background: #f0f;}
+
+
+#mask{
+    width: 100%;
+    height: 100%;
+    background: #00f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}

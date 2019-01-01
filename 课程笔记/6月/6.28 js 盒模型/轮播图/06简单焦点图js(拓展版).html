@@ -1,0 +1,280 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无标题文档</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: yellow;
+        }
+
+        /*#arr {display: none;}*/
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+        
+        #arr {
+            display: none;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            //需求：无缝滚动。
+            //原理：复制第一张图片添加到最末尾，然后当关键时刻滑动的时候有一个闪动。然后在滑动过去。
+            //步骤:
+            //1.老三步，鼠标进入显示，移开隐藏。
+            //2.复制第一张图片添加到最末尾。
+            //3.创建图片个数-1个li，添加进ol中。点亮第一个。
+            //4.需求1：小方块被点击，图片联动，自己变亮。(案例1：滑动轮播图)
+            //5.需求2：定时器，定时轮播。
+            //6.需求3：右侧小三角。(案例2：左右焦点图)
+            //7.需求4：左侧小三角。(案例2：左右焦点图)
+
+
+            //1.老三步，鼠标进入显示，移开隐藏。
+            var left = document.getElementById("left");
+            var right = document.getElementById("right");
+            var all = document.getElementById("all");
+            var screen = all.children[0];
+            var ul = screen.children[0];
+            var ol = screen.children[1];
+            var arr = screen.children[2];
+            var ulLiArr = ul.children;
+            var imgWidth = ulLiArr[0].children[0].offsetWidth;
+
+
+
+            //2.复制第一张图片添加到最末尾。
+            var firstLi = ulLiArr[0].cloneNode(true);
+            ul.appendChild(firstLi);
+
+            //3.创建图片个数-1个li，添加进ol中。点亮第一个。
+            for(var i=0;i<ulLiArr.length-1;i++){
+                var newLi = document.createElement("li");
+                newLi.innerHTML = i+1;
+                ol.appendChild(newLi);
+            }
+            //获取ol中的所有li
+            var olLiArr = ol.children;
+            //点亮第一个
+            olLiArr[0].className = "current";
+
+
+
+
+
+
+
+            //4.需求1：小方块被点击，图片联动，自己变亮。
+            //步骤：
+            //1.for循环绑定事件。
+            //2.排他思想点亮盒子。
+            //3.移动图片。
+
+            //1.for循环绑定事件。
+            for(var i=0;i<olLiArr.length;i++){
+                olLiArr[i].onclick = function () {
+                    //2.排他思想点亮盒子。
+                    for(var j=0;j<olLiArr.length;j++){
+                        olLiArr[j].className = "";
+                    }
+                    this.className = "current";
+
+                    //bug: 点击下面小方块的时候，定时器的变量没有同步。
+                    //导致再次开启定时器，继续按之前定时器自己的索引值继续轮播
+                    //办法：点击的时候，与key和sqare同步。
+                    key = sqare = this.innerHTML-1;
+                    
+                    //3.移动图片。
+                    animate(ul, -(this.innerHTML-1)*imgWidth);
+                }
+            }
+
+
+
+
+
+
+
+            //5.需求2：定时器，定时轮播。
+            //步骤：
+            //1.用两个变量记录索引值。（将来好自增和自减）
+            //2.每隔一秒所有变量自增一次。（到最大值需要特殊处理）
+            //3.点亮盒子，移动图片。
+//            var key = 0;
+//            var sqare = 0;
+//            var timer = setInterval(autoPlay,1000);
+//
+//            //鼠标进入清除定时器，鼠标移开重新开启定时器
+//            all.onmouseover = function () {
+//                arr.style.display = "block";
+//                clearInterval(timer);
+//            }
+//            all.onmouseout = function () {
+//                arr.style.display = "none";
+//                timer = setInterval( autoPlay,1000);
+//            }
+
+
+   
+            right.onclick = autoPlay;
+            left.onclick = function () {
+                key--;
+                if(key === -1){
+                    ul.style.left = -(ulLiArr.length-1)*imgWidth+"px";
+                    key = ulLiArr.length-2;
+                }
+                sqare--;
+                if(sqare === -1){
+                    sqare = olLiArr.length-1;
+                }
+                for(var i=0;i<olLiArr.length;i++){
+                    olLiArr[i].className = "";
+                }
+                olLiArr[sqare].className = "current";
+                animate(ul, -key*imgWidth);
+            }
+
+
+            function autoPlay() {
+                key++;
+                if(key === ulLiArr.length){
+                    ul.style.left = 0;
+                    key = 1;
+                }
+                sqare++;
+                if(sqare === olLiArr.length){
+                    sqare = 0;
+                }
+                for(var i=0;i<olLiArr.length;i++){
+                    olLiArr[i].className = "";
+                }
+                olLiArr[sqare].className = "current";
+                animate(ul, -key*imgWidth);
+            }
+
+
+        }
+
+
+
+
+        function animate(ele,target){
+            clearInterval(ele.timer);
+            ele.timer = setInterval(function () {
+                var step = target>ele.offsetLeft ? 15: -15;
+                var val = ele.offsetLeft-target;
+                ele.style.left = ele.offsetLeft + step + "px";
+                if(Math.abs(val) < Math.abs(step)){
+                    ele.style.left = target + "px";
+                    clearInterval(ele.timer);
+                }
+            },10);
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="all" id='all'>
+        <div class="screen" id="screen">
+            <!--图片-->
+            <ul id="ul">
+                <li><img src="images/1.jpg" width="300" height="300"/></li>
+                <li><img src="images/2.jpg" width="300" height="300"/></li>
+                <li><img src="images/3.jpg" width="300" height="300"/></li>
+                <li><img src="images/4.jpg" width="300" height="300"/></li>
+                <li><img src="images/5.jpg" width="300" height="300"/></li>
+            </ul>
+            <!--小方块-->
+            <ol>
+                
+            </ol>
+            <!--小三角-->
+            <div id="arr">
+                <span id="left"><</span>
+                <span id="right">></span>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+

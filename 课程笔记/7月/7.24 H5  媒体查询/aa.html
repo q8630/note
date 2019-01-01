@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+
+        }
+
+    </style>
+</head>
+<body>
+<button id="btn">返回上一页</button>
+<script>
+    window.onload=function(){
+        var oBtn=document.getElementById('btn');
+        var oBody=document.getElementsByTagName('body')[0];
+        var oBag1=localStorage.getItem('bag','a');
+        var oBag2=localStorage.getItem('bag','b');
+        var oBag3=localStorage.getItem('bag','c');
+
+
+        if (oBag1){
+            oBody.style.background="#f0f"
+        }
+        if (oBag2){
+            oBody.style.background="#f0f"
+        }
+        if (oBag3){
+            oBody.style.background=""
+        }
+        oBtn.onclick=function(){
+            window.history.back(-1)
+        }
+    }
+
+</script>
+</body>
+</html>

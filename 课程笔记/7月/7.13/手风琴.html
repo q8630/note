@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{list-style: none}
+        *{margin:0; padding:0;}
+        div{
+            width: 1150px;
+            height: 400px;
+            margin:50px auto;
+            border:1px solid red;
+            overflow: hidden;
+        }
+        div li {
+            width: 240px;
+            height: 400px;
+            float: left;
+            cursor: pointer;
+        }
+        div ul {
+            width: 1300px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+
+
+<script>
+    //需求：首先，先给每个盒子手动上背景图。鼠标进入哪个li，撒有的li全部宽变为100，当前的变为800。鼠标移开大盒子，恢复240
+
+    //步骤：
+    //老三部。
+    var div = document.getElementsByTagName("div")[0];
+    var liArr = document.getElementsByTagName("li");
+
+    //for循环绑定事件
+    for(var i=0;i<liArr.length;i++){
+        //给盒子上背景
+        liArr[i].style.background = "url(images/"+(i+1)+".jpg) no-repeat";
+
+        //鼠标进入谁，让所有盒子宽为100，进入谁为800；
+        liArr[i].onmouseover = function () {
+            //干掉所有人
+            for(var j=0;j<liArr.length;j++){
+                //让所有盒子宽为100
+                animate(liArr[j],{"width":100});
+            }
+            animate(this,{"width":800});
+        }
+    }
+
+    //移开box，所有的盒子，宽变为240
+    div.onmouseout = function () {
+        for(var j=0;j<liArr.length;j++){
+            //让所有的盒子宽为240
+            animate(liArr[j],{"width":240});
+        }
+    }
+
+
+
+
+
+    //缓动框架
+    function animate(ele,json,fn){
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function () {
+            for(var k in json){
+                var bool = true;
+                var leader = parseInt(getStyle(ele,k)) || 0;//获取的是字符串
+                var step = (json[k]-leader)/10;
+                step = step>0?Math.ceil(step):Math.floor(step);
+                ele.style[k] = leader + step + "px";
+                if(json[k] != parseInt(getStyle(ele,k))){
+                    bool = false;
+                }
+            }
+            console.log(1);
+            if(bool){
+                clearInterval(ele.timer);
+                if(fn){
+                    fn();
+                }
+            }
+        },10);
+    }
+
+    function getStyle(ele,attr){
+        if(ele.currentStyle != undefined){
+            return ele.currentStyle[attr]
+        }else{
+            return window.getComputedStyle(ele,null)[attr];
+        }
+    }
+</script>
+
+
+
+</body>
+</html>

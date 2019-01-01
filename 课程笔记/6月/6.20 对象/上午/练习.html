@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let deta = {
+        name:'233',
+        age:27,
+        score:[
+            110,
+            130,
+            20
+        ]
+    };
+
+let {name ,age ,score:[chinese, ,english]} = date;
+
+
+
+</script>
+<script>
+    let data = {
+        name: 'xxx',
+        age: 27,
+        score: [
+            110,
+            130,
+            20
+        ]
+    };
+    // [a,b,c]=ary
+
+    let {name,age, score: [chinese, , english=0]} = data;
+    console.log(name + ' 语文:' + chinese + ' 英语:' + english);
+</script>
+
+
+</body>
+</html>

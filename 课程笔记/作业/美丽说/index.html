@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="ajax.js"></script>
+</head>
+<body>
+<div id="box">
+    <div class="list" id="list">
+        <div type="全部">全部</div>
+        <div type="3件7折">3件7折</div>
+        <div type="满199减100">满199减100</div>
+        <div type="反季清仓">反季清仓</div>
+        <div type="击穿低价">击穿低价</div>
+    </div>
+    <ul class="list1" id="list1">
+        <!--<li>-->
+        <!--<imgs src="imgs/1.jpg" alt="" id="imgs">-->
+        <!--<div>-->
+        <!--<imgs src="imgs/a.png" alt="" id="img2">-->
+        <!--<p>MO&Co.女装爽购节专场</p>-->
+        <!--<p>跨品牌3件7折，2件8折</p>-->
+        <!--<div>-->
+        <!--<span>1.7</span>-->
+        <!--<p>折起</p>-->
+        <!--</div>-->
+        <!--<a href="">-->
+        <!--<span>立即抢购</span>-->
+        <!--</a>-->
+        <!--</div>-->
+        <!--</li>-->
+    </ul>
+</div>
+<script>
+    var oList = document.getElementById('list');
+    var oLi1 = document.querySelectorAll('.list div');
+
+    var oList1 = document.getElementById('list1');
+    ajax("data/demo.json", function (data) {
+//        alert("成功");
+        var _data = eval("(" + data + ")");
+        for (var i = 0; i < _data.length; i++) {
+
+
+            var oSpan = document.createElement('span');
+            var oSpan1 = document.createElement('span');
+
+
+            var oA = document.createElement('a');
+
+            var oDiv = document.createElement('div');
+            var oDiv1 = document.createElement('div');
+
+            var oP1 = document.createElement('p');
+            var oP2 = document.createElement('p');
+            var oP3 = document.createElement('p');
+
+            var oImg1 = document.createElement('img');
+            var oImg2 = document.createElement('img');
+
+            var oLi = document.createElement('li');
+
+
+            oList1.appendChild(oLi);
+            oDiv.appendChild(oImg2);
+            oDiv.appendChild(oP1);
+            oDiv.appendChild(oP2);
+            oA.appendChild(oSpan);
+            oDiv1.appendChild(oSpan1);
+            oDiv1.appendChild(oP3);
+            oLi.appendChild(oImg1);
+            oLi.appendChild(oDiv);
+            oDiv.appendChild(oDiv1);
+            oDiv.appendChild(oA);
+
+            oImg1.src = _data[i].img;
+            oImg2.src = _data[i].icn;
+            oP1.innerHTML = _data[i].field;
+            oP2.innerHTML = _data[i].noun;
+            oSpan1.innerHTML = _data[i].sale;
+            oSpan.innerHTML = _data[i].buy;
+            oP3.innerHTML = _data[i].zheqi;
+
+        }
+        oList.onclick = function () {
+
+        }
+
+    }, function () {
+        alert("失败")
+    });
+
+    for (var i = 0; i < oLi1.length; i++) {
+        oLi1[i].onclick = function () {
+            for (var j = 0; j < oLi1.length; j++) {
+             this.style.background="rgb(225, 55, 91)";
+                this.style="#fff"
+            }
+
+
+            oList1.innerHTML = '';
+
+            var type = this.getAttribute('type');
+            ajax("data/demo.json", function (data) {
+                var _data = eval("(" + data + ")");
+                for (var i = 0; i < _data.length; i++) {
+                    if (_data[i].type ==type){
+                        var oSpan = document.createElement('span');
+                        var oSpan1 = document.createElement('span');
+
+
+                        var oA = document.createElement('a');
+
+                        var oDiv = document.createElement('div');
+                        var oDiv1 = document.createElement('div');
+
+                        var oP1 = document.createElement('p');
+                        var oP2 = document.createElement('p');
+                        var oP3 = document.createElement('p');
+
+                        var oImg1 = document.createElement('img');
+                        var oImg2 = document.createElement('img');
+
+                        var oLi = document.createElement('li');
+
+
+                        oList1.appendChild(oLi);
+                        oDiv.appendChild(oImg2);
+                        oDiv.appendChild(oP1);
+                        oDiv.appendChild(oP2);
+                        oA.appendChild(oSpan);
+                        oDiv1.appendChild(oSpan1);
+                        oDiv1.appendChild(oP3);
+                        oLi.appendChild(oImg1);
+                        oLi.appendChild(oDiv);
+                        oDiv.appendChild(oDiv1);
+                        oDiv.appendChild(oA);
+
+                        oImg1.src = _data[i].img;
+                        oImg2.src = _data[i].icn;
+                        oP1.innerHTML = _data[i].field;
+                        oP2.innerHTML = _data[i].noun;
+                        oSpan1.innerHTML = _data[i].sale;
+                        oSpan.innerHTML = _data[i].buy;
+                        oP3.innerHTML = _data[i].zheqi;
+                    }
+                    if (type =="全部"){
+                        var oSpan = document.createElement('span');
+                        var oSpan1 = document.createElement('span');
+
+
+                        var oA = document.createElement('a');
+
+                        var oDiv = document.createElement('div');
+                        var oDiv1 = document.createElement('div');
+
+                        var oP1 = document.createElement('p');
+                        var oP2 = document.createElement('p');
+                        var oP3 = document.createElement('p');
+
+                        var oImg1 = document.createElement('img');
+                        var oImg2 = document.createElement('img');
+
+                        var oLi = document.createElement('li');
+
+
+                        oList1.appendChild(oLi);
+                        oDiv.appendChild(oImg2);
+                        oDiv.appendChild(oP1);
+                        oDiv.appendChild(oP2);
+                        oA.appendChild(oSpan);
+                        oDiv1.appendChild(oSpan1);
+                        oDiv1.appendChild(oP3);
+                        oLi.appendChild(oImg1);
+                        oLi.appendChild(oDiv);
+                        oDiv.appendChild(oDiv1);
+                        oDiv.appendChild(oA);
+
+                        oImg1.src = _data[i].img;
+                        oImg2.src = _data[i].icn;
+                        oP1.innerHTML = _data[i].field;
+                        oP2.innerHTML = _data[i].noun;
+                        oSpan1.innerHTML = _data[i].sale;
+                        oSpan.innerHTML = _data[i].buy;
+                        oP3.innerHTML = _data[i].zheqi;
+                    }
+                }
+            })
+
+        }
+
+    }
+
+</script>
+</body>
+</html>

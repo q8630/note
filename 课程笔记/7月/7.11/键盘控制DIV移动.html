@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 20px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+</head>
+<script>
+
+    window.onload = function(){
+        var oDiv=document.getElementById('div');
+
+        document.onkeydown =function(ev){
+            var oEvent=ev||event;
+            if(oEvent.keyCode ==37){
+                oDiv.style.left=oDiv.offsetLeft-50+"px";
+
+            }else if(oEvent.keyCode ==38) {
+                oDiv.style.Top = oDiv.offsetTop-50 + "px";
+
+            }else if(oEvent.keyCode ==40){
+                oDiv.style.Top = oDiv.offsetTop+50+"px";
+
+            }else if(oEvent.keyCode ==39) {
+                oDiv.style.left = oDiv.offsetLeft+50 + "px";
+
+
+        }
+    }}
+
+
+</script>
+<body>
+<div id="div"></div>
+</body>
+</html>

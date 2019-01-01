@@ -1,0 +1,72 @@
+#flyer{
+    width: 100%;
+    height: auto;
+    font-family: "微软雅黑";
+}
+
+
+#flyer .a{
+    height: 448px;
+    min-width: 1200px;
+    width: auto;
+    overflow: hidden;
+    background: url("../奥买家品牌宣传页_-_奥买家/15ada354c06_bc_d90ed9e762f5abf3d33fe26bfc8dc4c1_1920x449.jpeg")no-repeat center 0 ;
+}
+#flyer .a img{
+    height: 448px;
+    width:100%;
+    /*min-width: 1200px;*/
+}
+#flyer .nav{
+    width:100%;
+    height: auto;
+    /*background-color: #f6f6f6;*/
+}
+#flyer .nav .center{
+    width: 1200px;
+    height: 182px;
+    background-color: #f6f6f6;
+    margin: 0 auto;
+}
+#flyer .nav_pic{
+    display: block;
+    width: 142px;
+    height: 146px;
+    border-bottom: 3px solid #f6f6f6;
+    float: left;
+    text-align: center;
+    padding-top: 33px;
+    margin: 0 29px;
+}
+#flyer .nav_pic i{
+    display: block;
+    width: 70px;
+    height: 70px;
+    border: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    background: url(../img/icon.png) no-repeat;
+    margin: 0 auto;
+}
+#flyer .nav_pic h1{
+    font-size: 18px;
+    line-height: 30px;
+    color: #000;
+    padding-top: 6px;
+}
+#flyer .nav_pic p{
+    font-size: 15px;
+    color: #999;
+    line-height: 22px;
+}
+.m{
+    background-image: none;
+    background-color: #fe533b;
+}
+
+
+
+
+
+
+

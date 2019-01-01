@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+//    //求和
+//    function show(){
+//        var num = 0;
+//        for (var i = 0; i < arguments.length; i++) {
+//            num+=arguments[i];
+//
+//        } return num;
+//    }
+//    alert(show(1,2,3,4,5,6,7,8,9));
+
+//// 通过js 创建div 点击谁让谁的的颜色发生改变
+//
+//var oBody =document.getElementsByTagName('body')[0];
+//var aDiv =document.getElementsByTagName('div');
+//
+//for (var i = 0; i < 100; i++) {
+//    var oDiv = document.createElement('div'); //创建div
+//    document.body.appendChild(oDiv); //把创建好的div 添加到body 里面
+//    oBody.appendChild(oDiv);
+//
+//    oDiv.onclick =function(){
+//
+//
+//        for (var j = 0; j < aDiv.length; j++) {   //遍历 所以的div  使其颜色变成红色
+//
+//            aDiv[j].style.background='red';
+//
+//        }
+//        this.style.background ="#0f0";  //点击谁让谁的背景颜色 改变
+//    }
+//
+//}
+
+////封装兼容不同版本浏览器，获取元素样式
+//    function getStyle(){
+//        //obj .currentStyle[attr];  ie9 以下的浏览器 （低版本）
+//
+//        // alert(getComputedStyle(obj,false [attr]))
+//
+//        //兼容
+//        if(obj.currentStyle){
+//            return obj.currentStyle[attr];
+//        }else {
+//            return getComputedStyle(obj,false [attr])
+//        }
+//    }
+
+
+function getSss(){
+    if (obj.currentStyle){
+        return obj.currentStyle[attr]
+    }else {
+        return getComputedStyle(obj,false[attr])
+    }
+}
+
+</script>
+
+</body>
+</html>

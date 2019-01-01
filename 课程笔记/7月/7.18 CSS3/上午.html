@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            /*background: #0febc1;*/
+            margin:100px auto;
+            transform-style:preserve-3d;;
+            transform: rotateX(68deg) rotateZ(134deg) ; //rgba(255,0,0,0.5) ;
+            animation:dd  1s ;
+        }
+        .box:hover span{
+            transform: rotate3d(1,1,1,90deg);
+
+        }
+        @keyframes dd {
+            0%{
+
+            }
+            100%{
+
+            }
+        }
+        .zuo{
+               width: 200px;
+               height: 200px;
+               background-color:rgba(0,0,0,0.1) ;
+               position: absolute;
+               top: 0px;
+               left: 0px;
+               transform-style:preserve-3d;;
+               transform: rotateY(90deg)  translateZ(100px);
+           }
+        .you{
+            width: 200px;
+            height: 200px;
+            background-color:rgba(0,0,0,0.1) ;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform-style:preserve-3d;;
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .qian{
+            width: 200px;
+            height: 200px;
+            background-color:rgba(0,0,0,0.1) ;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform-style:preserve-3d;;
+            transform: rotate(-90deg) translateZ(-100px);
+        }
+        .hou{
+            width: 200px;
+            height: 200px;
+            background-color:rgba(0,0,0,0.1) ;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform-style:preserve-3d;;
+            transform: rotate(90deg) translateZ(100px);
+        }
+        .shang{
+            width: 200px;
+            height: 200px;
+            background-color:rgba(0,0,0,0.1) ;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-style:preserve-3d;;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .xia{
+            width:200px;
+            height: 200px;
+            background-color:rgba(0,0,0,0.1) ;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform-style:preserve-3d;;
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+
+
+
+        .zuo span{
+            width: 100px;
+            height: 100px;
+            background-color:#FF4200;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform: rotateY(0deg)  translateZ(-50px);
+        }
+        .you span{
+            width: 100px;
+            height: 100px;
+            background-color:#3333ff ;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform: rotateY(0deg) translateZ(-50px);
+        }
+        .qian span{
+            width: 100px;
+            height: 100px;
+            background-color:#ff00ff ;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform: rotate(0deg) translateZ(50px);
+        }
+        .hou span{
+            width: 100px;
+            height: 100px;
+            background-color:#0FC09C ;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform: rotate(0deg) translateZ(-50px);
+        }
+        .shang span{
+            width: 100px;
+            height: 100px;
+            background-color:#ffff99 ;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform: rotateX(0deg) translateZ(-50px);
+        }
+        .xia span{
+            width: 100px;
+            height: 100px;
+            background-color:#FF4200 ;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform: rotateX(0deg) translateZ(50px);
+        }
+
+        
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="zuo">左边 <span></span></div>
+    <div class="you">右边 <span></span></div>
+    <div class="shang">上边 <span ></span></div>
+    <div class="xia">下边 <span></span></div>
+    <div class="qian">前边 <span></span></div>
+    <div class="hou">后边 <span></span></div>
+    
+</div>
+</body>
+</html>

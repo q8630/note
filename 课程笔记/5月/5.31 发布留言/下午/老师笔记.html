@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select {
+            width: 200px;
+            height: 240px;
+            margin: 0 20px;
+        }
+
+    </style>
+</head>
+<body>
+<select name="" id="sel1" multiple>
+    <option value="">小娇</option>
+    <option value="">小花</option>
+    <option value="">小名</option>
+    <option value="">小明</option>
+</select>
+<input type="button" value=">>>">
+<input type="button" value="<<<">
+<input type="button" value=">">
+<input type="button" value="<">
+<select name="" id="sel2" multiple>
+
+</select>
+
+
+<script>
+    var arrIn = document.getElementsByTagName('input');
+
+
+    arrIn[0].onclick = function () {
+        fn(sel1, sel2);
+    };
+    arrIn[1].onclick = function () {
+        fn(sel2, sel1)
+    };
+    arrIn[2].onclick = function () {
+        fn2(sel1, sel2)
+    };
+    arrIn[3].onclick = function () {
+        fn2(sel2, sel1)
+    };
+
+    function fn2(x, y) {
+        var opt = x.children;
+        for (var i = opt.length - 1; i >= 0; i--) {
+            if (opt[i].selected == true) {
+                opt[i].selected = false;
+                y.appendChild(opt[i]);
+            }
+        }
+    }
+    function fn(sel1, sel2) {
+        var opt = sel1.children;
+        for (var i = opt.length - 1; i >= 0; i--) {
+            sel2.appendChild(opt[0]);
+        }
+    }
+
+</script>
+</body>
+</html>

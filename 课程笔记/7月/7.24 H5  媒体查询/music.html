@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: auto;
+        }
+        .box{
+            margin: 0 auto;
+        }
+        button{
+            width: auto;
+            height: auto;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        @keyframes music {
+            0%{
+                transform: rotate3d(0,0,0,360deg);
+                -webkit-transform: rotateZ(0deg);
+            }
+           100%{
+                transform: rotateZ(360deg);
+               -webkit-transform: rotateZ(360deg);
+            }
+        }
+       .img{
+           animation: music 3s linear normal infinite;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="music.png" alt="" id="img">
+    <audio id="audio" src="See%20You%20Again.mp3"></audio>
+    
+</div>
+<script>
+
+    var oAudo=document.getElementById("audio");
+    var oImg=document.getElementById("img");
+
+    var aa= 0;
+    oImg.onclick=function() {
+        if (aa == 0) {
+            oImg.className="img";
+            oAudo.play();
+                aa=1
+        } else {
+            oImg.className="";
+            oAudo.pause();
+            aa=0
+        }
+
+
+    }
+
+</script>
+</body>
+</html>

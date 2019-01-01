@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点 以及节点类型 </title>
+</head>
+<body>
+<div >
+    <!-- 选项卡的头部 -->
+    <ul id="tab">
+        <!-- 选项卡的头部 -->
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <!-- 选项卡的底部 -->
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<script type="text/javascript">
+    /*节点：元素 注释  空格符 换行符...
+     换行符也当成文本节点去处理
+    * childNodes子节点(元素 + 注释 + 换行符)
+    * */
+    /*【节点的类型】
+                  节点的类型     节点的名称         节点的值
+    *             nodeType      nodeName        nodeValue
+    *  元素节点       1           大写的标签名         null
+    *  文本节点       3           #text             文本的内容
+    *  注释节点       8           #comment          注释的内容
+    *  document      9           #document         null
+    * */
+    var tab = document.getElementById('tab');
+    console.log(tab.childNodes); //13
+//    console.log(tab.children); //3
+
+    var com1 = tab.childNodes[1];
+    console.log(com1.nodeType); //
+    console.log(com1.nodeName); //
+    console.log(com1.nodeValue); //
+
+
+//    console.log(document.nodeType); //
+//    console.log(document.nodeName); //
+//    console.log(document.nodeValue); //
+//
+//
+//    var com = tab.childNodes[3];
+//    console.log(com.nodeType); //
+//    console.log(com.nodeName); //
+//    console.log(com.nodeValue); //
+
+
+
+
+
+
+    console.log(document.nodeType); //
+    console.log(document.nodeName); //
+    console.log(document.nodeValue); //
+//
+//    var oLis = document.getElementsByTagName('li');
+//    var oLi = oLis[0];
+//    console.log(oLi.nodeType); //
+//    console.log(oLi.nodeName); //
+//    console.log(oLi.nodeValue); //
+
+
+
+
+</script>
+</body>
+</html>

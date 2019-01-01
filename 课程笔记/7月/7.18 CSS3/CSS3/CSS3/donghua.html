@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;  
+            height: auto;
+        }
+        div{
+            width: 500px;
+            height: 500px;
+            font-size: 100px;
+            text-align: center;
+            line-height: 500px;
+        }
+
+
+
+        .d1{
+            animation: d1 1s linear 2 ;
+        }
+        @keyframes d1{
+            0%{
+                width: 500px;
+            }
+            50%{
+                width: 1000px;
+                margin-top: -100px;
+            }
+            100%{
+                width: 500px;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+
+    <div id="box1"  style="background: #f00;">1</div>
+    <div id="box2" style="background: #0f0;">2</div>
+    <div id="box3" style="background: rgb(51, 4, 4);">3</div>
+    <div id="box4" style="background: rgb(96, 94, 105);">4</div>
+    <div id="box5" style="background: rgb(147, 189, 32);">5</div>
+    <div id="box6" style="background: #f0f;">6</div>
+    <div id="box7" style="background: rgb(34, 144, 218);">7</div>
+    <div id="box8" style="background: rgb(13, 201, 235);">8</div>
+
+
+    <script>
+        window.onscroll = function(){
+            var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+
+            console.log(scrollTop);
+
+
+            var oBox2 =  document.getElementById("box2")
+            var oBox3 =  document.getElementById("box3")
+            var oBox4 =  document.getElementById("box4")
+
+            if(scrollTop>1300){
+                oBox4.className=""
+                oBox4.className="d1"
+                oBox3.className=""
+            }else if(scrollTop>800){
+                oBox3.className=""
+                oBox3.className="d1"
+
+            }else if(scrollTop>300){
+                oBox3.className=""
+                oBox2.className=""
+                oBox2.className="d1"
+            }
+
+
+
+
+            
+
+
+        }
+    
+    
+    </script>
+
+    
+</body>
+</html>

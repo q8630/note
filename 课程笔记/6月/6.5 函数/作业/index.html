@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>携程旅行网官网:酒店预订,机票预订查询,旅游度假,商旅管理</title>
+    <link rel="stylesheet" href="css/1.css">
+
+</head>
+<body>
+<div class="hd">
+    <div class="top">
+        <h1 class="logo"></h1>
+        <div class="search">
+            <input type="text" id="searchbox" placeholder="搜索旅行地/酒店/旅游/景点门票/交通">
+            <button type="button" id="buttom"></button>
+            <em class="ico"></em>
+        </div>
+         
+    </div>
+
+
+</div>
+<div class="nav">
+
+</div>
+<div id="b" class="bb" >
+	<img  class="now" src="img/70050s000000hy3qeE53E_1920_340_17.jpg"/>
+	<img src="img/70090s000000hpmqg0D74_1920_340_17.jpg">
+	<img src="img/70060t000000ibjnt7857_1920_340_17.jpg"/>
+	<img src="img/70090s000000iaps4B130_1920_340_17.jpg"/>
+	<img src="img/70070q000000go6y6B9EF_1920_340_17.jpg"/>
+	<img src="img/700p0s000000hwzr9FBBA_1920_340_17.jpg"/>
+	<img src="img/700v0k000000c3iacAF22_1920_340_17.jpg"/>
+	<img src="img/700s0s000000ifvf6002D_1920_340_17.jpg"/>
+	
+	<ul>
+		<li class="li now"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	
+	</div>
+
+	<script>
+
+	let arrImg =document.querySelectorAll('.bb img'),
+	       arrLi = document.querySelectorAll('.bb li');
+
+	       let index=0,timer=null;
+	       for (let i=0 ;i< arrLi.length ;i++){
+	       	arrLi[i].onclick = function(){
+	       		for (let j=0 ;j<arrImg.length; j++){
+	       			arrImg[j].className='';
+	       			arrLi[j].className='';
+	       		}
+	       		arrImg[i].className='now';
+	       		arrLi[i].className = 'now';
+	       		index=i;
+	       	}
+	       }
+
+
+
+		timer = setInterval(rightClick,2000);
+   b.onmouseover = function(){
+        clearInterval(timer);
+    };
+    b.onmouseout = function(){
+        timer = setInterval(rightClick,2000);
+    };
+
+    function rightClick(){
+        index++;
+        if(index>arrLi.length-1){
+            index=0;
+        }
+        for (let j = 0; j < arrImg.length; j++) {
+            arrImg[j].className='';
+            arrLi[j].className ='';
+        }
+        arrImg[index].className='now';
+        arrLi[index].className ='now';
+    }
+	</script>
+</div>
+</body>
+</html>

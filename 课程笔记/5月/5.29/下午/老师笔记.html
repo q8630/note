@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    输入你的成绩  判断出是
+    //    A/B/C/D 不及格
+    /*
+     var score = Number(prompt('请输入你的成绩'));
+     if(score>=90){
+     console.log('A');
+     }else if(score>=80){
+     console.log('B');
+     }else if(score>=70){
+     console.log('C');
+     }else if(score>=60){
+     console.log('D');
+     }else{
+     console.log('不及格');
+     }
+
+
+
+     var num="1";
+     switch (num){
+     //        num===1
+     case 1:
+     console.log(1);
+     break;
+     case 2:
+     console.log(2);
+     break;
+     default:
+     console.log(3);
+     }
+     */
+    //90  91  92  93  94  95  99
+    //9  9.1  9.2   9.3  9.4 数组
+
+    var score = prompt('请输入你的成绩');
+    score = parseInt(score / 10);
+    switch (score) {
+        case 10:
+            console.log('给你满分');
+            break;
+        case 9:
+            console.log('A');
+            break;
+        case 8:
+            console.log('B');
+            break;
+        case 7:
+            console.log('C');
+            break;
+        case 6:
+            console.log('D');
+            break;
+        default:
+            console.log('不及格');
+    }
+
+    //输出月份的对应天数 1 3  5 7 8 10 12 输出31天    2 28    输出30
+
+    var month = prompt('请输入许东 怀胎月份？');
+    switch (month) {
+        case 1: case 3:case 5:case 7:case 8:case 10:case 12:
+            console.log(31);
+            break;
+        case 2:
+            console.log(28);
+            break;
+        case 4:case 6:case 9:case 11:
+            console.log(30);
+            break;
+        default:
+            console.log('输入错误');
+    }
+
+    var date = new Date();//获取当天日期
+    date = date.getDay();//获取当天星期几
+    switch (date) {
+        case 1:
+            console.log('今天是星期一');
+            break;
+        case 2:
+            console.log('今天是星期2');
+            break;
+        case 3:
+            console.log('今天是星期3');
+            break;
+        case 4:
+            console.log('今天是星期4');
+            break;
+        case 5:
+            console.log('今天是星期5');
+            break;
+        case 6:
+            console.log('今天是星期6');
+            break;
+        default:
+            console.log('今天是星期日');
+    }
+
+
+</script>
+</body>
+</html>

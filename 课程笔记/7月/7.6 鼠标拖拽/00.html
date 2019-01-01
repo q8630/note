@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+<script>
+    window.onload=function(){
+        var oDiv =document.getElementsByTagName('div');
+        document.onmousemove =function(ev){
+            var oEvent= ev||event;
+            for (var i=oDiv.length-1; i>0; i--) {
+                oDiv[i].style.left =oDiv[i-1].style.left;
+                oDiv[i].style.top =oDiv[i-1].style.top;
+            }
+            oDiv[0].style.left=oEvent.clientX +"px";
+            oDiv[0].style.top=oEvent.clientY +"px";
+        }
+    }
+    
+    
+</script>
+</body>
+</html>

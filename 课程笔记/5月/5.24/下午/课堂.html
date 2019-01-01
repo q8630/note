@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var 变量名
+//检查一个变量里面存储的是什么数据类型 typeof
+var a=1;
+var b='天哪';
+var c=true;
+var d=null;
+var e=undefined;
+
+var s;
+console.log(s);
+console.log(typeof (s));
+console.log(typeof (a));
+console.log(typeof (b));
+console.log(typeof (c));
+console.log(typeof (d));
+console.log(typeof (e));
+
+
+
+var o={};
+var q=/^&/;
+var w=new Date();
+var u=[];
+
+
+console.log(o);
+console.log(q);
+console.log(w);
+console.log(u);
+
+
+console.log(typeof (o));//object
+console.log(typeof (q));
+console.log(typeof (w));
+console.log(typeof (u));
+
+
+//    y=1;  全局变量  不推荐使用
+//    变量的命名规范：
+//    1、变量在命名的时候可以包含数字  字母 下划线 &符等 但不能以数字开头
+//    2、变量名遵循驼峰式命名法（ 碰到每一个有意义的字母 首字母大写）
+//      大驼峰 PersonClass
+//      小驼峰  getElementById
+//    3、有时候我们的变量名 会遵循匈牙利命名法（按照数据类型划分）
+//
+
+//    var oDiv;  表示是一个唯一的对象
+//    var arrli; 表示有多个li 元素
+
+//    4、命名的时候 不能使用js关键字和保留字
+
+
+    var f=function(){};
+    console.log(f);//'function'
+    console.log(typeof typeof (f));//'string'
+
+</script>
+</body>
+</html>

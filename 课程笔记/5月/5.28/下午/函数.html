@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+			//var a;
+		//	function a(){}
+			
+			//函数可以操作一堆指令
+		//	可以实现封装(为了让一些公有的内容,不重复书写 需要函数的封装)
+			//减少页面中的冗余代码 实现'低耦合高内聚'
+			
+		//	function a(){};
+		//	var a=function(){};
+			
+			//函数的定义  定义可以存储各种变量arr 
+			
+//			var arr=[1,2];
+//			var arr=[1,2,3];
+//			var arr=[1,2,3,4];
+//			var sam=0;
+//		
+//			function sam(arr){
+//				sam=0
+//				for (var i=o; i<arr.length;i++){
+//				sam+=arr[1];
+//			}
+//			
+//						
+//			}
+//			console.log(arr);
+			
+			
+		//	表示函数的执行 函数名()
+			
+//			
+//			var arr=[1,2,3,4];
+//			var a=arr[0];//函数的定义  可以定义各变量arr
+//			function a(arr){ //形参 
+//				for (var i=0; i<arr.length;i++){
+//					a+=arr[i]
+//				}
+//				console.log(arr);
+//			}
+			//实参
+			//最大值
+			var arr=[1,2,3,4];
+			//var max=arr[0];
+			function max(arr){
+				var max=arr[0];
+				for (var i=0; i< arr.length; i++){
+				if(max<arr[i]){
+					max=arr[i];
+				}
+			}
+			console.log(max);
+			}
+			var arr=[1,2,3,4,5];
+			max(arr);
+			
+			
+			function minNum(arr){
+				var min=arr[0];
+				for (var i=0;i<arr.length; i++){
+					if(min>arr[i]){
+						min=arr[i]
+					}
+				}
+				console.log(min);
+			}
+			
+			var arr=[6,8,9,3,8];
+			minNum(arr);
+			var arr=[1,2,3,4];
+			minNum(arr);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

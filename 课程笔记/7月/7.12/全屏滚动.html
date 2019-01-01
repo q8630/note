@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../animate.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        ul{
+            list-style: none;
+        }
+        #screen-banner {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .all-screen {
+            top: 0;
+            position: absolute;
+            transition: top 0.5s;
+        }
+        ul{
+            position: fixed;
+            right: 20px;
+            width: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        ul li{
+            width: 20px;
+            margin-top: 10px;
+            height: 20px;
+            background: rgba(0,0,0,.3);
+            border-radius: 50%;
+        }
+        ul li.now{
+            border: 1px solid #ff33ff;
+            background: rgba(0,0,0,.9);
+        }
+        .screen-wrap div{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            left: 0;
+            top: 50px;
+            /*margin: 50px auto;*/
+            background: #0a56bb;
+            border: 3px solid #ff33ff;
+            animation: r 1s;
+        }
+
+        /*.animated {*/
+            /*-webkit-animation-duration: 1s;*/
+            /*animation-duration: 1s;*/
+            /*-webkit-animation-fill-mode: both;*/
+            /*animation-fill-mode: both*/
+        /*}*/
+
+
+        @keyframes r {
+            0% {
+                left: 0;
+                top: 10px;
+                /*-webkit-transform: scale3d(1,1,1);*/
+                /*-ms-transform: scale3d(1,1,1);*/
+                transform: scale3d(1,1,1)
+            }
+            100%{
+                left: 10px;
+                top: 50px;
+            /*-webkit-transform: scale3d(1,1,2);*/
+            /*-ms-transform: scale3d(1,1,2);*/
+            transform: scale3d(1,1,3)
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="screen-banner">
+        <div class="all-screen">
+            <div class="screen-wrap" style="background: #ff3f38">
+                <div class=""></div><img src="" alt=""></div>
+            <div class="screen-wrap" style="background: #00aebb">
+                <div class=""></div>
+            </div>
+            <div class="screen-wrap" style="background: #ff00ff"><div class=""></div></div>
+            <div class="screen-wrap" style="background: #0febc1"><div class=""></div></div>
+            <div class="screen-wrap" style="background: #e4e4e4"><div class=""></div></div>
+            <div class="screen-wrap" style="background: #fff"><div class=""></div></div>
+        </div>
+    </div>
+    <ul>
+    </ul>
+
+    <script>
+
+            var oScreenBanner = document.getElementById('screen-banner');
+            var oAllScreen = oScreenBanner.children[0];
+            var arrScreen = oAllScreen.children;
+            var screenW, screenH;
+            var page = 0;
+            function resize(){
+                //获取屏幕宽高
+                screenH = document.documentElement.clientHeight;
+                screenW = document.documentElement.clientWidth;
+                //  设置宽高    总轮播图    大盒子     每一屏
+                oAllScreen.style.width = oScreenBanner.style.width = screenW + 'px';
+                oScreenBanner.style.height = screenH + 'px';
+                oAllScreen.style.height = screenH * arrScreen.length + 'px';
+                for (var i = 0; i < arrScreen.length; i++){
+                    arrScreen[i].style.width = screenW + 'px';
+                    arrScreen[i].style.height = screenH + 'px';
+                }
+
+                oAllScreen.style.top = -page * screenH + 'px';
+            }
+        resize();
+        window.onresize = resize;
+
+
+        var ul = document.getElementsByTagName('ul')[0];
+        var arrLi = ul.children;
+
+        //          文档碎片  减少dom回流  减少性能消耗
+        var flag = document.createDocumentFragment();
+        for (var i = 0; i < arrScreen.length; i++) {
+            var li = document.createElement('li');
+            flag.appendChild(li);
+        }
+        ul.appendChild(flag);
+        arrLi[0].classList.add('now');
+
+//            节流阀 阀门关闭
+        var isRunning = false;
+        //当isRunning 为true 鼠标滚轴不管事
+        //当isRunning 为false 鼠标滚轴管事
+        function scrollUp(){
+            if(!isRunning){
+                isRunning = true;
+                //设置定时器 当1秒之后 滚轴可以继续使用
+                setTimeout(function(){
+                    isRunning = false;
+                },1000);
+                if (page > 0){
+                    page--;
+                    for(var j=0;j<arrScreen.length;j++){
+                        arrLi[j].classList.remove('now');
+                    }
+                    arrLi[page].classList.add('now');
+                    oAllScreen.style.top = -page * screenH + 'px';
+                }
+            }
+        }
+
+        function  scrollDown(){
+            if(!isRunning) {
+                isRunning = true;
+                setTimeout(function(){
+                    isRunning = false;
+
+                },1000);
+                if (page < arrScreen.length - 1) {
+                    page++;
+                    for(var j=0;j<arrScreen.length;j++){
+                        arrLi[j].classList.remove('now');
+                    }
+                    arrLi[page].classList.add('now');
+                    oAllScreen.style.top = -page * screenH + "px";
+                }
+            }
+        }
+
+        //除火狐
+        addEvent(window,'mousewheel',mouseWheel);
+        //火狐
+        addEvent(window,'DOMMouseScroll',mouseWheel);
+
+//      滚轴事件函数
+        function  mouseWheel(ev){
+            var oEvent = window.event || ev;
+            if (oEvent.detail){
+                if (oEvent.detail > 0){
+                    scrollDown()
+                }else{
+                    scrollUp()
+                }
+            }else if (oEvent.wheelDelta) {// chrome ie
+                if (oEvent.wheelDelta > 0) {  // 上滚动
+                    scrollUp()
+                } else {   //   向下
+                    scrollDown()
+                }
+            }
+        }
+        function addEvent(ele, type, listener){
+            if (ele.addEventListener){
+                ele.addEventListener(type, listener);
+            }else{
+                ele.attachEvent('on' + type, listener);
+            }
+        }
+
+        for (let j = 0 ; j < arrLi.length;j++){
+            arrLi[j].onclick = function(){
+                for (var k = 0 ; k < arrLi.length; k++){
+                    arrLi[k].classList.remove('now');
+                }
+                arrLi[j].classList.add('now');
+                oAllScreen.style.top = -j * screenH + 'px';
+                page = j;
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+//    // charAt 索引  charCodAt
+//    var str = "HELLO WORLD";
+//    for (var i = 0; i < str.length; i++) {
+//        console.log(str.charAt(i));
+//        console.log(str.charCodeAt(i));
+//
+//    }
+//    var n = str.charAt(9);
+//    alert(n)
+
+
+////字符串拼接
+//    var str1 = "HELLO";
+//    var str2 = "WORLD";
+//    var str3 = "!";
+//    var n = str1.concat(str2,str3)
+//    alert(n)
+
+// var n = String.fromCharCode(65);
+//    alert(n)
+
+////查找“w”所在的位置 第一个
+//var str = "hello world, welcome to this ";
+//    var n = str.indexOf("w");
+//    alert(n)
+// 查找“w”所在的位置  最后一个
+//var str = "hello world, welcome to this ";
+//    var n = str.indexOf("w");
+//    alert(n)
+
+////match 用来查找“ain” 出现了几次 "g" 表示查找 全局/所有
+//var str = "The rain in SPAIN stays mainly in the plain";
+//    var n = str.match(/ain/g);
+//    alert(n)
+
+//// replace 表示把 "Microsoft" 替换为"hallo".
+////
+//var str ="Visit Microsoft!";
+//    var n= str.replace("Microsoft","hallo");
+//    alert(n)
+
+////search 表示查找"Microsoft"这个单词所在的索引的位置
+//// 返回的位置为首字母的 索引位置
+//var str ="Visit Microsoft!";
+//    var n = str.search("Microsoft");
+//    alert(n) ;//6
+
+
+
+
+//    var str ='a4t5sf5af4a46f';
+//var arr=[];
+//var tmp='';
+//for (var i = 0; i < str.length; i++) {
+//    if(str.charAt(i)>=0&&str.charAt(i)<=9){
+//        tmp+=str.charAt(i)
+//    }else {
+//        if (tmp){
+//           arr.push(tmp);
+//            tmp=''
+//        }
+//    }
+//}
+//if (tmp){
+//    arr.push(tmp);
+//    tmp=''
+//}
+//console.log(arr);
+
+//var str ='a4t5sf5af4a46f';
+//    var reg = /\d+/g;
+//console.log(str.match(reg));
+
+////    电话号码
+////1、11位数字
+////2、以1开头t
+////
+    let reg = /^1\d{10}$/;
+//    let str = '12545554';
+//    let str1 = '12323232322';
+////console.log(str.match(reg));//捕获
+//     console.log(reg.test(str));//匹配
+//     console.log(reg.test(str1));
+
+//
+////验证有效数字
+//    let mun=/^[+|-]?(\d|([0-9]\d+)(\.\d+)?$/;
+//
+//     let reg=/^(\+|-)?(\d|([1-9]\d+))(\.\d+)?$/;
+
+
+//  //  验证邮箱
+    let reg1 = /^\w+([-.]\w)*@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)$/;
+//
+//    let agg = /^\w([-.]\w)*@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)$/
+
+
+////验证名字
+//
+//    let reg = /^[\u4E00-\u9FA5]{2,}(\.[\u4E00-\u9FA5]{2,})?$/;
+//console.log(reg.test(1));
+
+
+//    //年龄18-49
+//    let arg=/^((a[89])|([2-4]\d))$/;
+//console.log(arg.test(23));
+
+
+//编写一个规则匹配"[object AAA]"
+//    let arg = /^\[object.+\]$/
+
+
+
+</script>
+</body>
+</html>

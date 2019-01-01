@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .out {
+            padding: 5px;
+            height: 300px;
+            margin: 200px auto;
+            border: 1px solid #ccc;
+        }
+        .inner {
+            position: relative;
+            overflow: hidden;
+            width: 1000px;
+            height: 300px;
+        }
+        ul {
+            position: absolute;
+            left: 0;
+            width: 550%;
+            list-style: none;
+        }
+        ul li {
+            float: left;
+        }
+        ol {
+            position: absolute;
+            bottom: 10px;
+            right: 30px;
+            list-style: none;
+        }
+        ol li {
+            width: 22px;
+            height: 22px;
+            text-align: center;
+            float: left;
+            margin-left: 10px;
+            background-color: #fff;
+            cursor: pointer;
+            font: 18px/22px "simsun";
+        }
+        .current {
+            color: #fff;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<div class="out">
+    <div class="inner" id="inner">
+        <!--图片区-->
+        <ul>
+            <li><img src="images/1.jpg" alt=""/></li>
+            <li><img src="images/2.jpg" alt=""/></li>
+            <li><img src="images/3.jpg" alt=""/></li>
+            <li><img src="images/4.jpg" alt=""/></li>
+            <li><img src="images/5.jpg" alt=""/></li>
+        </ul>
+        <!--小方块-->
+        <ol>
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+        <div id="arr">
+            <span id="left"></span>
+            <span id="right"></span>
+        </div>
+    </div>
+</div>
+<script>
+    var left = document.getElementById("left");
+    var right = document.getElementById("right");
+    var arr = document.getElementById("arr");
+
+    var inner = document.getElementById("inner");
+    var imgWidth = inner[0].children[0].offsetWidth;
+    var ul = inner.children[0];
+    var ol = inner.children[1];
+    var liArr = ol.children;
+    for (let i=0; i<liArr.length ;i++){
+        liArr[i].onclick = function(){
+            for (var j = 0; j < liArr.length; j++) {
+                liArr[j].className="";
+
+            }
+            this.className = "current";
+            animate(ul, -i*imgWidth);
+        }
+    }
+
+    function animate(ele,target){
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function(){
+            var step = (target-ele.offsetLeft)/10;
+            step = step>0? Math.ceil(step):Math.floor(step);
+            ele.style.left = ele.offsetLeft + step + "px";
+            console.log(1);
+            if (Math.abs(target-ele.offsetLeft) <Math.abs(step)){
+                ele.style.left = target+"px";
+                clearInterval(ele.timer);
+            }
+        },30)
+    }
+
+//    function animate(ele,target){
+//        clearInterval(ele.timer);
+//        ele.timer = setInterval(function(){
+//            var step = target> ele.offsetLeft ? 10: -10 ;
+//            var val= ele.offsetLeft -target;
+//            ele.style.left = ele.offsetLeft + step +"px";
+//            if (Math.abs(val) < Math.abs(step)){
+//                ele.style.left = target+ "px";
+//                clearInterval(ele.timer);
+//            }
+//        },1)
+//    }
+
+</script>
+</body>
+</html>

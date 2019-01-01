@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box{
+            width: 440px;
+            height: 300px;
+            float: right;
+            /*transition:translatex (93%);*/
+        }
+
+        .box1{
+            height: 80px;
+            width: 40px;
+            background-color: red;
+            float: left;
+            margin-top: 50px;
+
+        }
+        .box2{
+            /*display: none;*/
+            height: 400px;
+            width: 400px;
+            float: left;
+            background-color: green;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <div class="box1" id="box1">分享</div>
+    <div class="box2" id="box2"></div>
+</div>
+
+
+<script>
+    var x = document.getElementById('box1');
+    var y = document.getElementById('box2');
+//    var box =
+
+    x.onclick = function(){
+        if(y.style.display == 'block'){
+            y.style.display = 'none'
+        }
+
+        else {
+            y.style.display = 'block'
+        }
+    }
+
+
+</script>
+</body>
+</html>

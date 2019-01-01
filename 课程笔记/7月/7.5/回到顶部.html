@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            right: 0;
+            top: 1500px;
+            position: absolute;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<h2>顶部</h2>
+<div id="box">回到顶部</div>
+
+<script>
+
+
+    window.onload =function(){
+        var oBox = document.getElementById("box");
+        var timer;
+
+        oBox.onclick=function(){
+//            alert(1)
+            var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+            timer =setInterval(function(){
+                if(scrolltop<=0){
+                    clearInterval(timer)
+                }
+                scrolltop-=100;
+                document.documentElement.scrollTop = document.body.scrollTop =scrolltop;
+            },20)
+        }
+
+    };
+
+    //鼠标滚轮、拖动事件
+
+
+
+
+</script>
+</body>
+</html>

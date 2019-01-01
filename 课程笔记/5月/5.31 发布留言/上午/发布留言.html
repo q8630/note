@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布留言</title>
+    <!--<style>-->
+        <!--.box{-->
+            <!--width: 500px;-->
+            <!--margin: auto;-->
+            <!--border: 2px solid seashell;-->
+            <!--padding-bottom: 30px;-->
+        <!--}-->
+        <!--.box textarea{-->
+            <!--width: 400px;-->
+        <!--}-->
+        <!--.box li{-->
+            <!--width: 440px;-->
+            <!--line-height: 20px;-->
+            <!--border-bottom: 1px dashed lightgrey;-->
+        <!--}-->
+        <!--.box li a{-->
+            <!--float: left;-->
+        <!--}-->
+
+    <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="box" id="box">-->
+    <!--<label for="">请输入</label>-->
+    <!--<textarea name="" id="text" cols="30" rows="10"></textarea>-->
+    <!--<input id="btn" type="button" value="发布">-->
+    <!--<ul id="ul">-->
+
+    <!--</ul>-->
+<!--</div>-->
+    <style>
+        .box{
+            width: 550px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .box textarea{
+            width: 400px;
+        }
+        .box li{
+            width: 440px;
+            line-height: 30px;
+            border-bottom: 1px dashed #cccccc;
+        }
+        .box li a{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <label for="">请输入</label>
+    <textarea name="" id="text" cols="30" rows="10"></textarea>
+    <input id="btn" type="button" value="发布">
+    <ul id="ul">
+
+    </ul>
+</div>
+
+<script>
+    var li=document.createElement('li');
+    var a = document.getElementsByTagName('a');
+
+    btn.onclick = function(){
+        var val = text.value;
+        if (!val || val=='233'){
+            alert('不对！再输入一次！');
+            text.value='';
+            return;//中断函数
+        }
+        //创建 / 添加li元素
+
+        li.innerHTML= val+'<a href="">不要了</a>';
+        ul.children.length==0? ul.appendChild(li): ul.insertBefore(li,ul.children[0]);
+        text.value='';
+
+        //实现删除功能
+
+
+        for (var i=0 ;i< a.length ;i++){
+            a[i].onclick=function(){
+                ul.removeChild(this.parentNode);
+                return false; //去掉标签的默认行为
+            }
+        }
+    };
+
+
+
+//    bin.onclick=function(){
+//        var val = text.value;
+//        if (!val){
+//            alert('笨蛋！不对!);
+//                text.value='';
+//            return;
+//        }
+//        var li = document.createElement('li');
+//        li.innerHTML = val+'<a href="">啦啦啦</a>';
+//        ul.children.length==0? ul.appendChild(li):ul.insertBefore(li,ul.children[0]);
+//        text.value='';
+//
+//        var a=document.getElementsByTagName('a');
+//        for (var i=o;i< a.length; i++){
+//            a[i].onclick=function(){
+//                ul.
+//            }
+//        }
+//    }
+
+
+</script>
+</body>
+</html>

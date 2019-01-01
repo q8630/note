@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//普通对象
+			//1# 定义
+			//字面量定义
+			var obj={
+				name:'你好',
+				age: 18,
+				sex:'男'
+			};
+									
+			//构造函数定义
+			//var obj = new Object();
+			
+			//2# 对变量存储的值 实现  增删改查
+			//obj.name  obj的name属性
+			
+			
+			
+			console.log(obj['name']);
+			console.log(obj['age']);
+			console.log(obj['sex']);
+			console.log(obj['tel']);
+			
+			var tel='age';
+			console.log(obj[tel]);//18
+			console.log(obj.tel);//undefind
+			
+			//面试题
+			//obj['name']和obj[name]的区别?
+			//第一个是变量第二个是属性
+			
+			//2 修改（设置）
+			
+			obj.name='233';
+			console.log(obj);
+			
+			
+			//3 增加
+			
+		     obj.idNumber=12345;
+		     console.log(obj);
+		
+		    //4  删除 
+		    //obj.name=null;
+		    delete obj.sex;
+		    delete obj.name;
+		    console.log(obj);
+		    		    		    
+		 //3#  对象的遍历  (for in) 
+		 
+		 //itin+tab 打印对象的遍历
+		     for(var key in obj){
+		     	console.log(obj[key]);		     		     	
+		     }
+		     
+		     
+		    
+		
+		</script>
+	</body>
+</html>

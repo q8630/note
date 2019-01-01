@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;				
+			}
+			
+			ul {
+				list-style:none;	
+			}
+			
+			.box {
+				width: 500px;
+				height:300px;
+			}
+			
+			.box .top{
+				width:500px;
+				height:40px;
+				line-height:40px;
+				background:#999;
+				box-sizing: border-box;
+			}
+			
+			.box .top h3{
+				font-size:20px;
+				font-weight:normal;
+				float:left;
+				padding: 0 10px;
+				color:white;
+				cursor: pointer;
+			}
+			
+			.box.top h3 .now {
+				border-top:2px solid orange;
+				background:#ff00ff;
+				color:#000;
+			}
+			
+			.bottom div{
+				width:500px;
+				height:200px;
+				background:greenyellow;
+				display:none;
+			}
+
+			.bottom .div2{
+				background-color: #00a383;
+			}
+			.bottom .div3{
+				background:blanchedalmond;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<div class="top">
+				<h3 class="now">图片</h3>
+				<h3 class="now">专栏</h3>
+				<h3 class="now">热点</h3>
+			</div>
+			<div class="bottom">
+				<div class="div">1</div>
+				<div class="div">2</div>
+				<div class="div">3</div>
+			</div>
+		</div>
+		
+		<script>
+			var h3 = document.querySelectorAll('.box .top .now'),
+			   cont = document.querySelectorAll('.bottom .div');
+			//  console.log(h3,cont)
+			  for (let i = 0; i<h3.length; i++){
+			  	
+			  	 h3[i].onmouseover = function () {
+			  		for(var j=0; j<h3.length;j++) {
+			  			cont[j].style.display = 'none';
+			  		}
+			  			cont[i].style.display = 'block';
+
+			  	};
+				 cont[i].onmouseout = function () {
+					  for(var j=0; j<h3.length;j++) {
+						//
+						  this.style.display = 'none';
+					  }
+					//  cont[j].style.display = 'block';
+
+				  };
+
+			  }
+
+			
+			
+			
+		</script>
+	</body>
+</html>

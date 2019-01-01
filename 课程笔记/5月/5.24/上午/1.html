@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 400px;
+            width: 200px;
+            background-color: #000;
+        }
+
+        .div1 {
+            height: 40px;
+        }
+
+        .div2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--点击div1   让div2 进行显示-->
+<!--js做动画三步骤-->
+<!--1、找元素（找人）-->
+<!--2、绑定事件（拉手）-->
+<!--3】书写事件驱动（之后做的事情）-->
+
+
+<div class="div1" id="div1"></div>
+<div class="div2" id="div2"></div>
+
+
+<script>
+    //    1、找元素
+    //    get  elemt  By  Id 通过id获取元素
+    //    on  click 点击的时候c
+    ////function (){} 表示一个函数  存放指令
+//    var  变量名  var  用来定义变量的关键字
+
+//    如果div2 显示  就让它隐藏
+//    如果div2隐藏  就让他显示
+//    如果div2 显示  就让它隐藏  否则就让它显示
+//    赋值  x=5；  把右边的值 赋值给左边
+//    相等 1==1  1和1 相等
+
+
+
+    //    document.getElementById('div1').onclick=function(){
+    //        document.getElementById('div2').style.display='block';
+    //    }
+    var x = document.getElementById('div1');
+    var y = document.getElementById('div2');
+
+//    x.onclick = function () {
+//        if( y.style.display == 'block'){
+////            如果满足条件 就让它做的事情
+//            y.style.display = 'none';
+//        }
+//
+//        else {
+////            如果不满足条件 就让它显示
+//            y.style.display = 'block';
+//        }
+//
+//    }
+//    x.onclick = function () {
+//        if( y.style.display == 'block'){
+//            y.style.display = 'none';
+//        }
+//
+//        else {
+//            y.style.display = 'block';
+//        }
+//
+//    }
+
+    x.onmouseover = function() {
+        if( y.style.display == 'block'){
+            y.style.display ='none';
+        }
+
+
+    else  {
+        y.style.display = 'block';
+    }
+    }
+
+</script>
+</body>
+</html>

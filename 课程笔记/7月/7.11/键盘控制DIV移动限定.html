@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background:palegreen ;
+            margin: 20px  auto;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+        }
+    </style>
+</head>
+<script>
+
+    window.onload = function(){
+        var oDiv=document.getElementById('div1');
+        var oBox =document.getElementById('box');
+
+        document.onkeydown =function(ev){
+            var oEvent=ev||event;
+            if (oEvent.keyCode ==37){
+                oDiv.style.left =oDiv.offsetLeft-5 +"px";
+                if(oDiv.offsetLeft < 0){
+                    oDiv.style.left=0;
+                }
+            }else if (oEvent.keyCode ==38) {
+                oDiv.style.top = oDiv.offsetTop - 5 + "px";
+                if (oDiv.offsetTop < 0) {
+                    oDiv.style.top = 0;
+                }
+            }else if (oEvent.keyCode ==39) {
+                oDiv.style.left = oDiv.offsetLeft +5 + "px";
+                if (oDiv.offsetLeft >oBox.offsetWidth-oDiv.offsetWidth) {
+                    oDiv.style.left =oBox.offsetWidth-oDiv.offsetWidth +"px"
+                }
+            }else if(oEvent.keyCode==40){
+                oDiv.style.top=oDiv.offsetTop+5+"px";
+                if(oDiv.offsetTop>oBox.offsetHeight-oDiv.offsetHeight){
+                    oDiv.style.top=oBox.offsetHeight-oDiv.offsetHeight+"px";
+                }
+        }
+    }}
+</script>
+<!--<script>-->
+    <!--window.onload=function(){-->
+        <!--var oBox=document.getElementById("box");-->
+        <!--var oDiv=document.getElementById("div1");-->
+        <!--document.onkeydown=function(ev){-->
+            <!--var oEvent=ev||event;-->
+            <!--if(oEvent.keyCode==37){-->
+                <!--oDiv.style.left=oDiv.offsetLeft-5+"px";-->
+                <!--if(oDiv.offsetLeft<0){-->
+                    <!--oDiv.style.left=0;-->
+                <!--}-->
+            <!--}else if(oEvent.keyCode==38){-->
+                <!--oDiv.style.top=oDiv.offsetTop-5+"px";-->
+                <!--if(oDiv.offsetTop<0){-->
+                    <!--oDiv.style.top=0;-->
+                <!--}-->
+            <!--}else if(oEvent.keyCode==39){-->
+                <!--oDiv.style.left=oDiv.offsetLeft+5+"px";-->
+
+                <!--if(oDiv.offsetLeft>oBox.offsetWidth-oDiv.offsetWidth){-->
+                    <!--oDiv.style.left=oBox.offsetWidth-oDiv.offsetWidth+"px";-->
+                <!--}-->
+
+            <!--}else if(oEvent.keyCode==40){-->
+                <!--oDiv.style.top=oDiv.offsetTop+5+"px";-->
+                <!--if(oDiv.offsetTop>oBox.offsetHeight-oDiv.offsetHeight){-->
+                    <!--oDiv.style.top=oBox.offsetHeight-oDiv.offsetHeight+"px";-->
+                <!--}-->
+            <!--}-->
+        <!--};-->
+    <!--}-->
+<!--</script>-->
+
+
+
+
+
+
+<body>
+<div id="box">
+    <div id="div1"></div>
+</div>
+</body>
+</html>

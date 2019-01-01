@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .mask{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: rgba(0,0,0,.8);
+            display: none;
+        }
+        .login{
+            width: 500px;
+            height: 400px;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .mask.now{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<a href="#">注册</a>
+<a href="#">登录</a>
+<div class="mask">
+    <div class="login"></div>
+</div>
+
+
+<script>
+    //需求1、点击注册按钮，显示mask盒子
+    var aArr = document.getElementsByTagName('a');
+    var mask = document.getElementsByClassName('mask')[0];
+
+    aArr[0].addEventListener('click',fn);
+    function fn(ev){
+        mask.classList.add('now');
+        var oEvent = event || window.ev;
+
+        if(oEvent && oEvent.stopPropagation){
+            oEvent.stopPropagation();
+        }else {
+            oEvent.cancelBubble = true;
+        }
+    }
+    //需求2、点击除去login以外任何盒子，隐藏mask盒子
+    document.addEventListener('click',function(ev){
+        oEvent = event || window.ev;
+        var ele = oEvent.target || oEvent.srcElement;
+        if (ele.className !== "login"){
+            mask.classList.remove('now');
+        }
+    })
+
+</script>
+</body>
+</html>

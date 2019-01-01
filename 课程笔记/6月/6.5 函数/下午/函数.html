@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //定义函数
+//    var fn=function(){
+//        alert(0);
+//    };
+//    function  toBig(){
+//        alert(3)
+//    }
+//    let fn1=function(){
+//        alert(1)
+ //   }
+    //
+
+
+//    var result=0;
+//    function  sum(a,b){//形参
+//result=0;
+//        console.log(result=a+b);
+//    }
+//    sum(1+2); //实参
+
+    //实参和形参不对等的情况
+  //  实参个数=形参个数  sum(1,2);//正常执行
+ //   实参个数<形参个数  sum(1); //a=1  b= undefined (浏览器默认分配的值)
+//    实参个数>形参个数  sum(1,2,3); //正常执行
+
+
+
+
+
+
+    //求一组数字中的最小值
+//    var arr=[2,5,6];
+//    function min(arr){
+//        for (var i = 0; i < arr.length; i++) {
+//            arr=arr.sort(function(a,b){
+//                return a-b;
+//            });
+//            console.log(min = arr[0]);
+//            console.log(max = arr[arr.length- 1]);
+//        }
+//    }min(arr);
+
+
+
+    //实现2 个数求和
+    //实现3 个数求和
+    //实现4 个数求和
+    //实现n 个数求和
+    
+//   函数里面对于不确定参数  有一个内置的实参集合  arguments 【可变参】
+//    arguments  函数的内置对象
+//    arguments  只有函数才有的属性
+//    arguments  实参集合
+//    arguments  类数组
+//    arguments 映射 【实参和形参的映射】函数在执行的时候  实参传给形参的一瞬间  建立实参形参的映射关系
+//    一定那建立起映射关系  当实参的集合改变的时候  形参里面存储的值也会对应改变  形参里面存储的值不会改变
+  //
+
+//    function  sum(x,y,z){
+//        arguments[0]=11;
+//        arguments[2]=22;
+//        arguments[3]=34;
+//    }
+//    result=x+y;
+    
+   // arguments.callee.caller;//  callee 指函数本身 在严格模式下禁用
+    //callers 指函数的this  指向
+//    function number(){
+//        for (var i = 0; i < array.length; i++) {
+//            var obj = array[i];
+//
+//        }
+//
+//    }
+
+
+   // sum (1,2,3,4,5,6,7);
+//    var poor,sum1,product;
+//    function sum(){
+//        if(arguments.length==2){
+//            poor=arguments[0]-arguments[1];
+//        }
+//        if(arguments.length==3){
+//            poor=arguments[0]-arguments[1];
+//        }
+//        if(arguments.length==4){
+//            poor=arguments[0]-arguments[1];
+//        }
+//    }
+//    sum()
+
+function  sum(){
+   // [...arr]=arguments;
+    arr=[].slice.call(arguments);
+    console.log(eval(arr.join('+')));
+}
+sum(2,5,6,9,2,8,45,9,546);
+    eval(arr.join('+'))
+</script>
+</body>
+</html>

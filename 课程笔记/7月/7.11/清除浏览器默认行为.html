@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script>
+
+    window.onload = function(){
+        document.forms[0].onsubmit = function(ev){
+            var even = event||ev;
+            if(this.in1.value.length<10){
+                alert(1)
+//                return false;
+                //取消默认行为  既可以阻止事件冒泡 事件捕获
+
+                // 但是容易终止正在执行的函数代码
+//                    一般使用even.preventDefault的方法取消默认行为
+                if(even.preventDefault){
+                    even.preventDefault();  //不兼容兼容ie低版本
+                }else{
+                    even.returnValue=false;  //兼容ie低版本
+                }
+            }
+        }
+    }
+</script>
+</head>
+<body>
+<!--action  提交路径-->
+<form  action="https://www.baidu.com/s" method="post">
+    <input type="text" id="in1" name="wd">
+    <input type="submit">
+</form>
+</body>
+</html>

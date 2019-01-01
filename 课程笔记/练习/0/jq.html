@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 300px;
+            height: 200px;
+            position: relative;
+            margin: 50px auto;
+            border: 5px solid #ff3f38;
+            background: #D0AD4F;
+            overflow: hidden;
+        }
+        #boxa{
+            width: 9500px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #9F9F9F;
+
+        }
+        #boxa div{
+            width: 300px;
+            float: left;
+            height: 200px;
+            font-size: 100px;
+            left: 0;
+        }
+        #boxa>div:nth-child(1){
+
+            background: #FFFF00;
+        }
+        #boxa>div:nth-child(2){
+
+            background: #0000ff;
+        }
+        #boxa>div:nth-child(3){
+            background: #f3ca6f;
+        }
+
+        #left{
+            width: 20px;
+            height: 40px;
+            position: absolute;
+            top: 76px;
+            right: 0;
+            line-height: 40px;
+            background: #9F9F9F;
+        }
+        #right{
+            width: 20px;
+            height: 40px;
+            position: relative;
+            top: 76px;
+            left: 0;
+            line-height: 40px;
+            background: #9F9F9F;
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div id="box">
+        <div id="boxa">
+            <div class="box1">1</div>
+            <div class="box2">2</div>
+            <div class="box3">3</div>
+
+            <div class="box1">1</div>
+        </div>
+        <div id="left"> > </div>
+        <div id="right"> < </div>
+    </div>
+</body>
+<script>
+    window.onload =function(){
+        var oBOx=document.getElementById('box');
+
+        var oBOxa=document.getElementById('boxa');
+        var xiaoBox=oBOxa.getElementsByTagName('div');
+
+        var oLeft=document.getElementById('left');
+        var oRight=document.getElementById('right');
+
+//        console.log(oDiv);
+//        console.log(oBOxa);
+
+        var len=oBOxa.length;
+        var index= -1;
+
+        oLeft.onclick =function(){
+            index--;
+            if (index == -len){
+                index= -len+3;
+                oBOxa.style.left = (index + 1)*300 +'px';
+            }
+
+            $('boxa').animate({'left':index * 300 + 'px'},500); //自定义动画
+        };
+
+
+
+
+
+    };
+    //animate  自定义动画方法
+
+//    $('#box').animate({'left':'index *500 +"px"'},500)
+
+</script>
+</html>

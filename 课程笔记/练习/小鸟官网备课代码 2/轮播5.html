@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<link rel="stylesheet" href="css/animate.css" />-->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .box{
+            width: 500px;
+            height: 200px;
+            border: 5px solid #000;
+            margin: 200px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .daBox{
+            width: 9999px;
+            height: 200px;
+            background: #FF0;
+            position: absolute;
+            top: 0;
+            left: -500px;
+        }
+        .xiaoBox1{
+            width: 500px;
+            height: 200px;
+            background: #f00;
+            float: left;
+            font-size: 100px;
+        }
+        .xiaoBox2{
+            width: 500px;
+            height: 200px;
+            background: #0f0;
+            float: left;
+            font-size: 100px;
+        }
+        .xiaoBox3{
+            width: 500px;
+            height: 200px;
+            background: #00f;
+            float: left;
+            font-size: 100px;
+        }
+        button{
+            width: 50px;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 40px;
+            color: #fff;
+            position: absolute;
+            top: 75px;
+            background: #000;
+            opacity: 0.5;
+        }
+        .btnLeft{
+            left: 0;
+        }
+        .btnRight{
+            right: 0;
+        }
+        .btnBox{
+            width: 60px;
+            height: 20px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -30px;
+        }
+        .btnBox span{
+            width: 20px;
+            height: 20px;
+            display: block;
+            float: left;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+
+
+    </style>
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+
+
+<div class="box" id="box">
+
+    <div class="daBox" id="daBox">
+        <!--  假的  -->
+        <div class="xiaoBox3">3</div>
+
+        <div class="xiaoBox1">1</div>
+        <div class="xiaoBox2">2</div>
+        <div class="xiaoBox3">3</div>
+        <!--  假的  -->
+        <div class="xiaoBox1">1</div>
+    </div>
+
+    <button class="btnLeft" id="btnLeft"> < </button>
+    <button class="btnRight" id="btnRight"> > </button>
+
+    <p class="btnBox" id="btnBox">
+        <span></span>
+        <span></span>
+        <span></span>
+    </p>
+
+</div>
+
+<script>
+    var oBox = document.getElementById("box");
+    var oDaBox = document.getElementById("daBox");
+    var oDaBoxDiv = oDaBox.getElementsByTagName("div");
+    var oBtnLeft = document.getElementById("btnLeft");
+    var oBtnRight = document.getElementById("btnRight");
+    var oBtnBox = document.getElementById("btnBox");
+    var oBtnBoxSpan = oBtnBox.getElementsByTagName("span");
+
+
+    var len = oDaBoxDiv.length;
+    var index = -1;
+    oBtnLeft.onclick = function () {
+        //如果 $(".daBox") 在做动画，那么就把事件 return 掉
+        if ($(".daBox").is(':animated')) {
+            return;
+        }
+        index--;
+        if(index==-len){
+            index=-len+3;     //-2
+            oDaBox.style.left= (index+1)*500 +"px";
+        }
+        $("#daBox").animate({"margin-left":"50px"},200);    //自定义动画方法
+        $("#daBox").animate({"margin-left":"0px"},200);
+        $("#daBox").animate({"left":index * 500 +"px"},500);    //自定义动画方法
+
+        for (var j = 0; j < oBtnBoxSpan.length; j++) {
+            oBtnBoxSpan[j].style.background = "#fff";
+        }
+        console.log(index);
+        var aaa = index;
+        if(aaa==-4){
+            aaa=-1
+        }
+        oBtnBoxSpan[-aaa-1].style.background = "pink";
+
+    }
+
+    oBtnRight.onclick = function () {
+        if ($(".daBox").is(':animated')) {
+            return;
+        }
+        index++;
+        if(index>0){
+            index=-len+3;          //-2
+            oDaBox.style.left= (index-1)*500 +"px";
+        }
+
+        $("#daBox").animate({"margin-left":"-50px"},200);    //自定义动画方法
+        $("#daBox").animate({"margin-left":"0px"},200);
+
+
+        $("#daBox").animate({"left":index * 500 +"px"},500)    //自定义动画方法
+
+        for (var j = 0; j < oBtnBoxSpan.length; j++) {
+            oBtnBoxSpan[j].style.background = "#fff";
+        }
+        console.log(index);
+        var aaa = index;
+        if(aaa==0){
+            aaa=-3
+        }
+        oBtnBoxSpan[-aaa-1].style.background = "pink";
+
+    }
+
+
+    oBtnBoxSpan[0].style.background = "pink";
+    for (var i = 0; i < oBtnBoxSpan.length; i++) {
+
+        oBtnBoxSpan[i].number = i;
+        oBtnBoxSpan[i].onmouseover = function () {
+            if ($(".daBox").is(':animated')) {
+                return;
+            }
+            index = -this.number-1;
+            $("#daBox").animate({"left":index * 500 +"px"},500)    //自定义动画方法
+
+            for (var j = 0; j < oBtnBoxSpan.length; j++) {
+                oBtnBoxSpan[j].style.background = "#fff";
+            }
+
+            this.style.background = "pink";
+        }
+
+    }
+
+    timer();
+    var time ;
+    function timer() {
+        time = setInterval(function () {
+            index--;
+            if(index==-len){
+                index=-len+3;     //-2
+                oDaBox.style.left= (index+1)*500 +"px";
+            }
+            $("#daBox").animate({"margin-left":"50px"},200);    //自定义动画方法
+            $("#daBox").animate({"margin-left":"0px"},200);
+
+            $("#daBox").animate({"left":index * 500 +"px"},500)    //自定义动画方法
+
+            for (var j = 0; j < oBtnBoxSpan.length; j++) {
+                oBtnBoxSpan[j].style.background = "#fff";
+            }
+            console.log(index);
+            var aaa = index;
+            if(aaa==-4){
+                aaa=-1
+            }
+            oBtnBoxSpan[-aaa-1].style.background = "pink";
+
+
+        },2000)
+    }
+    oBox.onmouseover = function (ev) {
+        clearInterval(time)
+    }
+    oBox.onmouseout = function (ev) {
+        timer();
+    }
+
+</script>
+
+
+</body>
+</html>

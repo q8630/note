@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es6 箭头函数</title>
+</head>
+<body>
+<script>
+//    function fn(x){
+//        return function (){
+//            return function (){
+//                return 1;
+//            }
+//        }
+//    }
+  //  es6
+//    let fn=()=> ()=>  ()=> 120064;
+//    console.log(fn()()());
+    //
+//function  fn1(x){
+//    return 2;
+//}
+//let fn = x => 2;
+//console.log(fn1);
+//var fn=function fn(x){
+//    function fn(y){
+//        return x+y;
+//    }
+//};
+//
+//let fn= x=> y=> x+y;
+
+//    var fn = function (x=0,y=0){
+//            return x+y;
+//        }
+//    };
+//console.log(fn(10, 20));
+
+// es6 箭头函数
+// 并不适用于所有场景（ 如果需要上下文的this 就不能使用箭头函数，由于箭头函数没有主体， 它的this继承于上下级）
+
+
+     //1.箭头函数里面没有 arguments  ，
+// 我们可以使用扩展运算符...arg接收实参
+
+//    let fn = (...arg)=>{
+//    console.log(arg);
+//}
+//    fn(10,20,10);
+
+ //  2. 箭头函数没有this 主题
+
+//    自执行函数的this 指向window
+//     谁执行这个函数 this 就指向谁
+//
+
+
+
+
+
+</script>
+</body>
+</html>

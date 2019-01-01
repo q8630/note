@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全屏滚动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box{
+           width: 100%;
+            height: 100%;
+        }
+        .boxT{
+            width: 100%;
+            height: 80px;
+            background: #0febc1;
+        }
+        .boxB{
+            width: 100%;
+            height: calc(100% - 80px);
+            background: #ff3f38;
+        }
+
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div id="box">
+    <div class="boxT">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+    </div>
+    <div class="boxB" id="boxB">
+        <div id="lunbo">
+            <div class=""></div>
+        </div>
+    </div>
+    <button id="BtnT"> 上 </button>
+    <button id="BtnB"> 下 </button>
+
+</div>
+
+<script>
+    var oBox=document.getElementById('box');
+
+
+</script>
+</body>
+</html>

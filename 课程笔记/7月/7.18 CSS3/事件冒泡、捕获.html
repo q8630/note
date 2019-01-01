@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            margin: 50px auto;
+
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn" name="按钮">
+<div id="box"></div>
+<script>
+    window.onload=function(ev){
+        var aBtn=document.getElementById('btn');
+        var aBox=document.getElementById('box');
+
+        aBtn.onclick=function(){
+            aBox.style.display ='none'
+        };
+
+        var oEvent=ev||evevt;
+
+        oEvent.cancelBubble=true; //兼容低版本ie
+        oEvent.stopPropagation(); // 不兼容ie 6 7 8
+
+        try{
+            oEvent.stopPropagation(); //不兼容低版本浏览器
+        }catch (a){
+            console.log(a);
+            oEvent.cancelBubble=true;  //兼容低版本浏览器
+
+        }
+
+        document.onclick=function(){
+            aBox.style.display ='block'
+        };
+
+
+    };
+
+//事件冒泡是从内向外(ie浏览器) ，事件捕获是从外向内
+
+    //事件捕获：就是从最不具体的对象到  最具体的目标对象的顺序触发
+    //事件冒泡：就是从最具体的目标对象到  最不具体的对象的外层的顺序触发 （ie浏览器）
+
+</script>
+</body>
+</html>

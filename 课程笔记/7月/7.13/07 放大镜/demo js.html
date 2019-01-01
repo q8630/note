@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {margin: 0;padding: 0;}
+        .box {
+            width: 350px;
+            height: 350px;
+            margin:100px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        .big {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 360px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            display: none;
+        }
+        .mask {    
+            width: 175px;
+            height: 175px;
+            background: rgba(255, 255, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+            display: none;
+        }
+        .small {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="fdj">
+    <div class="small">
+        <img src="images/001.jpg" alt=""/>
+        <div class="mask"></div>
+    </div>
+    <div class="big">
+        <img src="images/0001.jpg" alt=""/>
+    </div>
+</div>
+</body>
+</html>
+<script src="my.js"></script>
+<script>
+    window.onload = function() {
+      var fdj = $("fdj");  // 获取最大 的盒子
+        var small  = fdj.children[0];   //  small 盒子
+        var big = fdj.children[1];
+        var mask = small.children[1];   // 黄色盒子
+        small.onmouseover = function() {
+            mask.style.display = "block";
+            big.style.display = "block";
+        };
+        small.onmouseout = function() {
+            mask.style.display = "none";
+            big.style.display = "none";
+        };
+        // alert(small.parentNode.offsetLeft)
+        // 第二步开始  要得到鼠标在 small 内的坐标
+        small.onmousemove  = function(event) {
+            var event = event || window.event;  // 事件对象
+            var pagex = event.pageX || event.clientX + scroll().left;  // 兼容pagex
+            var pagey = event.pageY || event.clientY + scroll().top;
+            var x = pagex - small.parentNode.offsetLeft-mask.offsetWidth / 2;
+            // 第二个雷， 得到是 box 距离左边的距离
+            // 鼠标在small 内的坐标     用pagex 减去 box.offsetLeft 就可以了
+            var y = pagey - small.parentNode.offsetTop - mask.offsetHeight /2;
+            // console.log(x+ " "+ y);
+            if(x<0) {
+                x = 0;
+            } else if(x>small.offsetWidth - mask.offsetWidth) {
+                x = small.offsetWidth - mask.offsetWidth;
+            }
+            if(y<0) {
+                y = 0;
+            } else if(y > small.offsetHeight - mask.offsetHeight) {
+                y = small.offsetHeight - mask.offsetHeight;
+            }
+
+            mask.style.left = x + "px";
+            mask.style.top = y + "px";
+            var bigImg = big.children[0];
+           // var xx = (bigImg.offsetWidth - small.offsetWidth) / (small.offsetWidth - mask.offsetWidth)
+//            console.log(xx);
+            // var xxx = 800 / 350;  最简单，但是不精确
+            // 他们的比例公式
+            var xx = (bigImg.offsetWidth - big.offsetWidth) / (small.offsetWidth - mask.offsetWidth)
+            bigImg.style.marginLeft = -x * xx + "px";
+            bigImg.style.marginTop = -y * xx + "px";
+        }
+
+    }
+</script>

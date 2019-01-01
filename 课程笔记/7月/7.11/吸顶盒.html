@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+        a{
+            color: #111111;
+            text-decoration: none;
+        }
+        header{}
+        .nav_warp{
+            height: 70px;
+        }
+
+        .fixed{
+            position: fixed;
+            top: 0;
+            box-shadow: 0 2px 2px 0 #ccc;
+        }
+    </style>
+</head>
+<body>
+<header></header>
+<div class="nav_warp">
+    <nav id="navbar"><img src="" alt="">
+    </nav>
+</div>
+<div style="height: 2000px"></div>
+
+<script>
+    //    吸顶盒/导航固定
+    var header = document.getElementsByTagName("header")[0];
+    var oNavBar = document.getElementById("navbar");
+    // onscroll事件发生在元素内容滚动的时候，也包括键盘上下键，载入也可触发。
+    window.onscroll=function(){
+        var scrollTop= document.documentElement.scrollTop||document.body.scrollTop;
+        if(scrollTop>header.offsetHeight){
+            oNavBar.className="fixed";
+        }else{
+            oNavBar.className="";
+        }
+    }
+
+    var der =document.getElementsByTagName('header')[0];
+    var bar= document.getElementById('navbar');
+
+    window.onload=function(){
+        var scrollTop =document.documentElement.scrollTop
+    }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        img{
+            width: 100%;
+            height: 445px;
+            overflow: hidden;//
+        }
+        .banner{
+            position: relative;//
+        }
+        .banner img{
+            display: none;
+        }
+        .banner ul{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);//沿着X轴向右移动自身的50%
+        }
+        .banner ul li {
+            width: 10px;
+            height: 10px;
+            background: red;
+            border-radius:50%;//设置圆角弧度为50%
+            margin-right: 10px;
+            float: left;
+            background: rgba(255,255,255,.3);
+            transition: all .2s;
+            cursor: pointer;//把鼠标指针变成‘手’的形状
+        }
+        .banner ul li.now{
+            transform:scale(1.2);//元素缩放
+            background: rgba(255,255,255,1);
+        }
+
+    </style>
+</head>
+<body>
+<div class="banner">
+
+    <img style="display: block" src="20160713154957678313.jpg" alt="">
+    <img src="20170913175748750902.jpg" alt="">
+    <img src="20170929134028425664.jpg" alt="">
+    <img src="20180529102657496732.jpg" alt="">
+    <img src="20180530003254199489.jpg" alt="">
+    <img src="20180529102657496732.jpg" alt="">
+    <ul>
+        <li class="now"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<script>
+    var arrImg=document.querySelectorAll('.banner img');
+    var arrLi=document.querySelectorAll('.banner li');
+    for ( var i= 0;i < arrLi.length; i++){
+        arrLi[i].index= i;
+        arrLi[i].onmouseover = function(){
+            for (var j=0;j<arrImg.length;j++){
+                arrImg[j].style.display='none';
+                arrLi[j].classList.remove('now')
+            }
+            arrImg[this.index].style.display='block';
+            this.classList.add('now');
+        }
+    }
+
+</script>
+</body>
+</html>

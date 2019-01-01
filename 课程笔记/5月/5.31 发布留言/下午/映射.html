@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select{
+            width: 200px;
+            height: 240px;
+            margin: 0 20px;
+        }
+
+    </style>
+</head>
+<body>
+<!--multiple 展开select-->
+
+<select name="" id="sel1"  multiple>
+    <option value="">小娇</option>
+    <option value="">小花</option>
+    <option value="">小名</option>
+    <option value="">小明</option>
+</select>
+<input type="button" value=">>>">
+<input type="button" value="<<<">
+<input type="button" value=">">
+<input type="button" value="<">
+<select name="" id="sel2" multiple>
+
+</select>
+
+
+
+<script>
+//    var arrIn = document.getElementsByTagName('input');
+//    arrIn[0].onclick = function(){
+//        var allOpt = sel1.children;//获取的所有option
+//        for (var i = 0; i < allOpt.length; i++) {
+////            dom映射
+//            sel2.appendChild(allOpt[i]);
+//
+//        }
+//    }
+    var arrIn = document.getElementsByTagName('input');
+    arrIn[0].onclick = function(){
+        var opt = sel1.children;
+        for (var i = opt.length-1;i>=0;i--){
+            sel2.appendChild(opt[0]);
+        }
+    };
+    arrIn[1].onclick=function(){
+        var opt = sel2.children;
+        for (var i=opt.length-1;i>=0;i--){
+            sel1.appendChild(opt[0]);
+        }
+    };
+    arrIn[2].onclick = function(){
+        var opt = sel1.children;
+        for (var i=opt.length-1; i>=0;i--){
+            if(opt[i].selected ==true){
+                opt[i].selected =false;
+                sel2.appendChild(opt[i]);
+            }
+        }
+    };
+    arrIn[3].onclick =function(){
+        var opt = sel2.children;
+        for (var i= opt.length-1; i>=0;i--){
+            if(opt[i].selected ==true){
+                opt[i].selected = false;
+                sel1.appendChild(opt[i]);
+            }
+        }
+    } ;
+
+
+    function fn2(x,y){var opt = x.children;
+      //  var opt = x.children;
+        for (var i= opt.length-1;i>=0;i--){
+            if (opt[i].seleted ==true){
+                opt[i].seleted =false;
+                y.appendChild(opt[i]);
+            }
+        }
+
+    }
+    function  fn1(sel1,sel2){
+        var opt = sel1.children;
+        for (var i = opt.length-1;i>=0;i--){
+            sel2.appendChild(opt[0]);
+        }
+    }
+
+//function fn2(x, y) {
+//    var opt = x.children;
+//    for (var i = opt.length - 1; i >= 0; i--) {
+//        if (opt[opt.length - 1-i].selected == true) {
+//            opt[opt.length - 1-i].selected = false;
+//            y.appendChild(opt[opt.length - 1-i]);
+//        }
+//    }
+//}
+//function fn(sel1, sel2) {
+//    var opt = sel1.children;
+//    for (var i = opt.length - 1; i >= 0; i--) {
+//        sel2.appendChild(opt[0]);
+//    }
+//}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+open
+    <input type="button" value="打开窗口" onclick="window.open('http://www.zhinengshe.com/');" />
+    _self 表示当前窗口
+    _blank 表示新窗口
+    _parent 表示父窗口        ps:后两个一般没用
+    _top 表示顶层窗口
+close
+    <input type="button" value="close" onclick="window.close();" />
+    IE:提示   FF：不能关闭非脚本打开的窗口（只能关闭由你打开的）
+
+
+
+
+
+
+
+
+
+
+window.navigator.userAgent
+    当前浏览器及版本信息
+window.location
+    读取：返回当前网址
+    赋值：window.location = "www.baidu.com"
+
+可视区尺寸
+    document.documentElement.clientWidth
+    document.documentElement.clientHeight
+滚动距离
+    document.body.scrollTop                 //Chrome
+    document.documentElement.scrollTop      //IE FF             ps:要写兼容
+
+系统对话框
+    警告框：alert(“内容”)，没有返回值
+    选择框：confirm(“你确定要关闭浏览器么？”)，返回boolean
+    输入框：prompt('请输入你的姓名', 'Ning')，返回字符串或null
+window对象常用事件
+    onload                  //事件会在页面或图像加载完成后立即发生。
+    onscroll                //事件会在页面滑动触发
+    onresize                //事件会在更改了窗口尺寸时立即发生
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

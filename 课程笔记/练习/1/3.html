@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa {
+            width: 100px;
+            height: 30px;
+            position: relative;
+            background: #ff3f38;
+        }
+
+        .aa .bb {
+            width: 100px;
+            height: auto;
+            position: absolute;
+            display: none;
+            border: 1px solid #ddd;
+            top: 30px;
+            left: 0;
+            background: #0febc1;
+        }
+        .aa:hover .bb {
+            display: block
+        }
+        .aa .bb .cc{
+            /*display: block;*/
+            width: 100px;
+            height: 100px;
+            background: #ffff99;
+        }
+
+        li:hover{
+            background: #0000ff;
+        }
+        ul{
+            display: none;
+            list-style: none;
+        }
+        .cc:hover ul{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="aa">1
+    <div class="bb">
+        <div class="cc">cc <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<script>
+    let arrImg1=document.querySelectorAll('.lunbo img');
+    let arrLi1=document.querySelectorAll('.lunbo li');
+    function lunbo(arrImg,arrLi){
+        let index= 0,timer=null;
+
+        function tab(i){
+            for (let j = 0; j < arrImg.length; j++) {
+                arrImg[j].className='';
+                arrLi[j].className ='';
+            }
+            arrImg[i].className='now';
+            arrLi[i].className ='now';
+        }
+        //圆点点击
+        for (let i = 0; i < arrLi.length; i++) {
+            arrLi[i].onclick = function(){
+                tab(i);
+                index=i;
+            }
+        }
+
+        //点击右边按钮
+//        right.onclick =rightClick;
+//
+//        //左点击
+//        left.onclick=function() {
+//            index--;
+//            if(index<0){
+//                index=arrLi.length-1;
+//            }
+//            tab(index)
+//        };
+
+        //自动轮播
+        timer = setInterval(rightClick,1000);
+        banner.onmouseover = function(){
+            clearInterval(timer);
+        };
+        banner.onmouseout = function(){
+            timer = setInterval(rightClick,1000);
+        };
+        function rightClick(){
+            index++;
+            if(index>arrLi.length-1){
+                index=0;
+            }
+            tab(index);
+        }
+    }
+    lunbo(arrImg1,arrLi1);
+</script>

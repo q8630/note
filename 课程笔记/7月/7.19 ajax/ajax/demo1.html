@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="ajax.js"></script>
+</head>
+<body>
+
+
+    <script>
+
+        ajax("data/demo1.json",function (data) {
+            alert("成功");
+            alert(data);
+            //ajxa 获得的数据是字符串，必须转换为对象才能使用
+
+            var _data  = eval("("+data+")");//json字符串转json对象
+            alert(_data.name)
+
+        },function () {
+            alert("失败")
+        })
+
+
+    </script>
+
+
+</body>
+</html>

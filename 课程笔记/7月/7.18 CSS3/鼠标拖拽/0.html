@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width:  100%;
+            height: 100%;
+            background-color: #BFBFBF;
+            position: relative;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: #ff00ff;
+            position: absolute;
+            left: 0;
+            top:0;
+            border-radius: 40%;
+        }
+    </style>
+
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script>
+    var aBody =document.getElementsByTagName("body")[0];
+    var oBox = document.getElementById("box");
+
+
+
+    oBox.onmousedown = function(){
+
+        var oDiv=document.createElement('div');
+
+//        console.log(oDiv);
+        aBody.onmousemove = function(ev){
+
+            var oEvent = ev || event;
+            var x = oEvent.clientX-oBox.offsetWidth/2;
+            var y = oEvent.clientY-oBox.offsetHeight/2;
+
+            var w = aBody.offsetWidth - oBox.offsetWidth;
+            var h = aBody.offsetHeight - oBox.offsetHeight;
+
+            console.log(x);
+            console.log(y);
+            console.log(w);
+            console.log(h);
+            if(x<=0){
+                x=0
+            }
+            if(y<=0){
+                y=0
+            }
+            if(x>=w){
+                x=w
+            }
+            if(y>=h){
+                y=h
+            }
+
+           oBox.style.left = x+ "px";
+           oBox.style.top = y + "px";
+        };
+        aBody.onmouseup= function(){
+            aBody.onmousemove = null;
+        }
+    }
+
+
+</script>
+</html>

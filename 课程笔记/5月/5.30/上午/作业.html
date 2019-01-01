@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        img{
+            width: 100%;
+            height: 445px;
+            overflow: hidden;
+        }
+        .top{
+            width: 100%;
+            height: 49px;
+            background-color: black;
+        }
+        .top.nav{
+            width: 1000px;
+            position: relative;
+            z-index: 200;
+            margin: 0 auto;
+        }
+        .top.nav ul{
+            position: relative;
+            z-index: 2;
+            background-color: #2c323b;
+        }
+
+
+        .banner{
+            position: relative;
+
+        }
+        .banner img{
+            display: none;
+        }
+        .banner ul{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .banner ul li{
+            width: 10px;
+            height: 10px;
+            background: red;
+            border-radius: 50%;
+            margin-right: 10px;
+            float: left;
+            background: rgba(255,255,255,.3);
+            transition: all .2s;
+            cursor: pointer;
+
+        }
+        .banner ul li.now{
+            transform: scale(1.2);
+            background: rgba(255,255,255,1);
+        }
+        .a{
+            width: 1000px;
+            height: 390px;
+            margin: auto;
+            overflow: hidden;
+            background: yellowgreen;
+        }
+        .a.aa1{
+            width: 650px;
+            height: 375px;
+            float: left;
+            overflow: hidden;
+            background: sandybrown;
+        }
+        .a.aa1.aaa1{
+            width: 650px;
+            height: 50px;
+            padding-bottom: 20px;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+<div class="top">
+    <div class="nav">
+        <ul class=""></ul>
+        <ul></ul>
+        <ul></ul>
+
+    </div>
+
+</div>
+<div class="banner">
+    <img style="display: block" src="img/20160713154957678313.jpg" alt="">
+    <img src="img/20170913175748750902.jpg" alt="">
+    <img src="img/20170929134028425664.jpg" alt="">
+    <img src="img/20180530003254199489.jpg" alt="">
+    <img src="img/20180529182218140197.jpg" alt="">
+
+    <ul>
+        <li class="now"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div class="a">
+    <div class="aa1">
+        <div class="aaa1">
+            <h3>
+                <b>新歌</b>
+                首发
+            </h3>
+        </div>
+        <div class="aaa2"></div>
+    </div>
+
+    <div class="aa2">
+        <h3></h3>
+        <div class="aaa2">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<div class="b">
+    <div class="bb1">
+        <div class="bbb1">
+            <h3>
+                <b>热门</b>
+                电台
+            </h3>
+        </div>
+        <div class="bbb2">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div class="bb2">
+        <div class="bbb1">
+            <h3>
+                <b>热门</b>
+                歌手
+            </h3>
+            <div class="bbbb1">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="bbb2">
+            <div bbbb1></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var arrImg = document.querySelectorAll('.banner img');
+    var arrLi= document.querySelectorAll('.banner li');
+    for (var i = 0; i < arrLi.length; i++) {
+        arrLi[i].index = i;
+        arrLi[i].onmouseover = function(){
+            for (var j = 0; j < arrImg.length; j++) {
+                arrImg[j].style.display = 'none';
+                arrLi[j].classList.remove('now');
+            }
+            arrImg[this.index].style.display = 'block';
+            this.classList.add('now');
+        }
+    }
+
+</script>
+
+</body>
+</html>

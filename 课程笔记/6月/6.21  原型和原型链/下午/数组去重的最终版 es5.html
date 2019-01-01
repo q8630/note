@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es5数组去重</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var arr=[1,1,1,1,2,2,3,4,3,4,2,3,5]//[1,2,3,4]
+    //	修改原数组
+    //			去重的最终版
+    Array.prototype.unique=function(){
+        var obj={};
+        for(var i=0;i<this.length;i++){
+            if(!obj[this[i]]){
+                obj[this[i]]=true;
+            }else{
+                this[i]=this[this.length-1];
+                this.length--;
+                i--;
+            }
+        }
+    };
+    arr.unique();
+    console.log(arr);
+
+
+    //		不修改原数组
+    			Array.prototype.unique=function(){
+     var obj={};var newArr=[];
+     for(var i=0;i<this.length;i++){
+     if(!obj[this[i]]){
+     newArr.push(this[i]);
+     obj[this[i]]=true;
+     }
+     }
+     return newArr;
+     };
+     arr=arr.unique();
+     console.log(arr);
+
+function Person(){
+
+}Person.prototype
+
+
+</script>
+</body>
+</html>

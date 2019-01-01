@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        #box{
+            width: 1100px;
+            height: auto;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #box li {
+            list-style: none;
+            width: 530px;
+            height: 240px;
+            margin: 10px;
+            float: left;
+        }
+        #box li img{
+            width: 260px;
+            height: 170px;
+            display: block;
+        }
+        #box .p1{
+            font-family: 华文楷体;
+            font-size: 20px;
+        }
+        #nav{
+            width: 1000px;
+            margin: 0 auto;
+            font-size: 30px;
+            line-height: 50px;
+        }
+
+
+    </style>
+    <script src="js/ajax.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="nav">
+        <a href="common.html?aaa=companyIdea">公司理念</a>
+        <a href="common.html?aaa=companyCulture">公司文化</a>
+        <a href="common.html?aaa=companyEnvironment">公司氛围</a>
+        <a href="common.html?aaa=talents">人才理念</a>
+        <a href="common.html?aaa=team">团队介绍</a>
+        <a href="common.html?aaa=joinUs">招聘信息</a>
+        <a href="common.html?aaa=telUs">联系我们</a>
+    </div>
+
+    <div id="box">
+        <!--<h3></h3>-->
+        <!--<ul>-->
+            <!--<li>-->
+                <!--<img src="" alt="">-->
+                <!--<p class="p1"></p>-->
+                <!--<span></span>-->
+                <!--<p class="p2"></p>-->
+            <!--</li>-->
+        <!--</ul>-->
+
+    </div>
+
+    <!--<div id="itemHtml" style="display: none">-->
+        <!--<div class="" id="$articleId$">-->
+            <!--<div>-->
+                <!--<img src="" alt="">-->
+            <!--</div>-->
+            <!--<div>-->
+                <!--<div></div>-->
+                <!--<div></div>-->
+                <!--<p></p>-->
+            <!--</div>-->
+            <!--<img src="" alt="">-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div id="footer"></div>
+    <script>
+
+//        var oBox = document.getElementById("box");
+
+//        ajax("js/listData.json",function (data) {
+//
+//            var _data = eval("("+data+")");
+////            console.log(_data);
+//            var len = _data.length;
+//            for (var i = 0; i < len; i++) {
+//                var list = _data[i].data.list;
+////                console.log(list);
+//                for (var j = 0; j < list.length; j++) {
+//                    var li = document.createElement("li");
+//                    var img = document.createElement("img");
+////                    console.log(list[j].coverImg);
+////                    console.log(list[j].sysId);
+//                    li.setAttribute("number",list[j].sysId);
+//
+//                    img.src= list[j].coverImg;
+//                    li.appendChild(img);
+//                    oBox.appendChild(li);
+//
+//
+//                    li.onclick = function () {
+//                        alert(this.getAttribute("number"));
+//                        var num = this.getAttribute("number");
+//                        window.location.href = "common.html?aaa="+num;
+//                    }
+//
+//
+//
+//                }
+//            }
+//
+//
+//        },function () {
+//            alert("失败")
+//        })
+
+
+//        $(function(){
+//            getList()
+//        })
+
+//        function getList(){
+//            var pageStart =0; //页数
+//
+//            if(pageStart == 0){
+//                $()
+//            }
+//        }
+            $.ajax({
+                url:"js/articleData.js",
+                type:"get",
+                data:{},
+                async:false
+//                dataType:"json"
+            }).done(function(result){
+                var data = result;
+//                console.log(result);
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                }
+            })
+
+
+
+
+    </script>
+
+
+</body>
+</html>

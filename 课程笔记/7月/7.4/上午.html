@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动</title>
+    <style>
+     *{
+         margin: 0;
+         padding:0;
+     }
+     .box{
+            width: 1125px;
+            height: 550px;
+            border: 20px solid red;
+            margin: 50px auto;
+            position: relative;
+         overflow: hidden;
+        }
+     .box1{
+         width: 112500px;
+         height: 550px;
+         position: absolute;
+         left: 0;
+         top: 0;
+
+     }
+
+     .box1>image{
+         width: 1125px;
+         height: 550px;
+         float: left;
+     }
+
+
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <div class="box1" id="box1">
+           <img src="image/0.jpg">
+           <img src="image/1.jpg">
+           <img src="image/2.jpg">
+           <img src="image/3.jpg">
+           <img src="image/4.jpg">
+           <img src="image/5.jpg">
+           <img src="image/6.jpg">
+
+           <img src="image/0.jpg">
+
+    </div>
+</div>
+<script>
+    var aImg= document.getElementsByTagName("img");
+    var aBox =document.getElementById("box");
+    var oBox= document.getElementById("box1");
+
+
+    var len= aImg.length-1;
+    var w = aImg[0].offsetWidth;
+
+    var number = len * w ;
+    var time;
+    var a=0;
+    set();
+    function set(){
+
+     time= setInterval(function(){
+
+        if(a>-number){
+            a-=6;
+            box1.style.left = a+"px";
+        }else {
+            a=0
+        }
+    },30)
+    }
+    aBox.onmouseover = function(){
+        clearInterval(time)
+    };
+
+    aBox.onmouseout = function(){
+        set();
+    };
+
+
+</script>
+</body>
+</html>

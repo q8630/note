@@ -1,0 +1,135 @@
+.header{
+    position: relative;
+}
+.header .title{
+    margin: auto;
+    width: 1200px;
+    height: 142px;
+    background-color: #fff;
+    position: relative;
+}
+.header .title h1{
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+/*导航a*/
+.header .title .top_nav{
+    position: absolute;
+    height: 90px;
+    left: 198px;
+    top: 0;
+}
+.top_nav_mus{
+    float: left;
+    margin-right: -5px;
+    list-style: none;
+    background-color: #31c27c ;
+}
+.top_nav_link1{
+    float: left;
+    margin-right: -5px;
+    list-style: none;
+}
+.header .title .top_nav .top_nav_item{
+    display: block;
+    width: auto;
+    font-size: 14px;
+    float: left;
+    margin-right: -5px;
+
+}
+.header .title .top_nav .top_nav_item a{
+    display: block;
+    padding: 0 20px;
+    line-height: 90px;
+    height: 90px;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+}
+.header .title ul li a:hover{
+    color: green;
+}
+/*导航b*/
+.header .title .top_subnav{
+    top: 90px;
+    height: 51px;
+    width:1200px;
+    line-height: 51px;
+    border-top: 1px solid #f2f2f2;
+    padding-left: 230px;
+    margin-right: -50px;
+    position: absolute;
+}
+.top_nav_link2{
+    font-size: 15px;
+    color: #31c27c;
+}
+.header .title .top_subnav li{
+    float: left;
+    font-size: 15px;
+    color: #c1c1c1;
+    margin-right: 47px;
+}
+.header .title .top_subnav li a{
+    list-style: none;
+}
+/*搜索框*/
+.top_search{
+    width: 220px;
+    height: 64px;
+    position: absolute;
+    top:0;
+    right: 290px;
+    /*left:284px;*/
+}
+div .input{
+    border: 1px solid #c9c9c9;
+    padding: 0 33px 0 11px;
+    line-height: 36px;
+    height: 36px;
+    margin-top: 26px;
+    position: relative;
+    border-radius: 3px;
+    -webkit-transition: width .6s ease-out;
+    transition: width .6s ease-out;
+}
+.search_input__input{
+    width: 174px;
+    height: 36px;
+    border: 0 none;
+    transition: width .6s ease-out,visibility .6s 1ms ease-out;
+}
+
+.search_input__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0 none;
+    width: 38px;
+    height: 35px;
+}
+
+.header .title .top_search .box{
+    display: none;
+    width: auto;
+    height: 200px;
+    background-color: peru;
+}
+
+.header .title .top_search .box li{
+    height: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

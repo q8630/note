@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input type="button" value="按钮1" id="btn1">
+    <input type="button" value="按钮2" id="btn2">
+    <input type="button" value="按钮3" id="btn3">
+</div>
+<script>
+    window.onload=function(){
+        var oBtn1=document.getElementById('btn1');
+        var oBtn2=document.getElementById('btn2');
+        var oBtn3=document.getElementById('btn3');
+
+
+        oBtn1.onclick=function(){
+            localStorage.setItem('bag','a');
+            window.location.href=('aa.html')
+        } ;
+        oBtn2.onclick=function(){
+            localStorage.setItem('bag','b');
+            window.location.href=('aa.html')
+        };
+        oBtn3.onclick=function(){
+            localStorage.setItem('bag','c');
+            window.location.href=('aa.html')
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

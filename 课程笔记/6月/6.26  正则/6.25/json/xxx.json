@@ -1,0 +1,75 @@
+[
+  {
+    "id":1,
+    "title":"HUAWEI Mate 10 4GB+64GB 全网通版 （亮黑色）",
+    "price":3889,
+    "time":"2017-03-15",
+    "hot":198,
+    "img":"img/1.jpg"
+  },
+  {
+    "id":2,
+    "title":"HUAWEI Mate 10 4GB+64GB 全网通版 （亮黑色）",
+    "price":2648,
+    "time":"2017-12-15",
+    "hot":999,
+    "img":"img/1.jpg"
+  },  {
+  "id":3,
+  "title":"HUAWEI Mate 10 4GB+64GB 全网通版 （亮黑色）",
+  "price":4238,
+  "time":"2017-03-15",
+  "hot":32,
+  "img":"img/1.jpg"
+},  {
+  "id":4,
+  "title":"HUAWEI Mate 10 4GB+64GB 全网通版 （亮黑色）",
+  "price":13980,
+  "time":"2018-06-15",
+  "hot":1,
+  "img":"img/1.jpg"
+},  {
+  "id":5,
+  "title":"HUAWEI Mate 10 4GB+64GB 全网通版 （亮黑色）",
+  "price":2999,
+  "time":"2016-06-15",
+  "hot":64,
+  "img":"img/1.jpg"
+},  {
+  "id":6,
+  "title":"HUAWEI Mate 10 4GB+64GB 全网通版 （亮黑色）",
+  "price":888,
+  "time":"2013-03-15",
+  "hot":1,
+  "img":"img/1.jpg"
+},  {
+  "id":7,
+  "title":"HUAWEI Mate 10 4GB+64GB 全网通版 （亮黑色）",
+  "price":1999,
+  "time":"2016-03-15",
+  "hot":32,
+  "img":"img/1.jpg"
+},  {
+  "id":8,
+  "title":"HUAWEI Mate 10 4GB+64GB 全网通版 （亮黑色）",
+  "price":3669,
+  "time":"2018-03-15",
+  "hot":8,
+  "img":"img/1.jpg"
+},
+  {
+    "id":9,
+    "title":"HUAWEI Mate 10 4GB+64GB 全网通版 （亮黑色）",
+    "price":9,
+    "time":"2017-03-16",
+    "hot":8,
+    "img":"img/1.jpg"
+  },  {
+  "id":10,
+  "title":"HUAWEI Mate 10 4GB+64GB 全网通版 （亮黑色）",
+  "price":3889,
+  "time":"2017-3-6",
+  "hot":66,
+  "img":"img/1.jpg"
+}
+]

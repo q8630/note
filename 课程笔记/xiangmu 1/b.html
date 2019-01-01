@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width: 1000px;
+            height: auto;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #title{
+            width: 1000px;
+            height: 100px;
+            font-size: 35px;
+            font-family: 华文琥珀;
+            line-height: 100px;
+            text-align: center;
+        }
+        #img{
+            width: 1000px;
+            height: auto;
+            margin: 80px auto;
+            display: block;
+        }
+        #detail{
+            width: 1000px;
+            height: auto;
+            font-family: 方正舒体;
+        }
+
+    </style>
+    <script src="js/articleData.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function(){
+            $('#headerBox').load('header.html');
+            $('#footerBox').load('footer.html');
+        });
+
+    </script>
+</head>
+<body>
+    <div id="headerBox"></div>
+    <div id="box">
+        <p id="title">233</p>
+        <img id="img" src="images/article_image01.jpg" alt="">
+        <div id="detail"></div>
+    </div>
+
+    <div id="footerBox"></div>
+    <script>
+
+        var oTitle=document.getElementById('title');
+        var oImg=document.getElementById('img');
+        var oDetail=document.getElementById('detail');
+
+        oDetail.innerHTML = content;
+
+
+        function GetRequest(){
+            var url = location.search;
+            var theRequest = new Object();
+
+            if (url.indexOf("?") != -1){
+                var str = url.substr(1);
+                strs = str.split('&');
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split('=')[0]]=unescape(strs[i].split('=')[1]);
+                }
+            }
+//            if (url.indexOf("?") != -1) {
+//                var str = url.substr(1);
+//                strs = str.split("&");
+//                for(var i = 0; i < strs.length; i++) {
+//                    theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+//                }
+//            }
+            return theRequest;
+        }
+
+        var Request =new Object();
+
+        Request = GetRequest();
+
+        var nu = Request['cc'];
+
+        if(nu>0){
+            var ty =articleData['xiaoniaoNews'+nu];
+        }else {
+            var ty = articleData[nu];
+        }
+
+        oTitle.innerHTML =ty.data.title;
+
+        oImg.src =ty.data.coverImg;
+    </script>
+
+
+</body>
+</html>
