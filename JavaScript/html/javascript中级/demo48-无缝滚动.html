@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 800px;
+            height: 300px;
+            background: #fff;
+            border: 10px solid #f00;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -400px;
+        }
+        .list{
+            width: 160000000px;
+            height: 300px;
+            /*overflow: hidden;*/
+            position: absolute;
+            left: 0px;
+            top: 0;
+            background: #ccc;
+
+        }
+        .list li{
+            list-style: none;
+            width: auto;
+            height: 300px;
+            float: left;
+            background: #f0f;
+
+        }
+        .list li img{
+            width: auto;
+            height: 300px;
+            display: block;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <ul class="list" id="list">
+            <li><img src="img/image/0.jpg" alt=""></li>
+            <li><img src="img/image/1.jpg" alt=""></li>
+            <li><img src="img/image/2.jpg" alt=""></li>
+            <li><img src="img/image/3.jpg" alt=""></li>
+            <li><img src="img/image/4.jpg" alt=""></li>
+            <li><img src="img/image/5.jpg" alt=""></li>
+            <li><img src="img/image/6.jpg" alt=""></li>
+            <li><img src="img/image/0.jpg" alt=""></li>
+            <li><img src="img/image/1.jpg" alt=""></li>
+            <li><img src="img/image/2.jpg" alt=""></li>
+            <li><img src="img/image/3.jpg" alt=""></li>
+            <li><img src="img/image/4.jpg" alt=""></li>
+            <li><img src="img/image/5.jpg" alt=""></li>
+            <li><img src="img/image/6.jpg" alt=""></li>
+
+        </ul>
+    </div>
+
+
+    <script type="text/javascript" charset="UTF-8">
+
+        window.onload = function () {
+
+            var oBox = document.getElementById("box");
+            var oList = document.getElementById("list");
+            var oLi = oList.getElementsByTagName("li");
+
+            // alert(oList.style.left)    //获取行内样式
+
+            // alert(getStyle(oList,"left"))   //0px
+
+            var num = parseInt(getStyle(oList,"left")); //获取ul距离box左边的距离
+            var len = oLi.length/2;  //有几个li
+            var w = parseInt(getStyle(oLi[0],"width")); //一个li的宽度
+
+            var number = len * w       //li一共有多宽
+            var timer;
+
+            console.log(number);
+
+            function set() {
+                clearInterval(timer)
+                timer = setInterval(function () {
+                    num-=2;
+                    if(num<-number){
+                        num = 0;
+                    }
+
+                    oList.style.left = num+"px";
+                    console.log(num);
+
+                },10)
+            }
+            set();
+
+
+            oBox.onmouseover = function () {
+                clearInterval(timer)
+            }
+
+            oBox.onmouseout = function () {
+                set();
+            }
+
+
+
+
+
+            //获取非行内样式
+            function getStyle(obj,name){
+                if(obj.currentStyle){
+                    return obj.currentStyle[name];   //IE<9
+                }else{
+                    return getComputedStyle(obj,false)[name] ;  //C/FF
+                }
+            }
+
+        }
+
+
+
+
+
+    </script>
+
+
+
+<!--    <script>
+
+        var aList= document.getElementsByClassName("list")[0];
+        // alert(aBox.offsetLeft);
+        // alert(aBox.offsetTop);
+        var aLi = aList.getElementsByTagName("li");
+
+        var aliW = parseInt(getStyle(aLi[0],"width"))
+        // alert(aliW)
+        var num = aliW*aLi.length;
+
+
+        //aList.style.left    获取行内样式的
+        //alert(aList.style.left)   //null
+
+        //获取非行内样式
+        function getStyle(obj,name){
+            if(obj.currentStyle){
+                return obj.currentStyle[name]   //IE<9
+            }else{
+                return getComputedStyle(obj,false)[name]   //C/FF
+            }
+        }
+
+        var number = getStyle(aList,"left")
+
+        number = parseInt(number)
+        // alert(number)
+        setInterval(function () {
+            if(number<-num){
+                number = 0;
+            }else{
+                number&#45;&#45;;
+            }
+
+            console.log(number);
+            console.log(num);
+
+            aList.style.left =  number+"px";
+        },5)
+
+
+
+    </script>-->
+
+</body>
+</html>

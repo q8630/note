@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--<button id="btn"  onmouseover="document.getElementById('box').style.display='block'" onmouseout="document.getElementById('box').style.display='none'">按钮</button>-->
+<button id="btn" class="ning">按钮</button>
+<div id="box" class="ning">
+    <!-- innerHTML -->
+</div>
+
+<!--
+    getElementById    获取元素的ID    js第一个兼容性
+-->
+
+<script type="text/javascript" charset="utf-8">
+    /* 获取元素的 ID 名 */
+    var oBox = document.getElementById("box");    /* 获取id名叫box的div */
+
+    /*
+    *  var  申明变量
+    *  oBox  就是 var 申明的变量 ，它可以是任何一个名字，比如：box 、a 、honghaoran 、ning1 、ning2、de789....
+    *
+    * */
+
+
+    var oBtn = document.getElementById("btn");    /* 获取id名叫btn的button */
+
+    oBtn.onmouseover = function(){              /* function(){} 函数 */
+        alert("宇宙无敌第一帅");                              /* alert()  弹出框  警告框  */
+        oBox.style.display = "block";
+
+    };
+
+
+
+
+    oBox.onmouseover = function(){
+        oBox.style.backgroundColor = "#ff0";
+    };
+
+    oBox.onclick = function(){
+        oBox.innerHTML = "今天有点冷！！"     /* innerHTML代表内容 */
+    }
+
+
+
+
+    /*
+    *  var aDiv = document.getElementsByClassName("aa")[0];
+    *  getElementsByClassName   获取元素的class   获取的是多个
+    *  [0]   代表第一个
+    *  [1]   代表第二个
+    *  [2]   代表第三个
+    *  ......
+    * */
+
+
+
+
+</script>
+</body>
+</html>

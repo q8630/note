@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .box{
+            width: 1200px;
+            height: auto;
+            border:5px solid #f00;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .box li{
+            list-style: none;
+            width: 570px;
+            height: 323px;
+            position: relative;
+            float: left;
+            margin: 10px 15px;
+
+        }
+        .box li p{
+            width: 570px;
+            height: 30px;
+            position: absolute;
+            left: 0;
+            bottom: 50px;
+            background: rgba(0,0,0,.5);
+            color: #fff;
+        }
+        .box li div{
+            width: 570px;
+            height: 50px;
+            background: #ccc;
+        }
+
+    </style>
+    
+    <script src="../../js/jquery.js"></script>
+    <script>
+        $(function(){
+            $.get("package.json",function(data){
+                var _data = eval(data)
+                console.log(_data);
+                for(var i=0; i<_data.length; i++){
+                    console.log(_data[i]);
+                    $("<li>" +
+                            "<img src='"+_data[i].img+"' />" +
+                            "<p>"+_data[i].zhe+"</p>" +
+                            "<div>" +
+                                "<span>"+_data[i].zheqi+"</span>" +
+                                "<span>"+_data[i].chang+"</span>" +
+                                "<span>"+_data[i].time+"</span>" +
+                            "</div>" +
+                            "</li>").appendTo($(".box"))
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+
+    <ul class="box">
+        <li>
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </li>
+        <li>
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </li>
+        <li>
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </li>
+        <li>
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </li>
+        <li>
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </li>
+        <li>
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </li>
+        <li>
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </li>
+
+    </ul>
+
+    <script>
+       /*
+       *  JSON:(JavaScript Object Notation, JS 对象标记) 是一种轻量级的数据交换格式。
+       *  它基于 ECMAScript (w3c制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。
+       *
+       * 什么是 JSON ？
+       *    JSON 指的是 JavaScript 对象表示法（JavaScript Object Notation）
+       *    JSON 是轻量级的文本数据交换格式
+       *   JSON 独立于语言 *
+       *   JSON 具有自我描述性，更易理解
+       *   JSON 使用 JavaScript 语法来描述数据对象，但是 JSON 仍然独立于语言和平台。JSON 解析器和 JSON 库支持许多不同的编程语言。
+       *
+       **/
+
+
+    </script>
+
+
+</body>
+</html>

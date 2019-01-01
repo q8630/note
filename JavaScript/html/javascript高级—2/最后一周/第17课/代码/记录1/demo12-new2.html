@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+function createPerson(name, qq)		//构造函数
+{
+	//系统偷偷替咱们做：
+	//var this=new Object();
+	
+	//加工
+	this.name=name;
+	this.qq=qq;
+	
+	this.showName=function ()
+	{
+		alert('我的名字叫：'+this.name);
+	};
+	this.showQQ=function ()
+	{
+		alert('我的QQ号：'+this.qq);
+	};
+	
+	//也会偷偷做一些：
+	//return this;
+}
+
+var obj=new createPerson('小仙女', '6666666666');
+var obj2=new createPerson('小帅哥', '88888888888');
+
+obj.showName();
+obj.showQQ();
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

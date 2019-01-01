@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<script>
+    var str = "11aaauuu889nns8";
+
+    // alert(str.match(/\d+/g));
+
+    var arr= [];
+    var  str1 =""
+
+    for(var i =0;i<str.length;i++){
+        if(str.charAt(i)<=9 && str.charAt(i)>=0){
+            str1 = str1 +str.charAt(i)
+        }else{
+            if(str1==""){
+                //不做什么
+            }else{
+                arr.push(str1)
+                str1=""
+            }
+        }
+    }
+    if(str1!=""){
+        arr.push(str1)
+        str1=""
+    }else{
+        //不做什么
+    }
+    console.log(arr);
+</script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

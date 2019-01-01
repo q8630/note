@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box4{
+            width: 200px;
+            height: 200px;
+            background: #f0f;
+        }
+
+    </style>
+</head>
+<body>
+
+<input type="text" id="txt" style="width: 400px; height: 70px; font-size: 30px;" value="嘻嘻嘻" />
+
+
+<div id="box1" style="width: 200px; height: 200px; background: #f00;"></div>
+<div id="box2" style="width: 500px; height: 500px; background: #0f0;"></div>
+<div id="box3" style="width: 500px; height: 500px; background: #0f0;"></div>
+<div id="box4"></div>
+
+<script>
+
+    var oTxt = document.getElementById("txt");
+
+
+    var oBox4 = document.getElementById("box4");
+    var oBox1 = document.getElementById("box1");
+    var oBox3 = document.getElementById("box3");
+
+    // alert(oBox4.style.width)
+    // alert(oBox3.style.width)
+
+
+
+
+    /* 获取和设置元素属性  */
+    oBox1.onclick = function () {
+        // 1.
+        // alert(oTxt.value)                //获取属性
+        // oTxt.value = "哈哈哈哈！";        //设置属性
+
+        // 2.
+        alert(oTxt.getAttribute("value"))       //获取属性
+        oTxt.setAttribute("value","哈哈哈哈!")   //设置属性
+
+    }
+
+//    var oTxt = document.getElementById("txt");
+//    oTxt.value = "哈哈哈哈";
+//
+//    oTxt.getAttribute("value");                     /* 一个值是取出属性 */
+//    oTxt.setAttribute("value","嘿嘿嘿");             /*  两个值是 改变（设置）属性值  */
+
+
+
+
+    // function css(){
+    //     if(arguments.length == 2){
+    //         return arguments[0].style[arguments[1]]
+    //     }else if(arguments.length == 3){
+    //         return arguments[0].style[arguments[1]] = arguments[2]
+    //     }
+    // }
+
+    var oBox1 = document.getElementById("box1");
+    var oBox2 = document.getElementById("box2");
+
+    // alert(css(oBox1, "width"));                  /*  两个值  获取 oBox1 的宽   200px */
+    // css(oBox2,"background","#00f");            /* 三个值  设置 oBox2 的背景色  蓝色 */
+    // css(oBox3,"background","#ff0");            /* 三个值  设置 oBox3 的背景色  黄色 */
+    // css(oBox3,"width","100px");            /* 三个值  设置 oBox3 的宽  100px */
+    //
+    //
+
+
+    //封装的方法
+   // function css(obj,name,value){
+   //     if(arguments.length == 2){
+   //         return obj.style[name];      //获取
+   //     }else{
+   //         return obj.style[name] = value     //设置
+   //     }
+   // }
+
+
+
+    // css(oBox1,"width","500px")
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 700px;
+            height: 700px;
+            background: #ccc;
+            margin: 50px auto;
+            position: relative;
+        }
+        .list{
+            width: 700px;
+            height: auto;
+            /* background: #f00; */
+        }
+        .list li{
+            list-style: none;
+            width: 700px;
+            min-height: 30px;
+            height: auto;
+            border: 2px solid #fff;
+        }
+
+        span{
+            width: 100px;
+            height: 50px;
+            display: block;
+            border: 2px solid #ff0;
+        }
+        #three{
+            background: #00f;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="box">
+    <ul class="list">
+        <li>1111111111111111111111111</li>
+        <li>22222222222222222</li>
+        <li>33333333333333333
+            <p>
+                <span>span1111</span>
+                <span>span2222</span>
+                <span id="three">span3333</span>
+                <span>span4444</span>
+                <span>span5555</span>
+                <span>span6666</span>
+            </p>
+        </li>
+        <li>44444444444444444</li>
+        <li>55555555555555555</li>
+    </ul>
+</div>
+
+<script>
+    window.onload = function () {
+        var aList = document.getElementsByClassName("list")[0];
+        /*
+        * 获取第一个元素：
+        * 1：firstChild           //只兼容IE<8 (低版本浏览器)
+        * 2：firstElementChild    //高级浏览器(高版本浏览器)
+        *
+        * */
+
+        // aList.firstElementChild.style.color = "#f00";    
+        // aList.firstChild.style.color = "#f00";    
+
+
+        //获取第一个子节点的兼容写法
+        // if(aList.firstElementChild){   //高版本浏览器
+        //     aList.firstElementChild.style.background='#00f';
+        // }else{
+        //     aList.firstChild.style.background='#00f';
+        // }
+        //获取最后一个子节点的兼容写法
+        // if(aList.lastElementChild){   //高版本浏览器
+        //     aList.lastElementChild.style.background='#00f';
+        // }else{
+        //     aList.lastChild.style.background='#00f';
+        // }
+
+        //下一个兄弟元素
+        //nextSibling   nextElementSibling
+        var oThree = document.getElementById("three");
+        
+        if(oThree.nextElementSibling){
+            oThree.nextElementSibling.style.background='#ff0';
+        }else{
+            oThree.nextSibling.style.background='#ff0';
+        }
+        //上一个兄弟元素
+        //previousSibling   previousElementSibling
+        if(oThree.previousElementSibling){
+            oThree.previousElementSibling.style.background='#f0f';
+        }else{
+            oThree.previousSibling.style.background='#f0f';
+        }
+
+
+
+
+
+        //IE<8
+       // aList.firstChild.style.background='#00f';
+
+        //高级浏览器(高版本浏览器)
+       // aList.firstElementChild.style.background='#00f';
+
+        //兼容写法
+        //第一个子节点
+        // if(aList.firstElementChild){
+        //     aList.firstElementChild.style.background='#00f';
+        // }else{
+        //     aList.firstChild.style.background='#00f';
+        // }
+        //最后一个子节点
+        // if(aList.lastElementChild){
+        //     aList.lastElementChild.style.background='#00f';
+        // }else{
+        //     aList.lastChild.style.background='#00f';
+        // }
+        // //下一个兄弟节点
+        // var oThree = document.getElementById("three");
+        //
+        // if(oThree.nextElementSibling){
+        //     oThree.nextElementSibling.style.background='#ff0';
+        // }else{
+        //     oThree.nextSibling.style.background='#ff0';
+        // }
+        //
+        // //上一个兄弟节点
+        // if(oThree.previousElementSibling){
+        //     oThree.previousElementSibling.style.background='#ff0';
+        // }else{
+        //     oThree.previousSibling.style.background='#ff0';
+        // }
+
+
+
+
+
+    }
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

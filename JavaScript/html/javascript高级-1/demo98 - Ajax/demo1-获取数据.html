@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="ajax.js"></script>
+</head>
+<body>
+    <button id="btn">获取数据</button>
+
+
+    <script>
+
+        window.onload = function () {
+            var oBtn = document.getElementById("btn");
+            oBtn.onclick = function () {
+                /*
+                * 1. ajax 是调用 ajax.js 里面的方法
+                * 2. url  数据的地址
+                * 3. fnSucc 成功返回的数据
+                * 4. fnFaild 失败返回的东西
+                *
+                * 5. 解决缓存问题的方法：?a=new Date().getTime()
+                * */
+                ajax("ning.txt", function (data) {
+                    // alert("成功！！")
+                    alert(data);
+                }, function () {
+                    alert("失败了！")
+                })
+
+
+            }
+
+
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <ul id="list">
+        <li>aaaaaaaaaaa<span>隐藏</span></li>
+        <li>bbbbbbbb<span>隐藏</span></li>
+        <li>cccccccc<span>隐藏</span></li>
+        <li>ddddddd<span>隐藏</span></li>
+        <li>eeeeeeee<span>隐藏</span></li>
+    </ul>
+
+    <script>
+        window.onload = function () {
+            var oList = document.getElementById("list");
+            var ali = oList.getElementsByTagName("li");
+            var aspan = oList.getElementsByTagName("span");
+
+            for(var i=0;i<aspan.length;i++){
+                aspan[i].onclick = function () {
+                    this.parentNode.style.display = "none"
+                }
+            }
+
+            /*
+            *  this : this在哪个函数里 这个函数属于谁，this就是谁。
+            *
+            * */
+
+
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

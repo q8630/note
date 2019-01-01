@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 700px;
+            height: 342px;
+            margin:  100px auto;
+            position: relative;
+        }
+        #list{
+            width: 700px;
+            height: 342px;
+            overflow: hidden;
+        }
+        #list li{
+            list-style: none;
+            width: 700px;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #list li img{
+            display: block;
+            width: 700px;
+            height: auto;
+        }
+        #btnBox{
+            width: 220px;
+            height: 24px;
+            background: rgba(255,255,255,.5);
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -100px;
+            text-align: center;
+            padding-top: 4px;
+            border-radius: 20px;
+
+        }
+        #btnBox span{
+            width: 20px;
+            height: 20px;
+            background: rgb(255,255,255);
+            display: inline-block;
+            border-radius: 20px;
+
+        }
+
+        botton{
+            display: block;
+            width: 50px;
+            height: 100px;
+            background: rgba(0,0,0,0.5);
+            font-size: 50px;
+            line-height: 100px;
+            color: #fff;
+            position: absolute;
+            top: 120px;
+            text-align: center;
+        }
+        #btnL{
+            left: 0;
+        }
+        #btnR{
+            right: 0;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <!-- 图片的容器 -->
+        <ul id="list">
+            <li><img src="img/image/0.jpg" alt=""></li>
+            <li><img src="img/image/1.jpg" alt=""></li>
+            <li><img src="img/image/2.jpg" alt=""></li>
+            <li><img src="img/image/3.jpg" alt=""></li>
+            <li><img src="img/image/4.jpg" alt=""></li>
+            <li><img src="img/image/5.jpg" alt=""></li>
+            <li><img src="img/image/6.jpg" alt=""></li>
+        </ul>
+        <!-- 小圆点容器 -->
+        <p id="btnBox">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </p>
+        <!-- 左右按钮 -->
+        <botton id="btnL"> < </botton>
+        <botton id="btnR"> > </botton>
+    </div>
+
+
+    <script>
+        window.onload = function () {
+
+            var oBox = document.getElementById("box");   //最大容器
+            var oList = document.getElementById("list");   //装图片的大盒子
+            var aLi = oList.getElementsByTagName("li");    //每张图片外面的Li
+            var oBtnBox = document.getElementById("btnBox"); //装小圆点的盒子
+            var aSpan = oBtnBox.getElementsByTagName("span"); //小圆点
+            var oBtnL = document.getElementById("btnL");   //左边按钮
+            var oBtnR = document.getElementById("btnR");   //有点按钮
+
+            var number = 0;
+
+
+            aSpan[0].style.background= "#f00";  //让第一个小圆点变红
+            aLi[0].style.display = "block"; //让第一张图片显示出来
+
+            //小圆点
+            for(var i=0;i<aSpan.length;i++){
+                aSpan[i].index = i;
+                aSpan[i].onmouseover = function () {
+                    number = this.index;
+                    //把所有的变白
+                    // for(var i=0;i<aSpan.length;i++){
+                    //     aLi[i].style.display = "none";   //先让所有的图片消失
+                    //     aSpan[i].style.background= "#fff";  //先让所有的点变白
+                    // }
+                    // //再把我要的这个变红
+                    // this.style.background= "#f00";  //再把划入的变红
+                    // aLi[this.index].style.display = "block"; //再把我要的图片显示出来
+
+                    gg();
+
+                }
+
+            }
+
+            function gg() {
+                for(var i=0;i<aSpan.length;i++){
+                    aLi[i].style.display = "none";   //先让所有的图片消失
+                    aSpan[i].style.background= "#fff";  //先让所有的点变白
+                }
+                aSpan[number].style.background= "#f00";  //再把划入的变红
+                aLi[number].style.display = "block"; //再把我要的图片显示出来
+
+            }
+
+            //左右按钮
+            oBtnL.onclick = function () {
+                number++;
+                if(number>=aLi.length){
+                    number=0;
+                }
+                gg();
+
+            };
+
+            oBtnR.onclick = function () {
+                number--;
+                if(number<0){
+                    number=aLi.length-1;
+                }
+                gg();
+            };
+
+
+            var timer;
+            function setIn() {
+                timer = setInterval(function () {
+                    number++;
+                    if(number>=aLi.length){
+                        number=0;
+                    }
+                    gg();
+                },2000);
+
+            }
+            setIn();
+
+            oBox.onmouseover = function () {
+                clearInterval(timer);
+            };
+            oBox.onmouseout = function () {
+                setIn();
+            };
+
+        }
+    </script>
+
+
+</body>
+</html>

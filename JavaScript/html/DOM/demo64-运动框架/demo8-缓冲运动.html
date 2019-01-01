@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div1 {width:300px; height:300px; background:red; position:absolute; left:1200px; top:50px;}
+#div2 {width:1px; height:400px; position:absolute; left:100px; top:0; background:black;}
+</style>
+<script>
+function startMove()
+{
+	var oDiv=document.getElementById('div1');
+	setInterval(function (){
+		var speed=(100-oDiv.offsetLeft)/10;
+		speed = Math.floor(speed);   //向下取整
+		
+		oDiv.style.left=oDiv.offsetLeft+speed+'px';
+		
+		document.title=oDiv.offsetLeft+','+speed;
+	}, 30);
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="开始运动" onclick="startMove()" />
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>无标题文档</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #txt{
+                width: 600px;
+                height: 100px;
+                font-size: 50px;
+                font-family: "楷体";
+                margin: 0 auto;
+                display: block;
+
+            }
+            #box{
+                width: 600px;
+                height:600px;
+                font-size: 50px;
+                font-family: "楷体";
+                line-height: 40px;
+                background: #eee;
+                margin: 0 auto;
+
+            }
+
+
+        </style>
+
+    </head>
+
+    <body>
+    <input id="txt" type="text">
+    <div id="box"></div>
+
+    <script>
+        var oTxt = document.getElementById("txt");
+        var oBox = document.getElementById("box");
+        var pp = oBox.getElementsByTagName("p");
+
+        document.onkeyup = function (ev) {
+            oTxt.style.color = "#000"
+            var oEvent = ev||event;
+            var Tvalue = oTxt.value;
+            if(oEvent.keyCode == 13){
+                var aP = document.createElement("p")
+                aP.innerHTML =  Tvalue;
+                if(pp.length>0){
+                    oBox.insertBefore(aP,pp[0]);
+                }else{
+                    oBox.appendChild(aP);
+                }
+            }
+        }
+
+        var arr = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
+        document.onkeydown = function () {
+            var a = arr[parseInt(Math.random()*16)];
+            var b = arr[parseInt(Math.random()*16)];
+            var c = arr[parseInt(Math.random()*16)];
+            var d = arr[parseInt(Math.random()*16)];
+            var e = arr[parseInt(Math.random()*16)];
+            var f = arr[parseInt(Math.random()*16)];
+
+            var number = a.toString() +  b.toString() +  c.toString() +  d.toString() +  e.toString() +  f.toString();
+            console.log("#"+number)
+            oTxt.style.color = "#"+number;
+
+
+        }
+
+
+
+    </script>
+
+
+    </body>
+</html>

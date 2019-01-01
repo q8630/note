@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>立体盒子</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            left:50%;
+            top: 50%;
+            margin-left: -250px;
+            margin-top: -250px;
+            transform-style:preserve-3d;
+            -webkit-transform-style:preserve-3d;
+            transform:rotateX(-0deg) rotateY(0deg);
+            -webkit-transform:rotateX(-0deg) rotateY(0deg);
+
+            transform-origin:50% 50%;
+            -webkit-transform-origin:50% 50%;
+
+            animation: ning 20s 0s linear infinite;
+            -webkit-animation: ning 20s 0s linear infinite ;
+
+        }
+        @keyframes ning{
+            0%{transform:rotate3d(1,1,1,0deg);}
+            50%{transform:rotate3d(1,1,1,360deg);}
+            100%{transform:rotate3d(1,1,1,0deg);}
+        }
+        .one, .two, .three, .four, .five, .six{
+            width: 400px;
+            height: 400px;
+            background: #000;
+            opacity: 0.3;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 400px;
+            font-size: 200px;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        .one{
+            transform: translateZ(200px);
+        }
+        .two{
+            transform: translateZ(-200px) rotateY(180deg);
+        }
+        .three{
+            transform: translateX(-200px) rotateY(-90deg);
+        }
+        .four{
+            transform: translateX(200px) rotateY(90deg);
+        }
+        .five{
+            transform: translateY(-200px) rotateX(90deg);
+        }
+        .six{
+            transform: translateY(200px) rotateX(-90deg);
+        }
+
+
+        .box:hover .one{
+            transform: translateZ(400px);
+        }
+        .box:hover .two{
+            transform: translateZ(-400px) rotateY(180deg);
+        }
+        .box:hover .three{
+            transform: translateX(-400px) rotateY(-90deg);
+        }
+        .box:hover .four{
+            transform: translateX(400px) rotateY(90deg);
+        }
+        .box:hover .five{
+            transform: translateY(-400px) rotateX(90deg);
+        }
+        .box:hover .six{
+            transform: translateY(400px) rotateX(-90deg);
+        }
+
+        .xiaoBox{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-top: -100px;
+            margin-left: -100px;
+        }
+        .xiaoBox span{
+            display: block;
+            width: 200px;
+            height: 200px;
+            background: #000;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .a{
+            transform: translateZ(100px);
+        }
+        .b{
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+        .c{
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+        .d{
+            transform: translateX(100px) rotateY(90deg);
+        }
+        .e{
+            transform: translateY(-100px) rotateX(90deg);
+        }
+        .f{
+            transform: translateY(100px) rotateX(-90deg);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="one" style="background: #f00">1</div>
+        <div class="two" style="background: #0f0">2</div>
+        <div class="three" style="background: #00f">3</div>
+        <div class="four" style="background: #f3f">4</div>
+        <div class="five" style="background: #ff0">5</div>
+        <div class="six" style="background: #003">6</div>
+
+
+        <div class="xiaoBox">
+            <span class="a"></span>
+            <span class="b"></span>
+            <span class="c"></span>
+            <span class="d"></span>
+            <span class="e"></span>
+            <span class="f"></span>
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>

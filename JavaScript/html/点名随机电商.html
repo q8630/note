@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap{
+            width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+        }
+        .box {
+            width: 500px;
+            height: 100px;
+            background: gold;
+            margin: 50px auto;
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+        }
+        button {
+            width: 80px;
+            height: 50px;
+            margin-left: 30px;
+        }
+        .but1 {
+            margin-left: 300px;
+        }
+
+    </style>
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+      <div class="wrap">
+          <div class="box"></div>
+          <button class="but1">start</button>
+          <button class="but2">stop</button>
+      </div>
+    <script>
+        $(function(){
+            var arr=  [
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+                "21",
+                "22",
+                "23",
+                "24",
+                "25",
+                "26",
+                "27",
+                "28",
+                "29",
+                "30",
+                "31",
+                "32",
+                "33",
+                "34",
+                "35",
+                "36",
+                "37",
+                "38",
+                "39",
+                "40",
+                "41",
+                "42"
+
+                ];
+
+            var time;
+            $(".but1").click(function(){
+                clearInterval(time)
+               time=  setInterval(function(){
+                    var  a = parseInt(Math.random()*42)
+                      $(".box").html(arr[a])
+                 },30)
+            })
+            $(".but2").click(function(){
+               clearInterval(time)
+            })
+        })
+
+    </script>
+
+</body>
+</html>

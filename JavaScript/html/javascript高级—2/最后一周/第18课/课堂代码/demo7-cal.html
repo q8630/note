@@ -1,0 +1,23 @@
+ <!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+function show(a, b)
+{
+	alert('this是：'+this+'\n a是：'+a+'\n b是：'+b);
+}
+
+// show(12, 5);
+
+
+show.call(100, 12, 5); //第一个做为this，别得依旧
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

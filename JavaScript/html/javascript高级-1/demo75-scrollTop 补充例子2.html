@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: auto;
+        }
+        #box{
+            width: 100%;
+            height: 10000px;
+            position: relative;
+            background: #ccc;
+
+        }
+        #box li{
+            list-style: none;
+            width: 30%;
+            height: 200px;
+            background: magenta;
+            line-height: 40px;
+            text-align: center;
+            font-size: 20px;
+            color: #fff;
+            position: absolute;
+            display: none;
+        }
+        #L{
+            top:500px;
+            left: -210px;
+        }
+        #C{
+            left: 280px;
+            top: -700px;
+        }
+        #R{
+            top:500px;
+            right: -210px;
+        }
+
+    </style>
+
+    <script src="startMove.js"></script>
+</head>
+<body>
+
+    <ul id="box">
+        <li id="L">左</li>
+        <li id="C">中</li>
+        <li id="R">右</li>
+    </ul>
+
+
+    <script type="text/javascript" charset="UTF-8">
+
+        var oL = document.getElementById("L");
+        var oC = document.getElementById("C");
+        var oR = document.getElementById("R");
+
+        document.onscroll = function () {    //页面滑动时触发
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;   // scrollTop 兼容
+            console.log(scrollTop);
+            if(scrollTop>290){
+                oL.style.display = "block";
+                oC.style.display = "block";
+                oR.style.display = "block";
+                startMove(oL, {"left":"10"});
+                startMove(oC, {"top":"500"});
+                startMove(oR, {"right":"10"});
+            }
+
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

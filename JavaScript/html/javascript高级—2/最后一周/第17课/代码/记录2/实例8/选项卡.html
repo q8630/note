@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box input {
+	background:white;
+}
+#box input.active {
+	background:yellow;
+    outline: none;
+}
+#box div {
+	width:200px;
+	height:200px;
+	background:#CCC;
+	display:none;
+}
+</style>
+
+
+
+
+</head>
+
+
+<body>
+    <div id="box">
+        <input class="active" type="button" value="aaa" />
+        <input type="button" value="bbb" />
+        <input type="button" value="ccc" />
+
+
+        <div style="display:block;">aaa</div>
+        <div>bbbb</div>
+        <div>cccccc</div>
+    </div>
+
+    <script>
+        new gouZaoFn();
+
+        function  gouZaoFn() {
+            var _this = this;
+            this.oBox=document.getElementById('box');
+            this.aBtn=this.oBox.getElementsByTagName('input');
+            this.aDiv=this.oBox.getElementsByTagName('div');
+
+            for(var i=0;i<this.aBtn.length;i++){
+                this.aBtn[i].index = i;
+                this.aBtn[i].onclick=function () {
+
+                    _this.suiBian(this);
+                }
+
+            }
+        }
+        gouZaoFn.prototype.suiBian = function(haha){
+            for(var i=0;i<this.aBtn.length;i++){
+                this.aBtn[i].className = "";
+                this.aDiv[i].style.display = "none";
+            }
+            haha.className = "active";
+            this.aDiv[haha.index].style.display = "block";
+        };
+
+    </script>
+
+</body>
+</html>

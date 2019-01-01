@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        #div1 input {
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            background:#fff;
+            border: 1px solid #000;
+
+        }
+        #div1 input.active {
+            background:yellow;
+        }
+        #div1 div {
+            width:610px;
+            height:600px;
+            text-align: center;
+            line-height: 600px;
+            font-size: 30px;
+            background:#ccc;
+            display:none;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            new TabSwitch("div1")
+        }
+//        var aBtn;
+//        var aDiv;
+        function TabSwitch(id) {
+            var _this = this;
+            var oDiv=document.getElementById(id);
+            this.aBtn=oDiv.getElementsByTagName('input');
+            this.aDiv=oDiv.getElementsByTagName('div');
+
+            for(var i=0;i<this.aBtn.length;i++){
+                this.aBtn[i].index=i;
+                this.aBtn[i].onclick=function(){
+                    _this.fnClick(this);
+                }
+            }
+        };
+        TabSwitch.prototype.fnClick = function(oBtn){
+//            alert(this)
+            for(var i=0;i<this.aBtn.length;i++){
+                this.aBtn[i].className=''
+                this.aDiv[i].style.display='none';
+            }
+            oBtn.className='active';
+            this.aDiv[oBtn.index].style.display='block';
+        };
+    </script>
+</head>
+
+<body>
+<div id="div1">
+    <input class="active" type="button" value="aaa" />
+    <input type="button" value="bbb" />
+    <input type="button" value="ccc" />
+    <div style="display:block;">aaa</div>
+    <div>bbbb</div>
+    <div>cccccc</div>
+</div>
+</body>
+</html>

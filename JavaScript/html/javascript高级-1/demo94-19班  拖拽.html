@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>无标题文档</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#div1 {width:100px; height:100px; background:red; position:absolute;}
+	</style>
+	<script>
+		window.onload=function ()
+		{
+			var oDiv=document.getElementById('div1');
+			var body = document.getElementsByTagName("body")[0];
+
+
+			var ox ;
+			var oy;
+
+			oDiv.onmousedown = function(){
+				var cDiv = document.createElement("div");
+				cDiv.style.width = "100px";
+				cDiv.style.height = "100px";
+				cDiv.style.background = "#f0f";
+				cDiv.style.position = "absolute";
+				cDiv.style.left = oDiv.offsetLeft +"px";
+				cDiv.style.top = oDiv.offsetTop +"px";
+
+				body.appendChild(cDiv)
+
+				
+				document.onmousemove = function(ev){
+					var oEvent = event||ev;
+					ox = oEvent.clientX-cDiv.offsetWidth/2;
+					oy = oEvent.clientY-cDiv.offsetHeight/2;
+					cDiv.style.left = ox+"px";
+					cDiv.style.top = oy+"px";
+
+				}
+
+
+				document.onmouseup = function(){
+					document.onmousemove = null;
+					cDiv.style.display = "none";
+					startMove(oDiv,{"left":ox,"top":oy});
+
+				}
+
+			}
+			
+
+
+
+		}
+	</script>
+
+
+    <script src="startMove-3.js"></script>
+</head>
+
+<body>
+
+	<div id="div1"></div>
+
+</body>
+</html>

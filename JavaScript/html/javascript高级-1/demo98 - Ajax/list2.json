@@ -1,0 +1,8 @@
+{
+  "name": "demo98 - Ajax",
+  "version": "0.0.1",
+  "dependencies": {
+       "name":"阿黄",
+        "age":28
+  }
+}

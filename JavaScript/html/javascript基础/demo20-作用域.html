@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div></div>
+    <p></p>
+
+    <script>
+
+
+        var a = 10;
+
+        function show() {
+            var b=100;
+            alert(b)      //100
+            alert(a)      //10
+        }
+
+        show();
+
+        alert(a)       //10
+        console.log(b);       //  b is not defined
+
+
+
+
+
+
+        /*
+        * 作用域：
+        * 局部变量 和 全局变量
+        *
+        * 局部变量：只是在某一块作用域里面起作用，比如 b
+        *
+        * 全局变量: 在全局中都是可以用的 比如 a
+        *
+        * */
+
+
+
+
+        var a = 0;
+
+        function show(){
+            var a =1;
+        }
+
+
+        console.log(a);
+
+
+    </script>
+
+
+
+</body>
+</html>

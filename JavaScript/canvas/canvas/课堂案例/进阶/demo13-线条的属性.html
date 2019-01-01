@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>线条的属性</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="800" style="border: 1px solid #000; display: block;margin: 10px auto;">
+    当前浏览器不支持Canvas,请更换浏览器以后再重试
+</canvas>
+
+
+
+<script>
+    var canvas=document.getElementById("canvas");
+    var ctx=canvas.getContext("2d");
+
+
+    ctx.beginPath();
+    ctx.moveTo(100,350);
+    ctx.lineTo(500,350);
+    ctx.lineTo(500,200);
+    ctx.lineTo(700,400);
+    ctx.lineTo(500,600);
+    ctx.lineTo(500,450);
+    ctx.lineTo(100,450);
+    ctx.lineTo(100,350);
+
+    ctx.lineWidth = 10;
+    ctx.lineCap = "square";    //建议还是用 ctx.closePath()
+    ctx.strokeStyle = "#f00";
+    ctx.stroke();
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

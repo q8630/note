@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="ajax.js"></script>
+</head>
+<body>
+    <button id="btn">获取数据</button>
+
+
+    <script>
+
+        window.onload = function () {
+            var oBtn = document.getElementById("btn");
+            oBtn.onclick = function () {
+
+                ajax("list3.json",function (data) {
+                    var _data = JSON.parse(data);
+
+                    /*
+                    *  调用json对象的时候，遇到中括号[] 就必须循环
+                    * */
+                    var _total = _data.total;
+
+                    // console.log(_total.length);
+
+                    for(var i=0;i<_total.length;i++){
+                        var aP = document.createElement("p");
+
+                        aP.innerHTML = _total[i].name +"----"+ _total[i].age;
+
+                        document.body.appendChild(aP)
+
+                    }
+
+                },function () {
+                    alert("失败！")
+                })
+
+
+            }
+
+
+
+        }
+
+    </script>
+
+</body>
+</html>

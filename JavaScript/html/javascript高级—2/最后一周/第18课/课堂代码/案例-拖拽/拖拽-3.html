@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <style>
+        #div1 {
+            width:200px;
+            height:200px;
+            background:yellow;
+            position:absolute;
+        }
+        #div2 {
+            width:200px;
+            height:200px;
+            background:green;
+            position:absolute;
+        }
+    </style>
+
+    <script src="Drag.js"></script>
+    <script src="LimitDrag.js"></script>
+
+</head>
+
+<body>
+    <div id="div1">放掉那些喧闹的浮夸</div>
+    <div id="div2">从此就陪我浪迹天涯</div>
+
+    <script>
+
+        new Drag("div1");
+        new LimitDrag("div2");
+
+    </script>
+</body>
+</html>

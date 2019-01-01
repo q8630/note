@@ -1,0 +1,214 @@
+混合法   --> 原型和构造函数
+
+
+Json                简单
+                    不适合多个对象
+单体       Ajax
+
+Json : 整个程序里只有一个(范围)，写起来比较简单。
+
+ps:所以多个对象就别用他了，否则就又和工厂方式差不多了。
+
+
+
+命名空间：防止函数名重复，使函数执行发生冲突。
+ps:绝大多数用于在公司里，把同一类方法，包在一起（既可以防止冲突，找起来还方便）
+
+
+继承（遗传）：
+
+属性的继承：
+例：【call】
+function show()
+{
+	alert(this);
+}
+
+//show();
+show.call(12);  //其实call也就是调用这个函数，只是他还有别的功能，他能够改变this的值，
+                //传参时，第一个做为this，别得依旧。
+
+call和apply是为了动态改变this而出现的
+区别：
+call方法:     语法：call([thisObj[,arg1[, arg2[,   [,.argN]]]]])     定义：调用一个对象的方法，以另一个对象替换当前对象。 说明： call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。 如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。
+apply方法：    语法：apply([thisObj[,argArray]])                      定义：应用某一对象的方法，用另一个对象替换当前对象。 说明： 如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。 如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。
+
+
+方法的继承：
+
+B.prototype=A.prototype;
+但是：如果B有自己的东西，那么也会被A取到，那么：
+涉及到一个东西，叫引用：
+例：
+var arr1=[1,2,3];
+var arr2=arr1;       //这其实不是赋值，而是指向。（计算机不仅懒，也为了节约资源）
+
+arr2.push(4);
+
+alert(arr1);	//1,2,3,4？
+alert(arr2);	//1,2,3,4
+
+解决方法：
+var arr1=[1,2,3];
+var arr2=[];      //相当于分别指向了自己的数组，指向不同了。
+
+for(var i=0;i<arr1.length;i++)
+{
+	arr2.push(arr1[i]);
+}
+
+arr2.push(4);
+
+alert(arr1);	//1,2,3
+alert(arr2);	//1,2,3,4
+
+那么，B的方法就只属于B 而不属于A呢？
+B.prototype=A.prototype;
+改为：
+for(var i in A.prototype)
+{
+	B.prototype[i]=A.prototype[i];
+}
+
+
+系统对象：
+1.本地对象（非静态对象）
+2.内置对象（静态对象）
+3.宿主对象（由浏览器提供的对象）
+
+
+
+宿主对象（由浏览器提供的对象）
+    DOM、BOM
+
+    宿主?
+    细菌的宿主是他赖以生存的地方。那么JS 的宿主呢？
+
+    其实JS 的宿主就是：JS的运行环境（浏览器）
+    DOM、BOM
+
+    那么NodeJS 中JS 的运行环境变成了后台，那么它就没有DOM、BOM，那么他的宿主也就变成了别的宿主对象了。
+
+
+本地对象+内置对象
+    和JS 的运行环境无关，不管JS 在任何地方运行，都必须得有：本地对象+内置对象，
+    如果没有本地对象+内置对象那它也就不叫JS了。
+
+内置对象（静态对象）:不经过New 直接能用的类。
+    Global、Math
+
+    Math.ceil();
+    var obj = new Math()  ???
+
+    Global：鬼！
+    只存在概念里面，比如说，很多全局变量，都得要有他们自己的归属，那么这个归属就是Global，
+    其实在咱们JS 里面，你根本没法使用：Global 因为他就只是一个概念，虚假的，不存在的。
+
+    所以说静态对象 ，只存在：Math 这一个。
+
+
+本地对象（非静态对象）
+    常用对象
+    Object、Function、Array、String、Boolean、Number、Date、RegExp、Error
+    非静态对象 都需要 New 出来才能用。
+
+    Array.push();      ????
+    Date.getMonth();   ????
+
+
+    var arr = new Array();
+    arr.push();
+
+    var oDate = new Date();
+    oDate.getMonth();
+
+    所以，非静态对象都是需要先实例化，才能去用的。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

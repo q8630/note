@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>无标题文档</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #box{
+                width: 200px;
+                height: 200px;
+                background: #000;
+                position: absolute;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <input id="txt" type="text"  value="请输入内容。。。。" />
+
+
+        <script>
+            var oTxt = document.getElementById("txt");
+
+
+            /*
+            *
+            * 键盘按下 onkeydown
+            * 键盘抬起 onkeyup
+            * 键盘按住 onkeypress
+            *
+            * */
+            document.onkeyup = function (ev) {
+
+                var oEvent = ev||event;
+
+                //alert(oEvent.keyCode)      //得到键盘对应的
+
+                if(oEvent.keyCode == 13){
+
+                    alert(oTxt.value);
+
+                }
+                
+                if(oEvent.keyCode == 65){
+
+                    alert("我是a  我被按了！");
+
+                }
+
+
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event对象</title>
+    <style>
+        *{
+            margin: 0;
+            margin: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            font-size: 50px;
+            color: #fff;
+        }
+        #div1{
+            width: 800px;
+            height: 800px;
+            background: #f00;
+        }
+        #div2{
+            width: 700px;
+            height: 700px;
+            background: #ff8814;
+        }
+        #div3{
+            width: 600px;
+            height: 600px;
+            background: #ff0;
+        }
+        #div4{
+            width: 500px;
+            height: 500px;
+            background: #0f0;
+        }
+        #div5{
+            width: 400px;
+            height: 400px;
+            background: #00f;
+        }
+        #div6{
+            width: 300px;
+            height: 300px;
+            background: #76d4ff;
+        }
+        #div7{
+            width: 200px;
+            height: 200px;
+            background: #f0f;
+        }
+
+
+
+
+
+
+    </style>
+    <script type="text/javascript" charset="utf-8" src="startMove-3.js"></script>
+
+</head>
+<body>
+    <div id="div1">1
+        <div id="div2">2
+            <div id="div3">3
+                <div id="div4">4
+                    <div id="div5">5
+                        <div id="div6">6
+                            <div id="div7">7</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var oDiv1 = document.getElementById("div1");
+            var oDiv2 = document.getElementById("div2");
+            var oDiv3 = document.getElementById("div3");
+            var oDiv4 = document.getElementById("div4");
+            var oDiv5 = document.getElementById("div5");
+            var oDiv6 = document.getElementById("div6");
+            var oDiv7 = document.getElementById("div7");
+
+
+            oDiv7.onclick = function (ev) {
+                alert("我是第7个！");
+            }
+            oDiv7.setCapture();    //IE   设置鼠标捕获
+
+
+            oDiv1.onclick = function () {
+                alert("我是第1个！");
+            }
+            oDiv2.onclick = function () {
+                alert("我是第2个！");
+            }
+            oDiv3.onclick = function () {
+                alert("我是第3个！");
+            }
+            oDiv4.onclick = function () {
+                alert("我是第4个！");
+            }
+            oDiv5.onclick = function () {
+                alert("我是第5个！");
+            }
+            oDiv6.onclick = function () {
+                alert("我是第6个！");
+            }
+
+
+            /*
+            *  事件捕获：从外到里冒，也就是从最不具体的到最具体的！
+            *
+            * */
+
+
+
+
+
+
+
+
+        }
+
+    </script>
+
+</body>
+</html>

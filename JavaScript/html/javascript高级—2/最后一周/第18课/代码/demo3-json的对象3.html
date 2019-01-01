@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+var json={
+	name: '小仙女',
+	qq: '666666666',
+	
+	showName: function ()
+	{
+		alert('我的名字叫：'+this.name);
+	},
+	showQQ: function ()
+	{
+		alert('我的QQ号是：'+this.qq);
+	}
+};
+
+
+
+/*
+*   功能一样！
+*
+*	Json                简单
+*	不适合多个对象
+*
+*	单体
+*
+*
+*	用Json来实现面向对象，有一定范围：
+*	    整个程序里只有一个，写起来比较简单。
+*	    若用到多个，则又陷入了上一课的循环中去了。
+*
+*
+* */
+
+json.showName();
+json.showQQ();
+</script>
+</head>
+
+<body>
+</body>
+</html>

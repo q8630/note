@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div {width:200px; height:200px; margin:20px; float:left; background:yellow;font-size:14px;}
+</style>
+<!--<script>
+window.onload=function ()
+{
+	var oDiv1=document.getElementById('div1');
+	
+	oDiv1.onmouseover=function ()
+	{
+		startMove(this, 400);
+	};
+	oDiv1.onmouseout=function ()
+	{
+		startMove(this, 200);
+	};
+	
+
+};
+
+function getStyle(obj, name) {
+	if(obj.currentStyle)
+	{
+		return obj.currentStyle[name];
+	}
+	else
+	{
+		return getComputedStyle(obj, false)[name];
+	}
+}
+
+function startMove(obj, iTarget) {
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function (){
+		var speed=(iTarget-parseInt(getStyle(obj,"height")))/6;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		
+		if(parseInt(getStyle(obj,"height"))==iTarget)
+		{
+			clearInterval(obj.timer);
+		}
+		else
+		{
+			obj.style.height=parseInt(getStyle(obj,"height"))+speed+'px';
+		}
+	}, 30);
+}
+</script>-->
+</head>
+
+<body>
+<div id="div1">变高</div>
+<div id="div2">变宽</div>
+
+
+<script>
+    window.onload = function () {
+
+        var oDiv1 = document.getElementById("div1");
+        oDiv1.onmouseover = function () {
+            startMove(this,400);
+        } ;
+        oDiv1.onmouseout = function () {
+            startMove(this,200);
+        };
+
+        var oDiv2 = document.getElementById("div2");
+        oDiv2.onmouseover = function () {
+            startMove2(this,400);
+        } ;
+        oDiv2.onmouseout = function () {
+            startMove2(this,200);
+        };
+
+
+    }
+
+
+    function startMove(obj,iTarget) {
+
+        var speed=(iTarget-parseInt(getStyle(obj, "height")))/10;
+        speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+        clearInterval(obj.timer)
+        obj.timer = setInterval(function () {
+            if(parseInt(getStyle(obj, "height")) == iTarget){
+                clearInterval(obj.timer)
+            }else{
+                obj.style.height = parseInt(getStyle(obj, "height"))+speed+"px"
+            }
+        },20)
+    }
+
+    function startMove2(obj,iTarget) {
+
+        var speed=(iTarget-parseInt(getStyle(obj, "width")))/10;
+        speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+        clearInterval(obj.timer)
+        obj.timer = setInterval(function () {
+            if(parseInt(getStyle(obj, "width")) == iTarget){
+                clearInterval(obj.timer)
+            }else{
+                obj.style.width = parseInt(getStyle(obj, "width"))+speed+"px"
+            }
+        },20)
+    }
+
+    //获取非行内样式
+    function getStyle(obj, name) {
+        if(obj.currentStyle)
+        {
+            return obj.currentStyle[name];
+        }
+        else
+        {
+            return getComputedStyle(obj, false)[name];
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

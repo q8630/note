@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        window.onload = function () {
+
+            var json = {
+                "name":"小仙女",
+                "age":"18",
+                "like":function () {
+                    alert("蓝天白云！")
+                },
+                "dislike":function () {
+                    alert("雾霾！！")
+                }
+            }
+            json.like();
+            json.dislike();
+
+
+            var json1 = {
+                "name":"小鲜肉",
+                "age":"18",
+                "like":function () {
+                    alert("蓝天白云！1")
+                },
+                "dislike":function () {
+                    alert("雾霾！！1")
+                }
+            }
+            json1.like();
+            json1.dislike();
+
+
+        }
+    </script>
+
+</body>
+</html>

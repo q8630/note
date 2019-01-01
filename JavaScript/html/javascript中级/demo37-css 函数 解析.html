@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="box1" style="width: 200px; height: 200px; background: #f00;"></div>
+<div id="box2" style="width: 500px; height: 500px; background: #0f0;"></div>
+<div id="box3" style="width: 500px; height: 500px; background: #0f0;"></div>
+
+
+
+
+
+<script>
+
+    var oBox1 = document.getElementById("box1");
+    var oBox2 = document.getElementById("box2");
+    var oBox3 = document.getElementById("box3");
+
+    oBox1.onclick = function(){
+        alert(oBox2.style.width)
+        oBox2.style.background = "#f0f"
+    }
+
+    oBox3.onclick = function(){
+        alert(this.style.width)
+        this.style.background = "#ff0"
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>

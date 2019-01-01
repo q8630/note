@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event对象</title>
+    <style>
+        *{
+            margin: 0;
+            margin: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        #btn{
+            width: 200px;
+            height: 70px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 10px;
+            outline: none;
+            font-size: 20px;
+            margin: 0 auto;
+            display: block;
+        }
+        #mask{
+            width: 700px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background: #000;
+            display: none;
+        }
+
+
+
+
+
+
+    </style>
+    <script type="text/javascript" charset="utf-8" src="startMove-3.js"></script>
+
+</head>
+<body>
+    <button id="btn">按钮</button>
+
+    <div id="mask"></div>
+
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById("btn");
+            var oMask = document.getElementById("mask");
+
+
+            oBtn.onclick = function (ev) {
+                // startMove(oMask,{"opacity":"100"})
+                // alert("按钮 被触发了！")
+
+                oMask.style.display = "block";
+
+                //阻止事件冒泡
+                var oEvent = window.event||ev ;
+
+                try{
+                    oEvent.stopPropagation();    //不兼容低版本浏览器
+                }catch(e){
+                    oEvent.cancelBubble = true;  //兼容低版本 
+                }
+
+
+
+
+
+
+            
+
+            }
+
+            document.onclick = function () {
+                // startMove(oMask,{"opacity":"0"})
+                // alert("document 被触发了！")
+                oMask.style.display = "none";
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

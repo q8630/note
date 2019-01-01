@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>无标题文档</title>
+        <script>
+
+        //存
+        // var oDate=new Date();
+        // oDate.setDate(oDate.getDate()+10);
+        // alert(oDate)
+        // document.cookie='userName=leng;expires='+oDate;
+        // alert(document.cookie);
+
+
+        //存
+        function setCookie(name,value,iDay){
+            var oDate = new Date()
+            oDate.setDate(oDate.getDate()+iDay)
+            document.cookie = name+"="+value+";expires="+oDate
+        }
+        //
+        // setCookie("userName","Ning",7)
+        // setCookie("age","18",1000)
+        // setCookie("password","6666666",1000)
+
+
+
+        // alert(document.cookie)
+
+
+        //取
+        function getCookie(name){
+
+            //userName=Ning; age=18; password=6666666
+            // console.log(document.cookie);
+            // document.cookie = "userName=Ning; age=18; password=6666666"
+
+            var arr=document.cookie.split('; ');   //["age=18","userName=Ning","password=6666666"]
+
+            for(var i=0;i<arr.length;i++){
+
+                var arr2=arr[i].split('=');  //["age","18"] ["userName","Ning"] ["password","6666666"]
+
+                if(arr2[0]==name){
+                    return arr2[1];
+                }
+            }
+            return "";
+        }
+
+       // alert(getCookie("userName"))
+
+
+        //删除
+        function removeCookie(name) {
+            setCookie(name, 123, -1);
+        }
+        removeCookie("password")
+
+        </script>
+    </head>
+
+    <body>
+    </body>
+</html>

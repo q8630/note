@@ -1,0 +1,35 @@
+[
+  {
+    "id": "男生",
+    "version": "man",
+    "total":[
+        {"name":"阿根","age":28},
+        {"name":"阿洪","age":8},
+        {"name":"阿楞","age":38},
+        {"name":"阿门","age":48},
+        {"name":"阿辉","age":58},
+        {"name":"正哥","age":18}
+    ]
+  },
+  {
+    "id": "女生",
+    "version": "women",
+    "total":[
+        {"name":"阿蕊","age":8},
+        {"name":"阿娟","age":8},
+        {"name":"阿露","age":8},
+        {"name":"阿晗","age":8},
+        {"name":"阿然","age":8},
+        {"name":"阿云","age":8},
+        {"name":"阿格","age":8}
+    ]
+  }
+]
+
+
+
+
+
+
+
+

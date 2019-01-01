@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function setCookie(name,value,num){
+            var oDate = new Date()
+            oDate.setDate(oDate.getDate()+num)
+            document.cookie=name+"="+value+";expires="+oDate
+        }
+
+        setCookie("姓名","宁德正",365)
+        setCookie("age","18",365)
+
+    function getCookie(username){
+        var str = document.cookie.split(";")
+        alert(str)
+
+        for(var i = 0; i <str.length; i++){
+            var str2 = str[i].split("=")
+            alert(str2)
+            if(str2[0]==username){
+                return str2[1]
+            }
+        }
+        return '';
+    }
+alert(getCookie("age"))
+//删除
+//function removeCookie(name)
+//{
+//    setCookie(name, 1, -1);
+//}
+//removeCookie("姓名")
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

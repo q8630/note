@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #76d4ff;
+        }
+        ul{
+            list-style: none;
+        }
+        #item_box{
+            width: 400px;
+            height: 480px;
+            margin: 50px auto;
+            border: 1px solid #CCCCCC;
+            position: relative;
+        }
+        #item_box img{
+            width: 400px;
+            height: 400px;
+        }
+        #list{
+            display: flex;
+        }
+        #list li{
+            margin: 15px;
+        }
+        #list li img{
+            width: 50px;
+            height: 50px;
+        }
+        #list li .bor{
+            border: 2px solid red;
+        }
+        #img_box #cover{
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,.4);
+        }
+        #b_img{
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            background-image: url("img/1.jpg");
+            background-size: 267%;
+            position: absolute;
+            top: 0;
+            left: 400px;
+        }
+    </style>
+    <title>放大镜</title>
+</head>
+<body>
+    <div id="item_box">
+        <div id="img_box">
+            <img src="img/1.jpg" alt="">
+            <div id="cover"></div>
+        </div>
+        <ul id="list">
+            <li>
+                <img class="bor" src="img/1.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/2.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/3.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/4.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/5.jpg" alt="">
+            </li>
+        </ul>
+
+        <div id="b_img"></div>
+    </div>
+
+
+    <script>
+        window.onload = function () {
+            var oList = document.getElementById("list");
+            var Img = document.querySelector("#img_box img");
+            var oCover = document.getElementById("cover");
+            var oImg_box = document.getElementById("img_box");
+            var oB_img = document.getElementById("b_img");
+
+            oList.addEventListener("mousemove",function (e) {
+                if(e.target.tagName == "IMG"){
+                    Img.src = e.target.src;
+                    oB_img.style.backgroundImage = 'url('+e.target.src+')';
+
+                }
+            })
+
+            oImg_box.addEventListener("mousemove",function (e) {
+                var x = e.clientX;
+                var y = e.clientY;
+
+                var l = oImg_box.getBoundingClientRect().left;
+                var t = oImg_box.getBoundingClientRect().top;
+
+                var tx = x - l -75;
+                var ty = y - t -75;
+
+                if(tx<0){
+                    tx=0;
+                }
+                if(ty<0){
+                    ty=0;
+                }
+                if(tx>250){
+                    tx=250;
+                }
+                if(ty>250){
+                    ty = 250;
+                }
+
+
+                oB_img.style.backgroundPosition = tx/250*100+"% " +ty/250*100+"%";
+
+
+
+                oCover.style.left = tx + "px";
+                oCover.style.top = ty + "px";
+
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 1125px;
+            height: 550px;
+            border: 20px solid #f00;
+            margin:  50px auto;
+            position: relative;
+            overflow: hidden;
+
+        }
+        .box .small_box{
+            width: 99999999999999px;
+            height: 550px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+
+        }
+        .small_box>img{
+            width: 1125px;
+            height: 550px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="small_box" id="small_box">
+            <img src="img/image/0.jpg" alt="">
+            <img src="img/image/1.jpg" alt="">
+            <img src="img/image/2.jpg" alt="">
+            <img src="img/image/3.jpg" alt="">
+            <img src="img/image/4.jpg" alt="">
+            <img src="img/image/5.jpg" alt="">
+            <img src="img/image/6.jpg" alt="">
+            <img src="img/image/0.jpg" alt="">
+        </div>
+       
+
+    </div>
+
+
+    <script>
+        var oBox = document.getElementById("box");
+        var oSmallBox = document.getElementById("small_box");
+        var aImg = document.getElementsByTagName("img");
+
+        var len = aImg.length-1;
+        var wImg = aImg[0].offsetWidth;
+//        alert(wImg);
+//        console.log(len);
+        var number = len * wImg;
+//        console.log(number);
+
+        var a =0;
+        var timer;
+        serT();
+        function serT(){
+            clearInterval(timer);
+            timer = setInterval(function () {
+                if(a>-number){
+                    a-=5;
+                    oSmallBox.style.left = a+"px";
+                }else{
+                    a=0
+                }
+            },20)
+        }
+        console.log(a);
+        oBox.onmouseover = function(){
+            clearInterval(timer)
+        }
+
+        oBox.onmouseout = function(){
+            serT()
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

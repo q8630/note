@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <script>
+
+
+        function createPerson(name, qq)
+        {
+            this.name=name;
+            this.qq=qq;
+        }
+
+
+        var obj1=new createPerson('小仙女', '6666666666');
+
+        createPerson.prototype.showName = function ()
+        {
+            alert('我的名字叫：'+this.name);
+        };
+        obj1.showName();
+
+
+    </script>
+</head>
+
+<body>
+</body>
+</html>

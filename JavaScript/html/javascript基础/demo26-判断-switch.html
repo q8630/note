@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if, switch, ?:</title>
+</head>
+<body>
+
+
+
+
+    <script>
+
+        /* 2. switch
+        * 语法：
+        *       switch (条件/变量){
+        *           case  参数1：
+        *               满足参数1执行的语句1
+        *               break;
+        *           case  参数2：
+        *               满足参数2执行的语句2
+        *               break;
+        *           case  参数3：
+        *               满足参数3执行的语句3
+        *               break;
+        *            .......
+        *           default:
+        *               所有参数或条件都不满足执行的语句
+        *       }
+        *
+        *
+        * */
+
+
+        var day = Math.random()*8;
+
+        console.log(day);
+
+        switch (parseInt(day)){
+            case 1:
+                alert("上班");
+                break;
+            case 2:
+                alert("上班");
+                break;
+            case 3:
+                alert("上班");
+                break;
+            case 4:
+                alert("上班");
+                break;
+            case 5:
+                alert("上班");
+                break;
+            case 6:
+                alert("休息");
+                break;
+            case 7:
+                alert("休息");
+                break;
+            default:
+                alert("你丫的写错了！！！");
+        }
+
+    </script>
+
+
+
+</body>
+</html>

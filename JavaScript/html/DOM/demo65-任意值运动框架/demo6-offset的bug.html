@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <style>
+        #div1 {
+            width:200px;
+            height:200px;
+            background:red;
+            border: 1px solid #000;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+
+
+
+
+
+    <script>
+        var oDiv=document.getElementById('div1');
+
+        /*
+        *  oDiv.style.width      oDiv.offsetWidth     -1            结果
+        *       200                     202           -1            201
+        *       201                     203           -1            202
+        *       202                     204           -1            203
+        *       。。。。。。。
+        *
+        *       ps:不能用 offset  因为offset拿到的值是包含边框的
+        *
+        * */
+
+        //获取非行内样式
+        function getStyle(obj, name) {
+            if(obj.currentStyle){
+                return obj.currentStyle[name];
+            }else{
+                return getComputedStyle(obj, false)[name];
+            }
+        }
+
+        setInterval(function (){
+
+
+            oDiv.style.width=oDiv.offsetWidth-1+'px';
+
+        }, 50);
+    </script>
+</body>
+</html>

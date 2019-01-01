@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #list{
+            width: 500px;
+            height: 50px;
+            background: rgba(0,0,0,.5);
+        }
+        #list li{
+            list-style: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background: rgba(255,255,255,1);
+            text-align: center;
+            line-height: 50px;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>btn1</li>
+        <li>btn2</li>
+        <li>btn3</li>
+        <li>btn4</li>
+        <li>btn5</li>
+        <li>btn6</li>
+    </ul>
+
+    <script>
+        var oList = document.getElementById("list");
+        var aLi = oList.getElementsByTagName("li")
+
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].index = i;   //这就是给每一个都添加一个index属性
+            aLi[i].onclick = function () {
+                alert(this.index)   //在这里点击谁就能得到谁的index属性值
+            }
+        }
+
+    </script>
+
+</body>
+</html>

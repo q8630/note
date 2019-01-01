@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>曲线例子</title>
+</head>
+<body>
+<canvas id="canvas"style="border: 2px solid #000; display: block; margin: 0 auto;">
+    当前浏览器不支持Canvas,请更换浏览器以后再重试
+</canvas>
+
+
+
+<script>
+    var canvas=document.getElementById("canvas");
+    canvas.width = 1000;
+    canvas.height = 700;
+    var ctx=canvas.getContext("2d");
+
+    //1.设置线宽和颜色
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "#0f0";
+
+    //设置：ctx.closePath() 能让首尾闭合
+    for(var i=0;i<10;i++){
+        ctx.beginPath();    //绘制开始
+
+        //2.设置绘图轨迹
+        ctx.arc(50+i*100, 60, 40,0, 2*Math.PI*(i+1)/10,false)
+
+        ctx.closePath();    //绘制结束
+
+        // 3.绘制
+        ctx.stroke();
+    }
+
+    //不设置： ctx.closePath()
+    for(var i=0;i<10;i++){
+        ctx.beginPath();    //绘制开始
+
+        //2.设置绘图轨迹
+        ctx.arc(50+i*100, 180, 40,0, 2*Math.PI*(i+1)/10,false)
+
+//        ctx.closePath();    //绘制结束
+
+        // 3.绘制
+        ctx.stroke();
+    }
+
+    //逆时针
+    for(var i=0;i<10;i++){
+        ctx.beginPath();    //绘制开始
+
+        //2.设置绘图轨迹
+        ctx.arc(50+i*100, 300, 40,0, 2*Math.PI*(i+1)/10,true)
+
+        ctx.closePath();    //绘制结束
+
+        // 3.绘制
+        ctx.stroke();
+    }
+
+    //逆时针
+    for(var i=0;i<10;i++){
+        ctx.beginPath();    //绘制开始
+
+        //2.设置绘图轨迹
+        ctx.arc(50+i*100, 420, 40,0, 2*Math.PI*(i+1)/10,true)
+
+//        ctx.closePath();    //绘制结束
+
+        // 3.绘制
+        ctx.stroke();
+    }
+
+
+    //添加填充颜色
+    ctx.fillStyle = "#f00";
+
+    for(var i=0;i<10;i++){
+        ctx.beginPath();    //绘制开始
+
+        //2.设置绘图轨迹
+        ctx.arc(50+i*100, 540, 40,0, 2*Math.PI*(i+1)/10,false)
+
+        ctx.closePath();    //绘制结束
+
+        // 3.绘制
+        ctx.fill();
+    }
+
+    //ctx.closePath() 对fill是没有用的。
+    ctx.fillStyle = "#f00";
+    for(var i=0;i<10;i++){
+        ctx.beginPath();    //绘制开始
+
+        //2.设置绘图轨迹
+        ctx.arc(50+i*100, 640, 40,0, 2*Math.PI*(i+1)/10,false)
+
+//        ctx.closePath();    //绘制结束
+
+        // 3.绘制
+        ctx.fill();
+    }
+
+</script>
+
+
+</body>
+</html>

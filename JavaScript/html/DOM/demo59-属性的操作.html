@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 700px;
+            height: 700px;
+            background: #ccc;
+            margin: 50px auto;
+            position: relative;
+        }
+        input{
+            width: 300px;
+            height: 50px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <input id="txt" type="text" />
+    </div>
+
+    <script>
+        window.onload = function () {
+
+            var oTxt = document.getElementById("txt");
+
+            //获取属性：
+            //方法一：
+            // alert(oTxt.value)
+
+            //方法二：（在js里面 能用点的地方就能用中括号）
+            // alert(oTxt["value"])
+
+            //方法三：
+            // alert(oTxt.getAttribute("value"))
+
+
+            //设置属性：
+            //方法一：
+            // oTxt.value = "你大爷的！"
+
+            //方法二：
+            // oTxt.setAttribute("value","哈哈哈哈");
+
+            //获取属性：getAttribute("") :一个参数
+            //设置属性：setAttribute("","") :两个参数
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 
+//             var oTxt = document.getElementById("txt");
+//             //获取属性值
+//             console.log(oTxt.getAttribute("value"));
+
+//             //设置属性或属性值
+//             oTxt.setAttribute("value","输入你大爷啊！")
+
+//             //删除属性
+//             oTxt.removeAttribute("value")
+
+
+
+        }
+    </script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

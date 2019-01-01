@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 1212px;
+            height: 200px;
+            background: #0086b3;
+            margin: 100px auto;
+        }
+        #box div{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+            border: 1px solid #000;
+            float: left;
+        }
+        #box div p{
+            width: 200px;
+            height: 50px;
+            color: #fff;
+            line-height: 50px;
+            text-align: center;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <div>
+        <p>第1个div里面的p标签</p>
+        <p>第1个div里面的p标签</p>
+        <p>第1个div里面的p标签</p>
+        <p>第1个div里面的p标签</p>
+    </div>
+    <div>
+        <p>第2个div里面的p标签</p>
+        <p>第2个div里面的p标签</p>
+        <p>第2个div里面的p标签</p>
+        <p>第2个div里面的p标签</p>
+    </div>
+    <div>
+        <p>第3个div里面的p标签</p>
+        <p>第3个div里面的p标签</p>
+        <p>第3个div里面的p标签</p>
+        <p>第3个div里面的p标签</p>
+    </div>
+    <div>
+        <p>第4个div里面的p标签</p>
+        <p>第4个div里面的p标签</p>
+        <p>第4个div里面的p标签</p>
+        <p>第4个div里面的p标签</p>
+    </div>
+    <div>
+        <p>第5个div里面的p标签</p>
+        <p>第5个div里面的p标签</p>
+        <p>第5个div里面的p标签</p>
+        <p>第5个div里面的p标签</p>
+    </div>
+    <div>
+        <p>第6个div里面的p标签</p>
+        <p>第6个div里面的p标签</p>
+        <p>第6个div里面的p标签</p>
+        <p>第6个div里面的p标签</p>
+    </div>
+</div>
+
+
+<script>
+
+    var oBox = document.getElementById("box");
+    var aDiv = oBox.getElementsByTagName("div");
+
+    for(var i=0; i<aDiv.length; i++){
+        aDiv[i].onclick = function () {
+            alert(this.innerHTML)
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

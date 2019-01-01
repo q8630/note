@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event对象</title>
+    <style>
+        *{
+            margin: 0;
+            margin: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        #div7{
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 50px;
+            color: #fff;
+            width: 200px;
+            height: 200px;
+            background: #f0f;
+        }
+
+    </style>
+    <script type="text/javascript" charset="utf-8" src="startMove-3.js"></script>
+
+</head>
+<body>
+    <div id="div7"></div>
+
+    <script>
+        window.onload = function () {
+            var oDiv7 = document.getElementById("div7");
+
+            document.onmousemove = function (ev) {
+                var oEvent = ev||event;
+                var x = oEvent.clientX;
+                var y = oEvent.clientY;
+                // console.log("现在的坐标是：" + x + "," + y)
+
+                oDiv7.style.left = (x-oDiv7.offsetWidth/2) +"px";
+                oDiv7.style.top = (y-oDiv7.offsetHeight/2)+"px";
+
+
+                // console.log(oDiv7.offsetWidth)    //获取自身的宽度
+                // console.log(oDiv7.offsetHeight)    //获取自身的高度
+                // console.log(oDiv7.offsetTop)    //获取自身距离页面顶部高度
+                // console.log(oDiv7.offsetLeft)    //获取自身距离页面左边距离
+
+
+
+
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

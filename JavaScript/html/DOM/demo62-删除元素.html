@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <ul id="list">
+        <li>aaaaaaaaaaa<span>删除</span></li>
+        <li>bbbbbbbb<span>删除</span></li>
+        <li>cccccccc<span>删除</span></li>
+        <li>ddddddd<span>删除</span></li>
+        <li>eeeeeeee<span>删除</span></li>
+    </ul>
+
+    <script>
+        window.onload = function () {
+            var oList = document.getElementById("list");
+            var ali = oList.getElementsByTagName("li");
+            var aspan = oList.getElementsByTagName("span");
+
+            for(var i=0;i<aspan.length;i++){
+                aspan[i].onclick = function () {
+                    // this.parentNode.style.display = "none";
+
+                    //点击谁就删除ul下面的子节点中的 点击元素的父节点
+                    oList.removeChild(this.parentNode)  
+                   
+                    /*
+                    * 删除子节点：removeChild（）
+                    *
+                    * */
+
+                }
+            }
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

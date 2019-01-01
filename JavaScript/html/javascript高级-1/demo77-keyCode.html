@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>无标题文档</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #box{
+                width: 200px;
+                height: 200px;
+                background: #000;
+                position: absolute;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+    <div id="box"></div>
+
+
+        <script>
+            var oBox = document.getElementById("box");
+            document.onkeydown=function (ev) {
+                var oEvent=ev||event;
+
+                // alert(oEvent.keyCode);
+
+                switch (oEvent.keyCode){
+                    case 37:
+                        // alert("左！");
+                        oBox.style.left = oBox.offsetLeft - 10 + "px";
+                        break;
+                    case 38:
+                        // alert("上！");
+                        oBox.style.top = oBox.offsetTop - 10 + "px";
+                        break;
+                    case 39:
+                        // alert("右！");
+                        oBox.style.left = oBox.offsetLeft + 10 + "px";
+                        break;
+                    case 40:
+                        // alert("下！");
+                        oBox.style.top = oBox.offsetTop + 10 + "px";
+                        break;
+                }
+            };
+
+    </script>
+    </body>
+</html>

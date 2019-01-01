@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>绘制曲线</title>
+</head>
+<body>
+<canvas id="canvas"style="border: 1px solid #000; display: block; margin: 0 auto;">
+    当前浏览器不支持Canvas,请更换浏览器以后再重试
+</canvas>
+
+
+
+<script>
+    var canvas=document.getElementById("canvas");
+    canvas.width = 1000;
+    canvas.height = 600;
+    var ctx=canvas.getContext("2d");
+
+
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "#0f0";
+
+
+    ctx.arc(500, 300, 100,0, 1.5*Math.PI,false)
+
+
+    ctx.stroke();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <style>
+        #div1 {
+            width:150px;
+            height:150px;
+            background:red;
+            position:absolute;
+            right:0;
+            bottom:0;
+        }
+    </style>
+    <!--<script>
+    window.onscroll=function () {
+        var oDiv=document.getElementById('div1');
+        var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+
+        //oDiv.style.top=document.documentElement.clientHeight-oDiv.offsetHeight+scrollTop+'px';
+        startMove(document.documentElement.clientHeight-oDiv.offsetHeight+scrollTop);
+    };
+    var timer=null;
+
+    function startMove(iTarget){
+        var oDiv=document.getElementById('div1');
+
+        clearInterval(timer);
+        timer=setInterval(function (){
+            var speed=(iTarget-oDiv.offsetTop)/4;
+            speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+            if(oDiv.offsetTop==iTarget){
+                clearInterval(timer);
+            }else{
+                oDiv.style.top=oDiv.offsetTop+speed+'px';
+            }
+        }, 30);
+    }
+    </script>-->
+</head>
+
+<body style="height:2000px;background: pink;">
+<div id="div1"></div>
+
+<script>
+
+
+    var oDiv=document.getElementById('div1');
+    //滚动页面的时候触发的事件
+    window.onscroll=function () {
+        // 获取scrollTop值（页面顶部距离视口（窗口）顶部的距离）
+        var scrollTop=document.documentElement.scrollTop || document.body.scrollTop;   //兼容
+        //获取窗口的高度
+        var windowH = document.documentElement.clientHeight;
+        //获取自身的高度
+        var myH = oDiv.offsetHeight;
+        console.log(scrollTop);
+
+        startMove(scrollTop + parseInt((windowH - myH)/2))
+    }
+    var timer;
+
+    function startMove(iTarget) {
+        var oDiv = document.getElementById('div1');
+
+        clearInterval(timer)
+        timer = setInterval(function () {
+            var speed = (iTarget-oDiv.offsetTop)/10;
+            speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+            if(oDiv.offsetTop == iTarget){
+                clearInterval(timer)
+            }else{
+                oDiv.style.top = oDiv.offsetTop+speed+"px";
+                document.title = oDiv.offsetTop;
+
+            }
+        },20)
+    }
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            width: 50px;
+            height: 50px;
+
+        }
+    </style>
+
+
+    <!--<script type="text/javascript" charset="UTF-8">-->
+        <!--window.onload = function(){-->
+            <!--var oAll = document.getElementById("All");-->
+            <!--var oUnCheck = document.getElementById("uncheck");-->
+            <!--var oOtherCheck = document.getElementById("othercheck");-->
+            <!--var oDiv = document.getElementById("div");-->
+            <!--var aInput = oDiv.getElementsByTagName("input");-->
+
+            <!--oAll.onclick = function(){-->
+                <!--for(var i=0;i<aInput.length;i++){-->
+                    <!--aInput[i].checked = true;-->
+                <!--}-->
+            <!--}-->
+            <!--oUnCheck.onclick = function(){-->
+                <!--for(var i=0;i<aInput.length;i++){-->
+                    <!--aInput[i].checked = false;-->
+                <!--}-->
+            <!--}-->
+            <!--oOtherCheck.onclick = function(){-->
+                <!--for(var i=0;i<aInput.length;i++){-->
+
+                    <!--//1:-->
+                    <!--if(aInput[i].checked == false){-->
+                        <!--aInput[i].checked = true;-->
+                    <!--}else {-->
+                        <!--aInput[i].checked = false;-->
+                    <!--}-->
+
+                    <!--//2:-->
+                    <!--// aInput[i].checked = !aInput[i].checked;-->
+                <!--}-->
+            <!--}-->
+
+
+
+
+
+
+        <!--}-->
+
+    <!--</script>-->
+
+
+
+</head>
+<body>
+
+    全选：<input type="button" id="All" value="全选" /><br />
+    不选<input type="button" id="uncheck" value="不选" /><br />
+    反选<input type="button" id="othercheck" value="反选" /><br />
+    <div id="div">
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+        <input type="text" /><br />
+    </div>
+
+
+
+<script>
+   window.onload=function(){
+        var CheckAll=document.getElementById('All');
+        var UnCheck=document.getElementById('uncheck');
+        var OtherCheck=document.getElementById('othercheck');
+
+        var div=document.getElementById('div');
+        var CheckBox=div.getElementsByTagName('input');
+
+        CheckAll.onclick=function(){
+            for(i=0;i<CheckBox.length;i++){
+                CheckBox[i].checked=true;
+            };
+        };
+
+        UnCheck.onclick=function(){
+            for(i=0;i<CheckBox.length;i++){
+                CheckBox[i].checked=false;
+            };
+        };
+
+        othercheck.onclick=function(){
+            for(i=0;i<CheckBox.length;i++){
+                if(CheckBox[i].checked==true){
+                    CheckBox[i].checked=false;
+                }else{
+                    CheckBox[i].checked=true
+                }
+            };
+        };
+    };
+</script>
+
+</body>
+</html>

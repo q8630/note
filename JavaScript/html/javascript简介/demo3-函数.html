@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="box"></div>
+
+
+    <script type="text/javascript" charset="utf-8">
+
+        var oBox = document.getElementById("box");    /* 获取id名叫box的div */
+        var oBtn = document.getElementById("btn");    /* 获取id名叫btn的按钮 */
+
+        //函数的基本格式
+        /*
+            function () { }
+
+            没有名字的函数叫做匿名函数
+
+        */
+
+        function ershazi(){
+            oBox.style.display = "block";
+        }
+
+
+        oBtn.onclick = function () {
+            ershazi();     /*  小括号代表执行函数 */
+        }
+
+
+        /*  函数的定义 */
+        function  ergouzi(a,b,c){   //ning和b  叫参数
+            // alert("ning+b")    //引号里面是啥就是啥
+
+            alert(a+b-c)
+        }
+
+        /* 调用函数 */
+        ergouzi(1,45,23,5,7)
+
+
+
+
+    </script>
+</body>
+</html>

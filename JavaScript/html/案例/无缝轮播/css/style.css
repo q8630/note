@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: auto;
+    background: #ccc;
+}
+#box{
+    width: 400px;
+    height: 319px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    border: 10px solid #f00;
+    overflow: hidden;
+}
+#list{
+    width: 40000000px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: -400px;
+    background: #0f0;
+
+}
+#list li{
+    width: 400px;
+    height: auto;
+    list-style: none;
+    float: left;
+}
+#list li img{
+    display: block;
+    width: 400px;
+    height: auto;
+}
+
+
+#btn_box{
+    width: 161px;
+    height: 20px;
+    background: rgba(255,255,255,.5);
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -80.5px;
+    border-radius: 30px;
+
+}
+
+#btn_box span{
+    float: left;
+    width: 15px;
+    height: 15px;
+    background: rgba(255,255,255,1);
+    margin: 2px 4px;
+    border-radius: 20px;
+}
+
+button{
+    border: none;
+    outline: none;
+    background: rgba(200,200,200,.5);
+    width: 30px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    color: #fff;
+    font-size: 20px;
+}
+#btnL{
+    left: 0;
+}
+#btnR{
+    right: 0;
+}
+
+
+

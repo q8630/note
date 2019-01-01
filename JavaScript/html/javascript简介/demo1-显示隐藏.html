@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+            display: none;    /* 隐藏的    display: block; 显示出来 */
+
+        }
+        
+    </style>
+</head>
+<body>
+<button id="btn" onmouseover="box.style.display='block'" onclick="box.style.border='1px solid #000'" onmouseout="box.style.display='none'">按钮</button>
+<div id="box"></div>
+
+</body>
+</html>

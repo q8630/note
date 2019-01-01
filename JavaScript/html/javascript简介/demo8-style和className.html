@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #btn{
+            width: 100px;
+            height: 50px;
+            background-color: #3333ff;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            margin: 50px auto;
+            display: block;
+            color: #fff;
+
+        }
+
+        #box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #f00;
+            margin: 0 auto;
+            line-height: 300px;
+            text-align: center;
+        }
+
+        .blue{
+            background-color: #00f;
+        }
+
+        .ning{
+            background: #f00;
+            border: 10px solid #000!important;
+            border-radius: 100%;
+            color: #fff;
+            font-size: 30px;
+        }
+
+    </style>
+
+    <script>
+        //等别的所有东西加载完毕以后才会触发他里面的代码块
+        window.onload = function(){
+            var oBtn = document.getElementById("btn");
+            var oBox = document.getElementById("box");
+
+
+
+
+            oBtn.onclick = function(){         /* 给oBtn添加一个点击事件  */
+
+                oBox.className = "ning"
+
+            }
+
+            /*
+             *   1. id名的权重比class的权重高，所以后添加class名不起作用
+             *   2.  .style 添加的是行内样式 class添加的是class样式，
+             *       行内样式的权重高于class样式的权重   所以后添加class名不起作用
+             *   注意： style 和 className  尽量不要混用！！
+             * */
+
+
+        }
+
+
+
+    </script>
+
+
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="box">
+        哈啊哈哈啊哈
+
+    </div>
+
+
+</body>
+</html>

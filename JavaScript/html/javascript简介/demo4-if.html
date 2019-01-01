@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="box"></div>
+
+
+    <script type="text/javascript" charset="utf-8">
+
+        var oBox = document.getElementById("box");    /* 获取id名叫box的div */
+        var oBtn = document.getElementById("btn");    /* 获取id名叫btn的按钮 */
+
+
+        /*
+        * 语法：if(条件){满足条件执行语句1}
+        * 注意： “=” 赋值     “==” 比较
+        *
+        * 语法：if(条件){满足条件执行语句1}else{不满足条件执行语句2}
+        *
+        *
+        * */
+
+
+        var abc = 10;
+        var def = 20;
+
+        if(abc<7){   //满足括号里面的条件 就执大打括号里面的语句
+            alert("abc 小于 7")
+        }
+
+        if(abc>7){  //满足括号里面的条件 就执行大括号里面的语句
+            alert("abc 大于 7")
+        }
+
+        if(def<20){    //满足括号里面的条件 就是行大括号里面的语句
+            alert("今天我很开心！")
+
+        }else{        //否则执行它里面的语句
+            alert("今天我不开心！")
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var a = 0;
+        oBtn.onclick = function(){
+            if(a == 0){
+                oBox.style.display = "block";
+               a = 1;
+            }else{
+                oBox.style.display = "none";
+                a = 0;
+            }
+
+        }
+
+    </script>
+</body>
+</html>

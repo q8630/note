@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 700px;
+            height: 700px;
+            background: #ccc;
+            margin: 50px auto;
+            position: relative;
+        }
+        .list{
+            width: 700px;
+            height: auto;
+            background: #f00;
+        }
+        .list li{
+            list-style: none;
+            width: 700px;
+            min-height: 30px;
+            height: auto;
+            border: 2px solid #fff;
+        }
+
+        span{
+            width: 100px;
+            height: 50px;
+            display: block;
+            border: 2px solid #ff0;
+        }
+        .hide{
+            font-size: 50px;
+            background: pink;
+            width: 400px;
+            color: #fff;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="box">
+    <ul class="list">
+        <li>1111111111111111111111111</li>
+        <li>22222222222222222</li>
+        <li>33333333333333333
+            <p>
+                <span>span1111</span>
+                <span>span2222</span>
+                <span id="three">span3333</span>
+                <span>span4444</span>
+                <span>span5555</span>
+                <span>span6666</span>
+            </p>
+        </li>
+        <li>44444444444444444</li>
+        <li>55555555555555555</li>
+    </ul>
+</div>
+
+<script>
+    window.onload = function () {
+        var aList = document.getElementsByClassName("list")[0];
+        var oThree = document.getElementById("three");
+
+        oThree.onclick = function () {
+
+            //兼容
+            if(oThree.previousElementSibling){
+                oThree.previousElementSibling.style.display = "none";
+                // oThree.previousElementSibling.style["display"] = "none";
+                // oThree.previousElementSibling.setAttribute("class","hide");
+                // oThree.previousElementSibling.className = "hide";
+
+            }else{
+                oThree.previousSibling.style.display = "none";
+                // oThree.previousSibling.style["display"] = "none";
+                // oThree.previousSibling.setAttribute("class","hide");
+                // oThree.previousSibling.className = "hide";
+            }
+
+        }
+
+
+
+
+    }
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

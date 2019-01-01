@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="ajax.js"></script>
+</head>
+<body>
+    <button id="btn">获取数据</button>
+
+
+    <script>
+
+        window.onload = function () {
+            var oBtn = document.getElementById("btn");
+            oBtn.onclick = function () {
+                /*
+                * ajax 只要是请求过来的数据，都是字符串
+                *
+                * //由JSON字符串转换为JSON对象
+                *    var _data = eval(data);    x
+                *
+                *    var _data = eval('(' + data + ')');  √
+                *
+                *    var _data = data.parseJSON();   x
+                *
+                *    var _data = JSON.parse(data);  √
+                *
+                * */
+
+                ajax("list2.json",function (data) {
+                    var _data = JSON.parse(data);
+
+                    console.log(_data.dependencies.name);
+
+                },function () {
+                    alert("失败！")
+                })
+
+
+            }
+
+
+
+        }
+
+    </script>
+
+</body>
+</html>

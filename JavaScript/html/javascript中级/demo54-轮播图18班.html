@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 700px;
+            height: 342px;
+            margin:  100px auto;
+            position: relative;
+        }
+        #list{
+            width: 700px;
+            height: 342px;
+            overflow: hidden;
+        }
+        #list li{
+            list-style: none;
+            width: 700px;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #list li:nth-child(1){
+            display: block;
+        }
+        #list li img{
+            display: block;
+            width: 700px;
+            height: auto;
+        }
+        #btnBox{
+            width: 220px;
+            height: 24px;
+            background: rgba(255,255,255,.5);
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -100px;
+            text-align: center;
+            padding-top: 4px;
+            border-radius: 20px;
+
+        }
+        #btnBox span{
+            width: 20px;
+            height: 20px;
+            background: rgb(255,255,255);
+            display: inline-block;
+            border-radius: 20px;
+
+        }
+        .color{
+            background: rgb(255,0,0)!important;
+        }
+
+        botton{
+            display: block;
+            width: 50px;
+            height: 100px;
+            background: rgba(0,0,0,0.5);
+            font-size: 50px;
+            line-height: 100px;
+            color: #fff;
+            position: absolute;
+            top: 120px;
+            text-align: center;
+        }
+        #btnL{
+            left: 0;
+        }
+        #btnR{
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul id="list">
+            <li><img src="img/image/0.jpg" alt=""/></li>
+            <li><img src="img/image/1.jpg" alt=""/></li>
+            <li><img src="img/image/2.jpg" alt=""/></li>
+            <li><img src="img/image/3.jpg" alt=""/></li>
+            <li><img src="img/image/4.jpg" alt=""/></li>
+            <li><img src="img/image/5.jpg" alt=""/></li>
+            <li><img src="img/image/6.jpg" alt=""/></li>
+        </ul>
+        <p id="btnBox">
+            <span></span>    <!-- this.index -->
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </p>
+        <botton id="btnL"> < </botton>
+        <botton id="btnR"> > </botton>
+    </div>
+
+   <script>
+        var oBox = document.getElementById("box");
+        var oList = document.getElementById("list");
+        var aLi = oList.getElementsByTagName("li");
+
+        var oBtnBox = document.getElementById("btnBox");
+        var aSpan = oBtnBox.getElementsByTagName("span"); 
+        var number = 0;
+        aSpan[0].style.background = "#f00"   
+
+        for(var i=0;i<aSpan.length;i++){    //仅仅只是给span添加事件的
+            aSpan[i].index = i;   //给span标签添加一个属性等i
+            aSpan[i].onmouseover = function(){
+                number = this.index;     //把number和this.index连续起来
+                //让所有的消失
+                for(var j=0;j<aSpan.length;j++){
+                    aLi[j].style.display = "none"
+                    aSpan[j].style.background = "#fff"
+                }
+                //让我要的那个 显示出来
+                aLi[this.index].style.display = "block"
+                aSpan[this.index].style.background = "red"
+            }
+        }
+
+        var oBtnL = document.getElementById("btnL");
+        var oBtnR = document.getElementById("btnR");
+        
+        oBtnL.onclick = function(){
+            //length   7
+            if(number<aLi.length-1){
+                number++;
+            }else{
+                number=0
+            }
+            
+            //让所有的消失
+            for(var j=0;j<aSpan.length;j++){
+                aLi[j].style.display = "none"
+                aSpan[j].style.background = "#fff"
+            }
+            //让我要的那个 显示出来
+            aLi[number].style.display = "block"
+            aSpan[number].style.background = "red"
+        }
+
+
+        oBtnR.onclick = function(){
+            //length   7
+            if(number<=0){
+                number=aLi.length-1
+            }else{
+                number--;
+            }
+            //让所有的消失
+            for(var j=0;j<aSpan.length;j++){
+                aLi[j].style.display = "none"
+                aSpan[j].style.background = "#fff"
+            }
+            //让我要的那个 显示出来
+            aLi[number].style.display = "block"
+            aSpan[number].style.background = "red"
+        }
+
+
+        timer();
+        var ding;
+        function timer(){
+            ding = setInterval(function(){
+                 //length   7
+            if(number<aLi.length-1){
+                number++;
+            }else{
+                number=0
+            }
+            //让所有的消失
+            for(var j=0;j<aSpan.length;j++){
+                aLi[j].style.display = "none"
+                aSpan[j].style.background = "#fff"
+            }
+            //让我要的那个 显示出来
+            aLi[number].style.display = "block"
+            aSpan[number].style.background = "red"
+            },3000)
+
+        }
+
+        oBox.onmouseover = function(){
+            clearInterval(ding)
+        }
+
+        oBox.onmouseout = function(){
+            timer();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+       
+   </script>
+
+<!--
+    <script>
+        window.onload = function () {
+
+            var oList = document.getElementById("list");
+            var aLi = oList.getElementsByTagName("li");
+            var oBtnBox = document.getElementById("btnBox");
+            var aSpan = oBtnBox.getElementsByTagName("span");
+            aSpan[0].style.background = "#f00";
+            aLi[0].style.display = "block";
+
+
+            // for(var i=0;i<aSpan.length;i++){
+            //     aSpan[i].index = i;
+            //     aSpan[i].onmouseover = function () {
+            //         for(var i=0;i<aSpan.length;i++) {
+            //             aSpan[i].style.background = "#fff";
+            //             aLi[i].style.display = "none";
+            //         }
+            //         this.style.background = "#f00";
+            //         aLi[this.index].style.display = "block";
+            //     }
+            // }
+
+            var index = 0;
+            var oBtnL = document.getElementById("btnL");
+            var oBtnR = document.getElementById("btnR");
+
+            oBtnL.onclick = function () {
+                index++;
+                if(index>=aSpan.length){
+                    index = 0;
+                }
+                for(var i=0;i<aSpan.length;i++) {
+                    aSpan[i].style.background = "#fff";
+                    aLi[i].style.display = "none";
+                }
+                aSpan[index].style.background = "#f00";
+                aLi[index].style.display = "block";
+
+            }
+
+            oBtnR.onclick = function () {
+                index&#45;&#45;;
+                if(index<0){
+                    index = aSpan.length-1;
+                }
+                for(var i=0;i<aSpan.length;i++) {
+                    aSpan[i].style.background = "#fff";
+                    aLi[i].style.display = "none";
+                }
+                aSpan[index].style.background = "#f00";
+                aLi[index].style.display = "block";
+
+            }
+
+
+
+
+
+
+
+        }
+    </script>-->
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 600px;
+            height: 400px;
+            background: #ccc;
+        }
+    </style>
+
+    <script src="ajax.js"></script>
+
+</head>
+<body>
+    <button id="btn">提取数据</button>
+    <div id="box"></div>
+<script>
+
+    var oBox = document.getElementById("box");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        ajax("data/arr.txt", function (data) {
+            //成功返回的数据
+            alert("成功！！！！！！！");
+            // alert(data);
+            oBox.innerHTML = data;
+
+        }, function () {
+            //失败返回的数据
+            alert("失败！！！！！！！")
+        })
+    }
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

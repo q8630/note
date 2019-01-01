@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #div {
+        width:100px;
+        height:100px;
+        background:red;
+        position:absolute;
+        left: 50%;
+        top: 50%;
+    }
+</style>
+<!--<script>
+    window.onload=function () {
+        var oDiv=document.getElementById('div');
+
+        oDiv.onmousedown=function (ev){
+            var oEvent=ev||event;
+
+            console.log(oEvent);
+
+            var x = oEvent.clientX-oDiv.offsetLeft;
+            var y = oEvent.clientY-oDiv.offsetTop;
+
+            // var documentW = document.documentElement.clientWidth;
+            // var documentH = document.documentElement.clientHeight;
+
+            document.onmousemove=function (ev){
+                var oEvent=ev||event;
+                var left = oEvent.clientX - x;
+                var top = oEvent.clientY - y;
+
+                // if(left<0){
+                //     left=0
+                // }
+                // if(top<0){
+                //     top=0
+                // }
+                // if(left>documentW-oDiv.offsetWidth){
+                //     left=documentW-oDiv.offsetWidth;
+                // }
+                // if(top>documentH-oDiv.offsetHeight){
+                //     top=documentH-oDiv.offsetHeight;
+                // }
+
+                oDiv.style.left= left + 'px';
+                oDiv.style.top= top + 'px';
+            };
+
+            oDiv.onmouseup = function () {
+                document.onmousemove=null;
+                oDiv.onmouseup = null;
+            }
+        };
+
+
+    };
+</script>-->
+
+    <script type="text/javascript" charset="UTF-8">
+        window.onload = function () {
+            var oDiv = document.getElementById("div");
+
+            oDiv.onmousedown = function (ev) {
+                var oEvent = ev||event;
+                var left = oEvent.clientX-oDiv.offsetLeft;
+                var top = oEvent.clientY-oDiv.offsetTop;
+
+                document.onmousemove = function (ev) {
+                    var oEvent = ev||event;
+
+                    var x = oEvent.clientX-left;  //x坐标
+                    var y = oEvent.clientY-top;  //x坐标
+
+                    console.log(x + "-" + y);
+
+                    oDiv.style.left = x + "px";
+                    oDiv.style.top = y + "px";
+
+
+                }
+
+                oDiv.onmouseup = function () {
+                    document.onmousemove = null;
+
+                }
+
+
+
+            }
+
+
+
+
+
+        }
+
+
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+    <div id="div"></div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 600px;
+            height: 400px;
+            background: #ccc;
+        }
+    </style>
+
+    <script src="ajax.js"></script>
+
+</head>
+<body>
+    <button id="btn">提取数据</button>
+    <div id="box"></div>
+<script>
+
+    var oBox = document.getElementById("box");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        ajax("data/ergouzi.json", function (data) {
+            //成功返回的数据
+            alert("成功！！！！！！！");
+
+            /*
+            *  1.json里面遇到中括号用循环，遇到大括号用点"."
+            *  2。ajax请求过来的数据是字符串，必须转换成对象才能使用
+            * */
+
+            var _data = JSON.parse(data);
+
+            console.log(_data);
+            console.log(_data.img);
+
+            var oDiv = document.createElement("div");
+
+            var oImg = document.createElement("img");
+            oImg.src = _data.img;
+
+            var aP1 = document.createElement("p");
+            aP1.innerHTML ="姓名："+ _data.name;
+
+            var aP2 = document.createElement("p");
+            aP2.innerHTML = "年龄："+ _data.age;
+
+            var aP3 = document.createElement("p");
+            aP3.innerHTML = "性别："+_data.sex;
+
+            oDiv.appendChild(oImg);
+            oDiv.appendChild(aP1);
+            oDiv.appendChild(aP2);
+            oDiv.appendChild(aP3);
+
+            oBox.appendChild(oDiv)
+
+
+        }, function () {
+            //失败返回的数据
+            alert("失败！！！！！！！")
+        })
+    }
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 700px;
+            height: 342px;
+            margin:  100px auto;
+            position: relative;
+        }
+        #list{
+            width: 700px;
+            height: 342px;
+            overflow: hidden;
+        }
+        #list li{
+            list-style: none;
+            width: 700px;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #list li:nth-child(1){
+            display: block;
+        }
+        #list li img{
+            display: block;
+            width: 700px;
+            height: auto;
+        }
+        #btnBox{
+            width: 220px;
+            height: 24px;
+            background: rgba(255,255,255,.5);
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -100px;
+            text-align: center;
+            padding-top: 4px;
+            border-radius: 20px;
+
+        }
+        #btnBox span{
+            width: 20px;
+            height: 20px;
+            background: rgb(255,255,255);
+            display: inline-block;
+            border-radius: 20px;
+
+        }
+        .color{
+            background: rgb(255,0,0)!important;
+        }
+
+        botton{
+            display: block;
+            width: 50px;
+            height: 100px;
+            background: rgba(0,0,0,0.5);
+            font-size: 50px;
+            line-height: 100px;
+            color: #fff;
+            position: absolute;
+            top: 120px;
+            text-align: center;
+        }
+        #btnL{
+            left: 0;
+        }
+        #btnR{
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul id="list">
+            <li><img src="img/image/0.jpg" alt=""></li>
+            <li><img src="img/image/1.jpg" alt=""></li>
+            <li><img src="img/image/2.jpg" alt=""></li>
+            <li><img src="img/image/3.jpg" alt=""></li>
+            <li><img src="img/image/4.jpg" alt=""></li>
+            <li><img src="img/image/5.jpg" alt=""></li>
+            <li><img src="img/image/6.jpg" alt=""></li>
+        </ul>
+        <p id="btnBox">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </p>
+        <botton id="btnL"> < </botton>
+        <botton id="btnR"> > </botton>
+    </div>
+
+    <script type="text/javascript" charset="UTF-8">
+        window.onload = function () {
+
+            var oBox = document.getElementById("box");
+
+            //左右按钮
+            var oList = document.getElementById("list");
+            var aLi = oList.getElementsByTagName("li")
+
+            var oBtnL = document.getElementById("btnL");
+            var oBtnR = document.getElementById("btnR");
+
+            var number = 0;
+            oBtnL.onclick = function () {
+                //先让所有的都消失   再让我要的那个显示出来
+                for(var i=0; i<aLi.length; i++){
+                    aLi[i].style.display = "none";
+                    aSpan[i].style.background = "#fff"; //让所有的都变成白色
+                }
+                if(number<6){
+                    number++;
+                }else {
+                    number=0;
+                }
+                console.log(number);
+                aLi[number].style.display = "block"  //我要的显示出来
+
+                aSpan[number].style.background = "#f00"; //我要的变成红色
+            }
+            oBtnR.onclick = function () {
+                //先让所有的都消失   再让我要的那个显示出来
+                for(var i=0; i<aLi.length; i++){
+                    aLi[i].style.display = "none";
+                    aSpan[i].style.background = "#fff"; //让所有的都变成白色
+                }
+
+                if(number<=0){
+                    number=6;
+                }else {
+                    number--;
+                }
+                console.log(number);
+                aLi[number].style.display = "block"  //我要的显示出来
+                aSpan[number].style.background = "#f00"; //我要的变成红色
+            }
+
+
+            //分页器
+            var oBtnBox = document.getElementById("btnBox");
+            var aSpan = oBtnBox.getElementsByTagName("span");
+
+            aSpan[0].style.background = "#f00"; //让所有的都变成白色
+            for(var i=0;i<aSpan.length;i++){  //最外面的for循环只是（仅仅）给span绑定事件用的
+                aSpan[i].index = i;   //也是添加一个index属性
+                aSpan[i].onmouseover = function () {
+                    number = this.index;   //把number和索引值对上
+                    //把所有的都消失 然后让我要的出现
+                    for(var i=0;i<aSpan.length;i++){
+                        aLi[i].style.display = "none";
+                        aSpan[i].style.background = "#fff"; //让所有的都变成白色
+                    }
+                    aLi[this.index].style.display = "block"; //我要的出现
+                    aSpan[this.index].style.background = "#f00"; //我要的变成红色
+                }
+            }
+
+
+            //自动轮播
+            var timer;
+            goLeft();
+            function goLeft() {
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    //先让所有的都消失   再让我要的那个显示出来
+                    for(var i=0; i<aLi.length; i++){
+                        aLi[i].style.display = "none";
+                        aSpan[i].style.background = "#fff"; //让所有的都变成白色
+                    }
+                    if(number<6){
+                        number++;
+                    }else {
+                        number=0;
+                    }
+                    console.log(number);
+                    aLi[number].style.display = "block"  //我要的显示出来
+
+                    aSpan[number].style.background = "#f00"; //我要的变成红色
+                },2000)
+            }
+
+            oBox.onmouseover = function () {
+                clearInterval(timer)
+            }
+            oBox.onmouseout = function () {
+                goLeft();
+            }
+
+
+
+        }
+
+    </script>
+
+<!--
+    <script>
+        window.onload = function () {
+
+            var oList = document.getElementById("list");
+            var aLi = oList.getElementsByTagName("li");
+            var oBtnBox = document.getElementById("btnBox");
+            var aSpan = oBtnBox.getElementsByTagName("span");
+            aSpan[0].style.background = "#f00";
+            aLi[0].style.display = "block";
+
+
+            // for(var i=0;i<aSpan.length;i++){
+            //     aSpan[i].index = i;
+            //     aSpan[i].onmouseover = function () {
+            //         for(var i=0;i<aSpan.length;i++) {
+            //             aSpan[i].style.background = "#fff";
+            //             aLi[i].style.display = "none";
+            //         }
+            //         this.style.background = "#f00";
+            //         aLi[this.index].style.display = "block";
+            //     }
+            // }
+
+            var index = 0;
+            var oBtnL = document.getElementById("btnL");
+            var oBtnR = document.getElementById("btnR");
+
+            oBtnL.onclick = function () {
+                index++;
+                if(index>=aSpan.length){
+                    index = 0;
+                }
+                for(var i=0;i<aSpan.length;i++) {
+                    aSpan[i].style.background = "#fff";
+                    aLi[i].style.display = "none";
+                }
+                aSpan[index].style.background = "#f00";
+                aLi[index].style.display = "block";
+
+            }
+
+            oBtnR.onclick = function () {
+                index&#45;&#45;;
+                if(index<0){
+                    index = aSpan.length-1;
+                }
+                for(var i=0;i<aSpan.length;i++) {
+                    aSpan[i].style.background = "#fff";
+                    aLi[i].style.display = "none";
+                }
+                aSpan[index].style.background = "#f00";
+                aLi[index].style.display = "block";
+
+            }
+
+
+
+
+
+
+
+        }
+    </script>-->
+
+
+</body>
+</html>

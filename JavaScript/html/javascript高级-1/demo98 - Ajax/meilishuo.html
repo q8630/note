@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: auto;
+        }
+        #box{
+            width: 1200px;
+            height: auto;
+            margin: 0 auto;
+
+        }
+        #list{
+            width: 1200px;
+            height: auto;
+            overflow: hidden;   /*防止高度塌陷*/
+            background: #ccc;
+
+        }
+        #list li{
+            list-style: none;
+            width: 350px;
+            height: 593px;
+            float: left;
+            margin: 25px;
+        }
+        #list li img{
+            width: 350px;
+            height: auto;
+            display: block;
+        }
+        #list li p{
+            width: 350px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            text-indent: 1em;
+            background: #fff;
+        }
+
+        .sp1{
+            width: 100px;
+            height: 50px;
+            display: block;
+            float: left;
+
+        }
+        .sp2{
+            width: 100px;
+            height: 50px;
+            display: block;
+            float: right;
+        }
+        .pp{
+            overflow: hidden;    /* 多出的隐藏 */
+            text-overflow:ellipsis;  /* 多余的变成省略号 */
+            white-space: nowrap;  /* 强制不换行 */
+        }
+
+    </style>
+    <script src="ajax.js"></script>
+
+</head>
+<body>
+
+<div id="box">
+    <ul id="list">
+        <!--<li>-->
+            <!--<imgs src="http://s3.mogucdn.com/mlcdn/917393/170921_5kfg02h4ag1i12hldi3g34c98j8el_956x1344.jpg" alt="">-->
+            <!--<p><span class="sp1">123</span><span class="sp2">789</span></p>-->
+            <!--<p>舒适百搭显瘦短款字母印花百搭舒适针织 123930</p>-->
+        <!--</li>-->
+    </ul>
+</div>
+
+
+<script>
+
+    window.onload = function () {
+        var oList = document.getElementById("list");
+        ajax("meilishuo.json",function (data) {
+            console.log(data);
+            var _data = JSON.parse(data);
+            var newData = _data.data;
+
+            for(var i=0;i<newData.length;i++){
+                /*
+                //第一种写法
+                var aLi = document.createElement("li");
+                aLi.innerHTML = "" +
+                    "<imgs src='"+newData[i].imgs+"' />" +
+                    "<p>" +
+                        "<span class='sp1'>"+newData[i].price+"</span>" +
+                        "<span class='sp2'>"+newData[i].like+"</span>" +
+                    "</p>" +
+                    "<p class='pp'>"+newData[i].detail+"</p> "*/
+
+                //第二种写法
+                var aLi = document.createElement("li");
+                var aImg = document.createElement("img");
+                aImg.src = newData[i].img;
+                var OneP = document.createElement("p");
+                var OneSpan1 = document.createElement("span");
+                OneSpan1.innerHTML = newData[i].price;
+                OneSpan1.className = "sp1"
+                var OneSpan2 = document.createElement("span");
+                OneSpan2.innerHTML = newData[i].like;
+                OneSpan2.className = "sp2"
+                var TwoP = document.createElement("p");
+                TwoP.innerHTML = newData[i].detail;
+                TwoP.className = "pp"
+
+                OneP.appendChild(OneSpan1)
+                OneP.appendChild(OneSpan2)
+                aLi.appendChild(aImg)
+                aLi.appendChild(OneP)
+                aLi.appendChild(TwoP)
+
+
+                oList.appendChild(aLi)
+
+                OneSpan1.onclick = function () {
+                    alert(1)
+                }
+
+            }
+
+
+        },function () {
+            alert("数据获取失败")
+        })
+
+
+    }
+
+</script>
+
+</body>
+</html>

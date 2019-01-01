@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建、插入和删除元素</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #list{
+            width: 100%;
+            height: auto;
+        }
+        #list li{
+            width: 100%;
+            height: 50px;
+            background: pink;
+            margin-bottom: 10px;
+        }
+        p{
+            width: 100%;
+            height: 50px;
+            background: #0f0;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+
+        <!--<p></p>-->
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li id="li1"></li>
+    </ul>
+
+
+    <script>
+        window.onload = function () {
+            var oList = document.getElementById("list");
+            var oLi1 = document.getElementById("li1");
+            //insertBefore(节点, 原有节点)	在已有元素前插入
+
+            // var pp = document.createElement("p");
+            // oList.insertBefore(pp,oLi1); //在oList里面的第一个元素oLi1前面插入一个P
+
+            var a= 5;
+            oList.onclick = function () {
+                a--;
+                var pp = document.createElement("p");
+                pp.innerHTML = a;
+                if(oList.firstElementChild){
+                    oList.insertBefore(pp,oList.firstElementChild)
+                }else{
+                    oList.insertBefore(pp,oList.firstChild)
+                }
+
+            }
+
+
+
+
+
+        }
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background:#f00;
+            position:relative;
+            top:0px;
+            left:0px;
+        }
+        #btn{
+            width: 100px;
+            height: 50px;
+            background:#00f;
+            outline:none;
+            color:#fff;
+            font-size:30px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<button id="btn">开始</button>
+
+
+<script>
+    window.onload = function(){
+        var oBtn = document.getElementById("btn");
+        var oBox = document.getElementById("box");
+
+        // var timer;
+        // var number = 100;
+        // oBtn.onclick = function(){
+        //     timer=setInterval(function(){
+        //         number++;
+        //         oBox.style.left = number+"px";
+        //     },10)
+        // }
+
+        var timer;
+        oBtn.onclick = function(){
+            clearInterval(timer)
+            timer=setInterval(function(){
+                /*
+                *  oBox.style.left  获取样式里面oBox的left值
+                *  oBox.offsetLeft  获取oBox距离左边的距离
+                *
+                * */
+                oBox.style.left = oBox.offsetLeft+3+"px";
+
+                if(oBox.offsetLeft >= 500){
+                    clearInterval(timer)
+                }
+            },10)
+        }
+
+
+
+    }
+
+</script>
+
+
+</body>
+</html>

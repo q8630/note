@@ -1,0 +1,259 @@
+面向对象
+
+对象
+
+电脑
+按钮
+键盘
+
+
+Date
+
+
+getFullYear();
+sort();
+
+总结：在不了解他的内部原理的情况下，就会使用它，这就是面向对象
+      不了解内部结构，但知道表面的各种操作（按钮）
+
+
+面向对象三大特点
+
+1。抽象：抽——把最重要的特征，跟问题相关的特征抽出来
+
+2。封装：看不到里面的东西，用好表面的东西就可以了
+   ps:用对象和写对象
+
+3。继承(遗传)：从父类上继承出一些方法，属性，子类，又有一些自己的的特征
+   ps:最大限度上重用已有代码
+	1）多重继承：简单的说就是一个人有多个爹 （很少直接用，容易让程序变得混乱）
+		例：盒子，汽车—>货车
+	2）多态：对于js弱语言意义不大，多用于Java，c++
+
+
+
+
+
+
+对象的组成：
+
+	1）方法——函数：过程，动态的
+		例子：	function aaa(){;		//函数 自由的
+			    alert("abc")
+			}
+			var arr=[1,2,3,4,5]
+			arr.aaa = function(){ 		//方法 属于一个对象
+			    alert("abc")
+			}
+
+	2）属性——变量：状态，静态的		
+		例子：	var a = 12;		//变量 自由的，不属于任何人
+			alert(a)
+			var arr=[1,2,3,4,5]
+			arr.a = 12;		//属性 属于一个对象
+			alert(arr.a)			
+
+
+
+
+
+
+
+
+this    95%以上
+
+当前发生事件的对象（旧）
+
+
+当前的方法属于谁？（新）
+
+
+object
+
+   ps:Date   日期
+      Array  存东西
+      RegExp 正则
+
+object:没有功能
+
+用object写 第一个面向对象的程序
+  例：
+	<script>
+		var obj=new Object();	//创建
+
+		obj.name='小仙女';	//属性
+		obj.qq='666666';
+
+		obj.showName=function (){	//方法
+			alert('我的名字叫：'+this.name);
+		};
+		obj.showQQ=function (){
+			alert('我的QQ号：'+this.qq);
+		};
+
+		obj.showName();		//调用
+		obj.showQQ();
+	</script>
+
+
+两个人能重写？200个人呢？
+
+<script>
+	function createPerson(name, qq){		//构造函数（就是普通函数）
+		//原料
+		var obj=new Object();
+		//加工
+		obj.name=name;
+		obj.qq=qq;
+	
+		obj.showName=function (){
+			alert('我的名字叫：'+this.name);
+		};
+		obj.showQQ=function (){
+			alert('我的QQ号：'+this.qq);
+		};
+		//出厂
+		return obj;
+	}
+
+	var obj=createPerson('小仙女', '666666');
+
+	obj.showName();
+	obj.showQQ();
+
+	var obj2=createPerson('孙悟空', '7777777');
+
+	obj2.showName();
+	obj2.showQQ();
+</script>
+
+这种构造函数的方式 ——工厂方式（用构造函数创建一个类）
+ps:PPT
+
+
+工厂方式的问题
+1）没有new 
+<script>
+    function createPerson(name, qq){		//构造函数
+	//系统偷偷替咱们做：
+	//var this=new Object();
+	
+	//加工
+	this.name=name;
+	this.qq=qq;
+	
+	this.showName=function ()
+	{
+		alert('我的名字叫：'+this.name);
+	};
+	this.showQQ=function ()
+	{
+		alert('我的QQ号：'+this.qq);
+	};
+	
+	//也会偷偷做一些：
+	//return this;
+    }
+
+    var obj=new createPerson('blue', '258248832');
+    var obj2=new createPerson('张三', '45648979879');
+
+    obj.showName();
+    obj.showQQ();
+//  alert(obj.showName==obj2.showName);
+</script>
+2）函数重复
+
+原型：
+
+css里面
+class：
+.box{background:red}      	给一组元素添加样式
+
+行间样式：
+style="background:red"  		给一个元素添加样式
+
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"  style="background:red"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+
+
+js里面
+
+class：原型    行间样式：就是给对象添加东西（没啥叫法）
+
+例子：
+<script>
+	var arr1=new Array(12,55,34,78,676);
+	var arr2=new Array(12,33, 1);
+
+	Array.prototype.sum=function ()			//class
+	//arr1.sum=function ()				//行间样式
+	{
+		var result=0;
+	
+		for(var i=0;i<this.length;i++){
+			result+=this[i];
+		}
+	
+		return result;
+	};
+
+	alert(arr1.sum());
+	alert(arr2.sum());	//?
+</script>
+
+
+
+
+
+类与对象
+   	类：模具，   (不具备实际功能)
+	对象：蛋糕 （蛋糕能吃，模具能吃么？）
+
+	
+例：var arr = new Array(1,2,3,4,5,6,7)
+
+    Array	类
+    arr	对象
+
+    Array.push() ?
+    new arr() ?
+
+
+
+
+ps:Array.prototype.sum=function (){}//原型是往类上面添加东西
+
+class  行间
+
+一样的             放在class里
+不一样的东西       放在行间
+
+总结：用构造函数加属性，用原型加方法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

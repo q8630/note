@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #btn{
+            width: 50px;
+            height: 30px;
+            display: block;
+            border: none;
+            margin-bottom: 20px;
+        }
+        #box{
+            width: 100%;
+            height: auto;
+            background: #ccc;
+            overflow: hidden;
+        }
+        #box li{
+            list-style: none;
+            width: 30%;
+            height: auto;
+            background: #fff;
+            float: left;
+            margin-left: 15px;
+            margin-top: 15px;
+        }
+        #box li img{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        #box li p{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 5px;
+
+        }
+
+    </style>
+
+    <script src="ajax.js"></script>
+
+</head>
+<body>
+    <button id="btn">4</button>
+    <ul id="box"></ul>
+<script>
+
+    var oBox = document.getElementById("box");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        var con = oBtn.innerHTML;
+        ajax("data/meilishuo.json", function (data) {
+            //成功返回的数据
+            alert("成功！！！！！！！");
+            console.log(data);
+            //1把json字符串转换为Json对象
+
+            var _data = JSON.parse(data);
+            console.log(_data);
+
+
+
+            //2.由中括号 循环拿到中括号里面的东西
+            for(var i=0;i<_data.length;i++){
+                // _data[i].imgs
+
+                var number = _data[i].id
+
+
+
+                if(number==con){
+                    var ali = document.createElement("li")
+                    ali.innerHTML="<img src='"+_data[i].img+"' />" +
+                        "<p><span>¥"+_data[i].price+"</span><span>😍"+_data[i].like+"</span></p>" +
+                        "<p>🐷"+_data[i].ps+"</p>"
+
+
+
+                    oBox.appendChild(ali)
+                }
+
+
+
+            }
+
+
+
+        }, function () {
+            //失败返回的数据
+            alert("失败！！！！！！！")
+        })
+    }
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

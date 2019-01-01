@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+
+
+	// var obj=new Object();        //创建
+    //
+	// obj.name='小仙女';			//属性
+	// obj.qq='6666666';
+    //
+	// obj.showName=function ()     //方法
+	// {
+	// 	alert('我的名字叫：'+this.name);
+	// };
+	// obj.showQQ=function ()
+	// {
+	// 	alert('我的QQ号：'+this.qq);
+	// };
+    //
+	// obj.showName();               //调用
+	// obj.showQQ();
+
+	// var obj1=new Object();
+    //
+	// obj1.name='小帅哥';			//属性
+	// obj1.qq='88888888';
+    //
+	// obj1.showName=function ()     //方法
+	// {
+	// 	alert('我的名字叫：'+this.name);
+	// };
+	// obj1.showQQ=function ()
+	// {
+	// 	alert('我的QQ号：'+this.qq);
+	// };
+    //
+	// obj1.showName();
+	// obj1.showQQ();
+
+
+    var obj = new Object();     //创建一个对象
+
+    obj.name = "ergouzi!";       //添加属性
+    obj.color = "黑色";
+    obj.age = "2";
+    obj.like = "肉";
+
+    obj.show = function () {     //添加方法
+        alert("看家");
+    }
+    obj.pao = function () {
+        alert("跑");
+    }
+    obj.hide = function () {
+        alert(this.color);
+    }
+
+    obj.hide();                 //调用
+    obj.show();
+    alert(obj.age)
+
+
+
+
+
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

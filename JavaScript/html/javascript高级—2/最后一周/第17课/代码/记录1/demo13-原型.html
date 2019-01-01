@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+
+var arr1=new Array(1,2,3,4,5);
+var arr2=new Array(11,22,33,44,55);
+var arr3=new Array(111,222,333,444,555);
+var arr4=new Array(1111,2222,3333,4444,5555);
+
+
+// arr1.sum=function () {
+// 	var result=0;
+//
+// 	for(var i=0;i<this.length;i++)
+// 	{
+// 		result+=this[i];
+// 	}
+//
+// 	return result;
+// };
+//
+// arr2.sum=function () {
+// 	var result=0;
+//
+// 	for(var i=0;i<this.length;i++)
+// 	{
+// 		result+=this[i];
+// 	}
+//
+// 	return result;
+// };
+
+Array.prototype.sum = function () {
+
+    var result=0;
+
+    for(var i=0;i<this.length;i++)
+    {
+        result+=this[i];
+    }
+
+    return result;
+};
+
+
+alert(arr1.sum());
+alert(arr2.sum());
+alert(arr3.sum());
+alert(arr4.sum());
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

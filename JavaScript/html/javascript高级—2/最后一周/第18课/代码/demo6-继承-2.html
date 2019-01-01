@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+function A()
+{
+	this.abc=12;     //new A()
+}
+
+A.prototype.show=function ()
+{
+	alert(this.abc);
+};
+
+//继承A
+
+function B()
+{
+
+	A.call(this); //this->new B()       继承A的属性
+}
+
+B.prototype=A.prototype;    //继承A的方法
+
+var obj=new B();
+
+alert(obj.abc);
+obj.show();
+</script>
+</head>
+
+<body>
+</body>
+</html>

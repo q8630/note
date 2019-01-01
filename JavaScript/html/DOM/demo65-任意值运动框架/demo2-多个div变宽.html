@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div {width:100px; height:50px; background:red; margin:10px;}
+</style>
+</head>
+
+<body>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        window.onload = function () {
+
+            var oDiv = document.getElementsByTagName("div");
+
+            //他仅仅只是添加事件而已！
+            for (var i=0; i<oDiv.length; i++){
+                oDiv[i].timer = null;   //定时器私有（开自己的，关自己的）
+                oDiv[i].onmouseover = function () {
+                    startMove(this,400);
+                } ;
+                oDiv[i].onmouseout = function () {
+                    startMove(this,100);
+                };
+            }
+
+        }
+
+        function startMove(obj,iTarget) {
+
+            var speed=(iTarget-obj.offsetWidth)/10;
+            speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+            clearInterval(obj.timer)
+            obj.timer = setInterval(function () {
+                if(obj.offsetWidth == iTarget){
+                    clearInterval(obj.timer)
+                }else{
+                    obj.style.width = obj.offsetWidth+speed+"px"
+                }
+            },20)
+        }
+
+
+
+    </script>
+
+</body>
+</html>

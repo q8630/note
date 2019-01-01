@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+
+        }
+        #box li{
+            list-style: none;
+            width: 300px;
+            height: 50px;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 50px;
+        }
+        li{
+            background: #eee;
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul id="box" class="box">
+        <li class="li0" id="li0">
+            <p>我是第0个li里面的P</p>
+        </li>
+        <li class="li1" id="li1">
+            <p>我是第1个li里面的P</p>
+        </li>
+        <li class="li2" id="li2">
+            <p>我是第2个li里面的P</p>
+        </li>
+        <li class="li3" id="li3">
+            <p>我是第3个li里面的P</p>
+        </li>
+        <li class="li4" id="li4">
+            <p>我是第4个li里面的P</p>
+        </li>
+        <li class="li5" id="li5">
+            <p>我是第5个li里面的P</p>
+        </li>
+        <li class="li6" id="li6">
+            <p>我是第6个li里面的P</p>
+        </li>
+        <li class="li7" id="li7">
+            <p>我是第7个li里面的P</p>
+        </li>
+        <li class="li8" id="li8">
+            <p>我是第8个li里面的P</p>
+        </li>
+        <li class="li9" id="li9">
+            <p>我是第9个li里面的P</p>
+        </li>
+    </ul>
+
+    <script type="text/javascript" charset="utf-8">
+        var oUL = document.getElementById("box");/* id名获取ul */
+        var aUl = document.getElementsByClassName("box")[0];   /* class名获取ul */
+        var aUL = document.getElementsByTagName("ul")[0];   /* 标签获取ul */
+
+        var aLi = aUL.getElementsByTagName("li");   /* 获取ul下面的li*/
+
+
+
+
+    </script>
+</body>
+</html>

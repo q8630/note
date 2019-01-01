@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>无标题文档</title>
+        <script>
+            var arr=[1,2,3,4];
+
+            arr.a=12;      //属性
+
+            arr.show=function ()    //方法
+            {
+                alert(this.a);   //12
+            };
+
+            //this:this所在的方法属于谁  this 就指向谁
+            //当this所在的方法 自调用时  this指向 window
+            //this的指向可以被改变，通过 call 和 apply
+            //call 和 apply的区别：
+            //定义：都是：调用一个对象的一个方法，用另一个对象替换当前对象。
+            //它们的共同之处：
+            //都是：调用一个对象的一个方法，用另一个对象替换当前对象。
+            //它们的不同之处：
+            //apply：最多只能有两个参数——新this对象和一个数组argArray。
+            //call：它可以接受多个参数，第一个参数与apply一样，后面则是一串参数列表。
+            //实际上，apply和call的功能是一样的，只是传入的参数列表形式不同。
+
+            arr.show();
+        </script>
+    </head>
+
+
+
+
+    <body>
+    </body>
+</html>

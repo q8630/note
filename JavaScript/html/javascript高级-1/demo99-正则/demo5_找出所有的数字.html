@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+
+
+// var str="ka5sk46hj732k1789jkkk912";    //9,567,234,8,9080,123
+// var arr = [];
+// var tmp = "5";
+//[5,46,732,1789,912]
+//1，一个一个的拿出来  判断是不是数字
+//2，如果是数字就push到数组里
+//注意：先看看有没有连在一起的数字
+
+var str="ka5sk46hj732k1789jkkk100";
+var arr = [];
+var tmp = "";
+for (var i = 0; i <str.length ; i++) {
+    if(str.charAt(i)>=0 && str.charAt(i)<=9 ){ //数字
+        tmp+=str.charAt(i)
+    }else{  //非数字
+        if(tmp==""){
+            //不管
+        }else{
+            arr.push(tmp)
+            tmp = ""
+        }
+    }
+}
+if(tmp==""){
+    //不管
+}else{
+    arr.push(tmp)
+    tmp = ""
+}
+console.log(arr);
+
+
+
+
+
+
+// var str="kja23shk456jhj7532kdhas789kjdhak1205";    //9,567,234,8,9080,123
+// var arr=[];
+// var tmp="";    //123
+// for(var i=0; i<str.length;i++){
+//     var number = str.charAt(i);
+//     if(0<=number &&  number<=9){
+//         // arr.push(number)
+//         tmp=tmp+number;
+//
+//     }else{
+//         //不管他
+//         if(tmp!=""){
+//             arr.push(tmp);
+//             tmp="";
+//         }
+//
+//     }
+// }
+//
+// if(tmp!=""){
+//     arr.push(tmp);
+//     tmp="";
+// }
+// console.log(arr);
+//
+
+//
+// var arr=[];
+// var tmp="";
+// for (var i=0;i<str.length;i++){
+//     // console.log(str.charAt(i));
+//     if(str.charAt(i)>=0 && str.charAt(i)<=9){ //数字
+//         //如果是数字，就拼接在一起
+//         tmp+=str.charAt(i) //tmp=tmp + str.charAt(i)
+//     }else{
+//         //如果不是数字，就push到数组里面
+//         if(tmp==""){  //判断不是空才往里面添加
+//             //啥也不干
+//         }else{
+//             arr.push(tmp);
+//             tmp="";
+//         };
+//     }
+// }
+// if(tmp!=""){  //最后判断tmp里面有没有数字没有push到数组里面的。
+//     arr.push(tmp);
+//     tmp="";
+// }else{
+//     //啥也不干
+// };
+// console.log(arr);
+//
+
+//var arr=[];
+//var tmp='';
+//for(var i=0; i<str.length;i++){
+//    if(str.charAt(i)>=0&&str.charAt(i)<=9){
+//        tmp+=str.charAt(i)
+//    }else{
+//        if(tmp){
+//            arr.push(tmp)
+//            tmp=''
+//        }
+//    }
+//}
+//if(tmp){
+//    arr.push(tmp)
+//    tmp=''
+//}
+//alert(arr)
+
+//var arr = [];
+//var tmp="";
+//for(var i=0;i<str.length;i++){
+//    if(str.charAt(i)>=0 && str.charAt(i)<=9){
+//        tmp += str.charAt(i);
+//    }else{
+//        if(tmp){
+//            arr.push(tmp);
+//            tmp="";
+//        }else{
+//
+//        }
+//    }
+//}
+//if(tmp){
+//    arr.push(tmp);
+//    tmp="";
+//}else{
+//
+//}
+//alert(arr)
+
+//var arr=[];
+//var tmp = "";
+//for(var i=0;i<str.length;i++){
+//    if(str.charAt(i)>=0 && str.charAt(i)<=9){
+////        arr.push(str.charAt(i))
+//        tmp+=str.charAt(i)
+//    }else{
+//        if(tmp){
+//            arr.push(tmp)
+//            tmp=""
+//        }
+//
+//    }
+//}
+//if(tmp){
+//    arr.push(tmp)
+//    tmp=""
+//}
+//alert(arr)
+
+//var arr=[];
+//var tmp='';
+//for(var i=0;i<str.length;i++) {
+//	if(str.charAt(i)>='0' && str.charAt(i)<='9')
+//	{
+//		tmp+=str.charAt(i);
+//	}else{
+//		if(tmp)
+//		{
+//			arr.push(tmp);
+//			tmp='';
+//		}
+//	}
+//}
+//if(tmp) {
+//	arr.push(tmp);
+//	tmp='';
+//}
+//alert(arr);
+
+//	var str = "12kk4yy666pppp99-=-=100===/*988pppp"
+//	var arr=[];
+// 	var tmp=""
+//
+//	for(var i = 0;i<str.length;i++){
+//		if(str.charAt(i)>=0 && str.charAt(i)<= 9){
+//			tmp+=str.charAt(i)
+//		}else{
+//			if(tmp){
+//				arr.push(tmp)
+//				tmp = ""
+//			}
+//		}
+//	}
+//alert(arr)
+//
+//
+//
+//var str='12ff87er334yy233-=-=fa80';
+//var arr=[];
+//var tmp='';
+//for(var i = 0;i<str.length;i++){
+//		if(str.charAt(i)>=0 && str.charAt(i)<= 9){
+//			tmp+=str.charAt(i)
+//
+//		}else{
+//			if(tmp){
+//				arr.push(tmp)
+//				tmp=""
+//			}
+//
+//		}
+//
+//	}
+//	if(tmp){
+//		arr.push(tmp)
+//		tmp=""
+//	}
+//alert(arr)
+
+//var str = '12ff87er334yy233-=-=fa80';
+//var arr = [];
+//var tmp = ""
+//for(var i=0; i<str.length;i++){
+//	if(str.charAt(i)>=0&&str.charAt(i)<=9){
+//		tmp+=str.charAt(i)
+//	}else {
+//		if(tmp){
+//			arr.push(tmp)
+//			tmp=""
+//		}
+//
+//	}
+//}
+//if(tmp){
+//	arr.push(tmp)
+//	tmp=""
+//}
+//alert(arr)
+
+
+
+
+
+
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

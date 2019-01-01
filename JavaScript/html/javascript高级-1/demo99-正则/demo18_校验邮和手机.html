@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function ()
+{
+	var oTxt1=document.getElementById('txt1');
+	var oTxt2=document.getElementById('txt2');
+	var oBtn=document.getElementById('btn1');
+	
+	oBtn.onclick=function (){
+		var re1=/^\w+@[a-z0-9]+\.[a-z]+$/i;//邮箱
+
+
+
+        var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"); //正则表达式
+
+
+        var re2=/^1[3456789][0-9]{9}$/; //手机号
+
+
+
+		var re3 = /^1[3456789][0-9]{9}$/;
+
+
+		if(!reg.test(oTxt1.value)){
+            alert('你丫写错了');
+            return false;
+		}
+
+		if(!re2.test(oTxt2.value)){
+            alert('你丫写错了');
+            return false;
+		}
+
+
+	};
+};
+</script>
+</head>
+
+<body>
+<form action="http://www.baidu.com" method="get">
+	<input type="text" id="txt1" name="userName" />
+	<input type="text" id="txt2" name="password" />
+	<input type="submit" value="校验" id="btn1" />
+</form>
+</body>
+</html>

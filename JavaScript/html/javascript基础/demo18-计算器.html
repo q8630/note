@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量：计算器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            background-color: #ccc;
+            color: #fff;
+        }
+        #box{
+            width: 400px;
+            height: 420px;
+            border: 2px solid #000;
+            margin: 100px auto;
+            padding: 20px;
+            background: #000;
+            font-size: 26px;
+        }
+        #show{
+            width: 386px;
+            height: 100px;
+            border: 2px solid #fff;
+            margin: 0 auto;
+            background-color: #fff;
+            color: #000;
+            text-align: right;
+            line-height: 100px;
+            font-size: 50px;
+            padding-right: 10px;
+        }
+        .list{
+            width: 400px;
+            height: auto;
+            /*border: 1px solid #f00;*/
+            margin: 10px auto;
+            overflow: hidden;
+        }
+        .list li{
+            list-style: none;
+            width: 88px;
+            height: 50px;
+            border: 1px solid #666;
+            margin: 5px;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 5px;
+            background: -webkit-linear-gradient(#aaa, #000); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#aaa, #000); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#aaa, #000); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#aaa, #000); /* 标准的语法 */
+        }
+
+        .list li:nth-child(1){
+            width: 288px;
+        }
+        .list li:nth-child(15){
+            width: 188px;
+        }
+        .list li:nth-child(1),.list li:nth-child(2),.list li:nth-child(6),.list li:nth-child(10),.list li:nth-child(14){
+            background: -webkit-linear-gradient(#ccc, #775846); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#ccc, #775846); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#ccc, #775846); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#ccc, #775846); /* 标准的语法 */
+        }
+      .list li:nth-child(17){
+            background: -webkit-linear-gradient(#f3d0b0, #fa7806); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#f3d0b0, #fa7806); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#f3d0b0, #fa7806); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#f3d0b0, #fa7806); /* 标准的语法 */
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="show"></div>
+    <ul class="list">
+        <li>史上最NB计算器</li>
+        <li>/</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>*</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>-</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>+</li>
+        <li>0</li>
+        <li>·</li>
+        <li id="btn">=</li>
+    </ul>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    var oShow = document.getElementById("show");
+    var aList = document.getElementsByClassName("list")[0];
+    var aLi = aList.getElementsByTagName("li");
+    var oBtn = document.getElementById("btn");
+
+
+    var arr = [];
+
+    for(var i=1;i<aLi.length-1;i++){
+        aLi[i].onclick = function(){
+            var tmp = ""
+            var thisHtml = this.innerHTML;
+            arr.push(thisHtml)
+            console.log(thisHtml);
+            console.log(arr);
+            for(var i=0;i<arr.length;i++){
+                tmp += arr[i];
+            }
+            oShow.innerHTML=tmp;
+        }
+    }
+    oBtn.onclick = function(){
+        oShow.innerHTML = "";
+        var number = new Number();
+        for(var i=0;i<arr.length;i++){
+            console.log(arr[i]);
+            var num = arr[i];
+            if(0<=num && num<=9){
+                num = parseFloat(num);
+                console.log(num);
+
+            }
+            number= number + num
+
+            console.log(number);
+
+        }
+        oShow.innerHTML = number
+    }
+
+
+
+
+</script>
+
+
+</body>
+</html>

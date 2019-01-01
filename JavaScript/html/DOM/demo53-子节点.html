@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+//         window.onload=function (){
+//             var oUl=document.getElementById('ul1');
+//             alert(oUl.childNodes.length)
+//
+//             //IE6-8
+//             //alert(oUl.childNodes.length);
+//             for(var i=0;i<oUl.childNodes.length;i++)
+//             {
+//                 //nodeType==3	->	文本节点
+//                 //nodeType==1	->	元素节点
+// //                alert(oUl.childNodes.length)
+// //                alert(oUl.childNodes[i].nodeType);
+//
+// //                if(oUl.childNodes[i].nodeType==1)
+// //                {
+// //                    oUl.childNodes[i].style.background='red';
+// //                }
+//
+// //                oUl.children[i].style.background='red';
+//             }
+//         };
+    </script>
+</head>
+<body>
+    <ul id="list">
+        <li>11111111</li>
+        <li>222222222</li>
+        <li>3333333333</li>
+        <li>4444444444</li>
+        <li>55555555555</li>
+    </ul>
+
+    <script>
+
+
+        var oList = document.getElementById("list");
+
+        // alert(oList.childNodes.length)     //11
+        //获取子节点：   childNodes
+        // 子节点分为：
+        //1， 文本节点     
+        //2， 元素节点   
+        //判断节点类型：nodeType
+
+
+        for(var i=0; i<oList.childNodes.length; i++){
+            // alert(oList.childNodes[i].nodeType)     // nodeType 判断节点类型
+            // nodeType   3    文本节点
+            // nodeType   1    元素节点
+
+            // if(oList.childNodes[i].nodeType==1){   //判断是不是元素节点
+            //     oList.childNodes[i].style.color = "#f00";
+            // }
+
+            oList.children[i].style.color = "#ff0"; 
+
+        }
+        /*
+        *  获取子节点：
+        *
+        *  1。childNodes  能获取元素节点的同时还能获取文本节点
+        *  2。children    直接获取元素节点
+        *
+        *  3。nodeType   判断节点的类型
+        *
+        */
+
+
+
+
+        // window.onload = function () {
+        //     var oList = document.getElementById("list");
+        //     // alert(oList.childNodes.length)  //预想的是5   弹出的是11
+        //     //alert(oList.children.length)    //5
+        //     for(var i=0; i<11; i++){
+        //         // alert(oList.childNodes[i].nodeType)     //3 文本节点    1  元素节点
+        //         //nodeType   3    文本节点
+        //         //nodeType   1    元素节点
+        //         // if(oList.childNodes[i].nodeType==1){
+        //         //     oList.childNodes[i].style.color = "#f00";
+        //         // }
+        //
+        //         oList.children[i].style.backgroundColor = "#ff0"
+        //     }
+        //
+        //     /*
+        //     *  获取子节点：
+        //     *
+        //     *  1。childNodes  能获取元素节点的同时还能获取文本节点
+        //     *  2。children    直接获取元素节点
+        //     *
+        //     * */
+        //
+        // }
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

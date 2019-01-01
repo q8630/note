@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量：求和</title>
+</head>
+<body>
+<input id="txt1" type="text"/>
++
+<input id="txt2" type="text"/>
+<input id="btn" type="button" value="=" />
+<input id="txt3" type="text"/>
+
+<script type="text/javascript" charset="utf-8">
+    var oTxt1 = document.getElementById("txt1");
+    var oTxt2 = document.getElementById("txt2");
+    var oTxt3 = document.getElementById("txt3");
+    var oBtn = document.getElementById("btn");
+
+
+        oBtn.onclick = function(){
+    //            alert( parseFloat(oTxt1.value) )
+    //            alert( parseFloat(oTxt2.value) )
+
+    //            alert(typeof oTxt2.value)      /*  string    不是数字 */
+                alert(isNaN(NaN))     /*  true */
+
+            /*
+            * isNaN    判断是不是NaN
+            *   返回  true 是NaN
+            *   返回 false 不是NaN
+            * */
+
+            oTxt3.value = parseFloat(oTxt1.value) + parseFloat(oTxt2.value)
+        }
+
+
+    /*
+    *   parseInt()
+    *       是转化为整数
+    *       从第一位开始找数字,一直到不是数字为止. 如果第一位就不是数字，那么就是NaN
+    *
+    *   parseFloat()
+    *       转化为浮点数（小数）
+    * */
+
+
+
+
+</script>
+
+
+</body>
+</html>

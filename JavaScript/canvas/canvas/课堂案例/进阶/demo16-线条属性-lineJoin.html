@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>线条属性</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="800" style="border: 1px solid #000; display: block;margin: 10px auto;">
+    当前浏览器不支持Canvas,请更换浏览器以后再重试
+</canvas>
+
+
+
+<script>
+    window.onload = function(){
+        var canvas=document.getElementById("canvas");
+        var ctx=canvas.getContext("2d");
+
+
+        ctx.lineWidth = 10;
+        ctx.lineJoin = "miter"   //miter(默认，尖角)、bevel(斜切)、round(圆角)
+        ctx.strokeStyle = "#f00";
+        drawStar(ctx,20,300,400,400,0)
+
+    }
+
+    function drawStar(ctx,r,R,x,y,rot){
+
+        ctx.beginPath();
+        for(var i = 0; i<5; i++){   //因为要用js的弧度制，所以要：/180*Math.PI  ，把角度转弧度  300：R（大）  400:位移  150：r(小)
+            ctx.lineTo(Math.cos((18+i*72-rot)/180*Math.PI)*R+x ,
+                    -Math.sin((18+i*72-rot)/180*Math.PI)*R+y);    //y轴是向下的   所以是 负号
+
+            ctx.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*r+x ,
+                    -Math.sin((54+i*72-rot)/180*Math.PI)*r+y);
+
+
+        }
+        ctx.closePath();
+        ctx.stroke();
+    }
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

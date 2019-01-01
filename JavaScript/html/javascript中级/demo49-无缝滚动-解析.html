@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 700px;
+            height: 200px;
+            border: 20px solid #f00;
+            margin:  50px auto;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        .list{
+            width: 1000000px;
+            height: 200px;
+            background: #ccc;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+        }
+        .list li{
+            list-style: none;
+            width: auto;
+            height: 200px;
+            float: left;
+
+        }
+        .list li img{
+            width: auto;
+            height: 200px;
+            display: block;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+         <ul class="list">
+             <li><img src="img/0.png" alt=""></li>
+             <li><img src="img/image/1.jpg" alt=""></li>
+             <li><img src="img/1.png" alt=""></li>
+             <li><img src="img/image/3.jpg" alt=""></li>
+             <li><img src="img/2.png" alt=""></li>
+             <li><img src="img/image/5.jpg" alt=""></li>
+         </ul>
+    </div>
+
+
+    <script>
+        var aBox = document.getElementsByClassName("box")[0];
+        var aList = document.getElementsByClassName("list")[0];
+        aList.innerHTML = aList.innerHTML + aList.innerHTML ;
+        window.onload = function () {
+
+            var listL = parseInt(getStyle(aList,"left"));
+            // alert(listL)
+            var aLi = aList.getElementsByTagName("li");
+            // var num = parseInt(getStyle(aLi[0],"width"))*(aLi.length/2);   //所有li的 长度
+            var num=0;
+            var speed = -1;
+            for(var i=0;i<aLi.length; i++){
+                num=num+parseInt(getStyle(aLi[i],"width"))  //num 等于 所有li的长度
+            }
+            num= num/2; //因为长度加了一倍 所以除以2
+            var timer;
+            setIn();
+
+            function setIn() {
+                timer = setInterval(function () {
+                    // listL-=1;//listL--
+                    if(listL<=num){
+                        listL=0;
+                    }else{
+                        listL+=speed;
+                        console.log(listL);    //-5
+                        console.log(num);      //0
+
+                    }
+
+                    aList.style.left =listL+"px";
+
+
+                },10)
+            }
+
+
+
+
+
+            aBox.onmouseover = function () {
+                clearInterval(timer)
+            }
+            aBox.onmouseout = function () {
+                setIn();
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+        //获取非行内样式
+        function getStyle(obj,name){
+            if(obj.currentStyle){
+                return obj.currentStyle[name]   //IE<9
+            }else{
+                return getComputedStyle(obj,false)[name]   //C/FF
+            }
+        }
+
+    </script>
+
+</body>
+</html>

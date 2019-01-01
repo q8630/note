@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <script>
+        function A(){     //构造函数    ==>  类
+            this.abc=12;      //this ->new A()
+        }
+
+        A.prototype.show=function (){
+            alert(this.abc);
+        };
+
+        //继承A
+
+        function B(){
+
+            //this
+            //this->new B()
+
+            A.call(this);   //this.abc = 12;
+            //相当于得到了（继承）A里面的属性
+
+        }
+
+        B.prototype = A.prototype;
+
+        B.prototype.fn=function (){
+            alert("这是B的方法");
+        };
+
+
+        var obj1 = new B();
+        var obj2 = new A();
+
+        alert(obj1.abc)    //12
+
+        obj1.show();     //?
+
+        obj2.fn();      //undefined     //这是B的方法
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+</body>
+</html>

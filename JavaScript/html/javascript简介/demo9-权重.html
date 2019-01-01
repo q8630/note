@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+
+        }
+        #box li{
+            list-style: none;
+            width: 300px;
+            height: 50px;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 50px;
+        }
+        li{
+            background: #eee;
+        }
+
+        #li3{
+            background: #0f0;
+        }
+
+        .li3{
+            background: #f00;
+        }
+
+        /*.li3{*/
+            /*background: #f00!important;*/
+        /*}*/
+
+        #box .li3{
+            background: #fff
+        }
+
+
+
+
+
+
+        /*
+             权重：
+             1. 元素 < class类名
+             2. class类名 < id名
+             3. id名 < 行内样式
+             4. 行内样式 < !important
+
+             !important      行内样式      id名      class类名     元素
+              最高权重        1000         100           10          1
+
+        */
+
+    </style>
+</head>
+<body>
+    <ul id="box" class="box">
+        <li class="li0" id="li0">
+            <p>我是第0个li里面的P</p>
+        </li>
+        <li class="li1" id="li1">
+            <p>我是第1个li里面的P</p>
+        </li>
+        <li class="li2" id="li2">
+            <p>我是第2个li里面的P</p>
+        </li>
+        <li class="li3" id="li3">
+            <p>我是第3个li里面的P</p>
+        </li>
+        <li class="li4" id="li4">
+            <p>我是第4个li里面的P</p>
+        </li>
+        <li class="li5" id="li5">
+            <p>我是第5个li里面的P</p>
+        </li>
+        <li class="li6" id="li6">
+            <p>我是第6个li里面的P</p>
+        </li>
+        <li class="li7" id="li7">
+            <p>我是第7个li里面的P</p>
+        </li>
+        <li class="li8" id="li8">
+            <p>我是第8个li里面的P</p>
+        </li>
+        <li class="li9" id="li9">
+            <p>我是第9个li里面的P</p>
+        </li>
+    </ul>
+
+</body>
+</html>

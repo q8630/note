@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>无标题文档</title>
+        <script>
+
+            /*
+            * 注释：
+            * 构造函数和别的函数没有什么区别  就是一个普普通通的函数，
+            * 之所以叫构造函数只是因为他和别的函数的作用不同而已他是用来构造一个对象
+            *
+            * ps：不同的人有不同的作用，也就有了不同的叫法。比如警察️
+            *
+            * */
+
+
+          /*  function createPerson(name, qq)		//构造函数
+                    {
+                        var obj=new Object();
+
+                        obj.name=name;
+                        obj.qq=qq;
+
+                        obj.showName=function ()
+                        {
+                            alert('我的名字叫：'+this.name);
+                        };
+                        obj.showQQ=function ()
+                        {
+                            alert('我的QQ号：'+this.qq);
+                        };
+
+                        return obj;
+                    }
+
+                    //createPerson('小仙女', '66666666666')
+
+
+                    var obj=createPerson('小仙女', '66666666666');
+
+                    obj.showName();
+                    obj.showQQ();
+
+                    var obj2=createPerson('小帅哥', '45648979879');
+
+                    obj2.showName();
+                    obj2.showQQ();*/
+
+
+
+            /*
+            var obj = new Object();
+
+            obj.name = "冰箱";
+            obj.color = "白色";
+
+            obj.use = function () {
+                alert(this.name+"的颜色是"+this.color)
+            }
+            obj.use();
+
+
+            var obj1 = new Object();
+
+            obj1.name = "手机";
+            obj1.color = "黑色";
+
+            obj1.use = function () {
+                alert(this.name+"的颜色是"+this.color)
+            }
+            obj1.use();
+
+
+            var obj2 = new Object();
+
+            obj2.name = "电脑";
+            obj2.color = "银色";
+
+            obj2.use = function () {
+                alert(this.name+"的颜色是"+this.color)
+            }
+            obj2.use();*/
+
+
+            //
+            // function dianqi(name,color) {
+            //
+            //     var obj = new Object();
+            //
+            //     obj.name = name;
+            //     obj.color = color;
+            //
+            //     obj.use = function () {
+            //         alert(this.name+"的颜色是"+this.color)
+            //     }
+            //
+            //     return obj;
+            // }
+            //
+            // var aaa = dianqi("冰箱","白色")
+            // aaa.use();
+            //
+            // var bbb = dianqi("电脑","银色")
+            // bbb.use();
+            //
+            // var ccc = dianqi("手机","黑色")
+            // ccc.use();
+
+
+
+
+        /*  var obj  = new Object();   //创建对象
+
+            //属性
+            obj.name = "乌日根";
+            obj.sex = "男";
+            obj.age = "18";
+
+            //方法
+            obj.chi = function () {
+                alert("他特别能吃！")
+            };
+            obj.wan = function () {
+                alert("他特别爱玩！")
+            };
+            obj.say = function () {
+                alert(this.name)
+            }
+
+            obj.wan();
+            obj.say();
+
+
+            var obj1  = new Object();   //创建对象
+
+            //属性
+            obj1.name = "乌日根1";
+            obj1.sex = "男1";
+            obj1.age = "19";
+
+            //方法
+            obj1.chi = function () {
+                alert("他特别能吃！")
+            };
+            obj1.wan = function () {
+                alert("他特别爱玩！")
+            };
+            obj1.say = function () {
+                alert(this.name)
+            }
+
+            obj1.wan();
+            obj1.say();*/
+
+
+
+
+            // function ren(name,sex,age) {    //构造函数
+            //
+            //     var obj  = new Object();   //创建对象
+            //
+            //
+            //
+            //     //属性
+            //     obj.name = name;
+            //     obj.sex = sex;
+            //     obj.age = age;
+            //
+            //     //方法
+            //     obj.chi = function () {
+            //         alert("他特别能吃！")
+            //     };
+            //     obj.wan = function () {
+            //         alert("他特别爱玩！")
+            //     };
+            //     obj.say = function () {
+            //         alert(this.name)
+            //     }
+            //
+            //     return obj;
+            //
+            // }
+            //
+            // var w =  ren("乌日根","男",18)
+            // w.say();
+            //
+            // var a = ren("阿龙","女",16)
+            // a.say();
+            //
+            // var l = ren("阿楞","其他",30)
+            // l.say();
+            //
+            //
+
+
+
+
+
+            // var Obj = new Object();  //创建对象
+            //
+            // //添加属性
+            // Obj.name = "许东";
+            // Obj.age = "20";
+            // Obj.height = "175cm";
+            // Obj.sex = "男";
+            //
+            // //添加方法
+            // Obj.show = function () {
+            //     alert(this.name);
+            // }
+            // Obj.chi = function () {
+            //     alert("红烧肉");
+            // }
+            // Obj.he = function () {
+            //     alert("闷倒驴");
+            // }
+            // Obj.wan = function () {
+            //     alert("敲代码");
+            // }
+            //
+            // Obj.show();
+            // alert(Obj.age)
+            //
+            //
+            //
+            // var Obj = new Object();  //创建对象
+            //
+            // //添加属性
+            // Obj.name = "老王";
+            // Obj.age = "45";
+            // Obj.height = "185cm";
+            // Obj.sex = "男";
+            //
+            // //添加方法
+            // Obj.show = function () {
+            //     alert(this.name);
+            // }
+            // Obj.chi = function () {
+            //     alert("肉");
+            // }
+            // Obj.he = function () {
+            //     alert("肉汤");
+            // }
+            // Obj.wan = function () {
+            //     alert("肉肉");
+            // }
+            //
+            // Obj.show();
+            // alert(Obj.age)
+
+
+            //封装     ==> 工厂
+            function gg(name,age,height,sex,chi) {   //构造函数   ==>    类
+
+                var Obj = new Object();  //创建对象     ==>     原料
+
+                //   加工
+                //添加属性
+                Obj.name = name;
+                Obj.age = age;
+                Obj.height = height;
+                Obj.sex = sex;
+
+                //添加方法
+                Obj.show = function () {
+                    alert(this.name);
+                }
+                Obj.chi = function () {
+                    alert(chi);
+                }
+
+                return Obj;      // ==>   出厂
+            }
+
+            var newObj = gg("老王","18","180cm","男","肉");          //对象1
+            alert(newObj.name)
+            newObj.show()
+
+            var newObj1 = gg("老许","20","180cm","男","肉");          //对象2
+            alert(newObj1.name)
+            newObj1.show()
+
+            var newObj2 = gg("老孙","18","150cm","女","肉");          //对象3
+            alert(newObj2.name)
+            newObj2.show()
+
+
+            alert(newObj.show)
+            alert(newObj1.show)
+            alert(newObj.show == newObj1.show)     //   false   ==>    true
+
+
+
+           /*
+            类与对象的概念：
+
+            类就相当于模具      比如：做蛋糕的模具
+            对象相当于产品           蛋糕
+
+            一个类能衍生出很多哥对象来。
+
+           */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </head>
+
+    <body>
+    </body>
+</html>

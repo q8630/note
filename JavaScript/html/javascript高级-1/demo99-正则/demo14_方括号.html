@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+
+
+    var str='apc xpc ppc bpc spc tpc';
+
+    var aaa=/[a]pc/g;    //中括号里面的任意一个都能与外面的匹配
+
+    alert(str.match(aaa));  //apc  ppc  xpc
+
+
+    //^
+    // 1。在中括号里面是除了什么 别的都可以（排除）
+    // 2。/^ / 在正则的开始  是必须以什么开头（/^a /必须以a开头）
+
+    //$  必须以什么结尾
+
+    // \d  数字                   \D  (反的)
+    // \w  字母 下划线 数字         \W
+    // \s  空白字符                \S
+
+    // .   任意字符 （如果我就要写点呢？    \.）
+
+    // |   或者
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

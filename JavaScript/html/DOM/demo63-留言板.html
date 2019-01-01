@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #txt{
+            width: 600px;
+            height: 80px;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 20px;
+            display: block;
+            outline: none;
+            font-size: 30px;
+            color: #FF9900;
+        }
+        #btn{
+            width: 100px;
+            height: 40px;
+            background: #0000ff;
+            color: #fff;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        #box{
+            width: 600px;
+            height: auto;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            background: #eee;
+        }
+        #box li{
+            list-style: none;
+            width: 600px;
+            height: 40px;
+            line-height: 40px;
+            margin: 10px auto;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            text-indent: 1em;
+        }
+
+        #box li span{
+            display: block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            background: #000;
+            color: #fff;
+            border-radius: 100%;
+            float: right;
+            text-indent: 0;
+            position: relative;
+            top: 5px;
+            right: 5px;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+   <textarea id="txt"></textarea>
+
+   <input id="btn" type="button" value="发送" />
+
+   <ul id="box">
+       <li> 123123123<span>X</span></li>
+       <li> 123123123<span>X</span></li>
+       <li> 123123123<span>X</span></li>
+       <li> 123123123<span>X</span></li>
+       <li> 123123123<span>X</span></li>
+       <li> 123123123<span>X</span></li>
+   </ul>
+
+
+   <script>
+        window.onload = function () {
+
+            var oBtn = document.getElementById("btn");
+            var oTxt = document.getElementById("txt");
+            var oBox = document.getElementById("box");
+            var newLi = oBox.getElementsByTagName("li");
+            var oSpan = oBox.getElementsByTagName("span");
+
+            oBtn.onclick = function(){
+                var oLi = document.createElement("li");
+                var oSpan = document.createElement("span");
+
+                oLi.innerHTML = oTxt.value;
+                oSpan.innerHTML = "X";
+                oLi.appendChild(oSpan) ;
+
+                //判断 ul 里面 有没有li  
+                if(newLi.length>0){   
+                    //有li添加在第一个li的前面
+                    if(oBox.firstElementChild){
+                        oBox.insertBefore(oLi,oBox.firstElementChild)  //
+                    }else{
+                        oBox.insertBefore(oLi,oBox.firstChild)
+                    }
+                }else{
+                    //没有li 就追加一个
+                    oBox.appendChild(oLi) ;
+                }
+
+                oSpan.onclick= function(){
+                    oBox.removeChild(this.parentNode)    
+                }
+
+            }
+            for(var i=0;i<oSpan.length;i++){
+                oSpan[i].onclick = function () {
+                    oBox.removeChild(this.parentNode)
+                }
+            }
+
+            
+          
+
+
+
+
+/*
+
+            oBtn.onclick = function () {
+                var ap = document.createElement("p");
+                ap.innerHTML = oTxt.value + "<span>X</span>";
+                if(oTxt.value==""){
+                    alert("请输入内容！")
+                }else{
+                    if(newP.length>0){
+                        oBox.insertBefore(ap,newP[0])
+                    }else{
+                        oBox.appendChild(ap)
+                    }
+                }
+            }
+
+            for(var i=0;i<oSpan.length;i++){
+                oSpan[i].onclick = function () {
+                    oBox.removeChild(this.parentNode)
+                }
+            }
+*/
+
+
+        }
+
+
+   </script>
+
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+</head>
+<body>
+
+    <script>
+       /*
+       *  JSON:(JavaScript Object Notation, JS 对象标记) 是一种轻量级的数据交换格式。
+       *  它基于 ECMAScript (w3c制定的js规范)的一个子集，采用完全独立于编程语言的文本格式来存储和表示数据。
+       *
+       * 什么是 JSON ？
+       *    JSON 指的是 JavaScript 对象表示法（JavaScript Object Notation）
+       *    JSON 是轻量级的文本数据交换格式
+       *   JSON 独立于语言 *
+       *   JSON 具有自我描述性，更易理解
+       *   JSON 使用 JavaScript 语法来描述数据对象，但是 JSON 仍然独立于语言和平台。JSON 解析器和 JSON 库支持许多不同的编程语言。
+       *
+       **/
+
+       /*  json */
+
+
+
+
+       var ren = {
+           "name":"ergouzi",
+           "age":"18",
+           "sex":"女",
+           "height":"120cm"
+       }
+
+
+
+
+
+       // alert(ren.age)
+       /* 在JS里面  能用点（.）的地方  都可以用中括号[]来代替 */
+       alert(ren["age"])
+
+        var json = {
+            "a":"123",
+            "b":"456",
+            "c":"789",
+            "d":"987",
+            "e":"654",
+            "f":"321"
+        }
+
+
+       //  var arr = ["a","b","c","d"];
+       // alert(arr[2])
+
+
+
+
+
+//        alert(json["e"]);        /* 654 */
+//       alert(json.length)         /* undefined */
+
+//              for(y in json){
+//                   alert(json[y])
+//              }
+//       for(var i=0;i<){
+//
+//       }
+
+
+       /* 数组 */
+        var arr = ["123","456","789","987","654","321"]
+//        alert(arr[4])             /* 654 */
+//        alert(arr.length)         /*  6  */
+
+//       for(var i=0;i<arr.length;i++){
+//            alert(arr[i])
+//       }
+
+       // for(i in arr){       /*  i是变量  arr是要循环的东西  */
+       //      alert(arr[i])
+       // }
+
+
+
+
+
+
+        /*
+        *  区别：
+        *   1. 数组的下面为 数字，JSON的下标为 字符串；
+        *   2.数组是有长度的（length）, JSON是没有长度（length）的；
+        *   3.数组的循环遍历用for和for...in ,JSON的循环遍历只能用for...in。
+        * */
+
+
+
+
+    </script>
+
+
+</body>
+</html>

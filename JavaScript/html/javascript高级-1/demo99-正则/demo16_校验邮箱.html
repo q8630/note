@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function ()
+{
+	var oTxt=document.getElementById('txt1');
+	var oBtn=document.getElementById('btn1');
+	
+	oBtn.onclick=function ()
+	{
+
+	    // var re = /^\w+@[0-9a-z]+\.[a-z]+$/i;
+
+
+        // var re = /^1[3456789][0-9]{9}$/;
+
+        //-50-50之间的数保留两位小数
+        var re = /^(\-|\+)?[0-4]?[0-9](\.[0-9]{2})?$/
+
+
+        /*
+        *   ^    必须以什么开头
+        *   $    必须以什么结束
+        *
+        * */
+
+		/*
+		* 591808250@qq.com
+		* ning@163.com
+		* 18630377912@163.com
+		*
+		* */
+
+		if(re.test(oTxt.value)){
+			alert('合法的邮箱');
+		}else{
+			alert('你丫写错了');
+		}
+	};
+
+
+
+};
+</script>
+</head>
+
+<body>
+    <input type="text" id="txt1" />
+    <input type="button" value="校验" id="btn1" />
+</body>
+</html>

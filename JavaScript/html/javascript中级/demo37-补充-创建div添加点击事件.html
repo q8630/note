@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 90px;
+            height: 90px;
+            background: #ccc;
+            margin: 10px;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div style="height: 90px; width: 90px; background: #ff0;"></div>
+   
+
+    <script>
+        
+        var oBody = document.getElementsByTagName("body")[0];
+        var aDiv = document.getElementsByTagName("div");
+
+        for (var i = 0; i < 100; i++) {
+            
+            var oDiv = document.createElement("div");     //创建div
+
+            oBody.appendChild(oDiv)   //把创建好的div 添加到body里面
+
+
+            oDiv.onclick = function(){             //点击谁  让谁的背景颜色变成绿的
+
+                for (let j = 0; j < aDiv.length; j++) {    //遍历所有的div使其变成灰色
+                    aDiv[j].style.background = "#ccc"
+                }
+                
+                this.style.background = "#0f0"
+               
+            }
+
+        
+        }
+    
+
+
+
+    
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event对象</title>
+    <style>
+        *{
+            margin: 0;
+            margin: 0;
+        }
+        html,body{
+            width: 2000px;
+            height: 1500px;
+        }
+        #div7{
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 50px;
+            color: #fff;
+            width: 200px;
+            height: 200px;
+            background: #f0f;
+        }
+
+    </style>
+    <script type="text/javascript" charset="utf-8" src="startMove-3.js"></script>
+
+</head>
+<body>
+    <div id="div7"></div>
+
+    <script>
+        window.onload = function () {
+            var oDiv7 = document.getElementById("div7");
+
+            document.onmousemove = function (ev) {
+
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;   // scrollTop 兼容
+                var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;  // scrollLeft 兼容
+                console.log("现在的scrollTop值是："+scrollTop)
+
+                var oEvent = ev||event;
+                var x = oEvent.clientX;
+                var y = oEvent.clientY;
+                // console.log("现在的坐标是：" + x + "," + y)
+
+                oDiv7.style.left = (x-oDiv7.offsetWidth/2 + scrollLeft) +"px";
+                oDiv7.style.top = (y-oDiv7.offsetHeight/2 + scrollTop)+"px";
+
+            }
+
+        }
+
+
+    </script>
+
+</body>
+</html>

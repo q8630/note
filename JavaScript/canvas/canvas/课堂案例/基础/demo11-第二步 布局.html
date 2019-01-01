@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>布局</title>
+</head>
+<body>
+<canvas id="canvas" style="display: block;margin: 50px auto;">
+    当前浏览器不支持Canvas，请更换浏览器后再试
+</canvas>
+
+<script src="js/digit.js"></script>
+<script>
+    var canvasWidth = 1024;
+    var canvasHeight = 768;
+
+    var radius = 8;
+
+    var marginTop = 60;
+    var marginLeft = 30;
+
+
+
+
+    window.onload = function(){
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+
+        render(ctx);
+
+    }
+
+    function render(ctx){
+        var h = 17;
+        var m = 03;
+        var s = 20;
+
+        renderDigit(marginLeft, marginTop, parseInt(h/10),ctx);                     //h的第一个数字
+        renderDigit(marginLeft+15*(radius+1), marginTop, parseInt(h%10),ctx);       //h的第二个数字
+
+        renderDigit(marginLeft+30*(radius+1), marginTop, 10, ctx);                  //第一个冒号 ： 2*4+1 = 9
+
+        renderDigit(marginLeft+39*(radius+1), marginTop, parseInt(m/10),ctx);       //m的第一个数字
+        renderDigit(marginLeft+54*(radius+1), marginTop, parseInt(m%10),ctx);       //m的第二个数字
+
+        renderDigit(marginLeft+69*(radius+1), marginTop, 10, ctx);                  //第二个冒号 ：
+
+        renderDigit(marginLeft+78*(radius+1), marginTop, parseInt(s/10),ctx);       //s的第一个数字
+        renderDigit(marginLeft+93*(radius+1), marginTop, parseInt(s%10),ctx);       //s的第二个数字
+
+
+
+
+    }
+
+    function renderDigit(x, y, num,ctx){
+
+        ctx.fillStyle = "rgb(0,102,153)";
+
+        for(var i=0;i<digit[num].length;i++){
+            for(var j=0;j<digit[num][i].length;j++){
+                if(digit[num][i][j] == 1){
+                    ctx.beginPath();
+                    ctx.arc( x+j*2*(radius+1)+(radius+1) , y+i*2*(radius+1)+(radius+1) , radius , 0 , 2*Math.PI );
+                    ctx.closePath();
+                    ctx.fill();
+                }
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

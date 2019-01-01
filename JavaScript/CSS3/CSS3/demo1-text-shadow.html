@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text-shadow</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            line-height: 500px;
+            text-align: center;
+            color: #fff;
+            background: #0f0;
+            margin: 100px auto;
+            font-size: 50px;
+            /*
+                 参数1：偏右的距离
+                 参数2：偏下的距离
+                 参数3：模糊程度
+                 参数4：颜色
+             */
+            text-shadow:5px 5px 5px #000; /* 文本 */
+
+            box-shadow: 5px 5px 10px #f00;   /* 元素 */
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="box">
+        早上好！
+    </div>
+
+
+
+
+</body>
+</html>

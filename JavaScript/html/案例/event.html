@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 2000px;
+            height: 3000px;
+            background: #faa;
+            position: relative;
+        }
+        div{
+            
+            width: 100px;
+            height: 100px;
+            background: #0f0;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div></div>
+
+
+
+
+
+
+
+    <script>
+
+        var aBody =  document.getElementsByTagName("body")[0];
+        var aDiv =  document.getElementsByTagName("div")[0];
+
+
+        aBody.onmousemove = function(ev){
+            var oEvent = ev||event; //event兼容写法
+
+            //scrollTop 
+            var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+            var scrollleft = document.documentElement.scrollLeft || document.body.scrollLeft;
+         
+            // alert(1)
+            // console.log(event.clientX,event.clientY)
+            var x = oEvent.clientX-aDiv.offsetWidth/2+scrollleft;
+            var y = oEvent.clientY-aDiv.offsetHeight/2+scrolltop;
+            var bW = aBody.offsetWidth-aDiv.offsetWidth;
+            var bH = aBody.offsetHeight-aDiv.offsetHeight;
+            // if(x<=0){
+            //     x=0
+            // }
+            // if(y<=0){
+            //     y=0
+            // }
+            // if(x>=bW){
+            //     x=bW
+            // }
+            // if(y>=bH){
+            //     y=bH
+            // }
+            console.log(x,y,bW,bH)
+
+            aDiv.style.top = y+"px";
+            aDiv.style.left = x+"px";
+
+        }
+
+    </script>
+
+
+
+    
+</body>
+</html>

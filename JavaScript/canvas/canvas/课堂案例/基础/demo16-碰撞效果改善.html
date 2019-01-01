@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>小球物理实验+碰撞效果</title>
+</head>
+<body>
+<canvas id="canvas" style="border:1px solid #000; display: block;margin: 50px auto;">
+    当前浏览器不支持Canvas，请更换浏览器后再试
+</canvas>
+
+<script>
+    var ball= {x:512,y:100,r:20,g:2,vx:-4,vy:0,color:"#058"}
+    window.onload = function(){
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        canvas.width = 800;
+        canvas.height = 600;
+
+        setInterval(function(){
+            render(ctx);
+            update();
+        },50)
+
+
+    }
+    function update(){
+       ball.x+=ball.vx;
+       ball.y+=ball.vy;
+       ball.vy+=ball.g;
+
+        if(ball.y>=600-ball.r){
+            ball.y = 600-ball.r
+            ball.vy = -ball.vy*0.5
+        }
+
+
+
+    }
+
+    function render(ctx){
+        ctx.clearRect(0,0,canvas.width,canvas.height); //对整个矩形进行刷新
+
+        ctx.fillStyle = ball.color;
+        ctx.beginPath();
+        ctx.arc( ball.x, ball.y, ball.r, 0 , 2*Math.PI );
+        ctx.closePath();
+        ctx.fill();
+
+
+
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="ajax.js"></script>
+
+</head>
+<body>
+    <button id="btn">提取数据</button>
+<script>
+
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        ajax("data/ning.txt", function (data) {
+            //成功返回的数据
+            alert("成功！！！！！！！");
+            // alert(data);
+            document.write(data);
+
+        }, function () {
+            //失败返回的数据
+            alert("失败！！！！！！！")
+        })
+    }
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

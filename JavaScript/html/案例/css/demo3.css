@@ -1,0 +1,184 @@
+*{
+    margin:0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: auto;
+    background: #eee;
+}
+#box{
+    width: 1200px;
+    height: auto;
+    background: #fff;
+    margin:0 auto;
+}
+.bigBox{
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+    background: #ccc;
+}
+.bigBox>li{
+    list-style: none;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 50px;
+    background: #ccc;
+    position: relative;
+}
+.box{
+    width: 300px;
+    height: 200px;
+    background: #fff;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    display: none;
+    padding: 10px;
+}
+.box li{
+    width: 60px;
+    height: 30px;
+    float: left;
+    list-style: none;
+    line-height: 30px;
+
+}
+
+
+.myJd{
+    width: 280px;
+    height: 200px;
+    background: #fff;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    display: none;
+    padding: 10px;
+}
+.myJd>li{
+    list-style: none;
+    width: 280px;
+    background: #fff;
+}
+.myJd>li:nth-child(1){
+    height: 120px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.myJd>li p{
+    width: 140px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+#mySpan{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../img/up.png)no-repeat center;
+    background-size: 20px auto;
+    position: relative;
+    top: 9px;
+}
+.right{
+    width: 10px;
+    height: 100%;
+    background: #666;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.R_box{
+    width: 35px;
+    height: 222px;
+    position: absolute;
+    top: 50%;
+    margin-top: -150px;
+    left: -35px;
+    /*background: #f00;*/
+}
+.R_box>li{
+    list-style: none;
+    width: 35px;
+    height: 35px;
+    background: #666;
+    margin-bottom: 2px;
+    border-radius: 5px 0px 0px 5px;
+    text-align: center;
+    line-height: 42px;
+    position: relative;
+
+}
+.R_box>li img{
+    width: 20px;
+    height: auto;
+    display: inline-block;
+}
+
+.R_box>li p{
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    background: #c00;
+    display: none;
+    z-index: -1;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#lunbo{
+    width: 790px;
+    height: 340px;
+    background: #d94b01;
+    margin: 0 auto;
+    position: relative;
+}
+.imgBox{
+    width: 790px;
+    height: 340px;
+}
+.imgBox li{
+    list-style: none;
+    width: 790px;
+    height: 340px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.imgBox li img{
+    width: 790px;
+    height: auto;
+    display: block;
+}
+
+.listBox{
+    width: 190px;
+    height: 20px;
+    background: rgba(200,200,200,0.5);
+    position: absolute;
+    left: 50%;
+    margin-left: -95px;
+    bottom: 20px;
+    border-radius: 20px;
+
+}
+.listBox li{
+    list-style:none;
+    width: 12px;
+    height: 12px;
+    float: left;
+    background: #fff;
+    margin-left: 10.5px;
+    border-radius: 100%;
+    margin-top: 4px;
+}
+
+
+

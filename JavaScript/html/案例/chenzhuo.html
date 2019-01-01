@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" charset="utf-8" src="jquery.js"></script>
+</head>
+<body>
+
+<select name="" style="width: 100px; height: 50px;" id="ss" >
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+</select>
+
+
+<script>
+    $("#ss").on("click",function(){
+        console.log($("#ss option:selected").text());
+    })
+
+</script>
+
+    
+
+</body>
+</html>

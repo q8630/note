@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        #box1{
+            width: 500px;
+            height: 500px;
+            background: #f00;
+            margin: 0 auto;
+        }
+
+        #box2{
+            width: 300px;
+            height: 300px;
+            background: #0f0;
+            margin: 0 auto;
+        }
+        #box3{
+            width: 1000px;
+            height: 200px;
+            background: #ff0;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        #box4{
+            width: 800px;
+            height: 100px;
+            background: #f0f;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div id="box1" ></div>
+<div id="box2" ></div>
+<div id="box3" ></div>
+<div id="box4" ></div>
+
+<script>
+
+    var oBox1 = document.getElementById("box1");
+    var oBox2 = document.getElementById("box2");
+    var oBox3 = document.getElementById("box3");
+    var oBox4 = document.getElementById("box4");
+
+
+    oBox1.onclick = function () {
+        alert(show())
+    }
+
+    function show() {
+        // alert(oBox1.style.width)     //空的
+
+        // oBox1.currentStyle["width"]         // 只兼容IE9以下
+
+        // getComputedStyle(oBox1,false)["width"]        //除了IE9以下 别的都兼容
+
+
+        //兼容
+        if(oBox1.currentStyle){
+             return oBox1.currentStyle["width"]
+        }else{
+            return  getComputedStyle(oBox1,false)["width"]
+        }
+
+
+    }
+
+
+
+    oBox2.onclick = function () {
+        alert(show1())
+    }
+
+    function show1() {
+        //兼容
+        if(oBox2.currentStyle){
+             return oBox2.currentStyle["background"]
+        }else{
+            return  getComputedStyle(oBox2,false)["background"]
+        }
+
+
+    }
+
+
+
+
+
+    oBox3.onclick = function () {
+        alert(getStyle(oBox3,"height"))
+    }
+
+    oBox4.onclick = function () {
+        alert(getStyle(oBox4,"background"))
+    }
+
+
+
+    /* 这是获取非行内样式的方法 */
+    function getStyle(obj,attr) {
+        //兼容
+        if(obj.currentStyle){
+            return obj.currentStyle[attr]
+        }else{
+            return  getComputedStyle(obj,false)[attr]
+        }
+
+    }
+
+    /*
+    * 1.怎么获取非行内样式？？？
+    *  obj.currentStyle[attr]         // 只兼容IE9以下
+    *
+    *  getComputedStyle(obj,false)[attr]       //除了IE9以下 别的都兼容
+    *
+    * 2.怎么做兼容呢？
+    *   if(obj.currentStyle){
+    *       obj.currentStyle[attr]
+    *   }else{
+    *       getComputedStyle(obj,false)[attr]
+    *   }
+    *
+    * */
+
+
+</script>
+
+</body>
+</html>

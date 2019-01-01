@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="canvas"style="border: 1px solid #000; display: block; margin: 0 auto;">
+    当前浏览器不支持Canvas,请更换浏览器以后再重试
+</canvas>
+
+
+
+<script>
+    var canvas=document.getElementById("canvas");
+    canvas.width = 1000;
+    canvas.height = 700;
+    var ctx=canvas.getContext("2d");
+
+
+    var linearGrad = ctx.createLinearGradient(0,0,800,0);
+    linearGrad.addColorStop(0.0, "#f00");
+    linearGrad.addColorStop(0.5, "#0f0");
+    linearGrad.addColorStop(1.0, "#00f");
+    ctx.fillStyle = linearGrad;
+
+    ctx.font = "bold 50px 楷体";
+
+
+    //文本上下对齐
+    ctx.textBaseline = "top";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,100);
+    drawBaseline(ctx,100)
+
+    ctx.textBaseline = "middle";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,200);
+    drawBaseline(ctx,200)
+
+    ctx.textBaseline = "bottom";
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,300);
+    drawBaseline(ctx,300)
+
+    ctx.textBaseline = "alphabetic"; //默认属性垂直方向的基准线 （拉丁字母）
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,400);
+    drawBaseline(ctx,400)
+
+    ctx.textBaseline = "ideographic"; //汉字，日本文字
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,500);
+    drawBaseline(ctx,500)
+
+    ctx.textBaseline = "hanging";   //  印度语
+    ctx.fillText("Canvas 真简单啊！学得我都懵圈了！",50,600);
+    drawBaseline(ctx,600)
+
+
+    function drawBaseline(ctx,h){
+        var width = ctx.canvas.width;
+
+        ctx.save();
+        ctx.strokeStyle = "#666";
+        ctx.lineWidth = 2;
+        ctx.moveTo(0,h);
+        ctx.lineTo(width,h);
+        ctx.stroke();
+        ctx.restore();
+
+    }
+
+</script>
+
+
+</body>
+</html>

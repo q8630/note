@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event对象</title>
+</head>
+<body>
+
+
+    <script>
+        window.onload = function () {
+
+            // document.onclick=function (ev){
+            //     // alert('a');
+            //     console.log(event)
+
+            //     var oEvent = event||ev;
+
+
+
+                
+            // };
+
+
+
+
+
+
+
+            // document.onclick=function (ev){
+            //     //有兼容
+            //     //IE
+            //     // alert(event.clientX+','+event.clientY);
+            //
+            //     //FF
+            //     alert(ev.clientX+','+ev.clientY);
+            //
+            // };
+
+            // document.onclick=function (ev){
+            //
+            //      var oEvent= ev || event;   //兼容的写法
+            //
+            //      alert(oEvent.clientX+','+oEvent.clientY);
+            //
+            // };
+
+            // document.onmousemove=function (ev){
+
+            //      var oEvent= ev || event;   //兼容的写法
+
+            //      console.log(oEvent.clientX+','+oEvent.clientY);
+
+            // };
+
+
+
+
+
+
+
+
+
+           //
+            document.onclick=function (ev){
+
+                 var oEvent=ev || event;   //兼容的写法
+
+                 alert(oEvent.clientX+','+oEvent.clientY);
+
+            };
+
+           //
+           // document.onmousemove=function (ev){
+           //
+           //      var oEvent=ev || event;   //兼容的写法
+           //
+           //      console.log("现在的坐标是："+oEvent.clientX+','+oEvent.clientY);
+           //
+           // }
+           //
+
+
+        }
+
+    </script>
+
+</body>
+</html>

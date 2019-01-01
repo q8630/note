@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量：求和</title>
+</head>
+<body>
+    <!--<input id="txt1" type="text"/>-->
+    <!--+-->
+    <!--<input id="txt2" type="text"/>-->
+
+    <!--<input id="btn" type="button" value="=" />-->
+
+    <!--<input id="txt3" type="text"/>-->
+
+
+    <!--<script type="text/javascript" charset="utf-8">-->
+        <!--var oTxt1 = document.getElementById("txt1");-->
+        <!--var oTxt2 = document.getElementById("txt2");-->
+        <!--var oTxt3 = document.getElementById("txt3");-->
+        <!--var oBtn = document.getElementById("btn");-->
+
+
+        <!--oBtn.onclick = function(){-->
+<!--//            alert(typeof oTxt1.value)   /*  string  字符串不会相加只会拼接 */-->
+<!--//            alert(typeof parseInt(oTxt2.value) )      /* parseInt能把字符串转换为整数   */-->
+            <!--oTxt3.value = parseInt(oTxt1.value) + parseInt(oTxt2.value)-->
+        <!--}-->
+
+
+    <!--</script>-->
+
+
+    <input id="txt1" type="text" />
+    +
+    <input id="txt2" type="text" />
+
+    <button id="btn">=</button>
+
+    <input id="txt3" type="text" />
+
+    <script>
+
+        var oBtn = document.getElementById("btn");   //object
+        var oTxt1 = document.getElementById("txt1");   //object
+        var oTxt2 = document.getElementById("txt2");   //object
+        var oTxt3 = document.getElementById("txt3");   //object
+        var aInput = document.getElementsByTagName("input");  //数组
+
+        oBtn.onclick = function(){
+
+            //1.
+            // oTxt3.value =  Number(oTxt1.value) + Number(oTxt2.value) ;
+
+
+            //2.
+            // oTxt3.value =  parseInt(oTxt1.value) + parseInt(oTxt2.value) ;
+
+
+            //3.
+            // oTxt3.value =  parseFloat(oTxt1.value) + parseFloat(oTxt2.value) ;
+
+
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 20px solid #f00;
+            margin:  50px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+
+    <script>
+
+        var aBox = document.getElementsByClassName("box")[0];
+
+         alert(aBox.offsetLeft)      //280    aBox 距离左边的距离
+         alert(aBox.offsetTop)       //50     aBox 距离上边的距离
+         alert(aBox.offsetWidth)     //240    aBox 自身的宽
+         alert(aBox.offsetHeight)    //240    aBox 自身的高
+
+
+
+    </script>
+
+</body>
+</html>

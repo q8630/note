@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css" >
+        *{
+            margin:0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 2000px;
+            background: #eee;
+        }
+        .bigBox{
+            width: 1200px;
+            height: 50px;
+            margin: 0 auto;
+            background: #ccc;
+        }
+        .bigBox>li{
+            list-style: none;
+            float: left;
+            padding-left: 20px;
+            padding-right: 20px;
+            line-height: 50px;
+            background: #ccc;
+            position: relative;
+        }
+        .box{
+            width: 300px;
+            height: 200px;
+            background: #fff;
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            display: none;
+            padding: 10px;
+        }
+        .box li{
+            width: 60px;
+            height: 30px;
+            float: left;
+            list-style: none;
+            line-height: 30px;
+
+        }
+
+
+        .myJd{
+            width: 280px;
+            height: 200px;
+            background: #fff;
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            display: none;
+            padding: 10px;
+        }
+        .myJd>li{
+            list-style: none;
+            width: 280px;
+            background: #fff;
+        }
+        .myJd>li:nth-child(1){
+            height: 120px;
+            border-bottom: 1px solid #ccc;
+        }
+
+
+        .myJd>li p{
+            width: 140px;
+            height: 30px;
+            line-height: 30px;
+            float: left;
+        }
+        #mySpan{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: url(img/up.png)no-repeat center;
+            background-size: 20px auto;
+            position: relative;
+            top: 9px;
+        }
+        .right{
+            width: 10px;
+            height: 100%;
+            background: #666;
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+        .R_box{
+            width: 35px;
+            height: 222px;
+            position: absolute;
+            top: 50%;
+            margin-top: -150px;
+            left: -35px;
+            /*background: #f00;*/
+        }
+        .R_box>li{
+            list-style: none;
+            width: 35px;
+            height: 35px;
+            background: #666;
+            margin-bottom: 2px;
+            border-radius: 5px 0px 0px 5px;
+            text-align: center;
+            line-height: 42px;
+            position: relative;
+
+        }
+        .R_box>li img{
+            width: 20px;
+            height: auto;
+            display: inline-block;
+        }
+
+        .R_box>li p{
+            width: 100px;
+            height: 35px;
+            line-height: 35px;
+            position: absolute;
+            top: 0;
+            right: 30px;
+            background: #c00;
+            display: none;
+            z-index: -1;
+            border-radius: 5px 0px 0px 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="right">
+        <ul class="R_box">
+            <li>
+                <img src="img/ren.png" />
+                <p>我的京东1</p>
+            </li>
+            <li>
+                <img src="img/xin.png" />
+                <p>我的京东2</p>
+            </li>
+            <li>
+                <img src="img/xinxi.png" />
+                <p>我的京东3</p>
+            </li>
+            <li>
+                <img src="img/shijian.png" />
+                <p>我的京东4</p>
+            </li>
+            <li>
+                <img src="img/fankui.png" />
+                <p>我的京东5</p>
+            </li>
+            <li>
+                <img src="img/gwc.png" />
+                <p>我的京东6</p>
+            </li>
+        </ul>
+    </div>
+    <ul class="bigBox">
+        <li id="bj">北京
+            <ul class="box">
+                <li>北京</li>
+                <li>上海</li>
+                <li>天津</li>
+                <li>重庆</li>
+                <li>河北</li>
+                <li>山西</li>
+                <li>河南</li>
+                <li>辽宁</li>
+                <li>吉林</li>
+                <li>黑龙江</li>
+                <li>内蒙古</li>
+                <li>江苏</li>
+                <li>山东</li>
+                <li>安徽</li>
+                <li>浙江</li>
+                <li>福建</li>
+                <li>湖北</li>
+                <li>湖南</li>
+                <li>广东</li>
+                <li>广西</li>
+                <li>江西</li>
+                <li>四川</li>
+                <li>海南</li>
+                <li>贵州</li>
+                <li>云南</li>
+                <li>西藏</li>
+                <li>陕西</li>
+                <li>甘肃</li>
+                <li>青海</li>
+                <li>宁夏</li>
+                <li>新疆</li>
+                <li>港澳</li>
+                <li>台湾</li>
+                <li>钓鱼岛</li>
+                <li>海外</li>
+            </ul>
+        </li>
+
+        <li>你好，请登录</li>
+        <li>免费注册</li>
+        <li>我的订单</li>
+        <li id="myLI">我的京东 <span id="mySpan"></span>
+            <ul class="myJd">
+                <li>
+                    <p>待处理订单</p>
+                    <p>返修退换货</p>
+                    <p>降价商品</p>
+                    <p>消息</p>
+                    <p>我的问答</p>
+                    <p>我的关注</p>
+                </li>
+                <li>
+                    <p>我的京豆</p>
+                    <p>我的白条</p>
+                    <p>我的优惠券</p>
+                    <p>我的理财</p>
+                </li>
+            </ul>
+        </li>
+        <li>京东会员</li>
+        <li>企业采购</li>
+        <li>客户服务</li>
+        <li>网站导航</li>
+        <li>手机京东</li>
+    </ul>
+
+
+    <script type="text/javascript" charset="utf-8">
+        var oBj = document.getElementById("bj");
+        var oMyli = document.getElementById("myLI");
+        var oMySpan = document.getElementById("mySpan");
+        var aBox = document.getElementsByClassName("box")[0];
+        var aMyjd = document.getElementsByClassName("myJd")[0];
+        var aR_box = document.getElementsByClassName("R_box")[0];
+
+        var aLI = aR_box.getElementsByTagName("li");
+
+
+
+        oBj.onmouseover = function(){
+            aBox.style.display = "block";
+            oBj.style.backgroundColor = "#fff"
+        };
+        oBj.onmouseout = function(){
+            aBox.style.display = "none";
+            oBj.style.backgroundColor = "#ccc"
+        };
+        oMyli.onmouseover = function(){
+            aMyjd.style.display = "block";
+            oMyli.style.backgroundColor = "#fff"
+            oMySpan.style.background = "url(img/down.png)no-repeat center"
+            oMySpan.style.backgroundSize = "20px auto"
+
+        };
+        oMyli.onmouseout = function(){
+            aMyjd.style.display = "none";
+            oMyli.style.backgroundColor = "#ccc";
+            oMySpan.style.background = "url(img/up.png)no-repeat center";
+            oMySpan.style.backgroundSize = "20px auto";
+        };
+
+        for(var i=0; i<aLI.length; i++){
+            /* this：  他所在函数属于谁  this就是谁！  */
+            aLI[i].onmouseover = function(){
+                this.children[1].style.display = "block";
+                this.style.backgroundColor = "#c00";
+            };
+            aLI[i].onmouseout = function(){
+                this.children[1].style.display = "none";
+                this.style.backgroundColor = "#666";
+            };
+        }
+
+    </script>
+</body>
+</html>
