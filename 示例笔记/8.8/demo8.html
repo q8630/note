@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .banner{
+            width: 200px;
+            height: 200px;
+            background: black;
+            /*overflow: hidden;*/
+            position: relative;
+        }
+        ul{
+            width: 600px;
+            background: yellow;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            transition: 1s;
+        }
+        li{
+            float: left;
+        }
+        ul>li:first-of-type{
+             width: 200px;
+             height: 200px;
+             background: blue;
+         }
+        ul>li:nth-of-type(2){
+            width: 200px;
+            height: 200px;
+            background: bisque;
+        }
+        ul>li:last-of-type{
+            width: 200px;
+            height: 200px;
+            background: blueviolet;
+        }
+        ol>li{
+            margin-right: 40px;
+        }
+       .li2:hover+.banner ul{
+                left: -200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>111</div>
+
+    <div>333</div>
+    <div class="li2">222</div>
+<div class="banner">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+</div>
+
+</body>
+</html>

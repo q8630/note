@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<script>
+//    箭头函数
+/*    function fn(x,y){
+        return function fn1(){
+            return function fn2(sum){
+                return sum;
+            }
+        }
+    }
+    var a=fn(1,2)()();
+    console.log(a);
+
+var fn = (x,y)=>()=>(sum)=>sum;
+
+    }*/
+
+/*    function fn(x){
+        return function (){
+            return function (){
+                return x+5;
+            }
+        };
+    }
+    var fn=x=>()=>()=>x+5;
+    console.log(fn(1)()());*/
+
+/*function fn(x){
+ var sum=0;
+ return sum;
+ }
+
+ var fn = x=>{
+    var sum=0;
+    return sum;
+}
+
+console.log(fn());*/
+
+/*function fn(x){
+    var sum=0;
+    return function (sum){
+        sum+=sum;
+        return function (sum){
+            return x+5+sum;
+        }
+    };
+}*/
+
+var fn = x=>{
+    var sum=0;
+    return sum=>{
+        sum+=sum;
+        return sum=> x+5+sum;
+    }
+}
+console.log(fn(1)(5)(1));//
+
+
+</script>
+
+</body>
+</html>

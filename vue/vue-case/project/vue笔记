@@ -1,0 +1,306 @@
+vue
+
+vue-cli 2.0 脚手架     vue-cil 3.0
+
+指令 ：
+    v-model 双向数据绑定
+    内置指令
+    v:text 更新元素的 textContent
+    v-html 更新元素的 innerHTML
+    v-if 如果为true，当前标签才会输出到页面中
+    v-else 如果为false，当前标签才会输出到页面
+    v-show 通过控制display样式来控制显示/隐藏
+    v-for  遍历数组/对象
+    v-on  绑定事件监听 简写@
+    v-bind  强制绑定解析表达式 可以省略
+    v-model  双向数据绑定
+    ref  指定唯一标识，vue通过$els属性访问这个元素对象
+    v-cloak  防止闪现 ，与css配合 [v-cloak]{display:none}
+
+事件：
+    普通事件
+
+    事件修饰符
+    .stop 阻止事件冒泡
+    按键修饰符
+
+自定义指令
+    directive
+    全局
+    局部
+
+生命周期
+    beforeCreate
+    初始化 (1次)
+        beforeCreate()
+        created()
+        beforeMount()
+        mounted() 初始化显示之后立即调用(1次)
+    更新  (n次) this.xxx = value
+        beforeUpdate()
+        updated()
+    死亡 (1次) vm.$destroy()
+        destroy()
+        beforeDestroy()  死亡之前调用(1次)
+   内存泄漏
+
+常用生命周期方法：
+    created()/mounted() : 发生ajax请求，启动定时器等异步任务
+    beforeDestroy() :   做收尾工作，如：清除定时器
+组件
+    component
+    全局
+    局部
+自定义过滤器
+    filter
+    全局
+    局部
+路由
+
+动画
+
+vuex
+
+
+
+实例声明模板
+new({
+    el:'',
+    //数据变量声明以d_开头，避免和methods重名
+    data:{
+        d_arr:[],
+        //类名控制一般写在class
+        d_class:{
+
+        },
+    },
+    computed:{
+
+    },
+    watch:{
+
+    },
+    methods:{
+
+    },
+    mounted:function(){
+
+    }
+})
+
+
+
+
+vue 2016下半年   
+
+react angular1.0 +ionic 微信小程序
+
+angular.js 1.0 
+angularjs 2.0  2016下半年  
+angular     4.0 
+开发难易程度：
+    原因：
+    1、react angular英文文档 
+    2、学习成本高
+    3、更新速度快 
+
+react 
+
+设计模式
+mvvm
+mvc 
+mvp ios  c  swif
+vue 定义：
+基于javascript 的一套构建用户界面  渐进式框架 
+特点：
+1、轻量级
+2、组件化 单向数据流 
+3、mvvm  m=>model   v=>view   vm=>数据和视图之间的交互 
+4、模块化 
+
+设计思想 
+声明式渲染  rander()
+组件系统  component  system 
+客户端路由  client-slide  router
+大规模数据管理状态  vuex
+构建工具  build 
+
+编程
+
+指令 
+  v-model 双向数据绑定
+    内置指令
+    v:text 更新元素的 textContent
+    v-html 更新元素的 innerHTML
+    v-if 如果为true，当前标签才会输出到页面中
+    v-else 如果为false，当前标签才会输出到页面
+    v-show 通过控制display样式来控制显示/隐藏
+    v-for  遍历数组/对象
+    v-on  绑定事件监听 简写@
+    v-bind  强制绑定解析表达式 可以省略
+    v-model  双向数据绑定
+    ref  指定唯一标识，vue通过$els属性访问这个元素对象
+    v-cloak  防止闪现 ，与css配合 [v-cloak]{display:none}
+事件
+    普通事件
+        
+    事件修饰符
+    按键修饰符
+
+组件
+三类： 
+		router-view   .vue：
+		    承载html   数据获取  页面交互等功能
+		基础组件：
+		    模态框
+		业务组件：
+		    包含复杂逻辑涉及到大型业务处理
+		组件：
+		    全局组件  
+			父子
+			   prop
+			子父  兄弟
+			局部组件
+		组件api：
+		    prop  slot  event
+    props父子 $emit自定义事件
+    bus new Vue() 兄弟
+    provide 2.2版本以后出现
+    inject向下注入
+    ref  $refs
+    slot-scope  <2.2 scope
+
+slot 插槽不写name(匿名插槽)   name(具名插槽)   占位符 
+    slot-scop 作用域插槽 
+    $mount挂载  
+ 
+    props 
+    event  emit on
+    bus
+    slot-scope
+    provide
+    inject
+    ref     $refs
+
+    vuex
+
+vue-cli 2.0 
+npm install vue-cli -g
+
+vue init webpack 文件名 
+
+6种模板
+    1、vue init webpack(模板名) <项目名>  大而全
+    2、webpack  webpack-simple  利用webpack进行构建 不会包含额外插件
+    3、simple   特别小 轻量级脚手架
+    4、pwa      单页面应用(需自己配置)
+      1、vue init pwa  文件名
+      2、npm install
+      3、npm run dev
+    5、browerify    基于浏览器的脚手架模板
+    6、browerify-simple     基于浏览器的脚手架的模板(轻量级)
+
+vue init webpack 文件名 
+
+vue 搭建webpack安装步骤。
+1） project name 项目名称  点回车
+
+2）project description 项目描述， 不想写直接回车
+
+3）author  作者
+
+4）install vue-router?  建议安装  Y  回车
+
+5）use ESLint preset      eslint算是一个代码语法规范检查的工具。 这个可根据自身是否熟悉安装
+
+6）后面两个 直接N
+
+第四步 cd project
+
+第五步 npm install
+
+第六部 npm run dev
+
+如果在第六步报错执行下面命令
+将项目里的“node_modules”文件夹删除，然后在cmd中cd到项目目录，
+依次运行命令：npm install和npm run build，
+最后运行npm run dev后项目成功运行。
+
+autoprefixer 自动补全
+
+npm 包管理工具  npm install
+npm  如果网段对不上时，就会下载报错  国外:翻墙 
+翻墙工具：vpn  蓝灯 
+cnpm    淘宝镜像 国内  缺点:下载时候会丢包 
+
+nvm npm的版本管理工具
+出现的原因：
+nvm updated 
+
+nrm 切换包(镜像源)管理工具
+nrm use npm 应用npm源 
+npm ls 查看列表
+
+
+anywhere    live-server  本地服务器
+npm install anywhere -g  首先下载全局
+执行时 anywhere
+
+
+index.html 项目的入口文件
+src 目录
+    asserts 资源文件 css图片  js
+    components 组件  所有的.vue 文件都会在此存放
+    router  路由文件  index.js      
+    只要使用路由必须存在    没有不使用路由的情况
+    App.vue  主入口组件     
+    可以删掉 自己重新定义一个主入口组件
+    main.js  主入口文件
+    static  静态资源目录
+    node_modules    项目依赖
+    dist    当项目打包以后 出现的文件夹
+    config   
+     // 处理跨域问题
+    proxyTable: {},
+
+    host: 'localhost', // can be overwritten by process.env.HOST
+    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    autoOpenBrowser: false,
+    errorOverlay: true,
+拦截器
+
+es6 
+improt {xx} from "vue"
+{} 相当于是解构
+fetch ajax请求
+export default 默认抛出(对象)
+
+
+
+执行报错 
+解决方案
+第一种
+1、删除 node_modules
+2、执行 npm install
+
+第二种
+webpack 版本
+webpack-cli 脚手架版本
+npm uninstall  webpack -g 全局删除webpack
+
+error cannot model webpack
+npm install webpack@3.2.1 -g 
+
+
+第三种
+几种模板进行切换
+webpack pwa browerify
+webpack-simple simple browerify-simple
+
+第四种
+自己配置环境
+工具：webpack vue babel router axios vuex
+
+
+
+$route.params.id

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<script>
+//    插入排序：初级版
+    var arr = [ 2, 1,6, 5, 4];
+//1   1 2 6
+for (var i = 1; i < arr.length; i++) {
+//    外循环 控制一次插入一个数
+    for (var j = i; j >0; j--) {
+//        内循环 控制当前要插入的数 和 已经插入的数字 比较
+        if (arr[j] < arr[j - 1]) {
+            var temp = arr[j];
+            arr[j] = arr[j - 1];
+            arr[j - 1] = temp;
+        }
+    }
+}
+console.log(arr);
+</script>
+</body>
+</html>

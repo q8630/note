@@ -1,0 +1,25 @@
+1. 通过Licence Server 激活PHPStorm 2017.1：
+
+http://idea.imsxm.com/ (已恢复使用，更新于20170621)
+
+http://www.0-php.com:1017（可用，更新于20170621）
+
+http://idea.singee77.com/ 
+
+http://idea.lanyus.com/ （已被封杀）
+
+http://idea.qinxi1992.cn/ (测试时不可以)
+
+2. 本地激活PHPStorm 2017.1（不上网）：
+加载文件LocalServer.zip
+下载地址：https://discharge.be/wp-content/uploads/2016/09/LicenceServer(v1.3).zip
+解压压缩文件，并选择与您的操作系统的名称的文件
+
+我们给运行该文件的权限并运行该文件
+
+选择一个许可证服务器，并在许可证服务器地址：指定地址 http://127.0.0.1:1017/
+
+按下按钮OK
+
+3. 直接用浏览器打开 http://idea.lanyus.com/ ，
+              点击页面中的“获得注册码”，然后在注册时切换至Activation Code选项，输入获得的注册码一长串字符串，便可以注册成功了！（推荐用这种方式）

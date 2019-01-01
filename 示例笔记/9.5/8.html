@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<script>
+    //    插入排序：旗舰版
+    var m=0,n=0;
+//    var arr = [ 1, 2, 4, 5,6];
+    var arr = [2, 1, 6, 5, 4];
+    for (var i = 1; i < arr.length; i++) {
+        m++;
+        for (var j = i; j > 0; j--) {
+            n++;
+            if (arr[j] < arr[j - 1]) {
+                var temp = arr[j];
+                arr[j] = arr[j - 1];
+                arr[j - 1] = temp;
+            }else{
+                break;
+            }
+        }
+    }
+    console.log(arr,m,n);
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+【数组的方法】
+改变原数组
+push
+	数组的末尾增加
+	返回数组的长度
+pop
+	数组的末尾删除
+	返回数组的删除的那一项
+shift
+	数组的头部删除
+	返回数组的删除的那一项
+unshift
+	数组的头部添加
+	返回数组的长度
+
+原数组不改变
+slice
+	‘含头不含尾’
+	slice(m)  从索引为m的位置开始 一直截取到末尾
+	slice(m,n)  从索引为m的位置开始 截图到n-1的位置结束
+	slice(-m,-n)  从最后位置开始 索引为m的位置开始 截图到n的位置结束
+	数组的截取
+	克隆数组slice()
+
+原数组改变
+splice
+	数组的增删改splice(index,num,m)
+	删  splice(2,2)  从索引为2的位置开始 删除2个
+	改  splice(2,1,5)
+	从索引为2的位置开始 删除1个  改为值5
+	增  splice(2,0,5)
+	从索引为2的位置开始 删除0个  增加值5
+indexOf
+lastindexOf
+	检索当前的值 在数组中是否存在？
+	存在    返回索引
+	不存在  返回-1
+concat
+	返回值：数组的合并
+reverse
+	数组的反转
+	原数组变化
+	返回值：反转之后的数组
+sort
+	数组排序(快速排序)
+	原数组变化
+	返回值：排好序的数组
+
+不改变原数组
+toString ()
+	数组转换为字符串
+join(参数)
+	数组转换为字符串
+split
+	字符串的方法
+	字符串转换为数组
+eval
+	把字符串 转换为真正的表达式  运算
+
+
+改变原数组的
+push  pop  shift unshift splice reverse sort
+
+不改变原数组的
+slice  indexOf lastIndexOf  join  toString  contact
+
+
+【效果】
+滚轴事件：
+    dom0事件： window.onmousewheel  不兼容ff
+    dom2事件
+        事件监听
+        addEvent
+            addEventListener  兼容ff chrome
+            attachEvent    兼容ie
+    addEvent 方法 ：用来绑定事件
+    绑定滚轴事件
+        mousewheel   兼容chrome   ie
+        DOMMouseScroll   兼容ff
+    判断滚轴走向：
+        事件对象：event  存储所有行为动作信息
+        var even = window.event || ev
+
+        // 火狐浏览器  使用detail属性判断方向
+        //  当detail>0 向下滚动  <0  向上滚动
+
+        / chrome     使用wheelDelta属性判断方向
+        //    wheelDelta<0 向下滚动   >0   向上滚动
+    知道滚轴走向之后 需要执行 向上走/向下走 函数？
+        scrollUp()
+        scrollDown()
+
+全屏滚动：
+    一屏的宽
+    一屏的高
+
+
+
+

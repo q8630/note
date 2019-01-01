@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<script>
+    var num = parseInt('width:35.5px');
+    if(num==35.5){
+        alert(0);
+    }else if(num==35){
+        alert(1);
+    }else if(num==NaN){
+        alert(2);
+    }else if(typeof num=='number'){
+        alert(3);
+    }else{
+        alert(4);
+    }
+    console.log(typeof []);
+    console.log(typeof typeof []);
+
+
+
+
+
+    var num = 12;
+    if(num>0){
+        if(num<10){
+            num++;
+        }else{
+            num--;
+        }
+    }else{
+        if(num==0){
+            num++;
+            num=num/10;
+        }
+    }
+    num>0?(num<10?num++:num--):(num==0?(num++,num=num/10):null);
+    //=>改写成三元运算符
+
+/*特殊情况
+```javascript
+    //=>如果三元运算符中的某一部分不需要做任何的处理，我们用 null/undeifned/void 0... 占位即可
+    var num = 12;
+    num>10?num++:null;
+
+    //=>如果需要执行多项操作，我们把其用小括号包裹起来，每条操作语句用逗号分隔
+    num=10;
+    num>=10?(num++,num*=10):null;*/
+</script>
+</body>
+</html>

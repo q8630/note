@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<select name="" id="s1">
+    <option value="">请选择城市</option>
+    <option value="0">北京</option>
+    <option value="1">上海</option>
+    <option value="2">广州</option>
+</select>
+<select name="" id="s2">
+    <option value="">请选择区</option>
+</select>
+
+<script>
+    var arr = [
+        ['昌平区','朝阳区','昌平区','昌平区'],
+        ['上海区','朝阳区','昌平区','昌平区'],
+        ['广州区','朝阳区','昌平区','昌平区']
+    ];
+    var s1 = document.getElementById('s1');
+    var s2= document.getElementById('s2');
+    s1.onchange = function(){
+//        console.log(s1.value);
+//        console.log(arr[s1.value]);
+        s2.options.length = 0;
+        for (var i = 0; i < arr[s1.value].length; i++) {
+            s2.add(new Option(arr[s1.value][i]))
+        }
+
+    }
+
+
+
+</script>
+
+</body>
+</html>

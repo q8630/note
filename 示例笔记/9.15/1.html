@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>8</li>
+    <li>7</li>
+    <li>4</li>
+    <li>5</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+</ul>
+
+<div id="div">1</div>
+<script>
+    //    es6
+    // 1、   let
+    //    解构赋值
+
+    //var  a=12;
+    //var b=13;
+    //[a,b] = [b,a];
+    //
+    //var arr=[1,2,3,4];
+    ////arr[0];
+    //arr[1];
+
+    //[a,b,c,d] = arr;
+    //console.log(a, b, c, d);
+
+    //[a,b,...c] = arr;
+    //console.log(a, b,c);
+
+    /*var arrli = document.getElementsByTagName('li');
+     console.log(arrli);
+
+     var arr = [...arrli];
+     console.log(arr);*/
+    //arr.sort();
+
+    //...拓展运算符
+    //    展开  剩余
+
+    //2、对象的解构赋值
+    /*var obj = {
+     name:'张三',
+     age:18,
+     tep:[1,2,{
+     x:1,
+     y:12
+     }],
+     eat:{
+     hanbao:['火腿肠','肌肉','牛肉']
+     }
+     };
+     var {name,age,tep:[a,b,{x,y}],eat:{hanbao:[]}} = obj;
+     console.log(x);*/
+
+
+    /*console.log(obj.age);
+     console.log(obj['age']);
+     [a,b] =[1,2];*/
+    /*var {name:n,age:a} = obj;
+     console.log(n);
+     console.log(a);*/
+
+
+    /*var c = a;
+     a=b;
+     b=c;*/
+    //console.log(a, b);
+
+
+    //    var  a;
+    //    let a;
+
+
+    //3、函数 - 箭头函数
+    //在箭头函数里面 没有自身的this主体
+    //箭头函数里面 this 继承自 他的宿主环境
+
+    //变量作用域：只和函数在哪定义有关
+    //函数里的this:只和函数在哪执行有关
+
+
+    //es6 箭头函数 - 宿主环境
+    使用注意点
+    箭头函数有几个使用注意点。
+
+/*    （1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+
+    （2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
+
+    （3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
+
+    （4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。
+
+    上面四点中，第一点尤其值得注意。this对象的指向是可变的，但是在箭头函数中，它是固定的。
+*/
+
+
+
+    /*div.onclick= ()=>{
+     console.log(this);
+     }*/
+/*    var fullName = 'language';
+    var obj = {
+        fullName: 'javascript',
+        prop: {
+            getFullName: () =>{
+                return this.fullName;
+            }
+        }
+    };
+    console.log(obj.prop.getFullName());
+    var test = obj.prop.getFullName;
+    console.log(test());*/
+/*    function fn(){
+        return function fn1(){
+            return function fn2(){
+                return 1;
+            }
+        };
+    }
+    var fn =() => ()=>()=>1;*/
+
+    function  fn(x,y){
+        var x=1;
+        x++;
+        return function sum(){
+            return x+y;
+        };
+    }
+    let fn = (x,y) =>{
+        var x=1;
+        x++;
+        return ()=>x+y;
+    };
+
+
+
+
+
+
+
+//    var fn = ()=>1
+
+
+
+
+
+
+    //只能在函数中出现的？
+    //1、return
+    //2、arguments
+    //3、this  函数的上下文主体
+    //谁执行这个函数  this就指向谁
+    //（函数执行的时候 this = 函数.前面的那一堆）
+    //自执行函数的this = window
+    //如过函数执行的时候 谁都没有执行 默认为window执行 this = window
+
+
+    /*div.onclick = function(){
+     console.log(this);
+     //    this//div
+     }*/
+    /*var obj = {
+     fn:function(){
+     console.log(2);
+     console.log(this);
+     }
+     };
+     function fn(){
+     console.log(1);
+     console.log(this);//window
+     }
+     window.fn();
+     obj.fn();*/
+
+    /*(function(){
+     console.log(2);
+     console.log(this);
+     })()*/
+
+
+
+    //    var fn =
+
+
+</script>
+</body>
+</html>

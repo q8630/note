@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            /*隐藏所有*/
+            display: none;
+        }
+        div.now{
+            /*显示当前*/
+            display: block;
+        }
+        .div2{
+            background: black;
+        }
+        .div3{
+            background:blanchedalmond ;
+        }
+        input.now{
+            color: white;
+            background: blueviolet;
+        }
+    </style>
+</head>
+<body>
+<input class="now" type="button" value="标题一">
+<input type="button" value="标题二">
+<input type="button" value="标题三">
+<div class="div1 now"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+
+<script>
+//    1、找人  通过标签名获取dom元素
+//get Element By Id
+//get Elements By Tag Name
+    var aInput = document.getElementsByTagName('input'),
+        aDiv = document.getElementsByTagName('div');
+//    console.log(aInput,aDiv);
+//    2、绑定事件
+    aInput[0].onclick = function(){
+        aDiv[0].classList.add('now');
+        aInput[0].classList.add('now');
+
+        aDiv[1].classList.remove('now');
+        aDiv[2].classList.remove('now');
+    };
+    aInput[1].onclick = function(){
+        aDiv[1].classList.add('now');
+        aInput[1].classList.add('now');
+
+        aDiv[0].classList.remove('now');
+        aDiv[2].classList.remove('now');
+    };
+    aInput[2].onclick = function(){
+        aDiv[2].classList.add('now');
+        aInput[2].classList.add('now');
+
+        aDiv[0].classList.remove('now');
+        aDiv[1].classList.remove('now');
+    };
+</script>
+
+</body>
+</html>

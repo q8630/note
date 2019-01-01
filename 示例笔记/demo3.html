@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<script src="ajax.js"></script>
+<script>
+window.onclick = function(){
+ajax("get",
+
+    "demo4.php?user=liming&age=18",
+
+    function (text) {
+        json = JSON.parse(text)
+        document.write(json["user"])
+        document.write(json["age"])
+
+
+})
+}
+
+</script>
+
+</body>
+</html>

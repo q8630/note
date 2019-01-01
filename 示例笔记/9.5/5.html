@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<script>
+//    冒泡算法：旗舰版
+//    var arr = [1, 2, 4, 5, 6];
+//    var arr = [1, 2, 4, 6, 5];
+    var arr = [1, 2, 6, 5, 4];
+    // 2,5,4,6,1
+    //   1  //2,4,5,1,6
+    //   2 //2,4,1,5,6
+    //   3 //2,1,4,5,6
+    //   4 //1,2,4,5,6
+    var countL = 0, countC = 0;
+    for (var i = 0; i < arr.length - 1; i++) {
+        var bool = true;//假设当前数组是排好序
+        countL++;
+//       控制轮数
+        for (var j = 0; j < arr.length - 1 - i; j++) {
+//       控制次数
+            countC++;
+            if (arr[j] > arr[j + 1]) {
+                var temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                bool = false;
+            }
+        }
+        if(bool){
+            break;
+        }
+    }
+    console.log(arr);
+    console.log(countL, countC);
+</script>
+</body>
+</html>

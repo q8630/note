@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <style>
+            li:nth-of-type(2n){
+                background: pink;
+            }
+            li{
+                background: red;
+            }
+        </style>-->
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+
+<script>
+    //    5%2   =  1
+    //    13%1   = 0
+    //    2%2   =0
+    //    2%4  =2
+    var lis = document.getElementsByTagName('li');
+    for (var i = 0; i < lis.length; i++) {
+        if (i % 2 == 0) {
+            lis[i].style.background = 'red';
+        }else{
+            lis[i].style.background = 'blue';
+        }
+
+    }
+
+
+</script>
+</body>
+</html>

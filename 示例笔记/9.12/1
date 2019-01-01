@@ -1,0 +1,31 @@
+js代码执行的步骤
+    1、变量提升
+    2、自上而下
+
+函数执行的步骤
+    1、形参赋值
+    2、变量提升
+    3、自上而下
+    4、内存销毁
+变量提升：（es5）
+    用var/function定义的变量才进行变量提升
+
+
+
+
+
+
+var n=0;
+function a(){
+    var n=10;
+    function b(){
+        n++;
+        console.log(n);
+    }
+    b();
+    return b;
+}
+var c=a();
+c();
+console.log(n);
+

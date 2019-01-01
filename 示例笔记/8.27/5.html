@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log( typeof  Number(true));//1
+    console.log(Number([]));//0
+    console.log(Number(['34']));//34
+    console.log(Number('true34'));//NaN
+    console.log(Number('true'));//NaN
+    console.log(Number('false'));//NaN
+    console.log(Number(false));//0
+    console.log(Number(null));//0
+    console.log(Number('null'));//NaN
+    console.log(Number('undefined'));//NaN
+    console.log(Number(undefined));//NaN
+
+    console.log(typeof 'undefined');//string
+    console.log(typeof typeof typeof undefined);//string
+    console.log(typeof typeof 1);//string
+    console.log(typeof typeof (function(){}));//string
+
+</script>
+</body>
+</html>

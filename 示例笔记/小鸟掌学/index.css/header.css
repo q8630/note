@@ -1,0 +1,239 @@
+body{
+    font-family: STKaiti, KaiTi_GB2312, "华文楷体", "宋体", Arial, Helvetica, sans-serif;
+}
+#header{
+    width: 100%;
+    height: 120px;
+    background: url("../images/header_bg.jpg")
+}
+.header{
+    width: 1100px;
+    height: 120px;
+    margin: 0 auto;
+}
+.logo{
+    width: 376px;
+    height: 120px;
+    float: left;
+}
+.logo img{
+    width: 376px;
+    height: 120px;
+}
+.nav_wrap{
+    width: 630px;
+    margin: 0px auto;
+    height: 25px;
+    line-height: 25px;
+    float: right;
+    margin-top: 45px;
+    text-align: right;
+}
+.nav_piece{
+    float: left;
+    position: relative;
+    color: #fff;
+    z-index: 999;
+}
+.nav_piece h1{
+    font-size: 16px;
+    text-align: center;
+    padding: 0 15px;
+    position: relative;
+    cursor: pointer;
+    height: 35px;
+    /*background: url(../images/nav_now_bg.png) no-repeat bottom center;*/
+}
+.has_downnav h1{
+    padding: 0 40px 0 15px;
+}
+.xiajiantou_img{
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 25px;
+    right: 8px;
+    top: 0;
+    background: url(../images/nav_xiajiantou.png) no-repeat;
+    z-index: 999;
+}
+.nav_piece a{
+    background: url(../images/nav_now_bg.png) no-repeat bottom center;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    display: none;
+    top:0px;
+    left: 50px;
+    bottom: -30px;
+    margin: auto;
+}
+.nav_piece .a1{
+    display: block;
+    top:0px;
+    left: 30px;
+    bottom: -30px;
+}
+.nav_piece h1:hover a{
+    display: block;
+}
+.ul1{
+    width: 180px;
+    height: 240px;
+    position: absolute;
+    left: -16px;
+    top: 35px;
+    background: #36264a;
+    display: none;
+    overflow: hidden;
+}
+.ul1 li,.ul2 li,.ul3 li{
+    width: 150px;
+    height: 40px;
+    padding-left: 30px;
+    text-align: left ;
+    line-height: 40px;
+    position: relative;
+}
+.ul2{
+    width: 180px;
+    position: absolute;
+    left: -16px;
+    top: 35px;
+    background: #36264a;
+    height: 120px;
+    display: none;
+    overflow: hidden;
+}
+.ul3{
+    width: 180px;
+    position: absolute;
+    left: -16px;
+    top: 35px;
+    background: #36264a;
+    height: 120px;
+    display: none;
+    overflow: hidden;
+}
+.nav_piece ul li span{
+    width: 5px;
+    height: 8px;
+    position: absolute;
+    display: none;
+    right: 5px;
+    top: 16px;
+    float: right;
+}
+.nav_piece:hover ul{
+    display: block;
+}
+.nav_piece ul li:hover span{
+    display: block;
+}
+.nav_piece ul li:hover{
+    padding-left: 40px;
+    transition: padding-left 0.4s ease 0s;
+    background: #3498db url(../images/nav_li_bg.png) no-repeat 165px 15px;
+
+}
+.c{
+    animation: c .5s linear;
+}
+@-webkit-keyframes c {
+    0%{
+        height: 240px;
+    }
+    55%{
+        height: 350px;
+    }
+    60%{
+        height: 230px;
+    }
+    70%{
+        height: 260px;
+    }
+    80%{
+        height: 220px;
+    }
+    90%{
+        height: 250px;
+    }
+    100%{
+        height: 240px;
+    }
+}
+.c1{
+    animation: c1 1s linear;
+}
+@-webkit-keyframes c1 {
+    0%{
+        height: 120px;
+    }
+    50%{
+        height: 230px;
+    }
+    60%{
+        height: 110px;
+    }
+    70%{
+        height: 130px;
+    }
+    80%{
+        height: 100px;
+    }
+    100%{
+        height: 120px;
+    }
+}
+.c2{
+    animation: c2 .5s linear;
+}
+@-webkit-keyframes c2 {
+    0%{
+        height: 120px;
+    }
+    50%{
+        height: 230px;
+    }
+    60%{
+        height: 110px;
+    }
+    70%{
+        height: 140px;
+    }
+    80%{
+        height: 100px;
+    }
+    90%{
+        height: 130px;
+    }
+    100%{
+        height: 120px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

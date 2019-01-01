@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0, .7);
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        .login {
+            width: 400px;
+            height: 300px;
+            background-color: #fff;
+            margin: 200px auto;
+        }
+    </style>
+
+    <script>
+//        事件委托:冒泡原理   目标元素
+        window.onload = function () {
+            //需求1：点击注册按钮，显示mask盒子。
+            //需求2：点击除去login以外任何盒子，隐藏mask盒子。
+
+            var aArr = document.getElementsByTagName("a");
+            var mask = document.getElementsByClassName("mask")[0];
+
+            aArr[0].addEventListener("click", function (event) {
+                mask.style.display = "block";
+                var event = event || window.event;
+                if(event && event.stopPropagation){
+                    event.stopPropagation();
+                }else{
+                    event.cancelBubble = true;
+                }
+            })
+            document.addEventListener("click", function (event) {
+                event = event || window.event;
+                var ele = event.target || event.srcElement;
+                if(ele.className !== "login"){
+                    mask.style.display = "none";
+                }
+            })
+
+
+
+        }
+    </script>
+</head>
+<body>
+
+    <a href="#">注册</a>
+    <a href="#">登录</a>
+
+    <div class="mask">
+        <div class="login">
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css/reset.css">
+    <link rel="stylesheet" href="index.css/footer.css">
+</head>
+<body>
+<footer id="footerBox">
+    <div class="map_bottomimg">
+        <img src="images/map_bottomimg.png" alt="">
+    </div>
+    <div class="footer_wrap">
+        <div class="footer">
+            <div class="music">
+                <span class="span1 i"></span>
+                <span class="span2 i"></span>
+                <span class="span3 i"></span>
+                <span class="span4 i"></span>
+                <span class="span5 i"></span>
+                <span class="span6 i"></span>
+                <span class="span7 i"></span>
+                <audio src="music/sound00.mp3"></audio>
+                <audio src="music/sound01.mp3"></audio>
+                <audio src="music/sound02.mp3"></audio>
+                <audio src="music/sound03.mp3"></audio>
+                <audio src="music/sound04.mp3"></audio>
+                <audio src="music/sound05.mp3"></audio>
+                <audio src="music/sound06.mp3"></audio>
+            </div>
+            <div class="shenmin">蜀ICP备16002451号</div>
+        </div>
+    </div>
+
+</footer>
+<script>
+    var aSpan = document.querySelectorAll('.music span');
+    var aAudio = document.querySelectorAll('.music audio');
+    for (let i=0;i<aSpan.length;i++){
+        aSpan[i].onclick=function(){
+            for(let j=0;j<aAudio.length;j++){
+                aAudio[j].pause();
+            }
+            aAudio[i].play();
+        }
+    }
+
+
+//           鼠标移入
+//    for (var i=0;i<aSpan.length;i++){
+//        aSpan[i].index=i;
+//        aSpan[i].onmousemove=function(){
+//            for (var j=0;j<aAudio.length;j++){
+//                aAudio[j].pause();
+//            }
+//            aAudio[this.index].play();
+//        }
+//    }
+
+
+
+</script>
+</body>
+</html>

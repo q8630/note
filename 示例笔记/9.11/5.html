@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<script>
+//    重名下的变量提升
+/*
+    var a;
+    function a(){
+        console.log(1);
+    }
+    console.log(a);
+    a=10;
+    a=20;
+*/
+/*
+    fn();
+    function fn() {console.log(1);}
+    fn();
+    function fn() {console.log(2);}
+    fn();
+    var fn=100;
+    fn();
+    function fn() {console.log(3);}
+    fn();
+    function fn() {console.log(4);}
+    fn();
+*/
+
+
+//条件判断下的变量提升
+//function fn;
+/*console.log(fn);
+if (1 === 1) {
+    function fn() {
+        console.log('ok');
+    }
+    console.log(fn);//
+
+}*/
+
+/*console.log(fn);//undefined
+if (2 === 1) {
+    console.log(fn);//
+    function fn() {
+        console.log('ok');
+    }
+}
+console.log(fn);*/
+
+
+
+/*    f = function () {return true;};//true
+    g = function () {return false;};//false
+    ~function () {
+        function g() {return true;}
+        if (g() && [] == ![]) {
+            f = function () {return false;};
+        }
+    }();
+    console.log(f());
+    console.log(g());*/
+
+
+/*f = function () {return true;};
+g = function () {return false;};
+~function () {
+//    function g;
+    g = function () {return true;};//私有的
+    if (g() && [] == ![]) {
+        function g() {return false;}
+        f = function () {return false;};
+        g();
+    }
+}();
+console.log(f());
+console.log(g());*/
+
+
+/*f = function () {return true;};
+g = function () {return false;};
+~function () {
+    g = function () {return true;};
+    if (g() && [] == ![]) {
+        f = function () {return false;};
+        g();
+    }
+}();
+console.log(f());
+console.log(g());*/
+
+    var ary = [12, 23];
+    function fn(ary) {
+        console.log(ary);
+        ary[0] = 100;
+        ary = [100];
+        ary[0] = 0;
+        console.log(ary);
+    }
+    fn(ary);
+    console.log(ary);
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

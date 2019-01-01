@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组合</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .show{
+            width: 500px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        .show h3{
+            width: 500px;
+            background-color: #0a56bb;
+            text-align: center;
+            cursor: pointer;
+        }
+        .show div{
+            width: 500px;
+            height: 150px;
+            background-color: red;
+            margin-top: 10px;
+            text-align: center;
+            line-height: 50px;
+            display: none;
+            cursor: pointer;
+        }
+        .show div.active{
+            display: block;
+        }
+        .tab{
+            width: 500px;
+            height: 500px;
+            margin: 10px auto;
+            text-align: center;
+        }
+        ul{
+            list-style: none;
+            position: relative;
+
+        }
+        ul li{
+            float: left;
+            cursor:pointer;
+        }
+        .tit{
+            clear: both;
+            overflow: hidden;
+            margin: 0 50px;
+        }
+        .tit li{
+            width: 100px;
+            height: 30px;
+            background-color: #0a56bb;
+            border: 1px solid red;
+
+        }
+        .tit li.active{
+            background-color: darkred;
+        }
+        .con{
+            margin-top: 50px;
+        }
+        .con li{
+            width: 300px;
+            height: 500px;
+            background-color: pink;
+            position: absolute;
+            display: none;
+            line-height: 500px;
+            font-size: 50px;
+            color: red;
+        }
+        .con li.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="show">
+    <h3>郑少斌</h3>
+    <div>瓜皮</div>
+</div>
+<div class="tab">
+    <ul class="tit">
+        <li class="active">麻辉</li>
+        <li>瓜皮</li>
+    </ul>
+    <ul class="con">
+        <li class="active">宋大业</li>
+        <li>大瓜皮</li>
+    </ul>
+</div>
+<script>
+    var atit=document.querySelectorAll(".tit li"),
+            acon=document.querySelectorAll(".con li"),
+            oh3=document.querySelector("h3"),
+            odiv=document.querySelector(".show div");
+    function xx(x,y,ev){
+        console.log(x.length);
+        if(x.length>1){
+            for (let i = 0; i < x.length; i++) {
+                x[i][ev]=function(){
+                    for (var j = 0; j < x.length; j++) {
+                        x[j].classList.remove("active");
+                        y[j].classList.remove("active");
+                    }
+                    x[i].classList.add("active");
+                    y[i].classList.add("active");
+                }
+
+            }
+        }
+        else if(!x.length){
+            var flag=0;
+            x[ev]=function(){
+                if (flag>0){
+                    y.classList.remove("active");
+                    --flag;
+                }else if (flag<=0){
+                    y.classList.add("active");
+                    ++flag;
+                }
+            }
+        }
+    }
+    xx(atit,acon,"onclick");
+    xx(oh3,odiv,"onclick");
+</script>
+</body>
+</html>

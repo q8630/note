@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 钟表</title>
+	<style>
+
+		.clock {
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			border: 10px solid #000;
+			border-radius: 110px;
+			position: relative;
+		}
+
+		/*刻度*/
+		.line{
+			width: 4px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			background: #ccc;
+			margin-left: -2px;
+		}
+		.line:nth-child(3n+1){
+			background: #aaa;
+			width: 6px;
+			margin-left: -3px;
+		}
+		.line:nth-child(1){transform: rotate(0deg)}
+		.line:nth-child(2){transform: rotate(30deg)}
+		.line:nth-child(3){transform: rotate(60deg)}
+		.line:nth-child(4){transform: rotate(90deg)}
+		.line:nth-child(5){transform: rotate(120deg)}
+		.line:nth-child(6){transform: rotate(150deg)}
+
+		/*表盘*/
+		.cover{
+			width: 160px;
+			height: 160px;
+			border-radius: 50%;
+			background: #fff;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -80px;
+			margin-top: -80px;
+		}
+
+		/*时针*/
+		.hour{
+			height: 50px;
+			width: 6px;
+			background: #000;
+			position: absolute;
+			left: 50%;
+			top: 50px;
+			margin-left: -3px;
+			transform-origin: center bottom;
+			animation: clock 43200s linear infinite;
+		}
+		.minute{
+			height: 60px;
+			width: 4px;
+			background: #000;
+			position: absolute;
+			left: 50%;
+			top: 40px;
+			margin-left: -2px;
+			transform-origin: center bottom;
+			animation: clock 3600s linear infinite;
+		}
+		.second{
+			height: 70px;
+			width: 2px;
+			background: red;
+			position: absolute;
+			left: 50%;
+			top: 30px;
+			margin-left: -1px;
+			transform-origin: center bottom;
+			/* steps(60) 速度*/
+			animation: clock  60s  steps(60)  infinite;
+		}
+		.dotted{
+			height: 20px;
+			width: 20px;
+			background: #000;
+			border-radius: 10px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -10px 0 0 -10px;
+		}
+
+		/*动画*/
+		@keyframes clock {
+			from{
+				transform: rotate(0deg);
+			}
+			to{
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="clock">
+		<div class="line line1"></div>
+		<div class="line line2"></div>
+		<div class="line line3"></div>
+		<div class="line line4"></div>
+		<div class="line line5"></div>
+		<div class="line line6"></div>
+		<div class="cover"></div>
+		<div class="hour"></div>
+		<div class="minute"></div>
+		<div class="second"></div>
+		<div class="dotted"></div>
+	</div>
+</body>
+</html>

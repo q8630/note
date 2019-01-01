@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Number('111a');//NaN
+    parseInt('111a');//111
+    parseFloat('111a');//111
+
+    Number('111a2');//
+    parseInt('111a4');//111
+    parseFloat('111a4');//111
+
+    Number('a111');//
+    parseInt('a111a');//
+    parseFloat('a111a');//
+
+    Number('11.1a11');//
+    parseInt('11.1a11');//11
+    parseFloat('11.1a11');//11.1
+
+    Number('12.q12');//
+    parseInt('12.q12');//12
+    parseFloat('12.q12');//12
+
+    Number('12.12');//12.12
+    parseInt('12.12');//12
+    parseFloat('12.12');//12.12
+
+    Number('12');//12
+    parseInt('12');//12
+    parseFloat('12');//12
+
+</script>
+</body>
+</html>

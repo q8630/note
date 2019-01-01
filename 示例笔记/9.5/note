@@ -1,0 +1,45 @@
+【数组的方法】 - 14个
+【多维数组】哈希表 /二级联动
+var arr = [[1,2,3],[4,5,6],[7,8,9]];
+（1-100）*100  存储在数组中
+【类数组】
+类似于数组  但不是数组
+    具有 length  和 index属性
+    但是没有数组的方法
+类数组  转换为数组
+方法一、 声明一个空数组，通过遍历伪数组把它们重新添加到新的数组中，不是面试官要的
+
+方法二、使用数组的slice()方法 它返回的是数组，使用call或者apply指向伪数组
+
+方法三 、使用原型继承
+aLi.__proto__ = Array.prototype;
+
+Array.prototype.slice.call()
+Array.from('hello');
+var args = [...arguments];
+【数组的算法】
+冒泡：
+    每一个数 依次进行俩俩比较 每一轮比较完 都会拿出一最大的数排好序
+    外循环 轮数
+    内循环  俩俩比较次数
+插入：
+    每次都取出一个数 和已经插入的数 进行比较
+    外循环 插入的数
+    内循环  比较
+sort：二分法
+
+选择算法
+希尔算法
+时间复杂度/空间复杂度
+【数组的迭代】
+forEach
+fill
+every
+includes
+some
+filter
+find
+findIndex
+reduce
+reduceRight
+

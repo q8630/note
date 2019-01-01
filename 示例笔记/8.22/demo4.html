@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width: 40px;
+            height: 40px;
+            background-color: darkorange;
+        }
+
+        #div2 {
+            width: 200px;
+            height: 200px;
+            background-color: burlywood;
+            display: none;
+        }
+
+    </style>
+    <script>
+        //    window.onload = function(){ 所有js代码 }
+        //window.onload  表示网页在加载的时候 先把所有的资源文件
+        //加载完成 在开始加载js
+        window.onload = function(){
+            //    1、找元素
+            var oDiv1 = document.getElementById('div1'),
+                    oDiv2 = document.getElementById('div2');
+            console.log(oDiv1);
+            //    2、绑定事件
+            oDiv1.onmouseover = function () {
+                oDiv2.style.display = 'block';
+            };
+            oDiv1.onmouseout = function () {
+                oDiv2.style.display = 'none';
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+
+</body>
+</html>

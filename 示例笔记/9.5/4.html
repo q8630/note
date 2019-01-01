@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    var arrLi = document.getElementsByTagName('li');
+//es6
+//   1、
+    var arr =Array.from(arrLi);
+    console.log(arr);
+
+    //   2、
+//    var arr = [...arrLi];
+//    arr.push()
+//es5
+//3、
+//    var arr =Array.prototype.slice.call(arrLi);
+//    arr.push()
+
+    //2原型继承
+/*    arrLi .__proto__ = Array.prototype;
+    arrLi.pop();
+    console.log(arrLi);*/
+
+//1 建立空数组 一个一个push
+/*    console.log(arrLi);
+    var arr=[];
+    for (var i = 0; i < arrLi.length; i++) {
+       arr.push(arrLi[i])
+    }
+    arr.pop();
+    console.log(arr);*/
+
+
+
+</script>
+</body>
+</html>

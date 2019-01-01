@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .img{
+            width: 320px;
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            margin: 20px 20px 0 0;
+
+        }
+
+
+        .img:hover div.div1{
+            opacity: 0;
+        }
+        .div1,.div2 {
+            line-height: 30px;
+            color: #fff;
+            width: 320px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, .6);
+            padding: 10px 20px;
+            position: absolute;
+            bottom: 0;
+
+        }
+        .div2{
+            width: 320px;
+            height: 320px;
+            left: 0;
+            top: 20px;
+            transition: .5s;
+            /*opacity: 0;*/
+        }
+        .img2:hover+.img3+.img4+.img5+.img6+div.div2{
+            left: 0;
+            top: 20px;
+
+        }
+        .img3:hover+.img4+.img5+.img6+div.div2{
+            left: 340px;
+            top: 20px;
+        }
+        .img5:hover+.img6+div.div2{
+            left: 0px;
+            top:360px;
+        }
+        .img6:hover+div.div2{
+            left: 340px;
+            top:360px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="img img1">
+    <img src="images/pic.jpg" alt="">
+    <div class="div1">
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+    </div>
+
+</div>
+<div class="img img2">
+    <img src="images/pic.jpg" alt="">
+    <div class="div1">
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+    </div>
+
+</div>
+<div class="img img3">
+    <img src="images/pic.jpg" alt="">
+    <div class="div1">
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+    </div>
+
+</div>
+<div class="img img4">
+    <img src="images/pic.jpg" alt="">
+    <div class="div1">
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+    </div>
+
+</div>
+<div class="img img5">
+    <img src="images/pic.jpg" alt="">
+    <div class="div1">
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+    </div>
+
+</div>
+<div class="img img6">
+    <img src="images/pic.jpg" alt="">
+    <div class="div1">
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+    </div>
+
+</div>
+<div class="div2">
+    <p>fshdlshf</p>
+    <p>fshdlshf</p>
+    <p>fshdlshf</p>
+</div>
+</body>
+</html>

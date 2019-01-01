@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交换变量</title>
+</head>
+<body>
+<script>
+    //1、 交换变量 可以利用第三方变量
+    //2、 交换变量 不可以利用第三方变量
+//    var a = 11, b = 22;
+//    console.log(a, b);
+//    var temp;
+//    temp = a;
+//    a = b;
+//    b = temp;
+//    console.log(a, b);
+
+
+    //
+/*    var a = 11, b = 11;
+    var a = b = 11;
+
+
+
+    console.log(a, b);
+    a = a+b;//33
+    b = a-b;//11
+    a = a-b;//22
+    console.log(a, b);*/
+
+//    console.log(b); //报错
+//    var b=2;  //undefined
+    let b=1;  //1
+    console.log(b);//1
+    console.log(window.b);//1
+
+    window.b = 12;
+    console.log(b);//12
+
+//    let b=1
+//    let b=2;
+//    console.log(b);
+
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+创建数据库
+
+创建数据表
+create table `表名` (
+	`字段名` 数据类(长度),
+	`字段名` 数据类(长度),
+
+)
+
+
+插入数据
+INSERT INTO shopinfo
+(shopid,shopname,shopprice)
+VALUES
+(2,"黄瓜",3.2)
+
+	insert into `表名`(要插入的第一列,第二列，第三列)values
+(值1，值2，值3),
+(值1，值2，值3) 
+
+
+
+
+INSERT INTO shopinfo
+VALUES
+(3,"茄子",2.5),
+(3,"茄子",2.5),
+(3,"茄子",2.5)
+
+删除数据
+DELETE FROM shopinfo
+WHERE shopname="茄子"
+
+
+delete from `表名`  where 条件
+
+更改数据
+
+update  `表名`   set 列=值
+where  条件
+
+
+
+
+UPDATE shopinfo
+SET shopprice=3.5
+WHERE shopname="茄子"
+
+
+练习    
+
+	要求创建学生表
+		学号
+		姓名
+		性别
+		班级
+		年龄
+数据：	
+1101  张三   男   1班	 21
+1102  李四   女   1班    22
+1103  王五   男   2班    21
+1104  赵六   男   1班    20
+1105  钱七   男   2班    22 
+1106  周八   男   1班    23
+
+要求：
+  把张三的年龄更改为24
+  把2班的年龄增加一岁
+  将1104数据删除
+  	
+
+
+
+
+
+
+查询数据
+
+	简单
+	分页
+	简单的两表查
+	一些查询条件	
+	排序	
+
+

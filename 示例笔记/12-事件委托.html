@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li {
+            background-color: greenyellow;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button>穿件新的元素</button>
+
+
+    <ul>
+        <li>我是原生土著li</li>
+        <li>我是原生土著li</li>
+        <span>我是滥竽充数的span</span>
+        <li>我是原生土著li</li>
+        <span>我是滥竽充数的span</span>
+        <li>我是原生土著li</li>
+
+    </ul>
+
+
+    <script>
+
+
+        //为li绑定事件(无法绑定还没有被创建出来的li)
+//        var liArr = document.getElementsByTagName("li");
+//        for(var i=0;i<liArr.length;i++){
+//            liArr[i].addEventListener("click", function () {
+//                alert("我是li标签");
+//            })
+//        }
+
+
+        //点击按钮，创建li
+        var btn = document.getElementsByTagName("button")[0];
+        var ul = document.getElementsByTagName("ul")[0];
+        btn.addEventListener("click", function () {
+            var newLi = document.createElement("li");
+            newLi.innerHTML = "我是新创建出来的li";
+            ul.appendChild(newLi);
+        })
+
+
+        //利用冒泡,为所有的li绑定click事件。
+        //为ul绑定onclick事件。当我们点击任何一个子元素的时候，都会冒泡到ul。
+        //然后，判断标签名，如果是li，就执行某个程序，如果不是，不管。
+        console.dir(document);
+        ul.addEventListener("click", function (event) {
+            //判断，如果点击的是li标签，那么我们才执行程序。
+            //还是要获取被传递过来的值。（事件对象，事件被出发的时候产生的对象，内部装在了一个触动是事件的时候第一个出发的元素，我们可以获取他）
+            event = event || window.event;
+            //event.target第一个触动事件的元素，被保存到了event.target中。
+            var ele = event.target || event.srcElement;
+            //tagName是标签名而且大写。
+            if(ele.tagName === "LI"){
+                alert("我是li标签");
+            }
+        })
+
+
+        //li标签虽然没有被绑定事件，但是所有事件被绑定的值都是null,当时间出发的时候，
+        // 只不过没有执行程序而已，但是事件会被出发，然后冒泡，冒到ul上。
+
+
+    </script>
+
+</body>
+</html>

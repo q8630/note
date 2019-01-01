@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+    /*    window.onmousewheel = function(){
+            alert(1);
+        };
+        window.onmousewheel = function(){
+            alert(2);
+        };*/
+        // 事件绑定
+
+//  function  mouseWheel1(){
+//      alert(1);
+//  }
+//  function  mouseWheel2(){
+//      alert(2);
+//  }
+
+//    滚轴事件
+// chrome   ie
+addEvent(window,"mousewheel",mouseWheel);
+// ff
+addEvent(window,"DOMMouseScroll",mouseWheel);
+
+
+
+
+    // 滚轴事件函数
+function mouseWheel(ev){
+    var oEvent = window.event||ev;
+//    console.log(oEvent);
+//    事件对象：存储了 此刻在浏览器中操作的所有信息
+
+    // 火狐浏览器  使用detail属性判断方向
+    //  当detail>0 向下滚动  <0  向上滚动
+
+    // chrome     使用wheelDelta属性判断方向
+//    wheelDelta<0 向下滚动   >0   向上滚动
+    // ff
+    if(oEvent.detail){
+        if(oEvent.detail>0){  // 下滚动
+            scrollDown()
+        }else{   //   向上
+            scrollUp()
+        }
+    }else if(oEvent.wheelDelta){// chrome ie
+        if(oEvent.wheelDelta>0){  // 上滚动
+            scrollUp()
+        }else{   //   向下
+            scrollDown()
+        }
+    }
+}
+function scrollUp(){
+
+    alert("up")
+}
+function scrollDown(){
+    alert("down")
+}
+
+/*
+* 事件监听
+* ele
+* type  事件类型
+* listener  监听的事件驱动
+* ele.add  Event  Listener  添加事件监听=》dom2事件
+* */
+function addEvent(ele,type,listener){
+    if(ele.addEventListener){   //  click
+        ele.addEventListener(type,listener);
+    }else{               //  onclick
+        ele.attachEvent("on"+type,listener);
+    }
+}
+    </script>
+</head>
+<body>
+
+</body>
+</html>

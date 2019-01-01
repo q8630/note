@@ -1,0 +1,45 @@
+cmd 命令 -v=>-version   -h=>-help
+
+清除npm缓存
+npm cache clean -f
+
+302状态码 域名重定向
+保存origin跨域问题
+
+域名购买
+阿里云  如果购买域名后需进行备案，如超过一个月不备案域名收回
+万网    
+
+上传项目到服务器的工具
+8uftp   filezilla(推荐使用) 
+
+
+vuerouter 
+npm install vue-router --save
+
+import Vue from "vue"
+import VueRouter from "vue-router"
+Vue.use(VueRouter)
+export default new VueRouter({
+
+    mode:"history",
+    routes:[
+        {
+            path:"/",
+            name:定义一个名称,
+            component:组件名
+        },{
+            path:"/",
+            name:定义一个名称,
+            component:组件名,
+            children:[
+                {
+                    path:"/",
+                    name:定义一个名称,
+                    component:组件名
+                }
+            ],
+            alias:"/Newnew",  别名
+        },
+    ]
+})

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/index2.css"/>
+    <script>
+        window.onload=function(){
+            var oRoll=document.getElementById("roll");
+            var oUl=oRoll.getElementsByTagName("ul")[0];
+            var aLis=oUl.getElementsByTagName("li");
+            var oLeft=oRoll.getElementsByTagName("a")[0];
+            var oRight=oRoll.getElementsByTagName("a")[1];
+            var timer=null;
+            var speed=-5;
+              oUl.innerHTML+=oUl.innerHTML;
+              oUl.style.height=aLis[0].offsetHeight*aLis.length+"px";
+
+               function auto(){
+                   timer=setInterval(function(){
+                       oUl.style.top=oUl.offsetTop+speed+"px";
+                       if(oUl.offsetTop<-oUl.offsetHeight/2){
+                           oUl.style.top=0;
+                       }else if(oUl.offsetTop>0){
+                           oUl.style.top=-oUl.offsetHeight/2+"px";
+                       }
+
+                   },30);
+               }
+               auto();
+
+
+              oLeft.onmouseover=function(){
+                  speed=-5;
+              };
+
+               oRight.onmouseover=function(){
+                  speed=5;
+               };
+
+             oUl.onmouseover=function(){
+                 clearInterval(timer);
+             };
+
+            oUl.onmouseout=function(){
+                  auto();
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<div class="roll" id="roll">
+    <a href="javascript:void(0);" class="btn_left"></a>
+    <a href="javascript:void(0);" class="btn_right"></a>
+    <div class="wrap">
+        <ul>
+            <li><a href="#"><img src="images/1.jpg" /></a></li>
+            <li><a href="#"><img src="images/2.jpg" /></a></li>
+            <li><a href="#"><img src="images/3.jpg" /></a></li>
+            <li><a href="#"><img src="images/4.jpg" /></a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

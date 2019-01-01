@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<script>
+//    数组的操作  （增删查改）
+//    var arr=[1,23,432,432,43,2];
+//    查看：  arr[index]
+//    改：
+//    arr[0] = null;
+//    console.log(arr);
+//      增：
+//    arr[88]=15;
+//   console.log(arr);
+
+//    arr.length=10;
+//    console.log(arr);
+
+//    arr.splice(3,0,1);
+//    console.log(arr);
+
+//    删除
+//    arr.length=1;
+//    console.log(arr);
+
+//    arr.splice(3,2);
+//    console.log(arr);
+
+//    delete arr[0];  //占位 只是把内容删除 索引不变
+//    console.log(arr);
+
+//    实现空数组
+//    var arr=[];
+//    var arr=new Array();
+//    arr.length = 0;
+
+//    数组克隆
+var arr=[1,23,432,432,43,2];
+console.log(arr);
+//1、通过循环克隆
+    var newArr = [];
+    for (var i = 0; i < arr.length; i++) {
+        newArr[i] = arr[i];
+    }
+    console.log(newArr);
+
+//2、通过数组的方法克隆    slice截取 含头不含尾
+    var newArr =  arr.slice();
+console.log(newArr);
+
+</script>
+</body>
+</html>

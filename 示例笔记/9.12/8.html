@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<script>
+//    定时器：
+//    间隔定时器
+//    setInterval(callback,time,改变this指向的)
+/*    setInterval(function(){
+        console.log(1);
+    },1000);*/
+var timer =null;
+    btn.onclick = function(){
+        clearInterval(timer);
+//        clearTimeout(timer)
+        timer=setInterval(function(){
+            console.log(1);
+        },3000);
+    };
+//    延时(炸弹)定时器
+//    setTimeout(callback,time,改变this指向的)
+/*    setTimeout(function(){
+        console.log(1);
+    },1000);*/
+
+
+</script>
+</body>
+</html>

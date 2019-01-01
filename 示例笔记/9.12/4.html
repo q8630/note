@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<script>
+    /*    function sum(){
+     var total=0;
+     total = arguments[0]+arguments[1];
+     console.log(total);
+     }
+     sum(1,2)*/
+
+
+/*    function sum(x, y) {
+        console.log(arguments.callee);
+        arguments[1] = 3;
+        var total = 0;
+        total = x + y;
+        console.log(total);
+    }
+    sum(1, 2);*/
+
+
+    function sum(...arg) {
+        console.log(arg);
+    }
+    sum(1, 2);
+
+    /*
+
+        function sum(x) {
+            arguments[1] = 3;
+            var total = 0;
+            total = arguments[0] + arguments[1];
+            console.log(total);
+        }
+        sum(1, 2);
+
+        function sum(x, y) {
+            var total = 0;
+            total = x + y;
+            console.log(total);//NaN
+        }
+        sum(1);
+
+        function sum(x, y) {
+            y=5;
+            var total = 0;
+            total = arguments[0] + arguments[1];
+            console.log(total);//NaN
+        }
+        sum(1);
+    */
+
+</script>
+</body>
+</html>

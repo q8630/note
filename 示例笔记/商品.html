@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品一览</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100%;
+            height: auto;
+            padding: 0 100px 30px;
+            margin-bottom: 100px;
+        }
+
+        .messsage {
+            min-height: 50px;
+
+        }
+
+        .off, .log {
+            display: inline-block;
+            margin: 20px;
+            border-bottom: 1px solid darkred;
+            float: right;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .content {
+            width: 100%;
+            min-height: 300px;
+            border: 1px solid black;
+            padding-top: 20px;
+        }
+
+        img {
+            width: 233px;
+            height: 233px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        ul li {
+            width: 243px;
+            height: 310px;
+            border: 1px solid darkred;
+            float: left;
+            margin: 10px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        ul li:hover {
+            border: 2px solid #0b8e89;
+        }
+
+        .names {
+            font-size: 12px;
+            color: #666;
+            text-indent: 2em;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            clear: both;
+        }
+
+        .prices {
+            margin: 10px -4px 0 20px;
+            display: inline-block;
+            color: darkred;
+        }
+
+        span {
+            line-height: 30px;
+        }
+
+        .shops {
+            width: 100px;
+            display: inline-block;
+            text-indent: 1em;
+            font-size: 14px;
+            margin: 10px 20px 0 0;
+            color: #8c6c2d;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+    <a href="javascript:;" onclick="load(0)">1</a>
+    <a href="javascript:;" onclick="load(1)">2</a>
+    <a href="javascript:;" onclick="load(2)">3</a>
+    <a href="javascript:;" onclick="load(3)">4</a>
+
+    <div class="messsage">
+        <div class="off fr" id="off">退出登录</div>
+        <div class="log fr" id="log"><a href="登录.html">用户名/登录</a></div>
+    </div>
+    <div class="content">
+        <ul class="clear" id="ul">
+
+        </ul>
+        <div id="model" style="display: none">
+
+            <li><img src="{img}" alt="">
+                <div class="tit"><span class="price">{price}</span>
+                    <span class="shop">{shop}</span>
+                    <p class="name">{name}</p>
+                </div>
+            </li>
+
+        </div>
+
+    </div>
+</div>
+<!--<script src="js/Cookie.js"></script>-->
+<script src="ajax.js"></script>
+<script>
+    list =  document.getElementById("ul")
+
+    ajax("get","demo5.php?page=0",function (text) {
+        json = JSON.parse(text)
+        for (i=0;i<json.length;i++){
+
+            shopitem = json[i];
+
+            model = document.getElementById("model").innerHTML
+            model = model.replace("{img}",json[i].image)
+                .replace("{price}",json[i].price)
+                .replace("{shop}",json[i].shop)
+                .replace("{name}",json[i].name)
+            list.innerHTML+=model
+
+        }
+
+
+
+    })
+
+    function load(num) {
+        ajax("get","demo5.php?page="+num,function (text) {
+            json = JSON.parse(text)
+            // list.innerHTML = ""
+            for (i=0;i<json.length;i++){
+
+                shopitem = json[i];
+
+                model = document.getElementById("model").innerHTML
+                model = model.replace("{img}",json[i].image)
+                    .replace("{price}",json[i].price)
+                    .replace("{shop}",json[i].shop)
+                    .replace("{name}",json[i].name)
+                list.innerHTML+=model
+
+            }
+
+        })
+
+
+
+
+
+
+    }
+</script>
+</body>
+</html>

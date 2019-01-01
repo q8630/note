@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            /*隐藏所有*/
+            display: none;
+        }
+        div.now{
+            /*显示当前*/
+            display: block;
+        }
+        .div2{
+            background: black;
+        }
+        .div3{
+            background:blanchedalmond ;
+        }
+        input.now{
+            color: white;
+            background: blueviolet;
+        }
+    </style>
+</head>
+<body>
+<input class="now" type="button" value="标题一">
+<input type="button" value="标题二">
+<input type="button" value="标题三">
+<div class="div1 now"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+
+<script>
+    var aInput = document.getElementsByTagName('input'),
+        aDiv = document.getElementsByTagName('div');
+    for (var i = 0; i < 3; i++) {
+        aInput[i].index = i;
+        aInput[i].onclick = function(){
+            for (var j = 0; j < 3; j++) {
+                aDiv[j].classList.remove('now');
+                aInput[j].classList.remove('now');
+            }
+//            console.log(this.index);
+            aDiv[this.index].classList.add('now');
+            this.classList.add('now');
+        }
+    }
+</script>
+
+</body>
+</html>

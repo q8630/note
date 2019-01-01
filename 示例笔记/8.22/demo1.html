@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+
+</head>
+<body>
+1、找人
+2、绑定事件
+3、书写事件驱动
+<div id="oDiv" onmouseover='toBig()' onmouseout='toSmall()'></div>
+<script>
+    //    多条指令的 集合 函数
+    //    function关键字   声明函数
+    //    var oDiv=document.getElementById("div1");
+    function toBig(){
+        oDiv.style.width="200px";
+        oDiv.style.height="200px";
+        oDiv.style.background="blue"
+    }
+    function toSmall(){
+        oDiv.style.width="100px";
+        oDiv.style.height="100px";
+        oDiv.style.background="red"
+    }
+</script>
+
+
+</body>
+</html>

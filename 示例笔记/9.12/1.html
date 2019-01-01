@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<script>
+/*    a=23;
+
+    console.log(window.a);*/
+
+/*    var c= 1,d=2;
+    var f= 5,g=6;
+    function sum1(a,b){//形参
+        console.log(a, b);
+        sum = a+b;
+        console.log(sum);
+    }
+    sum1(1);//实参
+    sum1(3,4);*/
+
+//求和函数  2/3/4...
+//可变参:接收所有实参(实参的集合)   arguments
+    /*function sum(){
+        var total = 0;
+        for (var i = 0; i < arguments.length; i++) {
+            total+=arguments[i];
+        }
+        console.log(total);
+    }*/
+//    sum(1,2);
+//    sum(1,2,4);
+//    sum(1,2,456,4756,86,9,790);
+    sum(1,2,566,80,0,9,0,3243,5,46,5,756,8,78);
+
+sum(1,2);//求和
+sum(1,2,4);//求积
+sum(1,2,1,6); //求差
+sum(1,2,1,6,5); //排序
+sum(1,2,1,6,5,1); //去掉一个最大值 去掉一个最小值 求平均
+
+function sum(){
+    if(arguments.length == 2){
+        console.log(arguments[0]+arguments[1]);
+    }else if(arguments.length == 3){
+        console.log(arguments[0]*arguments[1]*arguments[2]);
+    }else if(arguments.length == 4){
+        console.log(arguments[0]-arguments[1]-arguments[2]);
+    }else if(arguments.length == 5){
+        var arr = [...arguments]
+        arr.sort(function(a,b){return a-b;})
+        console.log( arr);
+    }else if(arguments.length == 6){
+        var arr = [...arguments]
+        arr.sort(function(a,b){return a-b;});
+        //链式写法  arr.slice(2,7).pop()
+        arr.shift();
+        arr.pop();
+        var total1=0;
+        for(var i=0;i<arr.length;i++){
+             total1+= arr[i];
+        }
+        console.log(total1/arr.length);
+    }
+
+}
+
+
+</script>
+</body>
+</html>

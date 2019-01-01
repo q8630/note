@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img:hover{
+            opacity: .5;
+        }
+        .img{
+            width: 320px;
+            height: 320px;
+            position: relative;
+        }
+        .layer{
+            width: 320px;
+            height: 320px;
+            position: absolute;
+            left: 0;
+            top:0;
+
+        }
+        .img:hover .layer{
+            background: rgba(0,0,0,.5);
+        }
+        .img:hover .play{
+            opacity: 1;
+        }
+        i{
+            display: inline-block;
+            background: url("images/sprite.png") no-repeat;
+            width: 48px;
+            height: 48px;
+
+        }
+        .play{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom:0;
+            margin: auto;
+            background-position: 0 -488px;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="img">
+    <img src="images/pic.jpg" alt="">
+    <div class="layer"></div>
+    <i class="play"></i>
+</div>
+
+
+</body>
+</html>

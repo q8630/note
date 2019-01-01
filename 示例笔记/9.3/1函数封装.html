@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yangxiaoli</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        .nav1{
+            margin: 10px;
+            float: left;
+        }
+        .nav1 li{
+            width: 200px;
+            line-height: 40px;
+            height: 40px;
+            position: relative;
+            background: blanchedalmond;
+
+        }
+        .nav1 li a{
+            display: block;
+            line-height: 40px;
+            text-align: center;
+
+        }
+        .nav1 div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: red;
+            top: 40px;
+            display: none;
+        }
+        /*li:hover div{*/
+            /*display: block;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<ul class="nav1">
+    <li>
+        <!--去掉a标签的默认行为-->
+        <a href="javascript:;">文字</a>
+        <!--<a href="javascript:void(0);">文字</a>-->
+        <div></div>
+    </li>
+</ul>
+
+<ul class="nav1 nav2">
+    <li>
+        <!--去掉a标签的默认行为-->
+        <a href="javascript:;">文字</a>
+        <!--<a href="javascript:void(0);">文字</a>-->
+        <div></div>
+    </li>
+</ul>
+
+<ul class="nav1 nav3">
+    <li>
+        <!--去掉a标签的默认行为-->
+        <a href="javascript:;">文字</a>
+        <!--<a href="javascript:void(0);">文字</a>-->
+        <div></div>
+    </li>
+</ul>
+
+<script>
+//    函数:封装
+    var tit1 = document.querySelector('.nav1 li'),
+        cont1 = document.querySelector('.nav1 div');
+    var tit2 = document.querySelector('.nav2 li'),
+        cont2 = document.querySelector('.nav2 div');
+    var tit3 = document.querySelector('.nav3 li'),
+        cont3 = document.querySelector('.nav3 div');
+
+//    形参
+    function showHide(tit,cont){
+        tit.onclick = function(){
+            if(cont.style.display == 'block'){
+                cont.style.display = 'none';
+            }else{
+                cont.style.display = 'block';
+            }
+        }
+    }
+//   实参
+    showHide(tit1,cont1);
+    showHide(tit2,cont2);
+    showHide(tit3,cont3);
+
+
+</script>
+</body>
+</html>

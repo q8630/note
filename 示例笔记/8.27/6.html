@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>   /  \
+<script>
+  console.log("Tom say:'\ti \nam \"a\" boy'")
+var q=12;
+  console.log(q.toString())//'12'
+  console.log(String(1))//1
+  console.log(typeof  1);
+  console.log(typeof  String(1));
+
+  console.log(true)
+  console.log(String(true))
+  console.log(typeof  true);
+  console.log(typeof  String(true));
+
+  console.log(null)
+  console.log(String(null))
+  console.log(typeof  null);
+  console.log(typeof  String(null));
+
+  console.log(undefined)
+  console.log(String(undefined))
+  console.log(typeof  undefined);
+  console.log(typeof  String(undefined));
+
+  console.log(1+1);//2
+  console.log(1+'12');//112
+  console.log('1'+'12');//112
+  console.log(1+2+'12');//312
+  console.log(1+3+'12'+2);//4122
+  console.log(1+3+1+NaN+'12'+2);//NaN122
+  console.log(1+'12'+2+NaN);//1122NaN
+  console.log(NaN+1+'12'+2);//NaN122
+
+//
+//  1*'1'+NaN+1-"13"+'15'+1=NaN151
+//  1+'NaN'+12-'1'-'12'+NaN+'15' =NaN15
+//  1*12 +NaN*1 +'10a'*2-12+'1'+1+null+undefined=
+//  null+10=10
+//  undefined+10=NaN
+//
+//  1+NaN+true+false+'NaN'+null+undefined+1 =
+
+//  null+undefined+10+true+false= NaN
+//  ''-10+true+null = -9
+
+  if(null){
+    console.log(1);
+  }else{
+    console.log(2);
+  }
+
+  var a=null;
+  if(undefined){
+     a=a+10;
+  }else if((typeof undefined) == undefined){
+    a=a+undefined;
+  }else if((typeof undefined) == 'undefined'){
+    a=a+true;
+  }
+
+
+  if(0){
+    console.log(1);//
+  }
+
+  if(!0){
+    console.log(1);//1
+  }
+
+  if(!!0){
+    console.log(1);//
+  }
+
+  var a=null;
+  if(!undefined){
+    a=a+10;
+  }else if((typeof undefined) == undefined){
+    a=a+undefined;
+  }else if((typeof undefined) == 'undefined'){
+    a=a+true;
+  }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+html5新增的标签：
+块/行  ？  语义？
+
+    header
+    nav
+    ariticle section
+    aside
+    footer
+
+    figure
+    figcaption
+
+    progress
+    meter
+    hgroup
+    time
+
+
+    video  autoplay  controls
+    audio
+表单：
+    标签
+    input  list='' name=''
+    datalist  id=''   option
+    keygen
+
+    类型
+    email   number  search tel  time
+    直接书写 pattern属性 =正则表达式
+
+    form  method=get/post
+    get 提交的内容 会以index.html?name=xxx&pwd=xxx
+    post 提交的内容 index.html
+
+   canvas 结合js使用
+
+ html4  和 html5 以及xhtml的区别？
+
+html5废弃得标签有哪些？
+
+

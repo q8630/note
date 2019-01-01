@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+    <style>
+        ul,ol{
+            list-style: none;
+        }
+        .showHide{
+            height: 200px;
+        }
+        .showHide h1{
+            cursor: pointer;
+        }
+        .showHide div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .tab ol li{
+            float: left;
+            margin-right: 3px;
+            border: 1px solid blue;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .tab ul li{
+            width: 150px;
+            height: 100px;
+            border: 1px solid #000;
+
+        }
+    </style>
+</head>
+<body>
+<div  class="showHide">
+    <h1>12321</h1>
+    <div></div>
+</div>
+<div class="tab">
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <br style="clear: both">
+    </ol>
+    <ul>
+        <li>内容区域1</li>
+        <li>内容区域2</li>
+        <li>内容区域3</li>
+    </ul>
+</div>
+<script>
+    /*传入俩个 对象 参数    显示隐藏处理
+     传入俩个 类数组 参数    做选项卡处理    */
+    var oTit = document.querySelector('.showHide h1');
+    var oCont = document.querySelector('.showHide div');
+    var arrTit = document.querySelectorAll('.tab ol li');
+    var arrCont= document.querySelectorAll('.tab ul li');
+    function showHide(){
+
+    }
+    function tab(){}
+</script>
+</body>
+</html>

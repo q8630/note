@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" id="dage">
+全选
+<br/>
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+
+
+<script>
+//    1、找人
+    var aIns = document.getElementsByTagName('input');
+//    2、绑定事件
+    dage.onclick = function(){
+        for (var i = 1; i < 6; i++) {
+            aIns[i].checked = dage.checked;
+        }
+    };
+//   思考题：实现反选？
+</script>
+</body>
+</html>

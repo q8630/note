@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+//        arr[0] = ["北京1","北京2","北京3","北京3"];
+//        arr[1] = ["上海1","上海2","上海3","上海3"];
+//        arr[2] = ["广州1","广州2","广州3","广州3"];
+
+        window.onload = function(){
+            var arr = [
+                ["北京1","北京2","北京3","北京3"],
+                ["上海1","上海2","上海3","上海3","上海3"],
+                ["广州1","广州2","广州3"]
+            ];
+            var oS1 = document.getElementById("s1");
+            var oS2 = document.getElementById("s2");
+            oS1.onchange = function(){
+                // 明确   s1   选了哪个
+//                oS1.value  获取的是下标 不是内容
+                console.log(oS1.value);
+                oS2.options.length = 0;
+                for (var i = 0;i<arr[oS1.value].length;i++) {
+                    oS2.add(new Option(arr[oS1.value][i]))
+                }
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+<select name="" id="s1">
+    <option value="">请选择城市</option>
+    <option value="0">北京</option>
+    <option value="1">上海</option>
+    <option value="2">广州</option>
+</select>
+<select name="" id="s2">
+    <option value="">请选择区</option>
+</select>
+</body>
+</html>

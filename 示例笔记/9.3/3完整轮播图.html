@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yangxiaoli</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .banner{
+            width: 1024px;
+            height: 768px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .banner img{
+            display: none;
+        }
+        .banner img.active{
+            display: block;
+        }
+        .banner ul{
+            position: absolute;
+            left: 45%;
+            bottom: 30px;
+        }
+        .banner ul li{
+            width: 20px;
+            height: 20px;
+            float: left;
+            border-radius: 50%;
+            background: blueviolet;
+            margin-right: 10px;
+
+        }
+        .banner ul li.active{
+            background: white;
+        }
+        .banner .arrow{
+            display: none;
+        }
+        .banner .arrow.active{
+            display: block;
+        }
+        .banner .arrow div{
+            position: absolute;
+            top: 50%;
+            height: 100px;
+            margin-top: -50px;
+            width: 60px;
+            background: #fff;
+
+        }
+        .banner .arrow .next{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="banner" id="banner">
+    <img class="active" src="img/Chrysanthemum.jpg" alt="">
+    <img src="img/Desert.jpg" alt="">
+    <img src="img/Hydrangeas.jpg" alt="">
+    <img src="img/Jellyfish.jpg" alt="">
+    <img src="img/Tulips.jpg" alt="">
+    <ul>
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="arrow">
+        <div class="prev"></div>
+        <div class="next"></div>
+    </div>
+</div>
+
+<script>
+    var tits1 = document.querySelectorAll('.div1 ul li'),
+        conts1 = document.querySelectorAll('.div1 ol li');
+    var tits2 = document.querySelectorAll('.banner ul li'),
+        conts2 = document.querySelectorAll('.banner img');
+
+    var arrow = document.querySelector('.banner .arrow');
+    var zy = document.querySelectorAll('.banner .arrow div');
+    var index=0;
+    var timer = null;
+
+
+    banner.onmouseover = function(){
+        arrow.classList.add('active');
+        clearInterval(timer);
+    };
+    banner.onmouseout = function(){
+        arrow.classList.remove('active');
+        timer = setInterval(right,1000);
+    };
+    timer = setInterval(right,1000);
+
+    zy[1].onclick = right;
+    function right(){
+        index++;
+        if(index>conts2.length-1){
+            index=0;
+        }
+        for (var j = 0; j < conts2.length; j++) {
+            conts2[j].classList.remove('active');
+            tits2[j].classList.remove('active');
+        }
+        conts2[index].classList.add('active');
+        tits2[index].classList.add('active');
+    }
+//    console.log(right);
+    zy[0].onclick = function(){
+        index--;
+        if(index<0){
+            index=conts2.length-1;
+        }
+        for (var j = 0; j < conts2.length; j++) {
+            conts2[j].classList.remove('active');
+            tits2[j].classList.remove('active');
+        }
+        conts2[index].classList.add('active');
+        tits2[index].classList.add('active');
+    };
+
+
+
+    function tab(tits,conts,ev){
+        for (let i = 0; i < tits.length; i++) {
+            tits[i][ev] = function(){
+                for (var j = 0; j < conts.length; j++) {
+                    conts[j].classList.remove('active');
+                    tits[j].classList.remove('active');
+                }
+                conts[i].classList.add('active');
+                this.classList.add('active');
+                index = i;
+            }
+        }
+    }
+    tab(tits1,conts1,'onclick');
+    tab(tits2,conts2,'onmouseover');
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .img{
+            width: 320px;
+            height: 320px;
+            position: relative;
+            margin: auto;
+        }
+        .img:hover .div2{
+            opacity: 1;
+            left: 0;
+        }
+        .img:hover .div1{
+            opacity: 0;
+            left:-20%;
+        }
+        .div1,.div2 {
+            line-height: 30px;
+            color: #fff;
+            width: 100%;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, .6);
+            padding: 10px 20px;
+            position: absolute;
+            bottom: 0;
+        }
+        .div1{
+            transition: .1s;
+        }
+        .div2{
+            height: 100%;
+            left: -100%;
+            top: 0;
+            opacity: 0;
+            transition: .3s;
+        }
+    </style>
+</head>
+<body>
+<div class="img">
+    <img src="images/pic.jpg" alt="">
+    <div class="div1">
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+    </div>
+    <div class="div2">
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+        <p>fshdlshf</p>
+    </div>
+</div>
+</body>
+</html>

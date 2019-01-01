@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            /*height: 200px;*/
+            width: 100%;
+            background: #ccc;
+            /*float: left;*/
+            /*overflow: hidden;*/
+        }
+        .div1 li{
+            width: 100px;
+            height: 200px;
+            background: red;
+            float: left;
+        }
+        .div1 li.li2{
+            float: right;
+        }
+        .div2{
+            width: 100%;
+            height: 300px;
+            background: black;
+            /*float: left;*/
+        }
+        .clear:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<ul class="div1 clear">
+    <li></li>
+    <li class="li2"></li>
+    <!--<div style="clear: both;"></div>    -->
+
+</ul>
+<div class="div2"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
++
+<input type="text">
+=
+<input type="button" value="计算">
+
+<script>
+//    1、找元素
+    var aIns = document.getElementsByTagName('input');
+    aIns[2].onclick = function(){
+//        console.log(aIns[0].value);
+        console.log(aIns[0].value - aIns[1].value);
+    }
+
+
+</script>
+</body>
+</html>

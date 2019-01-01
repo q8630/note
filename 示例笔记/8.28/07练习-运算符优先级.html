@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    var a = 1; var b = ++a + ++a; console.log(b);//5
+
+    var a = 1; var b = a++ + ++a; console.log(b);//4
+
+    var a = 1; var b = a++ + a++; console.log(b);//3
+
+    var a = 1; var b = ++a + a++; console.log(b);//4
+//                       2
+//        var num = 1;
+//    num += 1;   // num = num + 1;
+//    console.log(num);2
+//
+console.log(((4 >= 6) || ("人" != "阿凡达")) && !(((12 * 2) == 144) && true));
+//
+//var num = 10;
+//if(5 == num / 2 && (2 + 2 * num).toString() === "22") {
+//    console.log(true);
+//}
+
+
+
+var a = 1,b=c = 2,d = 4;
+//              2>1   &&  2<4
+var result = !(a*b > a++ && a<d++) || (a-b++ + --c)  && d*a+5;
+//             a=2  d=5              b=3   c=1
+    alert(result);//15
+
+
+// 逗号运算符    只输出 最后一个逗号后面的值
+    var a=(1,2,3,4,5);
+    alert(a);
+
+
+</script>
+</body>
+</html>

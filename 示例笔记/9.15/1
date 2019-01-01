@@ -1,0 +1,191 @@
+js:
+1、变量提升
+2、自上而下
+
+函数：
+    1、形参赋值
+    2、变量提升
+    3、自上而下
+    4、内存销毁？
+
+ 一个变量 只能存储一个值
+
+var n;
+function a(){
+    var n=10;  //11
+    function b(){
+        n++; //11
+        console.log(n);
+    }
+    b();
+    return b;
+}
+var c;
+
+n=0;
+
+c=function b(){
+          n++; //11    //1
+          console.log(n); //1
+      }
+c();
+console.log(n);//1
+
+
+
+
+
+var a=10,b=11,c=12;
+function test(a){
+    var a=10;//1
+    var b;//2
+     a=1;
+      b=2;
+     c=3;
+}
+test(10);
+console.log(a);
+console.log(b);
+console.log(c);
+
+
+if(!("a" in window)){
+   var a=1;
+}
+console.log(a);
+
+
+var a=4;
+function b(x,y,a) {
+     console.log(a); //3
+     arguments[2]=10;
+     console.log(a); //10
+}
+a=b(1,2,3);
+console.log(a);
+
+
+var foo='hello';
+(function(foo){
+   console.log(foo);
+   var foo=foo||'world';
+   console.log(foo);
+})(foo);
+console.log(foo);
+
+
+
+var a=9; //0 1 0  1  2
+function fn(){
+    a=0;
+    return function(b){
+        return b+a++;
+    }
+}
+var f=fn();//不销毁
+f=function(b){
+  return b+a++;
+}
+console.log(f(5));//5
+console.log(fn()(5));//5
+console.log(f(5));//6
+console.log(a);//2
+
+
+
+
+function fn(i) {
+    return function (n) {
+        console.log(n + (i++));
+    }
+}
+var f = fn(10);  //不销毁
+function fn(i) {
+    var i=10;//11  12
+}
+f=function (n) {
+          console.log(n + (i++));
+      }
+
+
+f(20);//30
+fn(20)(40);//60
+fn(30)(50);//80
+f(30);//41
+
+
+
+
+
+var i = 10;//全局
+function fn(i) {
+    var n=0;
+    i++;
+    return function (i) {
+             console.log(--n + (++i));
+         }
+}
+var f = fn(1);
+function (i) {
+             console.log(--n + (++i));
+         }
+
+function fn(i) {
+    var i=1;//私有  2
+    var n=0;//-1  -2
+    i++;//
+
+}
+
+
+f(20);//20
+fn()(20);//20
+fn()(30);//30
+f(30);//29
+
+
+
+var a = 10;//全局
+function test() {
+      var a;//私有a
+　　  a = 100;
+　　  alert(a);
+　　  alert(this.a);//10
+　　  alert(a);//100
+}
+test();
+
+
+
+var num = 10;
+var obj = {num: 20};
+obj.fn = (function (num) {
+    this.num = num * 3;
+    num++;
+    return function (n) {
+        this.num += n;
+        num++;
+        console.log(num);
+    }
+})(obj.num);
+var fn = obj.fn;
+fn(5);
+obj.fn(10);
+console.log(num, obj.num);
+
+
+
+var fullName='language';
+var obj={
+    fullName='javascript',
+    prop:{
+        getFullName:function(){
+            return this.fullName;
+        }
+    }
+};
+console.log(obj.prop.getFullName());
+var test=obj.prop.getFullName;
+console.log(test());
+
+

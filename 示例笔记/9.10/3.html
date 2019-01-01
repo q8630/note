@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杨晓丽</title>
+</head>
+<body>
+<script>
+    //    解构赋值
+    //    var a= 5,b=4;
+
+    //    var temp = a;
+    //        a=b;
+    //        b=temp;
+    //    [a,b]=[b,a];
+    //console.log(a, b);
+
+    //...拓展运算符
+//    注意：...在使用的时候 只能是最后一个元素
+    var a = [1, 2, 43, 5, 5, 6, 7, 8];
+//    [a, b, c,...d]= a;  //...剩下的
+//    console.log(a, b, c, d);
+
+    var b=[2,...a];//...展开  把原数组中的每一项  一项一项展开 添入新数组
+//    var b=a;
+//    b[0]=100;
+    console.log(b);
+
+
+</script>
+</body>
+</html>

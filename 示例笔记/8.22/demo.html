@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+1、找人
+<!--document  dom根节点-->
+<!--get  Element   By  Id  通过id获取元素-->
+2、绑定事件
+<!--on mouse over  在鼠标移上的时候-->
+3、书写事件驱动
+
+计算机 引号 就近原则
+内单外双/ 内双外单
+onmouse   over  鼠标移入
+onmouse   out   鼠标移出
+<div id="div1" onmouseover='
+        document.getElementById("div1").style.width="200px";
+        document.getElementById("div1").style.height="200px";
+        document.getElementById("div1").style.background="blue"
+' onmouseout='
+        document.getElementById("div1").style.width="100px";
+        document.getElementById("div1").style.height="100px";
+        document.getElementById("div1").style.background="red"
+'>
+    <p></p>
+</div>
+</body>
+</html>
