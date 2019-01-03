@@ -1,0 +1,140 @@
+微信小程序
+定义
+简称小程序
+是一款不需要下载安装的应用，通过二维码即可使用
+
+特点：轻
+发布上线时间 2017年1月9号  张小龙
+
+2017年之前都是内测 
+
+对外开放的群体
+    个人、企业、政府、媒体
+微信公众号: 订阅号 服务号 企业号 
+微信公众号的开发：
+前端：移动端页面 放到公众号中
+
+
+注册
+
+
+小程序只支持https 域名必须经过备案 不支持ip
+
+框架
+框架的核心：响应式数据系统绑定
+
+系统分类 
+    逻辑、视图
+
+wxss rpx
+
+app.js    小程序启动的入口文件
+app.json  项目的公共配置  如：路由配置
+    根据写入的顺序 显示对应的文件内容=>路由跳转
+
+小程序、原生(ios 安卓)web的区别？
+小程序:  融合web和原生的一套Hybrid(混合)框架 
+原生:   路由 生命周期 特定原生api
+web:    css 语法=>js vue es6 
+
+小程序是新的框架码？
+phongap  2011
+ionic   2013
+html5+ runtime  2014
+reactnative  2015 =>fiatter 最接近于原生(兼容性不是很好)
+weex    2016
+不是一个新的框架，换汤不换药
+
+app.wxss  项目的公共样式表 
+
+.js     页面的逻辑功能  如：方法
+.json   页面的配置  如：配置
+.wxml   页面的结构  <view/>
+.wxss   页面的样式  控制页面的显示效果
+
+App生命周期
+onLaunch    全局执行就会加载 => 初始化完成
+onShow      小程序正常启动的时候=> 进入页面执行
+onHide      小程序关闭的时候 => 离开页面执行
+
+Page生命周期
+onLoad      页面加载进入 执行一次 (加载)  
+
+onShow      页面显示
+    初次渲染
+onReady     
+onHide      页面隐藏
+
+onUnload    卸载 执行一次   
+
+小程序大小限制 4M
+小程序云开发：
+    可以前端和后台同时进行
+
+事件：
+阻止事件冒泡
+cancelBubble =true
+stopPropagation()
+通过原生的方式就可以解决
+
+冒泡事件
+bind
+bindTap
+bindLongtap
+bindTouch
+bindstart
+bindmove
+bindend
+bindchancel
+非冒泡事件
+catch 捕获
+tap
+touch
+touchstart
+touchmove
+touchend
+touchchancel
+{{}} 插值表达式 在小程序中同样适用
+data 的应用场景在onload里面  data赋值的过程只能在onload 
+setData 的应用场景 可以在Page的函数去执行
+data和setData 在设置数据时，一次不能超过1024kb
+
+
+底部导航栏
+tabBar:{
+    "list":[
+        {
+            页面路径
+            "pagePath":"",
+            //tabBar文字
+            "text":"",
+            //iconPath图片
+            "iconPath":""
+        }
+    ]
+}
+
+color  未选中的字体颜色
+selectedColor  选中的字体颜色
+borderStyle  边框颜色 只支持两种(black默认  white)
+pagePath    页面路径
+selectedIconPath    选中的地址
+iconPath    未选中的图标地址
+text    文字
+
+保证每个页面里面的json文件
+必须有navigationBarTitleText 如果没有
+会报错
+
+tabBar 配置的首页,必须和上面的pages书写的文件地址一样 
+
+tabBar的选项至少2项，最多5项。多出的不读取
+
+
+作业：
+如何定义tabbar？
+微信小程序的跳转除了js方式之外，在wxml里面进行跳转？
+navergeter url open-type
+rpx px 关系？
+dpi 设备
+vue 移动端项目
